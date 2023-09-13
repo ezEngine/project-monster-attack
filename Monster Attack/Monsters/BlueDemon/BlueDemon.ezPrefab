@@ -11,7 +11,7 @@ o
 		s %AssetType{"Prefab"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{14322564914651393684,4963922866170075549}}
-		u4 %Hash{9699947045699836228}
+		u4 %Hash{2387102208059216512}
 		VarArray %MetaInfo
 		{
 			Uuid{u4{12440196303460809848,14710351079864222681}}
@@ -19,13 +19,13 @@ o
 		VarArray %Outputs{}
 		VarArray %PackageDeps
 		{
+			s{"{ 45aea256-427f-4dd8-8ba3-30586cf7b88c }"}
 			s{"{ da6ec3ec-1e0a-4e90-81e2-551bfb0c36fa }"}
-			s{"{ f506fc27-f461-4dde-b708-feddc8e6a465 }"}
 		}
 		VarArray %References
 		{
+			s{"{ 45aea256-427f-4dd8-8ba3-30586cf7b88c }"}
 			s{"{ da6ec3ec-1e0a-4e90-81e2-551bfb0c36fa }"}
-			s{"{ f506fc27-f461-4dde-b708-feddc8e6a465 }"}
 		}
 	}
 }
@@ -57,17 +57,15 @@ o
 }
 o
 {
-	Uuid %id{u4{523964983379616764,747466845032041967}}
-	s %t{"ezSimpleAnimationComponent"}
+	Uuid %id{u4{15731704556607108248,4622660207630733554}}
+	s %t{"ezAnimationControllerComponent"}
 	u3 %v{2}
 	p
 	{
 		b %Active{1}
-		s %AnimationClip{"{ f506fc27-f461-4dde-b708-feddc8e6a465 }"}
-		s %AnimationMode{"ezPropertyAnimMode::Loop"}
+		s %AnimGraph{"{ 45aea256-427f-4dd8-8ba3-30586cf7b88c }"}
 		s %InvisibleUpdateRate{"ezAnimationInvisibleUpdateRate::Max5FPS"}
 		s %RootMotionMode{"ezRootMotionMode::Ignore"}
-		f %Speed{0x0000803F}
 	}
 }
 o
@@ -119,8 +117,8 @@ o
 		VarArray %Components
 		{
 			Uuid{u4{13845829655758101478,127304729655430150}}
-			Uuid{u4{523964983379616764,747466845032041967}}
 			Uuid{u4{14613140288000160397,5345780436201081083}}
+			Uuid{u4{15731704556607108248,4622660207630733554}}
 		}
 		s %GlobalKey{""}
 		Vec3 %LocalPosition{f{0,0,0}}
@@ -157,23 +155,6 @@ o
 	p
 	{
 		s %Category{"Physics/Jolt/Animation"}
-	}
-}
-o
-{
-	Uuid %id{u4{16492723009378139380,540909537214531894}}
-	s %t{"ezReflectedTypeDescriptor"}
-	u3 %v{1}
-	p
-	{
-		VarArray %Attributes{}
-		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
-		VarArray %Functions{}
-		s %ParentTypeName{"ezComponent"}
-		s %PluginName{"Static"}
-		VarArray %Properties{}
-		s %TypeName{"ezSimpleAnimationComponent"}
-		u3 %TypeVersion{2}
 	}
 }
 o
@@ -337,6 +318,23 @@ o
 }
 o
 {
+	Uuid %id{u4{3793674575974708228,6951555356482165156}}
+	s %t{"ezReflectedTypeDescriptor"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Attributes{}
+		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
+		VarArray %Functions{}
+		s %ParentTypeName{"ezComponent"}
+		s %PluginName{"Static"}
+		VarArray %Properties{}
+		s %TypeName{"ezAnimationControllerComponent"}
+		u3 %TypeVersion{2}
+	}
+}
+o
+{
 	Uuid %id{u4{10283468867778697373,7237061273152790000}}
 	s %t{"ezFunctionArgumentDescriptor"}
 	u3 %v{1}
@@ -387,23 +385,6 @@ o
 	{
 		s %Flags{""}
 		s %Type{""}
-	}
-}
-o
-{
-	Uuid %id{u4{12435145686180634860,8288333427582851889}}
-	s %t{"ezReflectedTypeDescriptor"}
-	u3 %v{1}
-	p
-	{
-		VarArray %Attributes{}
-		s %Flags{"ezTypeFlags::IsEnum|ezTypeFlags::Minimal"}
-		VarArray %Functions{}
-		s %ParentTypeName{"ezEnumBase"}
-		s %PluginName{"Static"}
-		VarArray %Properties{}
-		s %TypeName{"ezPropertyAnimMode"}
-		u3 %TypeVersion{1}
 	}
 }
 o

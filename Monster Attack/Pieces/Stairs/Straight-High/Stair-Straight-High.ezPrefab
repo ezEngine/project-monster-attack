@@ -11,7 +11,7 @@ o
 		s %AssetType{"Prefab"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{13963857254465533628,4976340257330528106}}
-		u4 %Hash{4522670177904426868}
+		u4 %Hash{14943458443691322596}
 		VarArray %MetaInfo
 		{
 			Uuid{u4{14757916743689152150,18061984361364964329}}
@@ -49,7 +49,7 @@ o
 	u3 %v{3}
 	p
 	{
-		b %Active{1}
+		b %Active{0}
 		Color %Color{f{0x0000803F,0x0000803F,0x0000803F,0x0000803F}}
 		VarArray %Materials{}
 		s %Mesh{"{ b65faa68-aabe-40d8-8a60-73e2bc1ca5ac }"}
@@ -106,7 +106,7 @@ o
 			Uuid{u4{4710920300374434708,5385990224272514143}}
 		}
 		s %GlobalKey{""}
-		Vec3 %LocalPosition{f{0,0,0x8BDF403F}}
+		Vec3 %LocalPosition{f{0,0,0x0000803F}}
 		Quat %LocalRotation{f{0,0,0x0000803F,0x6921A233}}
 		Vec3 %LocalScaling{f{0x0000803F,0x0000803F,0x0000803F}}
 		f %LocalUniformScaling{0x0000803F}
@@ -128,14 +128,14 @@ o
 		b %Active{1}
 		Color %Color{f{0x0000803F,0x0000803F,0x0000803F,0x0000803F}}
 		Angle %Curvature{f{0}}
-		u3 %Detail{6}
+		u3 %Detail{8}
 		b %GenerateCollision{1}
 		b %IncludeInNavmesh{1}
 		s %Material{"{ 9ce0db2a-284c-4cfd-a938-1eaded885932 }"}
 		s %Shape{"ezGreyBoxShape::StairsX"}
 		f %SizeNegX{0x0000803F}
 		f %SizeNegY{0x0000803F}
-		f %SizeNegZ{0x201C12BE}
+		f %SizeNegZ{0}
 		f %SizePosX{0x0000803F}
 		f %SizePosY{0x0000803F}
 		f %SizePosZ{0x0000803F}
@@ -175,7 +175,7 @@ o
 		}
 		s %GlobalKey{""}
 		Vec3 %LocalPosition{f{0,0,0}}
-		Quat %LocalRotation{f{0,0,0x0000803F,0x6921A233}}
+		Quat %LocalRotation{f{0,0,0,0x0000803F}}
 		Vec3 %LocalScaling{f{0x0000803F,0x0000803F,0x0000803F}}
 		f %LocalUniformScaling{0x0000803F}
 		s %Mode{"ezObjectMode::Automatic"}

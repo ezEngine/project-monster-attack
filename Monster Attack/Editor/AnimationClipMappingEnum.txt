@@ -1,0 +1,6 @@
+Attack-Melee
+Die
+Idle
+React-Hit
+Run
+Walk

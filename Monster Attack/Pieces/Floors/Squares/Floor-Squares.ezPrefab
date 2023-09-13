@@ -21,7 +21,7 @@ o
 		s %AssetType{"Prefab"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{16586296461104280238,4696254696701533586}}
-		u4 %Hash{4635722743889682659}
+		u4 %Hash{15039757847692549484}
 		VarArray %MetaInfo
 		{
 			Uuid{u4{5542551355813126502,3620668417819997093}}
@@ -69,7 +69,7 @@ o
 		s %Shape{"ezGreyBoxShape::Box"}
 		f %SizeNegX{0x0000803F}
 		f %SizeNegY{0x0000803F}
-		f %SizeNegZ{0xCDCC4C3E}
+		f %SizeNegZ{0x00000040}
 		f %SizePosX{0x0000803F}
 		f %SizePosY{0x0000803F}
 		f %SizePosZ{0}
@@ -86,7 +86,7 @@ o
 	u3 %v{3}
 	p
 	{
-		b %Active{1}
+		b %Active{0}
 		Color %Color{f{0x0000803F,0x0000803F,0x0000803F,0x0000803F}}
 		VarArray %Materials{}
 		s %Mesh{"{ 953cc66e-10dc-4c95-9a24-d4ddb83814dc }"}

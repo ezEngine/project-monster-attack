@@ -14,7 +14,7 @@ o
 			s{"Monsters/Orc/Orc.gltf"}
 		}
 		Uuid %DocumentID{u4{10510357740900025762,4989076011521735760}}
-		u4 %Hash{3371563079839252642}
+		u4 %Hash{16686176572885126674}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps{}
@@ -57,7 +57,7 @@ o
 		s %File{"Monsters/Orc/Orc.gltf"}
 		u3 %FirstFrame{0}
 		u3 %NumFrames{0}
-		s %PreviewMesh{"{ 16f53205-c7ac-4f58-9717-aebea40e9df1 }"}
+		s %PreviewMesh{"{ da6ec3ec-1e0a-4e90-81e2-551bfb0c36fa }"}
 		s %RootMotion{"ezRootMotionSource::None"}
 		s %UseAnimationClip{"Weapon"}
 	}
