@@ -14,10 +14,13 @@ o
 			s{"Pieces/Walls/Curved/Curve_1.obj"}
 		}
 		Uuid %DocumentID{u4{12682130829203381895,4981934696689803737}}
-		u4 %Hash{18376439675928762891}
+		u4 %Hash{1650276010353087260}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
-		VarArray %PackageDeps{}
+		VarArray %PackageDeps
+		{
+			s{"{ ef3b967e-25e8-439e-abef-1fd17db1227c }"}
+		}
 		VarArray %References
 		{
 			s{"Pieces/Walls/Curved/Curve_1.obj"}
@@ -63,7 +66,7 @@ o
 	{
 		b %Exclude{0}
 		s %Label{"Highlights"}
-		s %Resource{""}
+		s %Resource{"{ ef3b967e-25e8-439e-abef-1fd17db1227c }"}
 	}
 }
 o
@@ -75,7 +78,7 @@ o
 	{
 		b %Exclude{0}
 		s %Label{"Main"}
-		s %Resource{""}
+		s %Resource{"{ ef3b967e-25e8-439e-abef-1fd17db1227c }"}
 	}
 }
 o
