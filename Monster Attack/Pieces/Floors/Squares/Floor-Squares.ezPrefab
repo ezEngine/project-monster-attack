@@ -2,7 +2,7 @@ HeaderV2
 {
 o
 {
-	Uuid %id{u4{1009361368077140179,460530310765762415}}
+	Uuid %id{u4{5542551355813126502,3620668417819997093}}
 	s %t{"ezExposedParameters"}
 	u3 %v{3}
 	p
@@ -12,7 +12,7 @@ o
 }
 o
 {
-	Uuid %id{u4{12146444546646935471,5579309882653942037}}
+	Uuid %id{u4{16586296461104280238,4696254696701533586}}
 	s %t{"ezAssetDocumentInfo"}
 	u3 %v{2}
 	s %n{"Header"}
@@ -20,22 +20,22 @@ o
 	{
 		s %AssetType{"Prefab"}
 		VarArray %Dependencies{}
-		Uuid %DocumentID{u4{12146444546646935471,5579309882653942037}}
-		u4 %Hash{6219427348714649073}
+		Uuid %DocumentID{u4{16586296461104280238,4696254696701533586}}
+		u4 %Hash{4635722743889682659}
 		VarArray %MetaInfo
 		{
-			Uuid{u4{1009361368077140179,460530310765762415}}
+			Uuid{u4{5542551355813126502,3620668417819997093}}
 		}
 		VarArray %Outputs{}
 		VarArray %PackageDeps
 		{
+			s{"{ 953cc66e-10dc-4c95-9a24-d4ddb83814dc }"}
 			s{"{ 9ce0db2a-284c-4cfd-a938-1eaded885932 }"}
-			s{"{ fab6f863-1620-4c07-b40b-9e95e9678741 }"}
 		}
 		VarArray %References
 		{
+			s{"{ 953cc66e-10dc-4c95-9a24-d4ddb83814dc }"}
 			s{"{ 9ce0db2a-284c-4cfd-a938-1eaded885932 }"}
-			s{"{ fab6f863-1620-4c07-b40b-9e95e9678741 }"}
 		}
 	}
 }
@@ -44,7 +44,7 @@ Objects
 {
 o
 {
-	Uuid %id{u4{8147332490772997320,4885469400829961595}}
+	Uuid %id{u4{12587184405230342087,4002414214877553144}}
 	s %t{"ezPrefabDocumentSettings"}
 	u3 %v{1}
 	p
@@ -54,22 +54,7 @@ o
 }
 o
 {
-	Uuid %id{u4{18096612296587978288,6449934965513159559}}
-	s %t{"ezSceneDocumentRoot"}
-	u3 %v{2}
-	s %n{"ObjectTree"}
-	p
-	{
-		VarArray %Children
-		{
-			Uuid{u4{11340054353722883329,16929961533032418614}}
-		}
-		Uuid %Settings{u4{8147332490772997320,4885469400829961595}}
-	}
-}
-o
-{
-	Uuid %id{u4{12876039690803109980,10233206214867937303}}
+	Uuid %id{u4{9779064153392283044,5393835270274431283}}
 	s %t{"ezGreyBoxComponent"}
 	u3 %v{5}
 	p
@@ -96,7 +81,7 @@ o
 }
 o
 {
-	Uuid %id{u4{1523559631192434245,10531662457327179524}}
+	Uuid %id{u4{16873328167491158925,5692291512733673504}}
 	s %t{"ezMeshComponent"}
 	u3 %v{3}
 	p
@@ -104,13 +89,13 @@ o
 		b %Active{1}
 		Color %Color{f{0x0000803F,0x0000803F,0x0000803F,0x0000803F}}
 		VarArray %Materials{}
-		s %Mesh{"{ fab6f863-1620-4c07-b40b-9e95e9678741 }"}
+		s %Mesh{"{ 953cc66e-10dc-4c95-9a24-d4ddb83814dc }"}
 		f %SortingDepthOffset{0}
 	}
 }
 o
 {
-	Uuid %id{u4{7580894820935713398,10554638236198967384}}
+	Uuid %id{u4{4483919283524886462,5715267291605461364}}
 	s %t{"ezGameObject"}
 	u3 %v{1}
 	p
@@ -119,7 +104,7 @@ o
 		VarArray %Children{}
 		VarArray %Components
 		{
-			Uuid{u4{1523559631192434245,10531662457327179524}}
+			Uuid{u4{16873328167491158925,5692291512733673504}}
 		}
 		s %GlobalKey{""}
 		Vec3 %LocalPosition{f{0,0,0xCDCC4C3D}}
@@ -136,7 +121,22 @@ o
 }
 o
 {
-	Uuid %id{u4{11340054353722883329,16929961533032418614}}
+	Uuid %id{u4{18096612296587978288,6449934965513159559}}
+	s %t{"ezSceneDocumentRoot"}
+	u3 %v{2}
+	s %n{"ObjectTree"}
+	p
+	{
+		VarArray %Children
+		{
+			Uuid{u4{8243078816312056393,12090590588438912594}}
+		}
+		Uuid %Settings{u4{12587184405230342087,4002414214877553144}}
+	}
+}
+o
+{
+	Uuid %id{u4{8243078816312056393,12090590588438912594}}
 	s %t{"ezGameObject"}
 	u3 %v{1}
 	p
@@ -144,11 +144,11 @@ o
 		b %Active{1}
 		VarArray %Children
 		{
-			Uuid{u4{7580894820935713398,10554638236198967384}}
+			Uuid{u4{4483919283524886462,5715267291605461364}}
 		}
 		VarArray %Components
 		{
-			Uuid{u4{12876039690803109980,10233206214867937303}}
+			Uuid{u4{9779064153392283044,5393835270274431283}}
 		}
 		s %GlobalKey{""}
 		Vec3 %LocalPosition{f{0,0,0}}
