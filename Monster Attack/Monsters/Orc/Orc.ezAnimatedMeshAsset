@@ -1,0 +1,362 @@
+HeaderV2
+{
+o
+{
+	Uuid %id{u4{17410087835220711319,5717539268880314885}}
+	s %t{"ezAssetDocumentInfo"}
+	u3 %v{2}
+	s %n{"Header"}
+	p
+	{
+		s %AssetType{"Animated Mesh"}
+		VarArray %Dependencies
+		{
+			s{"Monsters/Orc/Orc.gltf"}
+		}
+		Uuid %DocumentID{u4{17410087835220711319,5717539268880314885}}
+		u4 %Hash{11640765247283817094}
+		VarArray %MetaInfo{}
+		VarArray %Outputs{}
+		VarArray %PackageDeps
+		{
+			s{"{ 0256e83d-0814-479f-8ea6-e800f6e4bfd8 }"}
+			s{"{ 10e382a8-e9d2-4b28-8d35-0e1bcf6f48e1 }"}
+			s{"{ 1fa5f848-ac06-4912-bcd2-30d5119e0157 }"}
+			s{"{ 218e7d22-3cbd-4699-abd1-4b4b925ec51d }"}
+			s{"{ 2881645c-fd10-4a24-929e-0429726c7ea1 }"}
+			s{"{ 4cdc1307-9ac4-4a4c-b7c9-ef4c1590d4b0 }"}
+			s{"{ 5d561f9c-3fa8-4afb-8534-5cdba3c8f9a3 }"}
+			s{"{ 840d30bf-b503-4c87-b475-b970827ccc35 }"}
+			s{"{ b1903f1c-847d-42b7-a19b-3eef192a20c2 }"}
+			s{"{ bb3abc96-70c7-4336-b06b-c922d0fc679a }"}
+			s{"{ d74db3e2-d5f6-4b8e-a7ac-5bda8849abf4 }"}
+			s{"{ dbc8e6af-e6c0-41e8-9dc0-fa88b2eee6b4 }"}
+		}
+		VarArray %References
+		{
+			s{"Monsters/Orc/Orc.gltf"}
+			s{"{ 0256e83d-0814-479f-8ea6-e800f6e4bfd8 }"}
+			s{"{ 10e382a8-e9d2-4b28-8d35-0e1bcf6f48e1 }"}
+			s{"{ 1fa5f848-ac06-4912-bcd2-30d5119e0157 }"}
+			s{"{ 218e7d22-3cbd-4699-abd1-4b4b925ec51d }"}
+			s{"{ 2881645c-fd10-4a24-929e-0429726c7ea1 }"}
+			s{"{ 4cdc1307-9ac4-4a4c-b7c9-ef4c1590d4b0 }"}
+			s{"{ 5d561f9c-3fa8-4afb-8534-5cdba3c8f9a3 }"}
+			s{"{ 840d30bf-b503-4c87-b475-b970827ccc35 }"}
+			s{"{ b1903f1c-847d-42b7-a19b-3eef192a20c2 }"}
+			s{"{ bb3abc96-70c7-4336-b06b-c922d0fc679a }"}
+			s{"{ d74db3e2-d5f6-4b8e-a7ac-5bda8849abf4 }"}
+			s{"{ dbc8e6af-e6c0-41e8-9dc0-fa88b2eee6b4 }"}
+		}
+	}
+}
+}
+Objects
+{
+o
+{
+	Uuid %id{u4{17857258104961682339,4776526266401472336}}
+	s %t{"ezMaterialResourceSlot"}
+	u3 %v{1}
+	p
+	{
+		s %Label{"Wood"}
+		s %Resource{"{ 5d561f9c-3fa8-4afb-8534-5cdba3c8f9a3 }"}
+	}
+}
+o
+{
+	Uuid %id{u4{13555931343095142837,4865306490650602671}}
+	s %t{"ezMaterialResourceSlot"}
+	u3 %v{1}
+	p
+	{
+		s %Label{"Metal"}
+		s %Resource{"{ 0256e83d-0814-479f-8ea6-e800f6e4bfd8 }"}
+	}
+}
+o
+{
+	Uuid %id{u4{14876516589014395046,4922640120907922720}}
+	s %t{"ezMaterialResourceSlot"}
+	u3 %v{1}
+	p
+	{
+		s %Label{"Eye_Black"}
+		s %Resource{"{ dbc8e6af-e6c0-41e8-9dc0-fa88b2eee6b4 }"}
+	}
+}
+o
+{
+	Uuid %id{u4{14064320953821345671,4936124957818510513}}
+	s %t{"ezAnimatedMeshAssetProperties"}
+	u3 %v{2}
+	p
+	{
+		s %BoneWeightPrecision{"ezMeshBoneWeigthPrecision::_8Bit"}
+		s %DefaultSkeleton{"{ b1903f1c-847d-42b7-a19b-3eef192a20c2 }"}
+		b %ImportMaterials{1}
+		VarArray %Materials
+		{
+			Uuid{u4{6362072873658381499,4965839984372578472}}
+			Uuid{u4{3916017100140902591,5147539436964797840}}
+			Uuid{u4{16661923315429580725,5511420379198579083}}
+			Uuid{u4{11767995777314423952,5621308135608833892}}
+			Uuid{u4{1000818490209675188,5592543995288362410}}
+			Uuid{u4{11214366433334760631,5292430198839230954}}
+			Uuid{u4{11167697720353855884,5061473073715947236}}
+			Uuid{u4{14876516589014395046,4922640120907922720}}
+			Uuid{u4{13381438063515434428,4979889747310732368}}
+			Uuid{u4{17857258104961682339,4776526266401472336}}
+			Uuid{u4{13555931343095142837,4865306490650602671}}
+		}
+		s %MeshFile{"Monsters/Orc/Orc.gltf"}
+		s %NormalPrecision{"ezMeshNormalPrecision::_10Bit"}
+		b %NormalizeWeights{1}
+		b %RecalculateNormals{0}
+		b %RecalculateTangents{1}
+		s %TexCoordPrecision{"ezMeshTexCoordPrecision::_16Bit"}
+	}
+}
+o
+{
+	Uuid %id{u4{6362072873658381499,4965839984372578472}}
+	s %t{"ezMaterialResourceSlot"}
+	u3 %v{1}
+	p
+	{
+		s %Label{"Orc_Main"}
+		s %Resource{"{ bb3abc96-70c7-4336-b06b-c922d0fc679a }"}
+	}
+}
+o
+{
+	Uuid %id{u4{13381438063515434428,4979889747310732368}}
+	s %t{"ezMaterialResourceSlot"}
+	u3 %v{1}
+	p
+	{
+		s %Label{"Eye_White"}
+		s %Resource{"{ 840d30bf-b503-4c87-b475-b970827ccc35 }"}
+	}
+}
+o
+{
+	Uuid %id{u4{11167697720353855884,5061473073715947236}}
+	s %t{"ezMaterialResourceSlot"}
+	u3 %v{1}
+	p
+	{
+		s %Label{"Orc_Hair"}
+		s %Resource{"{ 2881645c-fd10-4a24-929e-0429726c7ea1 }"}
+	}
+}
+o
+{
+	Uuid %id{u4{3916017100140902591,5147539436964797840}}
+	s %t{"ezMaterialResourceSlot"}
+	u3 %v{1}
+	p
+	{
+		s %Label{"Orc_Secondary"}
+		s %Resource{"{ 218e7d22-3cbd-4699-abd1-4b4b925ec51d }"}
+	}
+}
+o
+{
+	Uuid %id{u4{11214366433334760631,5292430198839230954}}
+	s %t{"ezMaterialResourceSlot"}
+	u3 %v{1}
+	p
+	{
+		s %Label{"Gold"}
+		s %Resource{"{ d74db3e2-d5f6-4b8e-a7ac-5bda8849abf4 }"}
+	}
+}
+o
+{
+	Uuid %id{u4{16661923315429580725,5511420379198579083}}
+	s %t{"ezMaterialResourceSlot"}
+	u3 %v{1}
+	p
+	{
+		s %Label{"Belt"}
+		s %Resource{"{ 1fa5f848-ac06-4912-bcd2-30d5119e0157 }"}
+	}
+}
+o
+{
+	Uuid %id{u4{1000818490209675188,5592543995288362410}}
+	s %t{"ezMaterialResourceSlot"}
+	u3 %v{1}
+	p
+	{
+		s %Label{"Tongue"}
+		s %Resource{"{ 4cdc1307-9ac4-4a4c-b7c9-ef4c1590d4b0 }"}
+	}
+}
+o
+{
+	Uuid %id{u4{11767995777314423952,5621308135608833892}}
+	s %t{"ezMaterialResourceSlot"}
+	u3 %v{1}
+	p
+	{
+		s %Label{"Orc_Mouth"}
+		s %Resource{"{ 10e382a8-e9d2-4b28-8d35-0e1bcf6f48e1 }"}
+	}
+}
+o
+{
+	Uuid %id{u4{18096612296587978288,6449934965513159559}}
+	s %t{"ezDocumentRoot"}
+	u3 %v{1}
+	s %n{"ObjectTree"}
+	p
+	{
+		VarArray %Children
+		{
+			Uuid{u4{14064320953821345671,4936124957818510513}}
+		}
+	}
+}
+}
+Types
+{
+o
+{
+	Uuid %id{u4{9735983355844992176,7654398404563011307}}
+	s %t{"ezReflectedTypeDescriptor"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Attributes{}
+		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
+		VarArray %Functions{}
+		s %ParentTypeName{"ezReflectedClass"}
+		s %PluginName{"ezEditorPluginAssets"}
+		VarArray %Properties{}
+		s %TypeName{"ezAnimatedMeshAssetProperties"}
+		u3 %TypeVersion{2}
+	}
+}
+o
+{
+	Uuid %id{u4{14196080311825956621,8048256116943370769}}
+	s %t{"ezReflectedTypeDescriptor"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Attributes{}
+		s %Flags{"ezTypeFlags::IsEnum|ezTypeFlags::Minimal"}
+		VarArray %Functions{}
+		s %ParentTypeName{"ezEnumBase"}
+		s %PluginName{"Static"}
+		VarArray %Properties{}
+		s %TypeName{"ezMeshBoneWeigthPrecision"}
+		u3 %TypeVersion{1}
+	}
+}
+o
+{
+	Uuid %id{u4{6089094783765586323,8705960867921430659}}
+	s %t{"ezReflectedTypeDescriptor"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Attributes{}
+		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
+		VarArray %Functions{}
+		s %ParentTypeName{"ezReflectedClass"}
+		s %PluginName{"Static"}
+		VarArray %Properties{}
+		s %TypeName{"ezDocumentRoot"}
+		u3 %TypeVersion{1}
+	}
+}
+o
+{
+	Uuid %id{u4{7523378465055293707,11345788873737253128}}
+	s %t{"ezReflectedTypeDescriptor"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Attributes{}
+		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
+		VarArray %Functions{}
+		s %ParentTypeName{""}
+		s %PluginName{"ezEditorPluginAssets"}
+		VarArray %Properties{}
+		s %TypeName{"ezMaterialResourceSlot"}
+		u3 %TypeVersion{1}
+	}
+}
+o
+{
+	Uuid %id{u4{3437852327385397451,11533535376753039907}}
+	s %t{"ezReflectedTypeDescriptor"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Attributes{}
+		s %Flags{"ezTypeFlags::IsEnum|ezTypeFlags::Minimal"}
+		VarArray %Functions{}
+		s %ParentTypeName{"ezEnumBase"}
+		s %PluginName{"Static"}
+		VarArray %Properties{}
+		s %TypeName{"ezMeshTexCoordPrecision"}
+		u3 %TypeVersion{1}
+	}
+}
+o
+{
+	Uuid %id{u4{3566230308987241816,14467924040829974905}}
+	s %t{"ezReflectedTypeDescriptor"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Attributes{}
+		s %Flags{"ezTypeFlags::IsEnum|ezTypeFlags::Minimal"}
+		VarArray %Functions{}
+		s %ParentTypeName{"ezEnumBase"}
+		s %PluginName{"Static"}
+		VarArray %Properties{}
+		s %TypeName{"ezMeshNormalPrecision"}
+		u3 %TypeVersion{1}
+	}
+}
+o
+{
+	Uuid %id{u4{2947336711354777548,15013008608905564043}}
+	s %t{"ezReflectedTypeDescriptor"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Attributes{}
+		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
+		VarArray %Functions{}
+		s %ParentTypeName{""}
+		s %PluginName{"Static"}
+		VarArray %Properties{}
+		s %TypeName{"ezEnumBase"}
+		u3 %TypeVersion{1}
+	}
+}
+o
+{
+	Uuid %id{u4{983387834180907111,17935407260904399048}}
+	s %t{"ezReflectedTypeDescriptor"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Attributes{}
+		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
+		VarArray %Functions{}
+		s %ParentTypeName{""}
+		s %PluginName{"Static"}
+		VarArray %Properties{}
+		s %TypeName{"ezReflectedClass"}
+		u3 %TypeVersion{1}
+	}
+}
+}
