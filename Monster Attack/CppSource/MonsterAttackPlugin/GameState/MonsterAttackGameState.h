@@ -2,10 +2,11 @@
 
 #include <Core/Input/Declarations.h>
 #include <Core/World/Declarations.h>
-#include <MonsterAttackPlugin/MonsterAttackPluginDLL.h>
 #include <GameEngine/GameApplication/GameApplication.h>
 #include <GameEngine/GameState/FallbackGameState.h>
 #include <GameEngine/GameState/GameState.h>
+#include <MonsterAttackPlugin/MonsterAttackPluginDLL.h>
+#include <RendererCore/Pipeline/Extractor.h>
 
 class MonsterAttackGameState : public ezFallbackGameState
 {
@@ -18,6 +19,8 @@ public:
   virtual ezGameStatePriority DeterminePriority(ezWorld* pWorld) const override;
 
   virtual void ProcessInput() override;
+
+  ezSelectedObjectsContext m_ObjectsToHighlight;
 
 protected:
   virtual void ConfigureMainWindowInputDevices(ezWindow* pWindow) override;
