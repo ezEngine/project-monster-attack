@@ -2,7 +2,7 @@ InputAction
 {
 	string %Set{"Default"}
 	string %Action{"MoveForwards"}
-	bool %TimeScale{true}
+	bool %TimeScale{false}
 	Slot
 	{
 		string %Key{"keyboard_w"}
@@ -13,7 +13,7 @@ InputAction
 {
 	string %Set{"Default"}
 	string %Action{"MoveBackwards"}
-	bool %TimeScale{true}
+	bool %TimeScale{false}
 	Slot
 	{
 		string %Key{"keyboard_s"}
@@ -24,7 +24,7 @@ InputAction
 {
 	string %Set{"Default"}
 	string %Action{"StrafeLeft"}
-	bool %TimeScale{true}
+	bool %TimeScale{false}
 	Slot
 	{
 		string %Key{"keyboard_a"}
@@ -35,7 +35,7 @@ InputAction
 {
 	string %Set{"Default"}
 	string %Action{"StrafeRight"}
-	bool %TimeScale{true}
+	bool %TimeScale{false}
 	Slot
 	{
 		string %Key{"keyboard_d"}
@@ -46,7 +46,7 @@ InputAction
 {
 	string %Set{"Default"}
 	string %Action{"RotateLeft"}
-	bool %TimeScale{true}
+	bool %TimeScale{false}
 	Slot
 	{
 		string %Key{"keyboard_left"}
@@ -62,7 +62,7 @@ InputAction
 {
 	string %Set{"Default"}
 	string %Action{"RotateRight"}
-	bool %TimeScale{true}
+	bool %TimeScale{false}
 	Slot
 	{
 		string %Key{"keyboard_right"}
@@ -78,7 +78,7 @@ InputAction
 {
 	string %Set{"Default"}
 	string %Action{"Run"}
-	bool %TimeScale{true}
+	bool %TimeScale{false}
 	Slot
 	{
 		string %Key{"keyboard_left_shift"}
@@ -89,7 +89,7 @@ InputAction
 {
 	string %Set{"Default"}
 	string %Action{"Jump"}
-	bool %TimeScale{true}
+	bool %TimeScale{false}
 	Slot
 	{
 		string %Key{"keyboard_space"}
@@ -100,7 +100,7 @@ InputAction
 {
 	string %Set{"Default"}
 	string %Action{"LookUp"}
-	bool %TimeScale{true}
+	bool %TimeScale{false}
 	Slot
 	{
 		string %Key{"keyboard_up"}
@@ -116,7 +116,7 @@ InputAction
 {
 	string %Set{"Default"}
 	string %Action{"LookDown"}
-	bool %TimeScale{true}
+	bool %TimeScale{false}
 	Slot
 	{
 		string %Key{"keyboard_down"}
@@ -125,6 +125,22 @@ InputAction
 	Slot
 	{
 		string %Key{"mouse_move_posy"}
+		float %Scale{1}
+	}
+}
+InputAction
+{
+	string %Set{"Default"}
+	string %Action{"Shoot"}
+	bool %TimeScale{false}
+	Slot
+	{
+		string %Key{"keyboard_right_ctrl"}
+		float %Scale{1}
+	}
+	Slot
+	{
+		string %Key{"mouse_button_0"}
 		float %Scale{1}
 	}
 }

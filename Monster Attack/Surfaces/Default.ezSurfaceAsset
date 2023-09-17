@@ -11,10 +11,13 @@ o
 		s %AssetType{"Surface"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{685735978494680979,5762486290835422144}}
-		u4 %Hash{15896364304085562369}
+		u4 %Hash{14199811371663587430}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
-		VarArray %PackageDeps{}
+		VarArray %PackageDeps
+		{
+			s{"{ 2a2b2ff8-f6a0-4e77-9f41-46b86c8e8fd2 }"}
+		}
 		VarArray %References{}
 	}
 }
@@ -30,12 +33,32 @@ o
 	{
 		s %BaseSurface{""}
 		f %DynamicFriction{0xCDCCCC3E}
-		VarArray %Interactions{}
+		i1 %GroundType{-1}
+		VarArray %Interactions
+		{
+			Uuid{u4{79070725506156474,5145667840068349686}}
+		}
 		s %OnCollideInteraction{""}
 		f %Restitution{0x0000803E}
 		s %RollReaction{""}
 		s %SlideReaction{""}
 		f %StaticFriction{0x9A99193F}
+	}
+}
+o
+{
+	Uuid %id{u4{79070725506156474,5145667840068349686}}
+	s %t{"ezSurfaceInteraction"}
+	u3 %v{1}
+	p
+	{
+		s %Alignment{"ezSurfaceInteractionAlignment::SurfaceNormal"}
+		Angle %Deviation{f{0}}
+		f %ImpulseScale{0x0000803F}
+		f %ImpulseThreshold{0}
+		VarDict %Parameters{}
+		s %Prefab{"{ 2a2b2ff8-f6a0-4e77-9f41-46b86c8e8fd2 }"}
+		s %Type{"Impact_Magic"}
 	}
 }
 o

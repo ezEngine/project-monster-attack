@@ -156,31 +156,40 @@ void ezPlayerComponent::Update()
     pHeadBone->ChangeVerticalRotation(down - up);
   }
 
+  if (ezPhysicsWorldModuleInterface* pPhysics = GetOwner()->GetWorld()->GetModule<ezPhysicsWorldModuleInterface>())
   {
-    ezGameObject* pCameraObject = GetOwner()->FindChildByName("Camera", true);
+    ezPhysicsQueryParameters params;
+    params.m_uiCollisionLayer = 8;
+    params.m_ShapeTypes = ezPhysicsShapeType::Static | ezPhysicsShapeType::Dynamic | ezPhysicsShapeType::Query;
 
-    if (ezPhysicsWorldModuleInterface* pPhysics = GetOwner()->GetWorld()->GetModule<ezPhysicsWorldModuleInterface>())
+    ezPhysicsCastResult result;
+    if (pPhysics->Raycast(result, pCameraObject->GetGlobalPosition(), pCameraObject->GetGlobalDirForwards(), 2.0f, params))
     {
-      ezPhysicsQueryParameters params;
-      params.m_uiCollisionLayer = 8;
-      params.m_ShapeTypes = ezPhysicsShapeType::Static | ezPhysicsShapeType::Dynamic | ezPhysicsShapeType::Query;
-
-      ezPhysicsCastResult result;
-      if (pPhysics->Raycast(result, pCameraObject->GetGlobalPosition(), pCameraObject->GetGlobalDirForwards(), 2.0f, params))
+      ezGameObject* pActor = nullptr;
+      if (GetOwner()->GetWorld()->TryGetObject(result.m_hActorObject, pActor))
       {
-        ezGameObject* pActor = nullptr;
-        if (GetOwner()->GetWorld()->TryGetObject(result.m_hActorObject, pActor))
+        ezGrabbableItemComponent* pGrabbable = nullptr;
+        if (pActor->TryGetComponentOfBaseType(pGrabbable))
         {
-          ezGrabbableItemComponent* pGrabbable = nullptr;
-          if (pActor->TryGetComponentOfBaseType(pGrabbable))
+          if (ezGameStateBase* pGameState = ezGameApplication::GetGameApplicationInstance()->GetActiveGameState())
           {
-            if (ezGameStateBase* pGameState = ezGameApplication::GetGameApplicationInstance()->GetActiveGameState())
-            {
-              MonsterAttackGameState* pTestGameState = ezDynamicCast<MonsterAttackGameState*>(pGameState);
-              pTestGameState->m_ObjectsToHighlight.AddObjectAndChildren(*GetWorld(), pActor);
-            }
+            MonsterAttackGameState* pTestGameState = ezDynamicCast<MonsterAttackGameState*>(pGameState);
+            pTestGameState->m_ObjectsToHighlight.AddObjectAndChildren(*GetWorld(), pActor);
           }
         }
+      }
+    }
+  }
+
+  if (pInput->GetCurrentInputState("Shoot", true) > 0)
+  {
+    ezGameObject* pSpawnBullet = GetOwner()->FindChildByName("Spawn_MagicBullet");
+    ezSpawnComponent* pSpawnComp;
+    if (pSpawnBullet->TryGetComponentOfBaseType(pSpawnComp))
+    {
+      if (pSpawnComp->CanTriggerManualSpawn())
+      {
+        pSpawnComp->TriggerManualSpawn();
       }
     }
   }
