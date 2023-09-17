@@ -11,7 +11,7 @@ o
 		s %AssetType{"BlackboardTemplate"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{14034861266640255893,5322652024691810448}}
-		u4 %Hash{17199679422876245701}
+		u4 %Hash{15273364332371025200}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps{}
@@ -53,20 +53,8 @@ o
 	p
 	{
 		s %Flags{""}
-		f %InitialValue{0}
+		f %InitialValue{0x0000803F}
 		s %Name{"MoveSpeed"}
-	}
-}
-o
-{
-	Uuid %id{u4{14551417697660148394,5485389462771158246}}
-	s %t{"ezBlackboardEntry"}
-	u3 %v{1}
-	p
-	{
-		s %Flags{""}
-		b %InitialValue{0}
-		s %Name{"Temp-Attack-Melee"}
 	}
 }
 o
@@ -95,7 +83,6 @@ o
 			Uuid{u4{966076780553923979,5290809630139244532}}
 			Uuid{u4{14515695018733544596,5026820912356559270}}
 			Uuid{u4{4588012314199534726,5662501752406885900}}
-			Uuid{u4{14551417697660148394,5485389462771158246}}
 		}
 	}
 }

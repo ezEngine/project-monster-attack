@@ -11,7 +11,7 @@ o
 		s %AssetType{"Scene"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{2395698263442221958,4715710380130620745}}
-		u4 %Hash{10524577300290106443}
+		u4 %Hash{6643597309057583318}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps
@@ -481,6 +481,7 @@ o
 		VarArray %Components
 		{
 			Uuid{u4{7829639015174219399,5570593887499449108}}
+			Uuid{u4{1600611974200461492,5012081167569957091}}
 		}
 		s %GlobalKey{""}
 		Vec3 %LocalPosition{f{0x3333B33F,0x676606C0,0}}
@@ -729,6 +730,24 @@ o
 }
 o
 {
+	Uuid %id{u4{1600611974200461492,5012081167569957091}}
+	s %t{"ezBlackboardComponent"}
+	u3 %v{2}
+	p
+	{
+		b %Active{1}
+		s %BlackboardName{""}
+		VarArray %Entries
+		{
+			Uuid{u4{13482623200252167815,5652934948513418392}}
+		}
+		b %SendEntryChangedMessage{0}
+		b %ShowDebugInfo{0}
+		s %Template{"{ dac4e090-dbd0-49dd-953b-fb4df6d7c5c2 }"}
+	}
+}
+o
+{
 	Uuid %id{u4{7297094203172243620,5017351621449061479}}
 	s %t{"ezDirectionalLightComponent"}
 	u3 %v{3}
@@ -761,8 +780,6 @@ o
 		{
 			Uuid{u4{636585634348640674,5232510769372823142}}
 			Uuid{u4{11487933354710272388,5620003319910844948}}
-			Uuid{u4{15371663493315705751,5728319977414971495}}
-			Uuid{u4{7941691307662983572,5661863605403948779}}
 		}
 		b %SendEntryChangedMessage{0}
 		b %ShowDebugInfo{0}
@@ -881,7 +898,7 @@ o
 	p
 	{
 		s %Flags{""}
-		i3 %InitialValue{1}
+		i3 %InitialValue{4}
 		s %Name{"State"}
 	}
 }
@@ -1215,26 +1232,14 @@ o
 }
 o
 {
-	Uuid %id{u4{7941691307662983572,5661863605403948779}}
+	Uuid %id{u4{13482623200252167815,5652934948513418392}}
 	s %t{"ezBlackboardEntry"}
 	u3 %v{1}
 	p
 	{
 		s %Flags{""}
-		b %InitialValue{1}
-		s %Name{"Attack-Melee"}
-	}
-}
-o
-{
-	Uuid %id{u4{15371663493315705751,5728319977414971495}}
-	s %t{"ezBlackboardEntry"}
-	u3 %v{1}
-	p
-	{
-		s %Flags{""}
-		b %InitialValue{0}
-		s %Name{"React-Hit"}
+		i3 %InitialValue{4}
+		s %Name{"State"}
 	}
 }
 o

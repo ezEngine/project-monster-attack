@@ -18,12 +18,6 @@ PluginState
 }
 PluginState
 {
-	string %ID{"Kraut"}
-	bool %Selected{true}
-	bool %LoadCopy{false}
-}
-PluginState
-{
 	string %ID{"MonsterAttackPlugin"}
 	bool %Selected{true}
 	bool %LoadCopy{true}
@@ -36,25 +30,7 @@ PluginState
 }
 PluginState
 {
-	string %ID{"ProcGen"}
-	bool %Selected{true}
-	bool %LoadCopy{false}
-}
-PluginState
-{
 	string %ID{"Recast"}
-	bool %Selected{true}
-	bool %LoadCopy{false}
-}
-PluginState
-{
-	string %ID{"RmlUi"}
-	bool %Selected{true}
-	bool %LoadCopy{false}
-}
-PluginState
-{
-	string %ID{"TypeScript"}
 	bool %Selected{true}
 	bool %LoadCopy{false}
 }
