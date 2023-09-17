@@ -11,7 +11,7 @@ o
 		s %AssetType{"Scene"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{2395698263442221958,4715710380130620745}}
-		u4 %Hash{17103403632291143733}
+		u4 %Hash{1429991925289126887}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps
@@ -482,9 +482,10 @@ o
 		{
 			Uuid{u4{7829639015174219399,5570593887499449108}}
 			Uuid{u4{1600611974200461492,5012081167569957091}}
+			Uuid{u4{10127891620507811260,5171627519778048440}}
 		}
 		s %GlobalKey{""}
-		Vec3 %LocalPosition{f{0x3333B33F,0x676606C0,0}}
+		Vec3 %LocalPosition{f{0x666606C0,0x343353C0,0x000000BF}}
 		Quat %LocalRotation{f{0,0,0x9E067F3F,0xBE7EB23D}}
 		Vec3 %LocalScaling{f{0x0000803F,0x0000803F,0x0000803F}}
 		f %LocalUniformScaling{0x0000803F}
@@ -540,6 +541,32 @@ o
 		f %LocalUniformScaling{0x0000803F}
 		s %Mode{"ezObjectMode::Automatic"}
 		s %Name{""}
+		VarArray %Tags
+		{
+			s{"CastShadow"}
+		}
+	}
+}
+o
+{
+	Uuid %id{u4{11428978839628134574,4683837426711952932}}
+	s %t{"ezGameObject"}
+	u3 %v{1}
+	p
+	{
+		b %Active{1}
+		VarArray %Children{}
+		VarArray %Components
+		{
+			Uuid{u4{603612204266915989,5251671619456844586}}
+		}
+		s %GlobalKey{"Goal"}
+		Vec3 %LocalPosition{f{0x66669AC1,0x9A993141,0x000000BF}}
+		Quat %LocalRotation{f{0,0,0,0x0000803F}}
+		Vec3 %LocalScaling{f{0x0000803F,0x0000803F,0x0000803F}}
+		f %LocalUniformScaling{0x0000803F}
+		s %Mode{"ezObjectMode::Automatic"}
+		s %Name{"Goal"}
 		VarArray %Tags
 		{
 			s{"CastShadow"}
@@ -840,6 +867,22 @@ o
 }
 o
 {
+	Uuid %id{u4{10127891620507811260,5171627519778048440}}
+	s %t{"ezAiNavMeshPathTestComponent"}
+	u3 %v{1}
+	p
+	{
+		b %Active{1}
+		HashedString %NavmeshConfig{s{"Default"}}
+		s %PathEnd{"{ d4d87e24-5552-4100-aeb8-7d89b3e39b9e }"}
+		HashedString %PathSearchConfig{s{"Default"}}
+		b %VisualizePathCorridor{1}
+		b %VisualizePathLine{1}
+		b %VisualizePathState{1}
+	}
+}
+o
+{
 	Uuid %id{u4{5371935698164033712,5212762507364369930}}
 	s %t{"ezGameObject"}
 	u3 %v{1}
@@ -900,6 +943,16 @@ o
 		s %Flags{""}
 		i3 %InitialValue{4}
 		s %Name{"State"}
+	}
+}
+o
+{
+	Uuid %id{u4{603612204266915989,5251671619456844586}}
+	s %t{"ezShapeIconComponent"}
+	u3 %v{1}
+	p
+	{
+		b %Active{1}
 	}
 }
 o
@@ -1182,7 +1235,7 @@ o
 			Uuid{u4{8715207230609827485,4842609237430120326}}
 		}
 		s %GlobalKey{""}
-		Vec3 %LocalPosition{f{0x0000803F,0x000080BF,0}}
+		Vec3 %LocalPosition{f{0x9A99D93F,0x9A9919BF,0x000000BF}}
 		Quat %LocalRotation{f{0,0,0,0x0000803F}}
 		Vec3 %LocalScaling{f{0x0000803F,0x0000803F,0x0000803F}}
 		f %LocalUniformScaling{0x0000803F}
@@ -1346,6 +1399,7 @@ o
 			Uuid{u4{5371935698164033712,5212762507364369930}}
 			Uuid{u4{14965020321458340493,5745031289394712416}}
 			Uuid{u4{12436693404996434346,5080633156484026948}}
+			Uuid{u4{11428978839628134574,4683837426711952932}}
 		}
 		Uuid %Settings{u4{16752723250588932764,4244571982856876854}}
 	}
@@ -1754,6 +1808,23 @@ o
 }
 o
 {
+	Uuid %id{u4{4326581947321494172,1779743091427569739}}
+	s %t{"ezReflectedTypeDescriptor"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Attributes{}
+		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
+		VarArray %Functions{}
+		s %ParentTypeName{"ezComponent"}
+		s %PluginName{"ezEditorPluginAi"}
+		VarArray %Properties{}
+		s %TypeName{"ezAiNavMeshPathTestComponent"}
+		u3 %TypeVersion{1}
+	}
+}
+o
+{
 	Uuid %id{u4{12741513019009579696,2118083688060841630}}
 	s %t{"ezReflectedTypeDescriptor"}
 	u3 %v{1}
@@ -1903,6 +1974,16 @@ o
 		VarArray %Properties{}
 		s %TypeName{"ezCategoryAttribute"}
 		u3 %TypeVersion{1}
+	}
+}
+o
+{
+	Uuid %id{u4{11135730192525964575,4819325472927372842}}
+	s %t{"ezCategoryAttribute"}
+	u3 %v{1}
+	p
+	{
+		s %Category{"Editing"}
 	}
 }
 o
@@ -2242,6 +2323,26 @@ o
 		s %PluginName{"Static"}
 		VarArray %Properties{}
 		s %TypeName{"ezRenderComponent"}
+		u3 %TypeVersion{1}
+	}
+}
+o
+{
+	Uuid %id{u4{12548802506357991701,12127202460150289855}}
+	s %t{"ezReflectedTypeDescriptor"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Attributes
+		{
+			Uuid{u4{11135730192525964575,4819325472927372842}}
+		}
+		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Phantom"}
+		VarArray %Functions{}
+		s %ParentTypeName{"ezComponent"}
+		s %PluginName{"ezEnginePluginScene"}
+		VarArray %Properties{}
+		s %TypeName{"ezShapeIconComponent"}
 		u3 %TypeVersion{1}
 	}
 }

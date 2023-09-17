@@ -5,6 +5,11 @@ Plugin
 }
 Plugin
 {
+	string %Path{"ezAiPlugin"}
+	bool %LoadCopy{false}
+}
+Plugin
+{
 	string %Path{"ezFmodPlugin"}
 	bool %LoadCopy{false}
 }
@@ -21,11 +26,6 @@ Plugin
 Plugin
 {
 	string %Path{"ezParticlePlugin"}
-	bool %LoadCopy{false}
-}
-Plugin
-{
-	string %Path{"ezRecastPlugin"}
 	bool %LoadCopy{false}
 }
 Plugin
