@@ -11,7 +11,7 @@ o
 		s %AssetType{"Prefab"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{14322564914651393684,4963922866170075549}}
-		u4 %Hash{2387102208059216512}
+		u4 %Hash{17636062987767999295}
 		VarArray %MetaInfo
 		{
 			Uuid{u4{12440196303460809848,14710351079864222681}}
@@ -80,6 +80,16 @@ o
 }
 o
 {
+	Uuid %id{u4{7489573408712554901,5282313501795719622}}
+	s %t{"ezMonsterComponent"}
+	u3 %v{1}
+	p
+	{
+		b %Active{1}
+	}
+}
+o
+{
 	Uuid %id{u4{14613140288000160397,5345780436201081083}}
 	s %t{"ezJoltBoneColliderComponent"}
 	u3 %v{1}
@@ -119,6 +129,7 @@ o
 			Uuid{u4{13845829655758101478,127304729655430150}}
 			Uuid{u4{14613140288000160397,5345780436201081083}}
 			Uuid{u4{15731704556607108248,4622660207630733554}}
+			Uuid{u4{7489573408712554901,5282313501795719622}}
 		}
 		s %GlobalKey{""}
 		Vec3 %LocalPosition{f{0,0,0}}
@@ -255,6 +266,23 @@ o
 }
 o
 {
+	Uuid %id{u4{17523044089822028024,3521005166208929094}}
+	s %t{"ezReflectedTypeDescriptor"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Attributes{}
+		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
+		VarArray %Functions{}
+		s %ParentTypeName{"ezPropertyAttribute"}
+		s %PluginName{"Static"}
+		VarArray %Properties{}
+		s %TypeName{"ezCategoryAttribute"}
+		u3 %TypeVersion{1}
+	}
+}
+o
+{
 	Uuid %id{u4{12955652544013368709,4955473867652852207}}
 	s %t{"ezReflectedFunctionDescriptor"}
 	u3 %v{1}
@@ -374,6 +402,26 @@ o
 		s %Flags{"ezPropertyFlags::StandardType|ezPropertyFlags::Phantom"}
 		s %Name{"UpdateThreshold"}
 		s %Type{"ezTime"}
+	}
+}
+o
+{
+	Uuid %id{u4{3857151382246068753,7660972060123797818}}
+	s %t{"ezReflectedTypeDescriptor"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Attributes
+		{
+			Uuid{u4{1788599446502422342,17419034928280953787}}
+		}
+		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Phantom"}
+		VarArray %Functions{}
+		s %ParentTypeName{"ezComponent"}
+		s %PluginName{"MonsterAttackPlugin"}
+		VarArray %Properties{}
+		s %TypeName{"ezMonsterComponent"}
+		u3 %TypeVersion{1}
 	}
 }
 o
@@ -519,6 +567,23 @@ o
 }
 o
 {
+	Uuid %id{u4{9604010176759229512,12868035041842190965}}
+	s %t{"ezReflectedTypeDescriptor"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Attributes{}
+		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
+		VarArray %Functions{}
+		s %ParentTypeName{"ezReflectedClass"}
+		s %PluginName{"Static"}
+		VarArray %Properties{}
+		s %TypeName{"ezPropertyAttribute"}
+		u3 %TypeVersion{1}
+	}
+}
+o
+{
 	Uuid %id{u4{182392957721892111,13475112211528091579}}
 	s %t{"ezReflectedPropertyDescriptor"}
 	u3 %v{2}
@@ -550,6 +615,16 @@ o
 		VarArray %Properties{}
 		s %TypeName{"ezEnumBase"}
 		u3 %TypeVersion{1}
+	}
+}
+o
+{
+	Uuid %id{u4{1788599446502422342,17419034928280953787}}
+	s %t{"ezCategoryAttribute"}
+	u3 %v{1}
+	p
+	{
+		s %Category{"MonsterAttack"}
 	}
 }
 o

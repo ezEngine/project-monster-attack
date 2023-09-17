@@ -57,54 +57,16 @@ void ezPlayerComponent::OnMsgInputActionTriggered(ezMsgInputActionTriggered& msg
   if (msg.m_TriggerState == ezTriggerState::Continuing)
     return;
 
-  ezGameObject* pWeaponsObject = GetOwner()->FindChildByName("Weapons", true);
-  ezGameObject* pCameraObject = GetOwner()->FindChildByName("Camera", true);
-  ezGameObject* pSpawnBulletObject = GetOwner()->FindChildByName("Spawn_Bullet", true);
-  ezSharedPtr<ezBlackboard> pWeaponsBlackboard = ezBlackboardComponent::FindBlackboard(pWeaponsObject);
-
-  ezSpawnComponent* pSpawnBullet = nullptr;
-  if (pSpawnBulletObject)
+  if (msg.m_sInputAction == ezTempHashedString("Shoot") && msg.m_TriggerState == ezTriggerState::Activated)
   {
-    pSpawnBulletObject->TryGetComponentOfBaseType(pSpawnBullet);
-  }
-
-  if (msg.m_sInputAction == ezTempHashedString("Shoot"))
-  {
-    if (msg.m_TriggerState == ezTriggerState::Activated)
+    if (ezGameObject* pSpawnBulletObj = GetOwner()->FindChildByName("Spawn_MagicBullet", true))
     {
-      if (pWeaponsBlackboard)
+      ezSpawnComponent* pSpawnBulletComp = nullptr;
+      if (pSpawnBulletObj->TryGetComponentOfBaseType(pSpawnBulletComp))
       {
-        if (pSpawnBullet && pSpawnBullet->CanTriggerManualSpawn())
+        if (pSpawnBulletComp->CanTriggerManualSpawn())
         {
-          const ezUInt32 uiWeaponState = pWeaponsBlackboard->GetEntryValue(ezTempHashedString("Weapon-State")).ConvertTo<ezUInt32>();
-
-          if (uiWeaponState == 0)
-          {
-            pSpawnBullet->TriggerManualSpawn();
-            pWeaponsBlackboard->SetEntryValue(ezTempHashedString("Weapon-State"), 1).AssertSuccess();
-          }
-        }
-      }
-    }
-  }
-
-  if (msg.m_sInputAction == ezTempHashedString("Use") && msg.m_TriggerState == ezTriggerState::Activated)
-  {
-    if (ezPhysicsWorldModuleInterface* pPhysics = GetOwner()->GetWorld()->GetModule<ezPhysicsWorldModuleInterface>())
-    {
-      ezPhysicsQueryParameters params;
-      params.m_uiCollisionLayer = 8;
-      params.m_ShapeTypes = ezPhysicsShapeType::Static | ezPhysicsShapeType::Dynamic | ezPhysicsShapeType::Query;
-
-      ezPhysicsCastResult result;
-      if (pPhysics->Raycast(result, pCameraObject->GetGlobalPosition(), pCameraObject->GetGlobalDirForwards(), 2.0f, params))
-      {
-        ezGameObject* pActor = nullptr;
-        if (GetOwner()->GetWorld()->TryGetObject(result.m_hActorObject, pActor))
-        {
-          ezMsgGenericEvent msg;
-          msg.m_sMessage.Assign("Use");
-          pActor->SendEventMessage(msg, this);
+          pSpawnBulletComp->TriggerManualSpawn();
         }
       }
     }
@@ -177,19 +139,6 @@ void ezPlayerComponent::Update()
             pTestGameState->m_ObjectsToHighlight.AddObjectAndChildren(*GetWorld(), pActor);
           }
         }
-      }
-    }
-  }
-
-  if (pInput->GetCurrentInputState("Shoot", true) > 0)
-  {
-    ezGameObject* pSpawnBullet = GetOwner()->FindChildByName("Spawn_MagicBullet");
-    ezSpawnComponent* pSpawnComp;
-    if (pSpawnBullet->TryGetComponentOfBaseType(pSpawnComp))
-    {
-      if (pSpawnComp->CanTriggerManualSpawn())
-      {
-        pSpawnComp->TriggerManualSpawn();
       }
     }
   }

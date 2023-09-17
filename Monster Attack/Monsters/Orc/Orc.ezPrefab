@@ -21,7 +21,7 @@ o
 		s %AssetType{"Prefab"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{4452553599613642380,5613514764798718529}}
-		u4 %Hash{16009625739511077980}
+		u4 %Hash{18009603199271117035}
 		VarArray %MetaInfo
 		{
 			Uuid{u4{15202541945221348026,4254623260804449292}}
@@ -53,6 +53,16 @@ o
 		s %AnimGraph{"{ 45aea256-427f-4dd8-8ba3-30586cf7b88c }"}
 		s %InvisibleUpdateRate{"ezAnimationInvisibleUpdateRate::Max5FPS"}
 		s %RootMotionMode{"ezRootMotionMode::Ignore"}
+	}
+}
+o
+{
+	Uuid %id{u4{9944635334172315550,4899101373279542216}}
+	s %t{"ezMonsterComponent"}
+	u3 %v{1}
+	p
+	{
+		b %Active{1}
 	}
 }
 o
@@ -106,6 +116,7 @@ o
 			Uuid{u4{6992071996791665651,18233212516641228976}}
 			Uuid{u4{14770901550409080452,5257263580945692688}}
 			Uuid{u4{12294846418541025692,4708861356711334683}}
+			Uuid{u4{9944635334172315550,4899101373279542216}}
 		}
 		s %GlobalKey{""}
 		Vec3 %LocalPosition{f{0,0,0}}
@@ -395,6 +406,26 @@ o
 }
 o
 {
+	Uuid %id{u4{3857151382246068753,7660972060123797818}}
+	s %t{"ezReflectedTypeDescriptor"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Attributes
+		{
+			Uuid{u4{1788599446502422342,17419034928280953787}}
+		}
+		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Phantom"}
+		VarArray %Functions{}
+		s %ParentTypeName{"ezComponent"}
+		s %PluginName{"MonsterAttackPlugin"}
+		VarArray %Properties{}
+		s %TypeName{"ezMonsterComponent"}
+		u3 %TypeVersion{1}
+	}
+}
+o
+{
 	Uuid %id{u4{9741789548777648822,7910960754254060082}}
 	s %t{"ezFunctionArgumentDescriptor"}
 	u3 %v{1}
@@ -584,6 +615,16 @@ o
 		VarArray %Properties{}
 		s %TypeName{"ezEnumBase"}
 		u3 %TypeVersion{1}
+	}
+}
+o
+{
+	Uuid %id{u4{1788599446502422342,17419034928280953787}}
+	s %t{"ezCategoryAttribute"}
+	u3 %v{1}
+	p
+	{
+		s %Category{"MonsterAttack"}
 	}
 }
 o

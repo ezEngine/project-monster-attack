@@ -11,7 +11,7 @@ o
 		s %AssetType{"Scene"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{2395698263442221958,4715710380130620745}}
-		u4 %Hash{6643597309057583318}
+		u4 %Hash{17103403632291143733}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps
@@ -383,7 +383,7 @@ o
 			Uuid{u4{1773038049501398708,4577584629519107473}}
 		}
 		s %GlobalKey{""}
-		Vec3 %LocalPosition{f{0,0,0}}
+		Vec3 %LocalPosition{f{0,0,0x000000BF}}
 		Quat %LocalRotation{f{0,0,0,0x0000803F}}
 		Vec3 %LocalScaling{f{0x0000803F,0x0000803F,0x0000803F}}
 		f %LocalUniformScaling{0x0000803F}
@@ -690,7 +690,7 @@ o
 			Uuid{u4{9808572861549374884,4642644454724556487}}
 		}
 		s %GlobalKey{""}
-		Vec3 %LocalPosition{f{0x0000C0C0,0x00004040,0xCDCCCC3D}}
+		Vec3 %LocalPosition{f{0x9A99C9C0,0x33333340,0}}
 		Quat %LocalRotation{f{0,0,0,0x0000803F}}
 		Vec3 %LocalScaling{f{0x0000803F,0x0000803F,0x0000803F}}
 		f %LocalUniformScaling{0x0000803F}
@@ -1118,7 +1118,7 @@ o
 			Uuid{u4{1176301393018006422,5431874062921852561}}
 		}
 		s %GlobalKey{""}
-		Vec3 %LocalPosition{f{0x676626C1,0x0000C03F,0}}
+		Vec3 %LocalPosition{f{0x000030C1,0x00000040,0x000000BF}}
 		Quat %LocalRotation{f{0,0,0,0x0000803F}}
 		Vec3 %LocalScaling{f{0x0000803F,0x0000803F,0x0000803F}}
 		f %LocalUniformScaling{0x0000803F}

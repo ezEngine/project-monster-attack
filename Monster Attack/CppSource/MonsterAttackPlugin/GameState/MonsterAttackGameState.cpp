@@ -26,6 +26,8 @@ void MonsterAttackGameState::OnActivation(ezWorld* pWorld, const ezTransform* pS
   {
     pView->SetExtractorProperty("HighlightObjects", "SelectionContext", &m_ObjectsToHighlight);
   }
+
+  ezGameApplication::cvar_AppVSync = true;
 }
 
 void MonsterAttackGameState::OnDeactivation()
