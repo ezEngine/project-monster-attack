@@ -1,3 +1,4 @@
+#include <AiPlugin/Navigation/Navigation.h>
 #include <Core/World/Component.h>
 #include <Core/World/ComponentManager.h>
 #include <GameEngine/Gameplay/InputComponent.h>
@@ -24,10 +25,18 @@ protected:
   // ezMonsterComponent
 
 public:
+  ezHashedString m_sNavmeshConfig;
+  ezHashedString m_sPathSearchConfig;
+  float m_fWalkSpeed = 4.0f;
+
 private:
   void Update();
 
   void OnMsgDamage(ezMsgDamage& msg);
 
   ezInt32 m_iHealthPoints = 100;
+
+  ezAiNavigation m_Navigation;
+
+  ezGameObjectHandle m_hMoveToTarget;
 };

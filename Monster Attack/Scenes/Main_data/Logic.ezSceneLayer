@@ -11,7 +11,7 @@ o
 		s %AssetType{"Layer"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{1393175745824782778,5102536520592911460}}
-		u4 %Hash{941712150648343855}
+		u4 %Hash{9602699771171038827}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps
@@ -114,7 +114,6 @@ o
 		{
 			Uuid{u4{4370316398345159747,10440328971708598313}}
 			Uuid{u4{16588033431080953456,9881816251779106296}}
-			Uuid{u4{6668569003678751608,10041362603987197645}}
 		}
 		s %GlobalKey{""}
 		Vec3 %LocalPosition{f{0x3333A741,0x303323C0,0}}
@@ -170,8 +169,8 @@ o
 			Uuid{u4{12561004937179019550,10371929656923320663}}
 		}
 		s %GlobalKey{"Goal"}
-		Vec3 %LocalPosition{f{0x0000F0C1,0,0}}
-		Quat %LocalRotation{f{0x0ABCB1BE,0,0x98B9ACBD,0x8F1B6F3F}}
+		Vec3 %LocalPosition{f{0x0000DAC1,0x0000003F,0}}
+		Quat %LocalRotation{f{0,0,0,0x0000803F}}
 		Vec3 %LocalScaling{f{0x0000803F,0x0000803F,0x0000803F}}
 		f %LocalUniformScaling{0x0000803F}
 		s %Mode{"ezObjectMode::Automatic"}
@@ -217,22 +216,6 @@ o
 		b %SendEntryChangedMessage{0}
 		b %ShowDebugInfo{0}
 		s %Template{"{ dac4e090-dbd0-49dd-953b-fb4df6d7c5c2 }"}
-	}
-}
-o
-{
-	Uuid %id{u4{6668569003678751608,10041362603987197645}}
-	s %t{"ezAiNavMeshPathTestComponent"}
-	u3 %v{1}
-	p
-	{
-		b %Active{1}
-		HashedString %NavmeshConfig{s{"Default"}}
-		s %PathEnd{"{ 5e5fac51-24e1-880f-37e9-8df609158d44 }"}
-		HashedString %PathSearchConfig{s{"Default"}}
-		b %VisualizePathCorridor{1}
-		b %VisualizePathLine{1}
-		b %VisualizePathState{1}
 	}
 }
 o
@@ -339,23 +322,6 @@ o
 		s %PluginName{"Static"}
 		VarArray %Properties{}
 		s %TypeName{"ezComponent"}
-		u3 %TypeVersion{1}
-	}
-}
-o
-{
-	Uuid %id{u4{4326581947321494172,1779743091427569739}}
-	s %t{"ezReflectedTypeDescriptor"}
-	u3 %v{1}
-	p
-	{
-		VarArray %Attributes{}
-		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
-		VarArray %Functions{}
-		s %ParentTypeName{"ezComponent"}
-		s %PluginName{"ezEditorPluginAi"}
-		VarArray %Properties{}
-		s %TypeName{"ezAiNavMeshPathTestComponent"}
 		u3 %TypeVersion{1}
 	}
 }
