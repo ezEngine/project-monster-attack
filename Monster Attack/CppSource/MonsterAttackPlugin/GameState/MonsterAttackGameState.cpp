@@ -82,6 +82,13 @@ void MonsterAttackGameState::ProcessInput()
   ezWorld* pWorld = m_pMainWorld;
 
   m_ObjectsToHighlight.m_Objects.Clear();
+
+  ezDebugRenderer::DrawInfoText(m_pActiveWorld.Borrow(), ezDebugTextPlacement::TopCenter, "Game", ezFmt("Reached Goal: {}", m_uiMonstersReachedGoal));
+}
+
+void MonsterAttackGameState::MonsterReachedGoal()
+{
+  ++m_uiMonstersReachedGoal;
 }
 
 void MonsterAttackGameState::ConfigureMainCamera()

@@ -11,7 +11,7 @@ o
 		s %AssetType{"Layer"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{1393175745824782778,5102536520592911460}}
-		u4 %Hash{9602699771171038827}
+		u4 %Hash{2799488006615933262}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps
@@ -169,7 +169,7 @@ o
 			Uuid{u4{12561004937179019550,10371929656923320663}}
 		}
 		s %GlobalKey{"Goal"}
-		Vec3 %LocalPosition{f{0x0000DAC1,0x0000003F,0}}
+		Vec3 %LocalPosition{f{0x9A99E7C1,0x00008032,0}}
 		Quat %LocalRotation{f{0,0,0,0x0000803F}}
 		Vec3 %LocalScaling{f{0x0000803F,0x0000803F,0x0000803F}}
 		f %LocalUniformScaling{0x0000803F}

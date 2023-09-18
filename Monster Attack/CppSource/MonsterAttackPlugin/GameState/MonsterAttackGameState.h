@@ -22,6 +22,8 @@ public:
 
   ezSelectedObjectsContext m_ObjectsToHighlight;
 
+  void MonsterReachedGoal();
+
 protected:
   virtual void ConfigureMainWindowInputDevices(ezWindow* pWindow) override;
   virtual void ConfigureInputActions() override;
@@ -34,4 +36,6 @@ private:
   virtual void AfterWorldUpdate() override;
 
   ezDeque<ezGameObjectHandle> m_SpawnedObjects;
+
+  ezUInt32 m_uiMonstersReachedGoal = 0;
 };

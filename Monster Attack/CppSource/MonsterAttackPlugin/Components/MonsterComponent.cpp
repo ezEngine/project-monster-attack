@@ -5,11 +5,12 @@
 #include <Core/GameState/GameStateBase.h>
 #include <Core/Messages/CommonMessages.h>
 #include <GameEngine/GameApplication/GameApplication.h>
+#include <GameEngine/GameState/GameState.h>
 #include <GameEngine/Gameplay/BlackboardComponent.h>
 #include <GameEngine/Gameplay/InputComponent.h>
 #include <GameEngine/Gameplay/SpawnComponent.h>
+#include <GameEngine/Messages/DamageMessage.h>
 #include <GameEngine/Physics/CharacterControllerComponent.h>
-#include <GameEngine\Messages\DamageMessage.h>
 #include <MonsterAttackPlugin/Components/MonsterComponent.h>
 #include <MonsterAttackPlugin/GameState/MonsterAttackGameState.h>
 
@@ -83,6 +84,18 @@ void ezMonsterComponent::Update()
   {
     m_Navigation.SetCurrentPosition(GetOwner()->GetGlobalPosition());
     m_Navigation.SetTargetPosition(pMoveToTarget->GetGlobalPosition());
+
+    if ((pMoveToTarget->GetGlobalPosition() - GetOwner()->GetGlobalPosition()).GetLengthSquared() < ezMath::Square(1.5f))
+    {
+      // reached the goal
+
+      GetWorld()->DeleteObjectDelayed(GetOwner()->GetHandle());
+
+      if (MonsterAttackGameState* pGameState = ezDynamicCast<MonsterAttackGameState*>(ezGameApplication::GetGameApplicationInstance()->GetActiveGameState()))
+      {
+        pGameState->MonsterReachedGoal();
+      }
+    }
   }
   else
   {
