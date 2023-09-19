@@ -1,5 +1,6 @@
 #pragma once
 
+#include <Core/Collection/CollectionResource.h>
 #include <Core/Input/Declarations.h>
 #include <Core/World/Declarations.h>
 #include <GameEngine/GameApplication/GameApplication.h>
@@ -34,8 +35,6 @@ private:
   virtual void OnDeactivation() override;
   virtual void BeforeWorldUpdate() override;
   virtual void AfterWorldUpdate() override;
-
-  ezDeque<ezGameObjectHandle> m_SpawnedObjects;
 
   ezUInt32 m_uiMonstersReachedGoal = 0;
 };
