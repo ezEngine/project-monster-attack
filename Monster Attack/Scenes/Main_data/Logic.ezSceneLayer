@@ -11,19 +11,17 @@ o
 		s %AssetType{"Layer"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{1393175745824782778,5102536520592911460}}
-		u4 %Hash{2799488006615933262}
+		u4 %Hash{9123922365770095485}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps
 		{
 			s{"{ d93cf241-35ef-4de7-8ca6-5b80e8a5ca3d }"}
-			s{"{ dac4e090-dbd0-49dd-953b-fb4df6d7c5c2 }"}
 			s{"{ fa81999d-658b-44e3-94ee-44dae7f8c3c6 }"}
 		}
 		VarArray %References
 		{
 			s{"{ d93cf241-35ef-4de7-8ca6-5b80e8a5ca3d }"}
-			s{"{ dac4e090-dbd0-49dd-953b-fb4df6d7c5c2 }"}
 			s{"{ fa81999d-658b-44e3-94ee-44dae7f8c3c6 }"}
 		}
 	}
@@ -113,7 +111,6 @@ o
 		VarArray %Components
 		{
 			Uuid{u4{4370316398345159747,10440328971708598313}}
-			Uuid{u4{16588033431080953456,9881816251779106296}}
 		}
 		s %GlobalKey{""}
 		Vec3 %LocalPosition{f{0x3333A741,0x303323C0,0}}
@@ -140,7 +137,6 @@ o
 		VarArray %Components
 		{
 			Uuid{u4{18236825182730838846,10303151900383686723}}
-			Uuid{u4{6550885071737887042,9924075905581229761}}
 		}
 		s %GlobalKey{""}
 		Vec3 %LocalPosition{f{0xA8DDA641,0x5834C53F,0}}
@@ -183,55 +179,6 @@ o
 }
 o
 {
-	Uuid %id{u4{16588033431080953456,9881816251779106296}}
-	s %t{"ezBlackboardComponent"}
-	u3 %v{2}
-	p
-	{
-		b %Active{1}
-		s %BlackboardName{""}
-		VarArray %Entries
-		{
-			Uuid{u4{10023300583423108163,10522670032722567597}}
-		}
-		b %SendEntryChangedMessage{0}
-		b %ShowDebugInfo{0}
-		s %Template{"{ dac4e090-dbd0-49dd-953b-fb4df6d7c5c2 }"}
-	}
-}
-o
-{
-	Uuid %id{u4{6550885071737887042,9924075905581229761}}
-	s %t{"ezBlackboardComponent"}
-	u3 %v{2}
-	p
-	{
-		b %Active{1}
-		s %BlackboardName{""}
-		VarArray %Entries
-		{
-			Uuid{u4{15624007091229132638,10102245853581972347}}
-			Uuid{u4{8028610737881212736,10489738404119994153}}
-		}
-		b %SendEntryChangedMessage{0}
-		b %ShowDebugInfo{0}
-		s %Template{"{ dac4e090-dbd0-49dd-953b-fb4df6d7c5c2 }"}
-	}
-}
-o
-{
-	Uuid %id{u4{15624007091229132638,10102245853581972347}}
-	s %t{"ezBlackboardEntry"}
-	u3 %v{1}
-	p
-	{
-		s %Flags{""}
-		i3 %InitialValue{0}
-		s %Name{"State"}
-	}
-}
-o
-{
 	Uuid %id{u4{18236825182730838846,10303151900383686723}}
 	s %t{"ezPrefabReferenceComponent"}
 	u3 %v{4}
@@ -262,30 +209,6 @@ o
 		b %Active{1}
 		VarDict %Parameters{}
 		s %Prefab{"{ d93cf241-35ef-4de7-8ca6-5b80e8a5ca3d }"}
-	}
-}
-o
-{
-	Uuid %id{u4{8028610737881212736,10489738404119994153}}
-	s %t{"ezBlackboardEntry"}
-	u3 %v{1}
-	p
-	{
-		s %Flags{""}
-		f %InitialValue{0x0000803F}
-		s %Name{"MoveSpeed"}
-	}
-}
-o
-{
-	Uuid %id{u4{10023300583423108163,10522670032722567597}}
-	s %t{"ezBlackboardEntry"}
-	u3 %v{1}
-	p
-	{
-		s %Flags{""}
-		i3 %InitialValue{0}
-		s %Name{"State"}
 	}
 }
 }
@@ -388,23 +311,6 @@ o
 }
 o
 {
-	Uuid %id{u4{10915434802948687564,6393886782732208983}}
-	s %t{"ezReflectedTypeDescriptor"}
-	u3 %v{1}
-	p
-	{
-		VarArray %Attributes{}
-		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
-		VarArray %Functions{}
-		s %ParentTypeName{"ezComponent"}
-		s %PluginName{"Static"}
-		VarArray %Properties{}
-		s %TypeName{"ezBlackboardComponent"}
-		u3 %TypeVersion{2}
-	}
-}
-o
-{
 	Uuid %id{u4{18327411855245510474,6668321287849544166}}
 	s %t{"ezReflectedTypeDescriptor"}
 	u3 %v{1}
@@ -502,23 +408,6 @@ o
 		s %PluginName{"Static"}
 		VarArray %Properties{}
 		s %TypeName{"ezObjectMode"}
-		u3 %TypeVersion{1}
-	}
-}
-o
-{
-	Uuid %id{u4{4287215348751137938,10033073971716187673}}
-	s %t{"ezReflectedTypeDescriptor"}
-	u3 %v{1}
-	p
-	{
-		VarArray %Attributes{}
-		s %Flags{"ezTypeFlags::Bitflags|ezTypeFlags::Minimal"}
-		VarArray %Functions{}
-		s %ParentTypeName{"ezBitflagsBase"}
-		s %PluginName{"Static"}
-		VarArray %Properties{}
-		s %TypeName{"ezBlackboardEntryFlags"}
 		u3 %TypeVersion{1}
 	}
 }
@@ -675,23 +564,6 @@ o
 		s %PluginName{"Static"}
 		VarArray %Properties{}
 		s %TypeName{"ezEnumBase"}
-		u3 %TypeVersion{1}
-	}
-}
-o
-{
-	Uuid %id{u4{48220615166662949,15649640188828373689}}
-	s %t{"ezReflectedTypeDescriptor"}
-	u3 %v{1}
-	p
-	{
-		VarArray %Attributes{}
-		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
-		VarArray %Functions{}
-		s %ParentTypeName{""}
-		s %PluginName{"Static"}
-		VarArray %Properties{}
-		s %TypeName{"ezBlackboardEntry"}
 		u3 %TypeVersion{1}
 	}
 }
