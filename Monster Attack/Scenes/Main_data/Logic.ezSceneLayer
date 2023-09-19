@@ -11,7 +11,7 @@ o
 		s %AssetType{"Layer"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{1393175745824782778,5102536520592911460}}
-		u4 %Hash{9123922365770095485}
+		u4 %Hash{10812451922746977379}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps
@@ -95,6 +95,7 @@ o
 			Uuid{u4{3268662997994645076,9484479726564454694}}
 			Uuid{u4{1484689002102859339,9706473322463235613}}
 			Uuid{u4{9296859092867354807,4945032247286692621}}
+			Uuid{u4{13367108008925997542,14593867202094426606}}
 		}
 		Uuid %Settings{u4{5945227382948020655,5656731387301054312}}
 	}
@@ -113,7 +114,7 @@ o
 			Uuid{u4{4370316398345159747,10440328971708598313}}
 		}
 		s %GlobalKey{""}
-		Vec3 %LocalPosition{f{0x3333A741,0x303323C0,0}}
+		Vec3 %LocalPosition{f{0x6666A641,0x2D3393BF,0}}
 		Quat %LocalRotation{f{0,0,0x0000803F,0x2EBD3BB3}}
 		Vec3 %LocalScaling{f{0x0000803F,0x0000803F,0x0000803F}}
 		f %LocalUniformScaling{0x0000803F}
@@ -139,7 +140,7 @@ o
 			Uuid{u4{18236825182730838846,10303151900383686723}}
 		}
 		s %GlobalKey{""}
-		Vec3 %LocalPosition{f{0xA8DDA641,0x5834C53F,0}}
+		Vec3 %LocalPosition{f{0x9A9999C1,0xD0CC4C3E,0}}
 		Quat %LocalRotation{f{0,0,0xA1C17FBF,0x30AA32BD}}
 		Vec3 %LocalScaling{f{0x0000803F,0x0000803F,0x0000803F}}
 		f %LocalUniformScaling{0x0000803F}
@@ -202,6 +203,44 @@ o
 o
 {
 	Uuid %id{u4{4370316398345159747,10440328971708598313}}
+	s %t{"ezPrefabReferenceComponent"}
+	u3 %v{4}
+	p
+	{
+		b %Active{1}
+		VarDict %Parameters{}
+		s %Prefab{"{ d93cf241-35ef-4de7-8ca6-5b80e8a5ca3d }"}
+	}
+}
+o
+{
+	Uuid %id{u4{13367108008925997542,14593867202094426606}}
+	s %t{"ezGameObject"}
+	u3 %v{1}
+	p
+	{
+		b %Active{1}
+		VarArray %Children{}
+		VarArray %Components
+		{
+			Uuid{u4{14468761409276512213,15549716447238570225}}
+		}
+		s %GlobalKey{""}
+		Vec3 %LocalPosition{f{0x67668241,0x263373BF,0}}
+		Quat %LocalRotation{f{0,0,0x0000803F,0x2EBD3BB3}}
+		Vec3 %LocalScaling{f{0x0000803F,0x0000803F,0x0000803F}}
+		f %LocalUniformScaling{0x0000803F}
+		s %Mode{"ezObjectMode::Automatic"}
+		s %Name{""}
+		VarArray %Tags
+		{
+			s{"CastShadow"}
+		}
+	}
+}
+o
+{
+	Uuid %id{u4{14468761409276512213,15549716447238570225}}
 	s %t{"ezPrefabReferenceComponent"}
 	u3 %v{4}
 	p

@@ -11,7 +11,7 @@ o
 		s %AssetType{"Prefab"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{1382606999710219698,5028722770767181639}}
-		u4 %Hash{6767279539117473655}
+		u4 %Hash{13799598440158414454}
 		VarArray %MetaInfo
 		{
 			Uuid{u4{8492514489251830997,11612161950564364082}}
@@ -275,7 +275,7 @@ o
 	p
 	{
 		b %Active{1}
-		u1 %CollisionLayer{5}
+		u1 %CollisionLayer{1}
 		s %TriggerMessage{"Fire"}
 	}
 }
@@ -546,7 +546,6 @@ o
 		{
 			Uuid{u4{4312352293884784016,5591211767260149089}}
 			Uuid{u4{3793137619202875152,18350009546257445896}}
-			Uuid{u4{4935091280528684219,5348447873298857784}}
 		}
 		VarArray %Components
 		{
@@ -574,7 +573,10 @@ o
 	p
 	{
 		b %Active{1}
-		VarArray %Children{}
+		VarArray %Children
+		{
+			Uuid{u4{4935091280528684219,5348447873298857784}}
+		}
 		VarArray %Components
 		{
 			Uuid{u4{13927509568440968975,737982354408996349}}

@@ -11,7 +11,7 @@ o
 		s %AssetType{"Prefab"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{4807102616338341041,4830533069843689837}}
-		u4 %Hash{4705266985255669241}
+		u4 %Hash{16244166457638786308}
 		VarArray %MetaInfo
 		{
 			Uuid{u4{84311642083157784,14446715351038868960}}
@@ -147,7 +147,7 @@ o
 		b %Active{1}
 		f %AirFriction{0x0000003F}
 		f %AirSpeed{0x00002040}
-		u1 %CollisionLayer{0}
+		u1 %CollisionLayer{6}
 		f %CrouchHeight{0xCDCC4C3E}
 		s %DebugFlags{""}
 		s %FallbackWalkSurface{""}
@@ -158,7 +158,7 @@ o
 		Angle %MaxClimbingSlope{f{0xC2B8323F}}
 		f %MaxStepDown{0x0000803E}
 		f %MaxStepUp{0x0000803E}
-		u1 %PresenceCollisionLayer{0}
+		u1 %PresenceCollisionLayer{6}
 		Angle %RotateSpeed{f{0xDB0FC93F}}
 		f %RunInteractionDistance{0x00004040}
 		f %ShapeRadius{0x0000803E}
