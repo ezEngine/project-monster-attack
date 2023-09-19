@@ -105,7 +105,7 @@ void ezMonsterComponent::Update()
   m_Navigation.Update();
 
   const bool bVisualizePathCorridor = false;
-  const bool bVisualizePathLine = true;
+  const bool bVisualizePathLine = false;
 
   if (bVisualizePathCorridor || bVisualizePathLine)
   {
