@@ -11,7 +11,7 @@ o
 		s %AssetType{"Prefab"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{1382606999710219698,5028722770767181639}}
-		u4 %Hash{6767279539117473655}
+		u4 %Hash{10699889299169175099}
 		VarArray %MetaInfo
 		{
 			Uuid{u4{8492514489251830997,11612161950564364082}}
@@ -22,6 +22,7 @@ o
 			s{"{ 208cb85d-7fdd-413f-aaf9-263afa34e407 }"}
 			s{"{ 354d5f58-514b-40e8-9fbf-da92012d9b61 }"}
 			s{"{ 754bffa2-efa2-447b-b2d3-ec8461b22f3b }"}
+			s{"{ 770d09b3-e86b-4bee-924c-d390955bedb1 }"}
 			s{"{ e8b0f236-c3e4-4488-bbcd-e5be1c8af7ef }"}
 		}
 		VarArray %References
@@ -165,6 +166,26 @@ o
 }
 o
 {
+	Uuid %id{u4{4721180305799702196,5021442628211264536}}
+	s %t{"ezParticleComponent"}
+	u3 %v{5}
+	p
+	{
+		b %Active{1}
+		s %Effect{"{ 770d09b3-e86b-4bee-924c-d390955bedb1 }"}
+		b %IgnoreOwnerRotation{0}
+		Time %MinRestartDelay{d{0}}
+		s %OnFinishedAction{"ezOnComponentFinishedAction2::None"}
+		VarDict %Parameters{}
+		u4 %RandomSeed{0}
+		Time %RestartDelayRange{d{0}}
+		s %SharedInstanceName{""}
+		b %SpawnAtStart{1}
+		s %SpawnDirection{"ezBasisAxis::PositiveZ"}
+	}
+}
+o
+{
 	Uuid %id{u4{15268128500001488561,5045086937628894134}}
 	s %t{"ezGameObject"}
 	u3 %v{1}
@@ -175,6 +196,7 @@ o
 		{
 			Uuid{u4{1440982741655870085,6219385500287490017}}
 			Uuid{u4{13482501543282685851,5564101391466513762}}
+			Uuid{u4{14930761687494551716,5089004213675548144}}
 		}
 		VarArray %Components{}
 		s %GlobalKey{""}
@@ -223,6 +245,32 @@ o
 		f %LocalUniformScaling{0x0000803F}
 		s %Mode{"ezObjectMode::Automatic"}
 		s %Name{"Retracting"}
+		VarArray %Tags
+		{
+			s{"CastShadow"}
+		}
+	}
+}
+o
+{
+	Uuid %id{u4{14930761687494551716,5089004213675548144}}
+	s %t{"ezGameObject"}
+	u3 %v{1}
+	p
+	{
+		b %Active{1}
+		VarArray %Children{}
+		VarArray %Components
+		{
+			Uuid{u4{4721180305799702196,5021442628211264536}}
+		}
+		s %GlobalKey{""}
+		Vec3 %LocalPosition{f{0,0,0xCDCC4C3F}}
+		Quat %LocalRotation{f{0,0,0,0x0000803F}}
+		Vec3 %LocalScaling{f{0x0000803F,0x0000803F,0x0000803F}}
+		f %LocalUniformScaling{0x0000803F}
+		s %Mode{"ezObjectMode::Automatic"}
+		s %Name{""}
 		VarArray %Tags
 		{
 			s{"CastShadow"}
@@ -1113,6 +1161,40 @@ o
 		s %Name{"GetObjectFilterID"}
 		Uuid %ReturnValue{u4{2797605736284022243,11870783614192411682}}
 		s %Type{"ezFunctionType::Member"}
+	}
+}
+o
+{
+	Uuid %id{u4{2313163756843389160,8849215390612252591}}
+	s %t{"ezReflectedTypeDescriptor"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Attributes{}
+		s %Flags{"ezTypeFlags::IsEnum|ezTypeFlags::Minimal"}
+		VarArray %Functions{}
+		s %ParentTypeName{"ezEnumBase"}
+		s %PluginName{"Static"}
+		VarArray %Properties{}
+		s %TypeName{"ezOnComponentFinishedAction2"}
+		u3 %TypeVersion{1}
+	}
+}
+o
+{
+	Uuid %id{u4{5020032394718308778,9029474187781723681}}
+	s %t{"ezReflectedTypeDescriptor"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Attributes{}
+		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
+		VarArray %Functions{}
+		s %ParentTypeName{"ezRenderComponent"}
+		s %PluginName{"ezEditorPluginParticle"}
+		VarArray %Properties{}
+		s %TypeName{"ezParticleComponent"}
+		u3 %TypeVersion{5}
 	}
 }
 o

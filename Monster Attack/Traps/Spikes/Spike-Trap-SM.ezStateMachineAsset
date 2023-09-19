@@ -11,7 +11,7 @@ o
 		s %AssetType{"StateMachine"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{4264823504054834098,4934801297746165666}}
-		u4 %Hash{14783948780997268762}
+		u4 %Hash{16845714012831797870}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps{}
@@ -21,6 +21,16 @@ o
 }
 Objects
 {
+o
+{
+	Uuid %id{u4{6364341665019134603,4639969221923383642}}
+	s %t{"ezStateMachineTransition_TransitionEvent"}
+	u3 %v{1}
+	p
+	{
+		HashedString %EventName{s{"Fire"}}
+	}
+}
 o
 {
 	Uuid %id{u4{15018311712539597490,4682811941401458565}}
@@ -55,6 +65,20 @@ o
 		s %Name{"Firing"}
 		Vec2 %Node::Pos{f{0xC0E0B643,0xCEF21944}}
 		Uuid %Type{u4{8579716592663793560,5693765025926771231}}
+	}
+}
+o
+{
+	Uuid %id{u4{14110655061075499186,4788728806808512200}}
+	s %t{"ezStateMachineConnection"}
+	u3 %v{1}
+	p
+	{
+		Uuid %Connection::Source{u4{3903604002267892140,4903948755502804906}}
+		s %Connection::SourcePin{"Exit"}
+		Uuid %Connection::Target{u4{17653069420849507475,4773401500307275277}}
+		s %Connection::TargetPin{"Enter"}
+		Uuid %Type{u4{6364341665019134603,4639969221923383642}}
 	}
 }
 o
@@ -196,6 +220,7 @@ o
 			Uuid{u4{8723262967062255135,9895206278042478648}}
 			Uuid{u4{2514100639284862388,5562460447764320588}}
 			Uuid{u4{15018311712539597490,4682811941401458565}}
+			Uuid{u4{14110655061075499186,4788728806808512200}}
 		}
 	}
 }
@@ -291,6 +316,23 @@ o
 		s %PluginName{"ezEditorPluginAssets"}
 		VarArray %Properties{}
 		s %TypeName{"ezStateMachineNode"}
+		u3 %TypeVersion{1}
+	}
+}
+o
+{
+	Uuid %id{u4{413312007041457721,6682385906266534516}}
+	s %t{"ezReflectedTypeDescriptor"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Attributes{}
+		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
+		VarArray %Functions{}
+		s %ParentTypeName{"ezStateMachineTransition"}
+		s %PluginName{"Static"}
+		VarArray %Properties{}
+		s %TypeName{"ezStateMachineTransition_TransitionEvent"}
 		u3 %TypeVersion{1}
 	}
 }
