@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="EncodableAsset" id="{366341e7-c885-4090-9d98-6440e2562b2c}">
+		<property name="assetPath">
+			<value>Free3D/Impacts/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{8ecdcd81-4b82-4afb-be06-6b4327c5f456}</destination>
+		</relationship>
+	</object>
+</objects>

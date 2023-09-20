@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{14a14d3f-8d10-4cb8-92f2-708b15521f62}">
+		<property name="assetPath">
+			<value>Free3D/Impacts/Stab4.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.9557369614512472</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{8ecdcd81-4b82-4afb-be06-6b4327c5f456}</destination>
+		</relationship>
+	</object>
+</objects>

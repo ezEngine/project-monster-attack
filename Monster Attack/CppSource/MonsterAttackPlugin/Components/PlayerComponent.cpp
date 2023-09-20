@@ -156,7 +156,7 @@ void ezPlayerComponent::Update()
     ezPhysicsQueryParameters params;
     params.m_bIgnoreInitialOverlap = true;
     params.m_uiCollisionLayer = (ezUInt8)iColFilter;
-    params.m_ShapeTypes = ezPhysicsShapeType::Static | ezPhysicsShapeType::Dynamic | ezPhysicsShapeType::Query;
+    params.m_ShapeTypes = ezPhysicsShapeType::Static;
 
     ezPhysicsCastResult result;
     if (pPhysics->Raycast(result, pCameraObject->GetGlobalPosition(), pCameraObject->GetGlobalDirForwards(), 10.0f, params))

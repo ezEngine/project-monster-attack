@@ -11,7 +11,7 @@ o
 		s %AssetType{"Prefab"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{4807102616338341041,4830533069843689837}}
-		u4 %Hash{16244166457638786308}
+		u4 %Hash{16044294723147750471}
 		VarArray %MetaInfo
 		{
 			Uuid{u4{84311642083157784,14446715351038868960}}
@@ -19,6 +19,7 @@ o
 		VarArray %Outputs{}
 		VarArray %PackageDeps
 		{
+			s{"{ 244dbbc0-76c0-4ff8-935f-e13f3d398409 }"}
 			s{"{ e3a6f62e-d359-43fc-aad9-b1e619a8e2c4 }"}
 		}
 		VarArray %References{}
@@ -71,6 +72,17 @@ o
 	p
 	{
 		VarArray %ExposedProperties{}
+	}
+}
+o
+{
+	Uuid %id{u4{16749247516159067541,5429557228234561906}}
+	s %t{"ezFmodListenerComponent"}
+	u3 %v{1}
+	p
+	{
+		b %Active{1}
+		u1 %ListenerIndex{0}
 	}
 }
 o
@@ -150,7 +162,7 @@ o
 		u1 %CollisionLayer{6}
 		f %CrouchHeight{0xCDCC4C3E}
 		s %DebugFlags{""}
-		s %FallbackWalkSurface{""}
+		s %FallbackWalkSurface{"{ 244dbbc0-76c0-4ff8-935f-e13f3d398409 }"}
 		f %FootRadius{0x9A99193E}
 		s %HeadObject{""}
 		f %JumpImpulse{0x0000A040}
@@ -160,11 +172,11 @@ o
 		f %MaxStepUp{0x0000803E}
 		u1 %PresenceCollisionLayer{6}
 		Angle %RotateSpeed{f{0xDB0FC93F}}
-		f %RunInteractionDistance{0x00004040}
+		f %RunInteractionDistance{0x00008040}
 		f %ShapeRadius{0x0000803E}
 		f %StandHeight{0x9A99993F}
 		f %Strength{0x0000FA43}
-		f %WalkInteractionDistance{0x0000803F}
+		f %WalkInteractionDistance{0x00000040}
 		f %WalkSpeedCrouching{0x0000803F}
 		f %WalkSpeedRunning{0x00002041}
 		f %WalkSpeedStanding{0x00008040}
@@ -249,6 +261,7 @@ o
 		{
 			Uuid{u4{12079743137196537121,18106000443028970553}}
 			Uuid{u4{16304882475156480812,18119206074101585502}}
+			Uuid{u4{16749247516159067541,5429557228234561906}}
 		}
 		s %GlobalKey{""}
 		Vec3 %LocalPosition{f{0,0,0xCDCCCC3F}}
@@ -291,6 +304,23 @@ o
 			Uuid{u4{4052736918928168731,7594899863019898105}}
 		}
 		s %TypeName{"ezJoltCharacterControllerComponent"}
+		u3 %TypeVersion{1}
+	}
+}
+o
+{
+	Uuid %id{u4{12339003457353207217,317585083296737199}}
+	s %t{"ezReflectedTypeDescriptor"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Attributes{}
+		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
+		VarArray %Functions{}
+		s %ParentTypeName{"ezFmodComponent"}
+		s %PluginName{"ezEditorPluginFmod"}
+		VarArray %Properties{}
+		s %TypeName{"ezFmodListenerComponent"}
 		u3 %TypeVersion{1}
 	}
 }
@@ -1403,6 +1433,23 @@ o
 		s %Flags{"ezPropertyFlags::StandardType|ezPropertyFlags::Phantom"}
 		s %Name{"PresenceCollisionLayer"}
 		s %Type{"ezUInt8"}
+	}
+}
+o
+{
+	Uuid %id{u4{1059777785414581172,10096107093115669027}}
+	s %t{"ezReflectedTypeDescriptor"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Attributes{}
+		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Abstract|ezTypeFlags::Minimal"}
+		VarArray %Functions{}
+		s %ParentTypeName{"ezComponent"}
+		s %PluginName{"ezEditorPluginFmod"}
+		VarArray %Properties{}
+		s %TypeName{"ezFmodComponent"}
+		u3 %TypeVersion{1}
 	}
 }
 o

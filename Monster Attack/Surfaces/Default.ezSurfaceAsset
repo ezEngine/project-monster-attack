@@ -11,11 +11,12 @@ o
 		s %AssetType{"Surface"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{685735978494680979,5762486290835422144}}
-		u4 %Hash{14199811371663587430}
+		u4 %Hash{12511858440913824175}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps
 		{
+			s{"{ 0abc3c82-a55c-88e8-38af-2c05e93477ab }"}
 			s{"{ 2a2b2ff8-f6a0-4e77-9f41-46b86c8e8fd2 }"}
 		}
 		VarArray %References{}
@@ -37,6 +38,7 @@ o
 		VarArray %Interactions
 		{
 			Uuid{u4{79070725506156474,5145667840068349686}}
+			Uuid{u4{15253567093694308519,5586053007478458287}}
 		}
 		s %OnCollideInteraction{""}
 		f %Restitution{0x0000803E}
@@ -59,6 +61,22 @@ o
 		VarDict %Parameters{}
 		s %Prefab{"{ 2a2b2ff8-f6a0-4e77-9f41-46b86c8e8fd2 }"}
 		s %Type{"Impact_Magic"}
+	}
+}
+o
+{
+	Uuid %id{u4{15253567093694308519,5586053007478458287}}
+	s %t{"ezSurfaceInteraction"}
+	u3 %v{1}
+	p
+	{
+		s %Alignment{"ezSurfaceInteractionAlignment::SurfaceNormal"}
+		Angle %Deviation{f{0}}
+		f %ImpulseScale{0x0000803F}
+		f %ImpulseThreshold{0}
+		VarDict %Parameters{}
+		s %Prefab{"{ 0abc3c82-a55c-88e8-38af-2c05e93477ab }"}
+		s %Type{"Footstep"}
 	}
 }
 o
