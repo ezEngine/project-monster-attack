@@ -27,15 +27,30 @@ public:
 private:
   void Update();
   void ClearPrevizObject();
+  bool DetermineTrapPlacement(const ezGameObject* pCameraObject);
 
   enum class PlayerAction
   {
     ShootMagicBullet,
     PlaceSpikeTrap,
+    PlaceArrowTrap,
+  };
+
+  enum class TrapPlacement
+  {
+    None,
+    Floor,
+    Wall,
+    Ceiling,
   };
 
   PlayerAction m_Action = PlayerAction::ShootMagicBullet;
 
   ezGameObjectHandle m_hPrevizObject;
   ezVec3 m_vPrevizPosition = ezVec3::MakeZero();
+  ezQuat m_qPrevizRotation = ezQuat::MakeIdentity();
+
+  TrapPlacement m_TrapPlacement = TrapPlacement::None;
+  ezPrefabResourceHandle m_hPrevizPrefab;
+  ezPrefabResourceHandle m_hPlacePrefab;
 };

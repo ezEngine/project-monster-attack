@@ -148,7 +148,7 @@ InputAction
 {
 	string %Set{"Default"}
 	string %Action{"Select_MagicBullet"}
-	bool %TimeScale{true}
+	bool %TimeScale{false}
 	Slot
 	{
 		string %Key{"keyboard_1"}
@@ -159,10 +159,21 @@ InputAction
 {
 	string %Set{"Default"}
 	string %Action{"Select_SpikeTrap"}
-	bool %TimeScale{true}
+	bool %TimeScale{false}
 	Slot
 	{
 		string %Key{"keyboard_2"}
+		float %Scale{1}
+	}
+}
+InputAction
+{
+	string %Set{"Default"}
+	string %Action{"Select_ArrowTrap"}
+	bool %TimeScale{false}
+	Slot
+	{
+		string %Key{"keyboard_3"}
 		float %Scale{1}
 	}
 }

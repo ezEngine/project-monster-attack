@@ -45,6 +45,13 @@ void MonsterAttackGameState::AfterWorldUpdate()
 void MonsterAttackGameState::BeforeWorldUpdate()
 {
   EZ_LOCK(m_pMainWorld->GetWriteMarker());
+
+  while (m_DeadMonsters.GetCount() > 20)
+  {
+    m_pMainWorld->DeleteObjectDelayed(m_DeadMonsters.PeekFront());
+
+    m_DeadMonsters.PopFront();
+  }
 }
 
 ezGameStatePriority MonsterAttackGameState::DeterminePriority(ezWorld* pWorld) const
@@ -89,6 +96,11 @@ void MonsterAttackGameState::ProcessInput()
 void MonsterAttackGameState::MonsterReachedGoal()
 {
   ++m_uiMonstersReachedGoal;
+}
+
+void MonsterAttackGameState::AddDeadMonster(ezGameObjectHandle hObject)
+{
+  m_DeadMonsters.PushBack(hObject);
 }
 
 void MonsterAttackGameState::ConfigureMainCamera()

@@ -11,7 +11,7 @@ o
 		s %AssetType{"Layer"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{1393175745824782778,5102536520592911460}}
-		u4 %Hash{16643370740525658606}
+		u4 %Hash{862144494892654783}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps
@@ -147,6 +147,7 @@ o
 			Uuid{u4{1484689002102859339,9706473322463235613}}
 			Uuid{u4{9296859092867354807,4945032247286692621}}
 			Uuid{u4{2699715483554092757,14921433771989234282}}
+			Uuid{u4{966951142705916936,14776110861665086141}}
 		}
 		Uuid %Settings{u4{5945227382948020655,5656731387301054312}}
 	}
@@ -206,6 +207,43 @@ o
 }
 o
 {
+	Uuid %id{u4{6434209343163211379,10234872607256951247}}
+	s %t{"ezSliderComponent"}
+	u3 %v{3}
+	p
+	{
+		f %Acceleration{0}
+		b %Active{1}
+		s %Axis{"ezBasisAxis::PositiveY"}
+		f %Deceleration{0}
+		f %Distance{0x0000C040}
+		Time %RandomStart{d{0x0000000000002440}}
+		b %ReverseAtEnd{1}
+		b %ReverseAtStart{1}
+		b %Running{1}
+		f %Speed{0x0000803F}
+	}
+}
+o
+{
+	Uuid %id{u4{6259916177789364544,10284257479477701397}}
+	s %t{"ezSpawnComponent"}
+	u3 %v{3}
+	p
+	{
+		b %Active{1}
+		b %AttachAsChild{0}
+		Time %DelayRange{d{0x0000000000000840}}
+		Angle %Deviation{f{0}}
+		Time %MinDelay{d{0x0000000000000040}}
+		VarDict %Parameters{}
+		s %Prefab{"{ fa81999d-658b-44e3-94ee-44dae7f8c3c6 }"}
+		b %SpawnAtStart{1}
+		b %SpawnContinuously{1}
+	}
+}
+o
+{
 	Uuid %id{u4{12561004937179019550,10371929656923320663}}
 	s %t{"ezShapeIconComponent"}
 	u3 %v{1}
@@ -230,6 +268,33 @@ o
 		s %Prefab{"{ d93cf241-35ef-4de7-8ca6-5b80e8a5ca3d }"}
 		b %SpawnAtStart{1}
 		b %SpawnContinuously{1}
+	}
+}
+o
+{
+	Uuid %id{u4{966951142705916936,14776110861665086141}}
+	s %t{"ezGameObject"}
+	u3 %v{1}
+	p
+	{
+		b %Active{1}
+		VarArray %Children{}
+		VarArray %Components
+		{
+			Uuid{u4{6259916177789364544,10284257479477701397}}
+			Uuid{u4{6434209343163211379,10234872607256951247}}
+		}
+		s %GlobalKey{""}
+		Vec3 %LocalPosition{f{0x33339F41,0xCDCC2C40,0}}
+		Quat %LocalRotation{f{0,0,0x94DC7D3F,0xBA13043E}}
+		Vec3 %LocalScaling{f{0x0000803F,0x0000803F,0x0000803F}}
+		f %LocalUniformScaling{0x0000803F}
+		s %Mode{"ezObjectMode::Automatic"}
+		s %Name{""}
+		VarArray %Tags
+		{
+			s{"CastShadow"}
+		}
 	}
 }
 o

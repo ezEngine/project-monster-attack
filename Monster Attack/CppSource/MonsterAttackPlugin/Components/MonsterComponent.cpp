@@ -159,7 +159,7 @@ void ezMonsterComponent::OnMsgDamage(ezMsgDamage& msg)
   {
     // loaded the prefab by a "nice name" only works because the prefab is part of a "collection" where it is given that name
     // and the collection is part of our scene (there is a collection component referencing it and registering the names)
-    ezPrefabResourceHandle hPrefab = ezResourceManager::LoadResource<ezPrefabResource>("FX-Wound"); 
+    ezPrefabResourceHandle hPrefab = ezResourceManager::LoadResource<ezPrefabResource>("FX-Wound");
     ezResourceLock<ezPrefabResource> pPrefab(hPrefab, ezResourceAcquireMode::BlockTillLoaded);
 
     ezPrefabInstantiationOptions opt;
@@ -171,6 +171,11 @@ void ezMonsterComponent::OnMsgDamage(ezMsgDamage& msg)
 
   if (m_iHealthPoints <= 0)
   {
+    if (MonsterAttackGameState* pGameState = ezDynamicCast<MonsterAttackGameState*>(ezGameApplication::GetGameApplicationInstance()->GetActiveGameState()))
+    {
+      pGameState->AddDeadMonster(GetOwner()->GetHandle());
+    }
+
     if (auto pBoard = ezBlackboardComponent::FindBlackboard(GetOwner()))
     {
       pBoard->SetEntryValue("State", 2).IgnoreResult(); // "die" animation

@@ -60,11 +60,23 @@ void ezPlayerComponent::OnMsgInputActionTriggered(ezMsgInputActionTriggered& msg
     if (msg.m_sInputAction == ezTempHashedString("Select_MagicBullet"))
     {
       m_Action = PlayerAction::ShootMagicBullet;
+      m_TrapPlacement = TrapPlacement::None;
       return;
     }
     if (msg.m_sInputAction == ezTempHashedString("Select_SpikeTrap"))
     {
       m_Action = PlayerAction::PlaceSpikeTrap;
+      m_TrapPlacement = TrapPlacement::Floor;
+      m_hPrevizPrefab = ezResourceManager::LoadResource<ezPrefabResource>("Vis-Trap-Spike");
+      m_hPlacePrefab = ezResourceManager::LoadResource<ezPrefabResource>("Trap-Spike");
+      return;
+    }
+    if (msg.m_sInputAction == ezTempHashedString("Select_ArrowTrap"))
+    {
+      m_Action = PlayerAction::PlaceArrowTrap;
+      m_TrapPlacement = TrapPlacement::Wall;
+      m_hPrevizPrefab = ezResourceManager::LoadResource<ezPrefabResource>("Vis-Trap-Arrow");
+      m_hPlacePrefab = ezResourceManager::LoadResource<ezPrefabResource>("Trap-Arrow");
       return;
     }
   }
@@ -87,7 +99,7 @@ void ezPlayerComponent::OnMsgInputActionTriggered(ezMsgInputActionTriggered& msg
     }
   }
 
-  if (m_Action == PlayerAction::PlaceSpikeTrap)
+  if (m_Action == PlayerAction::PlaceSpikeTrap || m_Action == PlayerAction::PlaceArrowTrap)
   {
     if (msg.m_sInputAction == ezTempHashedString("Shoot") && msg.m_TriggerState == ezTriggerState::Activated)
     {
@@ -95,9 +107,8 @@ void ezPlayerComponent::OnMsgInputActionTriggered(ezMsgInputActionTriggered& msg
       {
         ClearPrevizObject();
 
-        ezPrefabResourceHandle hPrefab = ezResourceManager::LoadResource<ezPrefabResource>("Trap-Spike");
-        ezResourceLock<ezPrefabResource> pPrefab(hPrefab, ezResourceAcquireMode::BlockTillLoaded_NeverFail);
-        pPrefab->InstantiatePrefab(*GetWorld(), ezTransform::Make(m_vPrevizPosition), {});
+        ezResourceLock<ezPrefabResource> pPrefab(m_hPlacePrefab, ezResourceAcquireMode::BlockTillLoaded_NeverFail);
+        pPrefab->InstantiatePrefab(*GetWorld(), ezTransform::Make(m_vPrevizPosition, m_qPrevizRotation), {});
       }
     }
   }
@@ -144,56 +155,9 @@ void ezPlayerComponent::Update()
     ClearPrevizObject();
   }
 
-  ezPhysicsWorldModuleInterface* pPhysics = GetOwner()->GetWorld()->GetModule<ezPhysicsWorldModuleInterface>();
-  if (!pPhysics)
-    return;
-
-  if (m_Action == PlayerAction::PlaceSpikeTrap)
+  if (m_Action == PlayerAction::PlaceSpikeTrap || m_Action == PlayerAction::PlaceArrowTrap)
   {
-    const ezInt32 iColFilter = pPhysics->GetCollisionFilterConfig().GetFilterGroupByName("Interaction Raycast");
-    EZ_ASSERT_DEBUG(iColFilter >= 0, "Collision filter is unknown.");
-
-    ezPhysicsQueryParameters params;
-    params.m_bIgnoreInitialOverlap = true;
-    params.m_uiCollisionLayer = (ezUInt8)iColFilter;
-    params.m_ShapeTypes = ezPhysicsShapeType::Static;
-
-    ezPhysicsCastResult result;
-    if (pPhysics->Raycast(result, pCameraObject->GetGlobalPosition(), pCameraObject->GetGlobalDirForwards(), 10.0f, params))
-    {
-      m_vPrevizPosition = result.m_vPosition;
-
-      m_vPrevizPosition.x = ezMath::Round(m_vPrevizPosition.x);
-      m_vPrevizPosition.y = ezMath::Round(m_vPrevizPosition.y);
-      m_vPrevizPosition.z = ezMath::Round(m_vPrevizPosition.z);
-
-      if (m_hPrevizObject.IsInvalidated())
-      {
-        ezPrefabResourceHandle hPreviz = ezResourceManager::LoadResource<ezPrefabResource>("Vis-Trap-Spike");
-        ezResourceLock<ezPrefabResource> pPreviz(hPreviz, ezResourceAcquireMode::BlockTillLoaded_NeverFail);
-
-        ezHybridArray<ezGameObject*, 2> root;
-
-        ezPrefabInstantiationOptions opt;
-        opt.m_bForceDynamic = true;
-        opt.m_pCreatedRootObjectsOut = &root;
-        pPreviz->InstantiatePrefab(*GetWorld(), ezTransform::Make(m_vPrevizPosition), opt);
-
-        if (!root.IsEmpty())
-        {
-          m_hPrevizObject = root[0]->GetHandle();
-        }
-      }
-      else
-      {
-        ezGameObject* pPreviz = nullptr;
-        if (GetWorld()->TryGetObject(m_hPrevizObject, pPreviz))
-        {
-          pPreviz->SetGlobalPosition(m_vPrevizPosition);
-        }
-      }
-    }
-    else
+    if (!DetermineTrapPlacement(pCameraObject))
     {
       ClearPrevizObject();
     }
@@ -207,4 +171,93 @@ void ezPlayerComponent::ClearPrevizObject()
 
   GetWorld()->DeleteObjectDelayed(m_hPrevizObject);
   m_hPrevizObject.Invalidate();
+}
+
+bool ezPlayerComponent::DetermineTrapPlacement(const ezGameObject* pCameraObject)
+{
+  ezPhysicsWorldModuleInterface* pPhysics = GetOwner()->GetWorld()->GetModule<ezPhysicsWorldModuleInterface>();
+  if (!pPhysics)
+    return false;
+
+  const ezInt32 iColFilter = pPhysics->GetCollisionFilterConfig().GetFilterGroupByName("Interaction Raycast");
+  EZ_ASSERT_DEBUG(iColFilter >= 0, "Collision filter is unknown.");
+
+  ezPhysicsQueryParameters params;
+  params.m_bIgnoreInitialOverlap = true;
+  params.m_uiCollisionLayer = (ezUInt8)iColFilter;
+  params.m_ShapeTypes = ezPhysicsShapeType::Static;
+
+  ezPhysicsCastResult result;
+  if (!pPhysics->Raycast(result, pCameraObject->GetGlobalPosition(), pCameraObject->GetGlobalDirForwards(), 10.0f, params))
+    return false;
+
+  m_vPrevizPosition = result.m_vPosition;
+
+  if (m_TrapPlacement == TrapPlacement::Floor)
+  {
+    // only allow flat floors
+    if (!result.m_vNormal.IsEqual(ezVec3(0, 0, 1), 0.05f))
+      return false;
+  }
+
+  if (m_TrapPlacement == TrapPlacement::Ceiling)
+  {
+    // only allow flat ceilings
+    if (!result.m_vNormal.IsEqual(ezVec3(0, 0, -1), 0.05f))
+      return false;
+  }
+
+  if (m_TrapPlacement == TrapPlacement::Wall)
+  {
+    // only allow straight up walls
+    if (!ezMath::IsZero(result.m_vNormal.z, 0.01f))
+      return false;
+  }
+
+  if (m_TrapPlacement == TrapPlacement::Floor || m_TrapPlacement == TrapPlacement::Ceiling)
+  {
+    // place it at the picked height, but on a 2D grid
+    m_vPrevizPosition.x = ezMath::Round(m_vPrevizPosition.x);
+    m_vPrevizPosition.y = ezMath::Round(m_vPrevizPosition.y);
+
+    m_qPrevizRotation.SetIdentity();
+    // TODO: more validation
+  }
+
+  if (m_TrapPlacement == TrapPlacement::Wall)
+  {
+    // TODO: allowed position needs way more validation (walls at any angle ?)
+    m_vPrevizPosition.x = ezMath::Round(m_vPrevizPosition.x);
+    m_vPrevizPosition.y = ezMath::Round(m_vPrevizPosition.y);
+    m_vPrevizPosition.z = ezMath::Round(m_vPrevizPosition.z);
+
+    m_qPrevizRotation = ezQuat::MakeShortestRotation(ezVec3::MakeAxisX(), result.m_vNormal);
+  }
+
+  if (m_hPrevizObject.IsInvalidated())
+  {
+    ezResourceLock<ezPrefabResource> pPreviz(m_hPrevizPrefab, ezResourceAcquireMode::BlockTillLoaded_NeverFail);
+
+    ezHybridArray<ezGameObject*, 2> root;
+
+    ezPrefabInstantiationOptions opt;
+    opt.m_bForceDynamic = true;
+    opt.m_pCreatedRootObjectsOut = &root;
+    pPreviz->InstantiatePrefab(*GetWorld(), ezTransform::Make(m_vPrevizPosition, m_qPrevizRotation), opt);
+
+    if (!root.IsEmpty())
+    {
+      m_hPrevizObject = root[0]->GetHandle();
+    }
+  }
+  else
+  {
+    ezGameObject* pPreviz = nullptr;
+    if (GetWorld()->TryGetObject(m_hPrevizObject, pPreviz))
+    {
+      pPreviz->SetGlobalPosition(m_vPrevizPosition);
+    }
+  }
+
+  return true;
 }
