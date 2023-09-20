@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.01.00">
-	<object class="AudioFile" id="{96a9b874-54dd-4cbe-a59b-b02fa203f964}">
+	<object class="AudioFile" id="{da2924d3-fdc5-42e6-b1e4-15f6d4b3c6a9}">
 		<property name="assetPath">
-			<value>Free3D/Weapons/Plasma Rifle Shots.wav</value>
+			<value>Free3D/Clicks/ClickClack.aiff</value>
 		</property>
 		<property name="frequencyInKHz">
-			<value>44.0999985</value>
+			<value>96</value>
 		</property>
 		<property name="channelCount">
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>12.808344671201814</value>
+			<value>1.0056041666666666</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{8ecdcd81-4b82-4afb-be06-6b4327c5f456}</destination>

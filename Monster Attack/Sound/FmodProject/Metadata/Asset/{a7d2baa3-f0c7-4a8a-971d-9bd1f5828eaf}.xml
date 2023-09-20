@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="EncodableAsset" id="{a7d2baa3-f0c7-4a8a-971d-9bd1f5828eaf}">
+		<property name="assetPath">
+			<value>Free3D/Whooshes/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{8ecdcd81-4b82-4afb-be06-6b4327c5f456}</destination>
+		</relationship>
+	</object>
+</objects>

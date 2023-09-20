@@ -11,7 +11,7 @@ o
 		s %AssetType{"Layer"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{17723535473041328803,4898313741260022833}}
-		u4 %Hash{16182251773979890194}
+		u4 %Hash{13646139258463156084}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps{}

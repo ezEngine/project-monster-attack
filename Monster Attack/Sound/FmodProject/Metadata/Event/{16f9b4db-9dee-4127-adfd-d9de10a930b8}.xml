@@ -2,13 +2,13 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="Event" id="{16f9b4db-9dee-4127-adfd-d9de10a930b8}">
 		<property name="name">
-			<value>SpikeTrap</value>
+			<value>Attack</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
 		</property>
 		<relationship name="folder">
-			<destination>{fd2431d1-9ccc-4e36-97a2-eaef7e3d09ff}</destination>
+			<destination>{61b51ffe-68ad-4baf-898f-c4b9ed558400}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{03359244-bd7e-47d3-a7f1-f2c015e3d8f6}</destination>

@@ -11,11 +11,13 @@ o
 		s %AssetType{"Collection"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{9812963356183237293,4764425462325997221}}
-		u4 %Hash{7335737824353732667}
+		u4 %Hash{14004660959466380925}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps
 		{
+			s{"{ 3c26f345-7a4c-446d-b2d2-b532146d4dbc }"}
+			s{"{ 40eecb35-8511-4635-9d80-0c033f34c4da }"}
 			s{"{ 573b2f53-7f8c-483d-a1a6-63c92be21df1 }"}
 			s{"{ 797ef747-9cb7-45c9-b23d-b2a9bd013013 }"}
 		}
@@ -25,6 +27,17 @@ o
 }
 Objects
 {
+o
+{
+	Uuid %id{u4{14278740160068474004,4639910328199596388}}
+	s %t{"ezCollectionAssetEntry"}
+	u3 %v{1}
+	p
+	{
+		s %Asset{"{ 40eecb35-8511-4635-9d80-0c033f34c4da }"}
+		s %Name{"Vis-Trap-Arrow"}
+	}
+}
 o
 {
 	Uuid %id{u4{3012264295797661061,4795435743520061861}}
@@ -49,6 +62,17 @@ o
 }
 o
 {
+	Uuid %id{u4{14593831382042364294,5427496093017764783}}
+	s %t{"ezCollectionAssetEntry"}
+	u3 %v{1}
+	p
+	{
+		s %Asset{"{ 3c26f345-7a4c-446d-b2d2-b532146d4dbc }"}
+		s %Name{"Trap-Arrow"}
+	}
+}
+o
+{
 	Uuid %id{u4{550159077821738155,5720175029304048358}}
 	s %t{"ezCollectionAssetData"}
 	u3 %v{1}
@@ -58,6 +82,8 @@ o
 		{
 			Uuid{u4{594362957652851603,5187642119801855358}}
 			Uuid{u4{3012264295797661061,4795435743520061861}}
+			Uuid{u4{14593831382042364294,5427496093017764783}}
+			Uuid{u4{14278740160068474004,4639910328199596388}}
 		}
 	}
 }

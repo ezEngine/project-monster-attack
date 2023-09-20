@@ -155,7 +155,7 @@ void ezMonsterComponent::OnMsgDamage(ezMsgDamage& msg)
 
   const ezInt32 iDamage = (ezInt32)msg.m_fDamage;
 
-  if (iDamage > 5)
+  if (iDamage >= 5)
   {
     // loaded the prefab by a "nice name" only works because the prefab is part of a "collection" where it is given that name
     // and the collection is part of our scene (there is a collection component referencing it and registering the names)
