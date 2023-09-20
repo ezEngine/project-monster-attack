@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{afbbdb1c-dc00-4f38-baa1-0b26c08bbac2}">
+		<property name="assetPath">
+			<value>Free3D/Traps/SpikeTrap.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>22.0499992</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.24049886621315192</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{8ecdcd81-4b82-4afb-be06-6b4327c5f456}</destination>
+		</relationship>
+	</object>
+</objects>
