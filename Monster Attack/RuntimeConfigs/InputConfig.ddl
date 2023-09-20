@@ -144,3 +144,25 @@ InputAction
 		float %Scale{1}
 	}
 }
+InputAction
+{
+	string %Set{"Default"}
+	string %Action{"Select_MagicBullet"}
+	bool %TimeScale{true}
+	Slot
+	{
+		string %Key{"keyboard_1"}
+		float %Scale{1}
+	}
+}
+InputAction
+{
+	string %Set{"Default"}
+	string %Action{"Select_SpikeTrap"}
+	bool %TimeScale{true}
+	Slot
+	{
+		string %Key{"keyboard_2"}
+		float %Scale{1}
+	}
+}

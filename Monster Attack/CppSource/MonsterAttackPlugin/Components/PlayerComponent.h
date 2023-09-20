@@ -26,4 +26,16 @@ public:
 
 private:
   void Update();
+  void ClearPrevizObject();
+
+  enum class PlayerAction
+  {
+    ShootMagicBullet,
+    PlaceSpikeTrap,
+  };
+
+  PlayerAction m_Action = PlayerAction::ShootMagicBullet;
+
+  ezGameObjectHandle m_hPrevizObject;
+  ezVec3 m_vPrevizPosition = ezVec3::MakeZero();
 };

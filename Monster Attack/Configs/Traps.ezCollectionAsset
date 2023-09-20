@@ -1,0 +1,149 @@
+HeaderV2
+{
+o
+{
+	Uuid %id{u4{9812963356183237293,4764425462325997221}}
+	s %t{"ezAssetDocumentInfo"}
+	u3 %v{2}
+	s %n{"Header"}
+	p
+	{
+		s %AssetType{"Collection"}
+		VarArray %Dependencies{}
+		Uuid %DocumentID{u4{9812963356183237293,4764425462325997221}}
+		u4 %Hash{7335737824353732667}
+		VarArray %MetaInfo{}
+		VarArray %Outputs{}
+		VarArray %PackageDeps
+		{
+			s{"{ 573b2f53-7f8c-483d-a1a6-63c92be21df1 }"}
+			s{"{ 797ef747-9cb7-45c9-b23d-b2a9bd013013 }"}
+		}
+		VarArray %References{}
+	}
+}
+}
+Objects
+{
+o
+{
+	Uuid %id{u4{3012264295797661061,4795435743520061861}}
+	s %t{"ezCollectionAssetEntry"}
+	u3 %v{1}
+	p
+	{
+		s %Asset{"{ 573b2f53-7f8c-483d-a1a6-63c92be21df1 }"}
+		s %Name{"Vis-Trap-Spike"}
+	}
+}
+o
+{
+	Uuid %id{u4{594362957652851603,5187642119801855358}}
+	s %t{"ezCollectionAssetEntry"}
+	u3 %v{1}
+	p
+	{
+		s %Asset{"{ 797ef747-9cb7-45c9-b23d-b2a9bd013013 }"}
+		s %Name{"Trap-Spike"}
+	}
+}
+o
+{
+	Uuid %id{u4{550159077821738155,5720175029304048358}}
+	s %t{"ezCollectionAssetData"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Entries
+		{
+			Uuid{u4{594362957652851603,5187642119801855358}}
+			Uuid{u4{3012264295797661061,4795435743520061861}}
+		}
+	}
+}
+o
+{
+	Uuid %id{u4{18096612296587978288,6449934965513159559}}
+	s %t{"ezDocumentRoot"}
+	u3 %v{1}
+	s %n{"ObjectTree"}
+	p
+	{
+		VarArray %Children
+		{
+			Uuid{u4{550159077821738155,5720175029304048358}}
+		}
+	}
+}
+}
+Types
+{
+o
+{
+	Uuid %id{u4{13590641013881919643,2844595810355963325}}
+	s %t{"ezReflectedTypeDescriptor"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Attributes{}
+		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
+		VarArray %Functions{}
+		s %ParentTypeName{"ezReflectedClass"}
+		s %PluginName{"ezEditorPluginAssets"}
+		VarArray %Properties{}
+		s %TypeName{"ezCollectionAssetEntry"}
+		u3 %TypeVersion{1}
+	}
+}
+o
+{
+	Uuid %id{u4{6089094783765586323,8705960867921430659}}
+	s %t{"ezReflectedTypeDescriptor"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Attributes{}
+		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
+		VarArray %Functions{}
+		s %ParentTypeName{"ezReflectedClass"}
+		s %PluginName{"Static"}
+		VarArray %Properties{}
+		s %TypeName{"ezDocumentRoot"}
+		u3 %TypeVersion{1}
+	}
+}
+o
+{
+	Uuid %id{u4{12165807254422627566,15044647769667105818}}
+	s %t{"ezReflectedTypeDescriptor"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Attributes{}
+		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
+		VarArray %Functions{}
+		s %ParentTypeName{"ezReflectedClass"}
+		s %PluginName{"ezEditorPluginAssets"}
+		VarArray %Properties{}
+		s %TypeName{"ezCollectionAssetData"}
+		u3 %TypeVersion{1}
+	}
+}
+o
+{
+	Uuid %id{u4{983387834180907111,17935407260904399048}}
+	s %t{"ezReflectedTypeDescriptor"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Attributes{}
+		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
+		VarArray %Functions{}
+		s %ParentTypeName{""}
+		s %PluginName{"Static"}
+		VarArray %Properties{}
+		s %TypeName{"ezReflectedClass"}
+		u3 %TypeVersion{1}
+	}
+}
+}

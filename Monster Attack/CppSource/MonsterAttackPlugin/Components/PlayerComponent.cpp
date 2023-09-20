@@ -9,6 +9,7 @@
 #include <GameEngine/Gameplay/InputComponent.h>
 #include <GameEngine/Gameplay/SpawnComponent.h>
 #include <GameEngine/Physics/CharacterControllerComponent.h>
+#include <GameEngine/Physics/CollisionFilter.h>
 #include <MonsterAttackPlugin/Components/PlayerComponent.h>
 #include <MonsterAttackPlugin/GameState/MonsterAttackGameState.h>
 
@@ -54,20 +55,49 @@ void ezPlayerComponent::OnSimulationStarted()
 
 void ezPlayerComponent::OnMsgInputActionTriggered(ezMsgInputActionTriggered& msg)
 {
-  if (msg.m_TriggerState == ezTriggerState::Continuing)
-    return;
-
-  if (msg.m_sInputAction == ezTempHashedString("Shoot") && msg.m_TriggerState == ezTriggerState::Activated)
+  if (msg.m_TriggerState == ezTriggerState::Activated)
   {
-    if (ezGameObject* pSpawnBulletObj = GetOwner()->FindChildByName("Spawn_MagicBullet", true))
+    if (msg.m_sInputAction == ezTempHashedString("Select_MagicBullet"))
     {
-      ezSpawnComponent* pSpawnBulletComp = nullptr;
-      if (pSpawnBulletObj->TryGetComponentOfBaseType(pSpawnBulletComp))
+      m_Action = PlayerAction::ShootMagicBullet;
+      return;
+    }
+    if (msg.m_sInputAction == ezTempHashedString("Select_SpikeTrap"))
+    {
+      m_Action = PlayerAction::PlaceSpikeTrap;
+      return;
+    }
+  }
+
+  if (m_Action == PlayerAction::ShootMagicBullet)
+  {
+    if (msg.m_sInputAction == ezTempHashedString("Shoot") && msg.m_TriggerState == ezTriggerState::Activated)
+    {
+      if (ezGameObject* pSpawnBulletObj = GetOwner()->FindChildByName("Spawn_MagicBullet", true))
       {
-        if (pSpawnBulletComp->CanTriggerManualSpawn())
+        ezSpawnComponent* pSpawnBulletComp = nullptr;
+        if (pSpawnBulletObj->TryGetComponentOfBaseType(pSpawnBulletComp))
         {
-          pSpawnBulletComp->TriggerManualSpawn();
+          if (pSpawnBulletComp->CanTriggerManualSpawn())
+          {
+            pSpawnBulletComp->TriggerManualSpawn();
+          }
         }
+      }
+    }
+  }
+
+  if (m_Action == PlayerAction::PlaceSpikeTrap)
+  {
+    if (msg.m_sInputAction == ezTempHashedString("Shoot") && msg.m_TriggerState == ezTriggerState::Activated)
+    {
+      if (!m_hPrevizObject.IsInvalidated())
+      {
+        ClearPrevizObject();
+
+        ezPrefabResourceHandle hPrefab = ezResourceManager::LoadResource<ezPrefabResource>("Trap-Spike");
+        ezResourceLock<ezPrefabResource> pPrefab(hPrefab, ezResourceAcquireMode::BlockTillLoaded_NeverFail);
+        pPrefab->InstantiatePrefab(*GetWorld(), ezTransform::Make(m_vPrevizPosition), {});
       }
     }
   }
@@ -79,19 +109,8 @@ void ezPlayerComponent::Update()
   if (!GetOwner()->TryGetComponentOfBaseType(pInput))
     return;
 
-  const ezRTTI* pCharType = ezRTTI::FindTypeByName("ezJoltCharacterControllerComponent");
-
-  ezComponent* pCC = nullptr;
-  if (!GetOwner()->TryGetComponentOfBaseType(pCharType, pCC))
-    return;
-
   ezGameObject* pCameraObject = GetOwner()->FindChildByName("Camera", true);
-
   if (!pCameraObject)
-    return;
-
-  ezHeadBoneComponent* pHeadBone = nullptr;
-  if (!pCameraObject->TryGetComponentOfBaseType(pHeadBone))
     return;
 
   // character controller update
@@ -107,10 +126,12 @@ void ezPlayerComponent::Update()
     msg.m_fRotateRight = pInput->GetCurrentInputState("RotateRight", false);
     msg.m_bRun = pInput->GetCurrentInputState("Run", false) > 0.5;
 
-    pCC->SendMessage(msg);
+    GetOwner()->SendMessage(msg);
   }
 
   // look up / down
+  ezHeadBoneComponent* pHeadBone = nullptr;
+  if (pCameraObject->TryGetComponentOfBaseType(pHeadBone))
   {
     float up = pInput->GetCurrentInputState("LookUp", false);
     float down = pInput->GetCurrentInputState("LookDown", false);
@@ -118,28 +139,72 @@ void ezPlayerComponent::Update()
     pHeadBone->ChangeVerticalRotation(down - up);
   }
 
-  if (ezPhysicsWorldModuleInterface* pPhysics = GetOwner()->GetWorld()->GetModule<ezPhysicsWorldModuleInterface>())
+  if (m_Action == PlayerAction::ShootMagicBullet)
   {
+    ClearPrevizObject();
+  }
+
+  ezPhysicsWorldModuleInterface* pPhysics = GetOwner()->GetWorld()->GetModule<ezPhysicsWorldModuleInterface>();
+  if (!pPhysics)
+    return;
+
+  if (m_Action == PlayerAction::PlaceSpikeTrap)
+  {
+    const ezInt32 iColFilter = pPhysics->GetCollisionFilterConfig().GetFilterGroupByName("Interaction Raycast");
+    EZ_ASSERT_DEBUG(iColFilter >= 0, "Collision filter is unknown.");
+
     ezPhysicsQueryParameters params;
-    params.m_uiCollisionLayer = 8;
+    params.m_bIgnoreInitialOverlap = true;
+    params.m_uiCollisionLayer = (ezUInt8)iColFilter;
     params.m_ShapeTypes = ezPhysicsShapeType::Static | ezPhysicsShapeType::Dynamic | ezPhysicsShapeType::Query;
 
     ezPhysicsCastResult result;
-    if (pPhysics->Raycast(result, pCameraObject->GetGlobalPosition(), pCameraObject->GetGlobalDirForwards(), 2.0f, params))
+    if (pPhysics->Raycast(result, pCameraObject->GetGlobalPosition(), pCameraObject->GetGlobalDirForwards(), 10.0f, params))
     {
-      ezGameObject* pActor = nullptr;
-      if (GetOwner()->GetWorld()->TryGetObject(result.m_hActorObject, pActor))
+      m_vPrevizPosition = result.m_vPosition;
+
+      m_vPrevizPosition.x = ezMath::Round(m_vPrevizPosition.x);
+      m_vPrevizPosition.y = ezMath::Round(m_vPrevizPosition.y);
+      m_vPrevizPosition.z = ezMath::Round(m_vPrevizPosition.z);
+
+      if (m_hPrevizObject.IsInvalidated())
       {
-        ezGrabbableItemComponent* pGrabbable = nullptr;
-        if (pActor->TryGetComponentOfBaseType(pGrabbable))
+        ezPrefabResourceHandle hPreviz = ezResourceManager::LoadResource<ezPrefabResource>("Vis-Trap-Spike");
+        ezResourceLock<ezPrefabResource> pPreviz(hPreviz, ezResourceAcquireMode::BlockTillLoaded_NeverFail);
+
+        ezHybridArray<ezGameObject*, 2> root;
+
+        ezPrefabInstantiationOptions opt;
+        opt.m_bForceDynamic = true;
+        opt.m_pCreatedRootObjectsOut = &root;
+        pPreviz->InstantiatePrefab(*GetWorld(), ezTransform::Make(m_vPrevizPosition), opt);
+
+        if (!root.IsEmpty())
         {
-          if (ezGameStateBase* pGameState = ezGameApplication::GetGameApplicationInstance()->GetActiveGameState())
-          {
-            MonsterAttackGameState* pTestGameState = ezDynamicCast<MonsterAttackGameState*>(pGameState);
-            pTestGameState->m_ObjectsToHighlight.AddObjectAndChildren(*GetWorld(), pActor);
-          }
+          m_hPrevizObject = root[0]->GetHandle();
+        }
+      }
+      else
+      {
+        ezGameObject* pPreviz = nullptr;
+        if (GetWorld()->TryGetObject(m_hPrevizObject, pPreviz))
+        {
+          pPreviz->SetGlobalPosition(m_vPrevizPosition);
         }
       }
     }
+    else
+    {
+      ClearPrevizObject();
+    }
   }
+}
+
+void ezPlayerComponent::ClearPrevizObject()
+{
+  if (m_hPrevizObject.IsInvalidated())
+    return;
+
+  GetWorld()->DeleteObjectDelayed(m_hPrevizObject);
+  m_hPrevizObject.Invalidate();
 }
