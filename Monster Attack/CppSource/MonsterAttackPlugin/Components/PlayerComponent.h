@@ -34,6 +34,7 @@ private:
     ShootMagicBullet,
     PlaceSpikeTrap,
     PlaceArrowTrap,
+    PlaceTarTrap,
   };
 
   enum class TrapPlacement

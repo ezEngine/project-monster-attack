@@ -61,6 +61,7 @@ void ezPlayerComponent::OnMsgInputActionTriggered(ezMsgInputActionTriggered& msg
     {
       m_Action = PlayerAction::ShootMagicBullet;
       m_TrapPlacement = TrapPlacement::None;
+      ClearPrevizObject();
       return;
     }
     if (msg.m_sInputAction == ezTempHashedString("Select_SpikeTrap"))
@@ -69,6 +70,7 @@ void ezPlayerComponent::OnMsgInputActionTriggered(ezMsgInputActionTriggered& msg
       m_TrapPlacement = TrapPlacement::Floor;
       m_hPrevizPrefab = ezResourceManager::LoadResource<ezPrefabResource>("Vis-Trap-Spike");
       m_hPlacePrefab = ezResourceManager::LoadResource<ezPrefabResource>("Trap-Spike");
+      ClearPrevizObject();
       return;
     }
     if (msg.m_sInputAction == ezTempHashedString("Select_ArrowTrap"))
@@ -77,6 +79,16 @@ void ezPlayerComponent::OnMsgInputActionTriggered(ezMsgInputActionTriggered& msg
       m_TrapPlacement = TrapPlacement::Wall;
       m_hPrevizPrefab = ezResourceManager::LoadResource<ezPrefabResource>("Vis-Trap-Arrow");
       m_hPlacePrefab = ezResourceManager::LoadResource<ezPrefabResource>("Trap-Arrow");
+      ClearPrevizObject();
+      return;
+    }
+    if (msg.m_sInputAction == ezTempHashedString("Select_TarTrap"))
+    {
+      m_Action = PlayerAction::PlaceTarTrap;
+      m_TrapPlacement = TrapPlacement::Floor;
+      m_hPrevizPrefab = ezResourceManager::LoadResource<ezPrefabResource>("Vis-Trap-Tar");
+      m_hPlacePrefab = ezResourceManager::LoadResource<ezPrefabResource>("Trap-Tar");
+      ClearPrevizObject();
       return;
     }
   }
@@ -99,7 +111,7 @@ void ezPlayerComponent::OnMsgInputActionTriggered(ezMsgInputActionTriggered& msg
     }
   }
 
-  if (m_Action == PlayerAction::PlaceSpikeTrap || m_Action == PlayerAction::PlaceArrowTrap)
+  if (m_Action == PlayerAction::PlaceSpikeTrap || m_Action == PlayerAction::PlaceArrowTrap || m_Action == PlayerAction::PlaceTarTrap)
   {
     if (msg.m_sInputAction == ezTempHashedString("Shoot") && msg.m_TriggerState == ezTriggerState::Activated)
     {
@@ -155,7 +167,7 @@ void ezPlayerComponent::Update()
     ClearPrevizObject();
   }
 
-  if (m_Action == PlayerAction::PlaceSpikeTrap || m_Action == PlayerAction::PlaceArrowTrap)
+  if (m_Action == PlayerAction::PlaceSpikeTrap || m_Action == PlayerAction::PlaceArrowTrap || m_Action == PlayerAction::PlaceTarTrap)
   {
     if (!DetermineTrapPlacement(pCameraObject))
     {

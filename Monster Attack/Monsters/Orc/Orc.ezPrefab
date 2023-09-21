@@ -21,7 +21,7 @@ o
 		s %AssetType{"Prefab"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{4452553599613642380,5613514764798718529}}
-		u4 %Hash{15584236050404774493}
+		u4 %Hash{6903642950271532705}
 		VarArray %MetaInfo
 		{
 			Uuid{u4{15202541945221348026,4254623260804449292}}
@@ -84,12 +84,14 @@ o
 {
 	Uuid %id{u4{9944635334172315550,4899101373279542216}}
 	s %t{"ezMonsterComponent"}
-	u3 %v{1}
+	u3 %v{2}
 	p
 	{
 		b %Active{1}
+		i3 %Health{150}
 		HashedString %NavmeshConfig{s{"Default"}}
 		HashedString %PathSearchConfig{s{"Default"}}
+		f %WalkSpeed{0x00000040}
 	}
 }
 o
@@ -570,24 +572,6 @@ o
 }
 o
 {
-	Uuid %id{u4{1676047420664624834,3833962385936040947}}
-	s %t{"ezReflectedPropertyDescriptor"}
-	u3 %v{2}
-	p
-	{
-		VarArray %Attributes
-		{
-			Uuid{u4{16764254928272616231,11539342459554369572}}
-		}
-		s %Category{"ezPropertyCategory::Member"}
-		Invalid %ConstantValue{}
-		s %Flags{"ezPropertyFlags::StandardType|ezPropertyFlags::Phantom"}
-		s %Name{"NavmeshConfig"}
-		s %Type{"ezHashedString"}
-	}
-}
-o
-{
 	Uuid %id{u4{13321904241437720597,4060527578740508305}}
 	s %t{"ezClampValueAttribute"}
 	u3 %v{1}
@@ -635,24 +619,6 @@ o
 		s %Flags{"ezPropertyFlags::StandardType|ezPropertyFlags::Phantom"}
 		s %Name{"Kinematic"}
 		s %Type{"bool"}
-	}
-}
-o
-{
-	Uuid %id{u4{7600809575812605786,4692391718551750473}}
-	s %t{"ezReflectedPropertyDescriptor"}
-	u3 %v{2}
-	p
-	{
-		VarArray %Attributes
-		{
-			Uuid{u4{2244630551859907505,13429558582022265997}}
-		}
-		s %Category{"ezPropertyCategory::Member"}
-		Invalid %ConstantValue{}
-		s %Flags{"ezPropertyFlags::StandardType|ezPropertyFlags::Phantom"}
-		s %Name{"PathSearchConfig"}
-		s %Type{"ezHashedString"}
 	}
 }
 o
@@ -1039,21 +1005,14 @@ o
 	u3 %v{1}
 	p
 	{
-		VarArray %Attributes
-		{
-			Uuid{u4{1788599446502422342,17419034928280953787}}
-		}
-		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Phantom"}
+		VarArray %Attributes{}
+		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
 		VarArray %Functions{}
 		s %ParentTypeName{"ezComponent"}
 		s %PluginName{"MonsterAttackPlugin"}
-		VarArray %Properties
-		{
-			Uuid{u4{1676047420664624834,3833962385936040947}}
-			Uuid{u4{7600809575812605786,4692391718551750473}}
-		}
+		VarArray %Properties{}
 		s %TypeName{"ezMonsterComponent"}
-		u3 %TypeVersion{1}
+		u3 %TypeVersion{2}
 	}
 }
 o
@@ -1447,16 +1406,6 @@ o
 }
 o
 {
-	Uuid %id{u4{16764254928272616231,11539342459554369572}}
-	s %t{"ezDynamicStringEnumAttribute"}
-	u3 %v{1}
-	p
-	{
-		s %DynamicEnum{"AiNavmeshConfig"}
-	}
-}
-o
-{
 	Uuid %id{u4{12162947412619476030,11678637699905460909}}
 	s %t{"ezReflectedPropertyDescriptor"}
 	u3 %v{2}
@@ -1594,16 +1543,6 @@ o
 	{
 		Invalid %Max{}
 		f %Min{0}
-	}
-}
-o
-{
-	Uuid %id{u4{2244630551859907505,13429558582022265997}}
-	s %t{"ezDynamicStringEnumAttribute"}
-	u3 %v{1}
-	p
-	{
-		s %DynamicEnum{"AiPathSearchConfig"}
 	}
 }
 o
@@ -1807,16 +1746,6 @@ o
 		VarArray %Properties{}
 		s %TypeName{"ezVisualizerAttribute"}
 		u3 %TypeVersion{1}
-	}
-}
-o
-{
-	Uuid %id{u4{1788599446502422342,17419034928280953787}}
-	s %t{"ezCategoryAttribute"}
-	u3 %v{1}
-	p
-	{
-		s %Category{"MonsterAttack"}
 	}
 }
 o

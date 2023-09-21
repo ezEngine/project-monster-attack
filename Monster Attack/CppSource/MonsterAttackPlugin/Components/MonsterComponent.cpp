@@ -4,6 +4,8 @@
 #include <AiPlugin/Navigation/Steering.h>
 #include <Core/GameState/GameStateBase.h>
 #include <Core/Messages/CommonMessages.h>
+#include <Core/Messages/SetColorMessage.h>
+#include <Core/Physics/SurfaceResource.h>
 #include <GameEngine/GameApplication/GameApplication.h>
 #include <GameEngine/GameState/GameState.h>
 #include <GameEngine/Gameplay/BlackboardComponent.h>
@@ -11,14 +13,17 @@
 #include <GameEngine/Gameplay/SpawnComponent.h>
 #include <GameEngine/Messages/DamageMessage.h>
 #include <GameEngine/Physics/CharacterControllerComponent.h>
+#include <GameEngine/Physics/CollisionFilter.h>
 #include <MonsterAttackPlugin/Components/MonsterComponent.h>
 #include <MonsterAttackPlugin/GameState/MonsterAttackGameState.h>
 
 // clang-format off
-EZ_BEGIN_COMPONENT_TYPE(ezMonsterComponent, 1, ezComponentMode::Dynamic)
+EZ_BEGIN_COMPONENT_TYPE(ezMonsterComponent, 2, ezComponentMode::Dynamic)
 {
   EZ_BEGIN_PROPERTIES
   {
+    EZ_MEMBER_PROPERTY("Health", m_iHealthPoints)->AddAttributes(new ezDefaultValueAttribute(100)),
+    EZ_MEMBER_PROPERTY("WalkSpeed", m_fWalkSpeed)->AddAttributes(new ezDefaultValueAttribute(4.0f)),
     EZ_MEMBER_PROPERTY("NavmeshConfig", m_sNavmeshConfig)->AddAttributes(new ezDynamicStringEnumAttribute("AiNavmeshConfig")),
     EZ_MEMBER_PROPERTY("PathSearchConfig", m_sPathSearchConfig)->AddAttributes(new ezDynamicStringEnumAttribute("AiPathSearchConfig")),
   }
@@ -45,16 +50,25 @@ void ezMonsterComponent::SerializeComponent(ezWorldWriter& stream) const
 
   s << m_sNavmeshConfig;
   s << m_sPathSearchConfig;
+  s << m_iHealthPoints;
+  s << m_fWalkSpeed;
 }
 
 void ezMonsterComponent::DeserializeComponent(ezWorldReader& stream)
 {
   SUPER::DeserializeComponent(stream);
+  const ezUInt32 uiVersion = stream.GetComponentTypeVersion(GetStaticRTTI());
 
   auto& s = stream.GetStream();
 
   s >> m_sNavmeshConfig;
   s >> m_sPathSearchConfig;
+
+  if (uiVersion >= 2)
+  {
+    s >> m_iHealthPoints;
+    s >> m_fWalkSpeed;
+  }
 }
 
 void ezMonsterComponent::OnSimulationStarted()
@@ -115,6 +129,21 @@ void ezMonsterComponent::Update()
   if (m_Navigation.GetState() != ezAiNavigation::State::FullPathFound)
     return;
 
+  CheckGroundType();
+
+  if (m_fGroundWalkSpeed >= 1.0f)
+  {
+    ezMsgSetColor msg;
+    msg.m_Color = ezColor::White;
+    GetOwner()->SendMessageRecursive(msg);
+  }
+  else
+  {
+    ezMsgSetColor msg;
+    msg.m_Color = ezColor::DarkGrey;
+    GetOwner()->SendMessageRecursive(msg);
+  }
+
   if (m_fWalkSpeed > 0)
   {
     ezVec2 vForwardDir = GetOwner()->GetGlobalDirForwards().GetAsVec2();
@@ -125,7 +154,7 @@ void ezMonsterComponent::Update()
     steering.m_vPosition = GetOwner()->GetGlobalPosition();
     steering.m_qRotation = GetOwner()->GetGlobalRotation();
     steering.m_vVelocity = GetOwner()->GetLinearVelocity();
-    steering.m_fMaxSpeed = m_fWalkSpeed;
+    steering.m_fMaxSpeed = m_fWalkSpeed * m_fGroundWalkSpeed;
     steering.m_MinTurnSpeed = ezAngle::MakeFromDegree(180);
     steering.m_fAcceleration = 5;
     steering.m_fDecceleration = 10;
@@ -145,6 +174,43 @@ void ezMonsterComponent::Update()
       pBoard->SetEntryValue("State", 1).IgnoreResult(); // "walk" animation
       pBoard->SetEntryValue("MoveSpeed", ezMath::Clamp(steering.m_vVelocity.GetLength() * 0.5f, 0.0f, 2.0f)).IgnoreResult();
     }
+  }
+}
+
+
+void ezMonsterComponent::CheckGroundType()
+{
+  const ezTime tNow = GetWorld()->GetClock().GetAccumulatedTime();
+
+  if (tNow - m_LastCheckGround < ezTime::MakeFromSeconds(0.1f))
+    return;
+
+  m_LastCheckGround = tNow;
+  m_fGroundWalkSpeed = 1.0f;
+
+  ezPhysicsWorldModuleInterface* pPhysics = GetOwner()->GetWorld()->GetModule<ezPhysicsWorldModuleInterface>();
+  if (!pPhysics)
+    return;
+
+  const ezInt32 iColFilter = pPhysics->GetCollisionFilterConfig().GetFilterGroupByName("Ground Raycast");
+  EZ_ASSERT_DEBUG(iColFilter >= 0, "Collision filter is unknown.");
+
+  ezPhysicsQueryParameters params;
+  params.m_bIgnoreInitialOverlap = true;
+  params.m_uiCollisionLayer = (ezUInt8)iColFilter;
+  params.m_ShapeTypes = ezPhysicsShapeType::Static | ezPhysicsShapeType::Query;
+
+  ezPhysicsCastResult result;
+  if (!pPhysics->Raycast(result, GetOwner()->GetGlobalPosition() + ezVec3(0, 0, 1), ezVec3(0, 0, -1), 2.0f, params))
+    return;
+
+  if (!result.m_hSurface.IsValid())
+    return;
+
+  ezResourceLock<ezSurfaceResource> pSurface(result.m_hSurface, ezResourceAcquireMode::AllowLoadingFallback_NeverFail);
+  if (pSurface->GetDescriptor().m_iGroundType >= 2)
+  {
+    m_fGroundWalkSpeed = 0.25f;
   }
 }
 

@@ -194,7 +194,7 @@ o
 			s{"Monsters/Orc/Orc.gltf"}
 		}
 		Uuid %DocumentID{u4{13988226733489167265,4807456802626092828}}
-		u4 %Hash{16168461526516208310}
+		u4 %Hash{1039668586186762235}
 		VarArray %MetaInfo
 		{
 			Uuid{u4{13554026709793456204,17084286766265016083}}
@@ -1115,7 +1115,7 @@ o
 		{
 			Uuid{u4{10238574223361355447,4859574431109593582}}
 		}
-		u1 %CollisionLayer{0}
+		u1 %CollisionLayer{5}
 		s %File{"Monsters/Orc/Orc.gltf"}
 		b %FlipForwardDir{1}
 		f %MaxImpulse{0x0000C842}
@@ -2519,6 +2519,23 @@ o
 }
 o
 {
+	Uuid %id{u4{18145823255500990886,658922949661762930}}
+	s %t{"ezReflectedTypeDescriptor"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Attributes{}
+		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
+		VarArray %Functions{}
+		s %ParentTypeName{"ezPropertyAttribute"}
+		s %PluginName{"Static"}
+		VarArray %Properties{}
+		s %TypeName{"ezManipulatorAttribute"}
+		u3 %TypeVersion{1}
+	}
+}
+o
+{
 	Uuid %id{u4{7487808954123518552,1038212999886154059}}
 	s %t{"ezReflectedTypeDescriptor"}
 	u3 %v{1}
@@ -2587,6 +2604,23 @@ o
 }
 o
 {
+	Uuid %id{u4{455663516835322266,10016785433957589977}}
+	s %t{"ezReflectedTypeDescriptor"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Attributes{}
+		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
+		VarArray %Functions{}
+		s %ParentTypeName{"ezManipulatorAttribute"}
+		s %PluginName{"Static"}
+		VarArray %Properties{}
+		s %TypeName{"ezTransformManipulatorAttribute"}
+		u3 %TypeVersion{1}
+	}
+}
+o
+{
 	Uuid %id{u4{10395479654444300045,10796011810626369603}}
 	s %t{"ezReflectedTypeDescriptor"}
 	u3 %v{1}
@@ -2599,6 +2633,23 @@ o
 		s %PluginName{"Static"}
 		VarArray %Properties{}
 		s %TypeName{"ezEditableSkeleton"}
+		u3 %TypeVersion{1}
+	}
+}
+o
+{
+	Uuid %id{u4{9604010176759229512,12868035041842190965}}
+	s %t{"ezReflectedTypeDescriptor"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Attributes{}
+		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
+		VarArray %Functions{}
+		s %ParentTypeName{"ezReflectedClass"}
+		s %PluginName{"Static"}
+		VarArray %Properties{}
+		s %TypeName{"ezPropertyAttribute"}
 		u3 %TypeVersion{1}
 	}
 }

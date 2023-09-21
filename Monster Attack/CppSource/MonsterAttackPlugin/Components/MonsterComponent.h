@@ -31,10 +31,14 @@ public:
 
 private:
   void Update();
+  void CheckGroundType();
 
   void OnMsgDamage(ezMsgDamage& msg);
 
   ezInt32 m_iHealthPoints = 100;
+
+  ezTime m_LastCheckGround = ezTime::MakeZero();
+  float m_fGroundWalkSpeed = 1.0f;
 
   ezAiNavigation m_Navigation;
 

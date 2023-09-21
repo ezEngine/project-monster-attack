@@ -177,3 +177,14 @@ InputAction
 		float %Scale{1}
 	}
 }
+InputAction
+{
+	string %Set{"Default"}
+	string %Action{"Select_TarTrap"}
+	bool %TimeScale{false}
+	Slot
+	{
+		string %Key{"keyboard_4"}
+		float %Scale{1}
+	}
+}
