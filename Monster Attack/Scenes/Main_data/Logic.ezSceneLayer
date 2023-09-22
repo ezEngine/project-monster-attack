@@ -11,7 +11,7 @@ o
 		s %AssetType{"Layer"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{1393175745824782778,5102536520592911460}}
-		u4 %Hash{7327087175139840132}
+		u4 %Hash{4356861364634905066}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps
@@ -26,24 +26,6 @@ o
 }
 Objects
 {
-o
-{
-	Uuid %id{u4{1614258258300256433,4723986487773723885}}
-	s %t{"ezBlackboardComponent"}
-	u3 %v{2}
-	p
-	{
-		b %Active{1}
-		s %BlackboardName{"LevelLogic"}
-		VarArray %Entries
-		{
-			Uuid{u4{7607202580146722215,5710674211387515846}}
-		}
-		b %SendEntryChangedMessage{0}
-		b %ShowDebugInfo{0}
-		s %Template{""}
-	}
-}
 o
 {
 	Uuid %id{u4{91832927378655104,4732422775724763898}}
@@ -108,7 +90,7 @@ o
 	p
 	{
 		b %Active{1}
-		s %BlackboardName{"LevelLogic"}
+		s %BlackboardName{"LevelState"}
 		s %InitialState{""}
 		s %Resource{"{ 963c173e-2b96-4f98-b1c2-bb9210879152 }"}
 	}
@@ -162,7 +144,6 @@ o
 		VarArray %Components
 		{
 			Uuid{u4{13822840635453330821,5121458034952077408}}
-			Uuid{u4{1614258258300256433,4723986487773723885}}
 		}
 		s %GlobalKey{"LevelLogic"}
 		Vec3 %LocalPosition{f{0x00009C41,0xCDCC4C3E,0x00000040}}
@@ -228,18 +209,6 @@ o
 	s %t{"ezLayerDocumentSettings"}
 	u3 %v{1}
 	p{}
-}
-o
-{
-	Uuid %id{u4{7607202580146722215,5710674211387515846}}
-	s %t{"ezBlackboardEntry"}
-	u3 %v{1}
-	p
-	{
-		s %Flags{""}
-		i3 %InitialValue{0}
-		s %Name{"Round"}
-	}
 }
 o
 {
@@ -630,23 +599,6 @@ o
 }
 o
 {
-	Uuid %id{u4{10915434802948687564,6393886782732208983}}
-	s %t{"ezReflectedTypeDescriptor"}
-	u3 %v{1}
-	p
-	{
-		VarArray %Attributes{}
-		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
-		VarArray %Functions{}
-		s %ParentTypeName{"ezComponent"}
-		s %PluginName{"Static"}
-		VarArray %Properties{}
-		s %TypeName{"ezBlackboardComponent"}
-		u3 %TypeVersion{2}
-	}
-}
-o
-{
 	Uuid %id{u4{18327411855245510474,6668321287849544166}}
 	s %t{"ezReflectedTypeDescriptor"}
 	u3 %v{1}
@@ -778,23 +730,6 @@ o
 		s %PluginName{"Static"}
 		VarArray %Properties{}
 		s %TypeName{"ezObjectMode"}
-		u3 %TypeVersion{1}
-	}
-}
-o
-{
-	Uuid %id{u4{4287215348751137938,10033073971716187673}}
-	s %t{"ezReflectedTypeDescriptor"}
-	u3 %v{1}
-	p
-	{
-		VarArray %Attributes{}
-		s %Flags{"ezTypeFlags::Bitflags|ezTypeFlags::Minimal"}
-		VarArray %Functions{}
-		s %ParentTypeName{"ezBitflagsBase"}
-		s %PluginName{"Static"}
-		VarArray %Properties{}
-		s %TypeName{"ezBlackboardEntryFlags"}
 		u3 %TypeVersion{1}
 	}
 }
@@ -1050,23 +985,6 @@ o
 		s %PluginName{"Static"}
 		VarArray %Properties{}
 		s %TypeName{"ezEnumBase"}
-		u3 %TypeVersion{1}
-	}
-}
-o
-{
-	Uuid %id{u4{48220615166662949,15649640188828373689}}
-	s %t{"ezReflectedTypeDescriptor"}
-	u3 %v{1}
-	p
-	{
-		VarArray %Attributes{}
-		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
-		VarArray %Functions{}
-		s %ParentTypeName{""}
-		s %PluginName{"Static"}
-		VarArray %Properties{}
-		s %TypeName{"ezBlackboardEntry"}
 		u3 %TypeVersion{1}
 	}
 }

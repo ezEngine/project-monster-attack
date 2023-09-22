@@ -28,6 +28,10 @@ void MonsterAttackGameState::OnActivation(ezWorld* pWorld, const ezTransform* pS
   }
 
   ezGameApplication::cvar_AppVSync = true;
+
+  ezHashedString sName;
+  sName.Assign("LevelState");
+  m_pLevelState = ezBlackboard::GetOrCreateGlobal(sName);
 }
 
 void MonsterAttackGameState::OnDeactivation()
@@ -89,18 +93,32 @@ void MonsterAttackGameState::ProcessInput()
   ezWorld* pWorld = m_pMainWorld;
 
   m_ObjectsToHighlight.m_Objects.Clear();
-
-  ezDebugRenderer::DrawInfoText(pWorld, ezDebugTextPlacement::TopCenter, "Game", ezFmt("Reached Goal: {}", m_uiMonstersReachedGoal));
 }
 
 void MonsterAttackGameState::MonsterReachedGoal()
 {
-  ++m_uiMonstersReachedGoal;
+  const ezInt32 iPoints = ezMath::Max(0, m_pLevelState->GetEntry("Points")->m_Value.ConvertTo<ezInt32>() - 1);
+  m_pLevelState->SetEntryValue("Points", iPoints).AssertSuccess();
+
+  const ezInt32 iMonsters = ezMath::Max(0, m_pLevelState->GetEntry("Monsters")->m_Value.ConvertTo<ezInt32>() - 1);
+  m_pLevelState->SetEntryValue("Monsters", iMonsters).AssertSuccess();
 }
 
-void MonsterAttackGameState::AddDeadMonster(ezGameObjectHandle hObject)
+void MonsterAttackGameState::AddDeadMonster(ezGameObjectHandle hObject, ezInt32 iMoneyReward)
 {
   m_DeadMonsters.PushBack(hObject);
+
+  const ezInt32 iMoney = m_pLevelState->GetEntry("Money")->m_Value.ConvertTo<ezInt32>() + iMoneyReward;
+  m_pLevelState->SetEntryValue("Money", iMoney).AssertSuccess();
+
+  const ezInt32 iMonsters = ezMath::Max(0, m_pLevelState->GetEntry("Monsters")->m_Value.ConvertTo<ezInt32>() - 1);
+  m_pLevelState->SetEntryValue("Monsters", iMonsters).AssertSuccess();
+}
+
+void MonsterAttackGameState::AddMonster()
+{
+  const ezInt32 iMonsters = m_pLevelState->GetEntry("Monsters")->m_Value.ConvertTo<ezInt32>() + 1;
+  m_pLevelState->SetEntryValue("Monsters", iMonsters).AssertSuccess();
 }
 
 void MonsterAttackGameState::ConfigureMainCamera()

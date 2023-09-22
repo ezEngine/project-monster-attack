@@ -54,4 +54,6 @@ private:
   TrapPlacement m_TrapPlacement = TrapPlacement::None;
   ezPrefabResourceHandle m_hPrevizPrefab;
   ezPrefabResourceHandle m_hPlacePrefab;
+  ezInt32 m_iRequiredMoney = 0;
+  ezSharedPtr<ezBlackboard> m_pLevelState;
 };

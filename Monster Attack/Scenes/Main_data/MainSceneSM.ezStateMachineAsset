@@ -11,15 +11,27 @@ o
 		s %AssetType{"StateMachine"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{5949685087984140977,5735382051221935934}}
-		u4 %Hash{17118076032337006143}
+		u4 %Hash{1207195848484499691}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps
 		{
+			s{"{ 03e94d9c-a7d6-4fcb-9203-80d8a9fda76c }"}
+			s{"{ 312eec35-288e-4a16-b517-ab2682e51814 }"}
+			s{"{ 384de184-6ea0-4c7b-a5b5-f28ffe62c275 }"}
+			s{"{ 71b29ab8-b97d-4211-b635-9cbf8aa47871 }"}
+			s{"{ 72af2f8d-ce6f-46fd-bf94-fdaa5cc0edba }"}
+			s{"{ c8287fda-a6ed-4e13-a401-d56153e1db36 }"}
 			s{"{ c86d0682-9622-469a-a9f9-038b4ad4e0f4 }"}
 		}
 		VarArray %References
 		{
+			s{"{ 03e94d9c-a7d6-4fcb-9203-80d8a9fda76c }"}
+			s{"{ 312eec35-288e-4a16-b517-ab2682e51814 }"}
+			s{"{ 384de184-6ea0-4c7b-a5b5-f28ffe62c275 }"}
+			s{"{ 71b29ab8-b97d-4211-b635-9cbf8aa47871 }"}
+			s{"{ 72af2f8d-ce6f-46fd-bf94-fdaa5cc0edba }"}
+			s{"{ c8287fda-a6ed-4e13-a401-d56153e1db36 }"}
 			s{"{ c86d0682-9622-469a-a9f9-038b4ad4e0f4 }"}
 		}
 	}
@@ -29,21 +41,283 @@ Objects
 {
 o
 {
-	Uuid %id{u4{6007751247512041638,4776891078036207973}}
+	Uuid %id{u4{5153447804287539061,2370759095620262416}}
+	s %t{"ezStateMachineNode"}
+	u3 %v{1}
+	p
+	{
+		s %Name{"Wave Loop 2"}
+		Vec2 %Node::Pos{f{0xD7981344,0x348F2644}}
+		Uuid %Type{u4{9892047085936591425,10377554671119627988}}
+	}
+}
+o
+{
+	Uuid %id{u4{5227260283433533622,4648683002801642040}}
+	s %t{"ezStateMachineNode"}
+	u3 %v{1}
+	p
+	{
+		s %Name{"Build 1"}
+		Vec2 %Node::Pos{f{0xE1C9A643,0xEC3B1342}}
+		Uuid %Type{u4{9897917762547502509,4891855562424593219}}
+	}
+}
+o
+{
+	Uuid %id{u4{17454232720236233883,4657141102720163655}}
+	s %t{"ezStateMachineConnection"}
+	u3 %v{1}
+	p
+	{
+		Uuid %Connection::Source{u4{17581673993409861968,11080114410121136374}}
+		s %Connection::SourcePin{"Exit"}
+		Uuid %Connection::Target{u4{9348401003168330391,5757134391278002241}}
+		s %Connection::TargetPin{"Enter"}
+		Uuid %Type{u4{3298147827866009481,4965027696959813017}}
+	}
+}
+o
+{
+	Uuid %id{u4{4297460712155848879,4662697766267389142}}
+	s %t{"ezStateMachineConnection"}
+	u3 %v{1}
+	p
+	{
+		Uuid %Connection::Source{u4{5227260283433533622,4648683002801642040}}
+		s %Connection::SourcePin{"Exit"}
+		Uuid %Connection::Target{u4{17581673993409861968,11080114410121136374}}
+		s %Connection::TargetPin{"Enter"}
+		Uuid %Type{u4{10573196428169698947,4900122176184512385}}
+	}
+}
+o
+{
+	Uuid %id{u4{10214557179094405055,4670919385830993657}}
+	s %t{"ezStateMachineConnection"}
+	u3 %v{1}
+	p
+	{
+		Uuid %Connection::Source{u4{3299369928732152367,10739465614460342260}}
+		s %Connection::SourcePin{"Exit"}
+		Uuid %Connection::Target{u4{1851063097239798716,5250093619384221562}}
+		s %Connection::TargetPin{"Enter"}
+		Uuid %Type{u4{16707345347113051570,5521823685673154400}}
+	}
+}
+o
+{
+	Uuid %id{u4{10035194786858935991,4694953574628490733}}
+	s %t{"ezStateMachineNode"}
+	u3 %v{1}
+	p
+	{
+		s %Name{"LOST"}
+		Vec2 %Node::Pos{f{0x76B52844,0x68410442}}
+		Uuid %Type{u4{16269236440461760400,5017825396453649249}}
+	}
+}
+o
+{
+	Uuid %id{u4{5759602732506217373,4751802818344987708}}
+	s %t{"ezBlackboardCondition"}
+	u3 %v{1}
+	p
+	{
+		d %ComparisonValue{0}
+		s %EntryName{"Monsters"}
+		s %Operator{"ezComparisonOperator::Equal"}
+	}
+}
+o
+{
+	Uuid %id{u4{7946178380966160018,4761730513702005307}}
+	s %t{"ezStateMachineState_Script"}
+	u3 %v{1}
+	p
+	{
+		VarDict %Parameters{}
+		s %ScriptClass{"{ 71b29ab8-b97d-4211-b635-9cbf8aa47871 }"}
+	}
+}
+o
+{
+	Uuid %id{u4{10305025552059859332,4774218983207661336}}
+	s %t{"ezBlackboardCondition"}
+	u3 %v{1}
+	p
+	{
+		d %ComparisonValue{0}
+		s %EntryName{"Monsters"}
+		s %Operator{"ezComparisonOperator::Equal"}
+	}
+}
+o
+{
+	Uuid %id{u4{10586566134764281992,4877020024083397624}}
+	s %t{"ezStateMachineConnection"}
+	u3 %v{1}
+	p
+	{
+		Uuid %Connection::Source{u4{5153447804287539061,2370759095620262416}}
+		s %Connection::SourcePin{"Exit"}
+		Uuid %Connection::Target{u4{3299369928732152367,10739465614460342260}}
+		s %Connection::TargetPin{"Enter"}
+		Uuid %Type{u4{3382724059059074452,4992596507201943020}}
+	}
+}
+o
+{
+	Uuid %id{u4{6949991024743395248,4878026557885869677}}
+	s %t{"ezStateMachineTransition_BlackboardConditions"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Conditions
+		{
+			Uuid{u4{5759602732506217373,4751802818344987708}}
+		}
+		s %Operator{"ezStateMachineLogicOperator::And"}
+	}
+}
+o
+{
+	Uuid %id{u4{1733922683035626421,4887181873920601122}}
 	s %t{"ezStateMachineConnection"}
 	u3 %v{1}
 	p
 	{
 		Uuid %Connection::Source{u4{9579000649608647407,15567674812283112427}}
 		s %Connection::SourcePin{"Exit"}
-		Uuid %Connection::Target{u4{16118756999147684233,4998055744329680029}}
+		Uuid %Connection::Target{u4{17910370855463720844,5431440063034425159}}
 		s %Connection::TargetPin{"Enter"}
-		Uuid %Type{u4{11214106843869224637,5367861858016329489}}
+		Uuid %Type{u4{2197508816197111437,5402052877959406922}}
 	}
 }
 o
 {
-	Uuid %id{u4{93882471792986044,4807187279545881300}}
+	Uuid %id{u4{9897917762547502509,4891855562424593219}}
+	s %t{"ezStateMachineState_Script"}
+	u3 %v{1}
+	p
+	{
+		VarDict %Parameters{}
+		s %ScriptClass{"{ 72af2f8d-ce6f-46fd-bf94-fdaa5cc0edba }"}
+	}
+}
+o
+{
+	Uuid %id{u4{10573196428169698947,4900122176184512385}}
+	s %t{"ezStateMachineTransition_TransitionEvent"}
+	u3 %v{1}
+	p
+	{
+		HashedString %EventName{s{"StartRound"}}
+	}
+}
+o
+{
+	Uuid %id{u4{8778985662722527381,4932071508758820985}}
+	s %t{"ezStateMachineConnection"}
+	u3 %v{1}
+	p
+	{
+		Uuid %Connection::Source{u4{1456464873005213101,5681070859845895036}}
+		s %Connection::SourcePin{"Exit"}
+		Uuid %Connection::Target{u4{10035194786858935991,4694953574628490733}}
+		s %Connection::TargetPin{"Enter"}
+		Uuid %Type{u4{11432795275494179769,5061940203762633109}}
+	}
+}
+o
+{
+	Uuid %id{u4{3298147827866009481,4965027696959813017}}
+	s %t{"ezStateMachineTransition_TransitionEvent"}
+	u3 %v{1}
+	p
+	{
+		HashedString %EventName{s{"CountdownEnd"}}
+	}
+}
+o
+{
+	Uuid %id{u4{3382724059059074452,4992596507201943020}}
+	s %t{"ezStateMachineTransition_BlackboardConditions"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Conditions
+		{
+			Uuid{u4{14072348818337634985,5039770068487807413}}
+		}
+		s %Operator{"ezStateMachineLogicOperator::And"}
+	}
+}
+o
+{
+	Uuid %id{u4{16269236440461760400,5017825396453649249}}
+	s %t{"ezStateMachineState_Script"}
+	u3 %v{1}
+	p
+	{
+		VarDict %Parameters{}
+		s %ScriptClass{"{ 384de184-6ea0-4c7b-a5b5-f28ffe62c275 }"}
+	}
+}
+o
+{
+	Uuid %id{u4{14072348818337634985,5039770068487807413}}
+	s %t{"ezBlackboardCondition"}
+	u3 %v{1}
+	p
+	{
+		d %ComparisonValue{0x0000000000001840}
+		s %EntryName{"Round"}
+		s %Operator{"ezComparisonOperator::GreaterEqual"}
+	}
+}
+o
+{
+	Uuid %id{u4{11432795275494179769,5061940203762633109}}
+	s %t{"ezStateMachineTransition_BlackboardConditions"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Conditions
+		{
+			Uuid{u4{2690332198686572711,5255239284260235280}}
+		}
+		s %Operator{"ezStateMachineLogicOperator::And"}
+	}
+}
+o
+{
+	Uuid %id{u4{7183665312338664381,5093501843989201551}}
+	s %t{"ezStateMachineNode"}
+	u3 %v{1}
+	p
+	{
+		b %IsInitialState{1}
+		s %Name{"None"}
+		Vec2 %Node::Pos{f{0x7E279443,0x5F4758C3}}
+		Uuid %Type{u4{359368889824297126,5225878631021951270}}
+	}
+}
+o
+{
+	Uuid %id{u4{14780042116054423211,5100370753132015530}}
+	s %t{"ezStateMachineNode"}
+	u3 %v{1}
+	p
+	{
+		s %Name{"Init Env"}
+		Vec2 %Node::Pos{f{0xA8C1A343,0x7203B7C2}}
+		Uuid %Type{u4{1533925574514006688,5655006699551121876}}
+	}
+}
+o
+{
+	Uuid %id{u4{14317599931257699771,5127726314072926383}}
 	s %t{"ezStateMachineState_SendMsg"}
 	u3 %v{1}
 	p
@@ -57,58 +331,32 @@ o
 }
 o
 {
-	Uuid %id{u4{5244369553001572266,4948821167892314825}}
-	s %t{"ezBlackboardCondition"}
-	u3 %v{1}
-	p
-	{
-		d %ComparisonValue{0x0000000000000840}
-		s %EntryName{"Round"}
-		s %Operator{"ezComparisonOperator::GreaterEqual"}
-	}
-}
-o
-{
-	Uuid %id{u4{16118756999147684233,4998055744329680029}}
-	s %t{"ezStateMachineNode"}
-	u3 %v{1}
-	p
-	{
-		s %Name{"State"}
-		Vec2 %Node::Pos{f{0x58E80C44,0x2222C643}}
-		Uuid %Type{u4{93882471792986044,4807187279545881300}}
-	}
-}
-o
-{
-	Uuid %id{u4{14780042116054423211,5100370753132015530}}
-	s %t{"ezStateMachineNode"}
-	u3 %v{1}
-	p
-	{
-		b %IsInitialState{1}
-		s %Name{"Start"}
-		Vec2 %Node::Pos{f{0xCB229743,0x74A9BC40}}
-		Uuid %Type{u4{1925990137275366553,5325034381381657350}}
-	}
-}
-o
-{
-	Uuid %id{u4{16859082631057050282,5170142315609978625}}
+	Uuid %id{u4{14029903562598729909,5130771889521378044}}
 	s %t{"ezStateMachineConnection"}
 	u3 %v{1}
 	p
 	{
-		Uuid %Connection::Source{u4{14780042116054423211,5100370753132015530}}
+		Uuid %Connection::Source{u4{7183665312338664381,5093501843989201551}}
 		s %Connection::SourcePin{"Exit"}
-		Uuid %Connection::Target{u4{9348401003168330391,5757134391278002241}}
+		Uuid %Connection::Target{u4{14780042116054423211,5100370753132015530}}
 		s %Connection::TargetPin{"Enter"}
-		Uuid %Type{u4{10802620045881551545,5651106727423227184}}
+		Uuid %Type{u4{0,0}}
 	}
 }
 o
 {
-	Uuid %id{u4{4551468412939794575,5210949883314258339}}
+	Uuid %id{u4{3990778659247645105,5191963354175855081}}
+	s %t{"ezStateMachineState_Script"}
+	u3 %v{1}
+	p
+	{
+		VarDict %Parameters{}
+		s %ScriptClass{"{ c8287fda-a6ed-4e13-a401-d56153e1db36 }"}
+	}
+}
+o
+{
+	Uuid %id{u4{359368889824297126,5225878631021951270}}
 	s %t{"ezStateMachineState_SendMsg"}
 	u3 %v{1}
 	p
@@ -116,7 +364,7 @@ o
 		b %LogOnEnter{0}
 		b %LogOnExit{0}
 		Time %MessageDelay{d{0}}
-		b %SendMessageOnEnter{1}
+		b %SendMessageOnEnter{0}
 		b %SendMessageOnExit{0}
 	}
 }
@@ -128,6 +376,30 @@ o
 	p
 	{
 		Time %Timeout{d{0x0000000000000040}}
+	}
+}
+o
+{
+	Uuid %id{u4{1851063097239798716,5250093619384221562}}
+	s %t{"ezStateMachineNode"}
+	u3 %v{1}
+	p
+	{
+		s %Name{"Win"}
+		Vec2 %Node::Pos{f{0x08BF6244,0x71DA2644}}
+		Uuid %Type{u4{3990778659247645105,5191963354175855081}}
+	}
+}
+o
+{
+	Uuid %id{u4{2690332198686572711,5255239284260235280}}
+	s %t{"ezBlackboardCondition"}
+	u3 %v{1}
+	p
+	{
+		d %ComparisonValue{0}
+		s %EntryName{"Points"}
+		s %Operator{"ezComparisonOperator::Equal"}
 	}
 }
 o
@@ -146,6 +418,20 @@ o
 }
 o
 {
+	Uuid %id{u4{311785830478391726,5264508154531754350}}
+	s %t{"ezStateMachineConnection"}
+	u3 %v{1}
+	p
+	{
+		Uuid %Connection::Source{u4{14780042116054423211,5100370753132015530}}
+		s %Connection::SourcePin{"Exit"}
+		Uuid %Connection::Target{u4{5227260283433533622,4648683002801642040}}
+		s %Connection::TargetPin{"Enter"}
+		Uuid %Type{u4{0,0}}
+	}
+}
+o
+{
 	Uuid %id{u4{11758380840803244427,5273105092543500593}}
 	s %t{"ezStateMachineConnection"}
 	u3 %v{1}
@@ -160,16 +446,16 @@ o
 }
 o
 {
-	Uuid %id{u4{1925990137275366553,5325034381381657350}}
-	s %t{"ezStateMachineState_SendMsg"}
+	Uuid %id{u4{11960863243818654858,5350332143745804069}}
+	s %t{"ezStateMachineConnection"}
 	u3 %v{1}
 	p
 	{
-		b %LogOnEnter{0}
-		b %LogOnExit{0}
-		Time %MessageDelay{d{0}}
-		b %SendMessageOnEnter{0}
-		b %SendMessageOnExit{0}
+		Uuid %Connection::Source{u4{17910370855463720844,5431440063034425159}}
+		s %Connection::SourcePin{"Exit"}
+		Uuid %Connection::Target{u4{4922848157847222045,11006962748324703846}}
+		s %Connection::TargetPin{"Enter"}
+		Uuid %Type{u4{6949991024743395248,4878026557885869677}}
 	}
 }
 o
@@ -186,14 +472,52 @@ o
 }
 o
 {
-	Uuid %id{u4{11214106843869224637,5367861858016329489}}
+	Uuid %id{u4{9139074654911152535,5372281412190286286}}
+	s %t{"ezBlackboardCondition"}
+	u3 %v{1}
+	p
+	{
+		d %ComparisonValue{0x0000000000000840}
+		s %EntryName{"Round"}
+		s %Operator{"ezComparisonOperator::GreaterEqual"}
+	}
+}
+o
+{
+	Uuid %id{u4{2197508816197111437,5402052877959406922}}
 	s %t{"ezStateMachineTransition_BlackboardConditions"}
 	u3 %v{1}
 	p
 	{
 		VarArray %Conditions
 		{
-			Uuid{u4{5244369553001572266,4948821167892314825}}
+			Uuid{u4{9139074654911152535,5372281412190286286}}
+		}
+		s %Operator{"ezStateMachineLogicOperator::And"}
+	}
+}
+o
+{
+	Uuid %id{u4{17910370855463720844,5431440063034425159}}
+	s %t{"ezStateMachineNode"}
+	u3 %v{1}
+	p
+	{
+		s %Name{"Fight 1"}
+		Vec2 %Node::Pos{f{0x3D35F543,0x66CEFD43}}
+		Uuid %Type{u4{7946178380966160018,4761730513702005307}}
+	}
+}
+o
+{
+	Uuid %id{u4{16707345347113051570,5521823685673154400}}
+	s %t{"ezStateMachineTransition_BlackboardConditions"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Conditions
+		{
+			Uuid{u4{10305025552059859332,4774218983207661336}}
 		}
 		s %Operator{"ezStateMachineLogicOperator::And"}
 	}
@@ -214,12 +538,26 @@ o
 }
 o
 {
-	Uuid %id{u4{10802620045881551545,5651106727423227184}}
-	s %t{"ezStateMachineTransition_TransitionEvent"}
+	Uuid %id{u4{1533925574514006688,5655006699551121876}}
+	s %t{"ezStateMachineState_Script"}
 	u3 %v{1}
 	p
 	{
-		HashedString %EventName{s{"StartRound"}}
+		VarDict %Parameters
+		{
+			i3 %StartPoints{5}
+		}
+		s %ScriptClass{"{ 03e94d9c-a7d6-4fcb-9203-80d8a9fda76c }"}
+	}
+}
+o
+{
+	Uuid %id{u4{1456464873005213101,5681070859845895036}}
+	s %t{"ezStateMachineNodeAny"}
+	u3 %v{1}
+	p
+	{
+		Vec2 %Node::Pos{f{0xD692F543,0x31401242}}
 	}
 }
 o
@@ -258,7 +596,7 @@ o
 	p
 	{
 		s %Name{"Wave 1"}
-		Vec2 %Node::Pos{f{0x8AEAA743,0xAA7C4943}}
+		Vec2 %Node::Pos{f{0xEC99A543,0x6A5C9B43}}
 		Uuid %Type{u4{17565943290956859522,5586775283334270621}}
 	}
 }
@@ -275,12 +613,194 @@ o
 			Uuid{u4{9348401003168330391,5757134391278002241}}
 			Uuid{u4{9579000649608647407,15567674812283112427}}
 			Uuid{u4{14780042116054423211,5100370753132015530}}
-			Uuid{u4{16859082631057050282,5170142315609978625}}
 			Uuid{u4{11758380840803244427,5273105092543500593}}
 			Uuid{u4{7422724311928169899,5258445970320449726}}
-			Uuid{u4{16118756999147684233,4998055744329680029}}
-			Uuid{u4{6007751247512041638,4776891078036207973}}
+			Uuid{u4{17581673993409861968,11080114410121136374}}
+			Uuid{u4{17454232720236233883,4657141102720163655}}
+			Uuid{u4{5227260283433533622,4648683002801642040}}
+			Uuid{u4{311785830478391726,5264508154531754350}}
+			Uuid{u4{4297460712155848879,4662697766267389142}}
+			Uuid{u4{1456464873005213101,5681070859845895036}}
+			Uuid{u4{10035194786858935991,4694953574628490733}}
+			Uuid{u4{8778985662722527381,4932071508758820985}}
+			Uuid{u4{17910370855463720844,5431440063034425159}}
+			Uuid{u4{1733922683035626421,4887181873920601122}}
+			Uuid{u4{1851063097239798716,5250093619384221562}}
+			Uuid{u4{7183665312338664381,5093501843989201551}}
+			Uuid{u4{14029903562598729909,5130771889521378044}}
+			Uuid{u4{3299369928732152367,10739465614460342260}}
+			Uuid{u4{4922848157847222045,11006962748324703846}}
+			Uuid{u4{5153447804287539061,2370759095620262416}}
+			Uuid{u4{7332827995482136081,10522933449590202198}}
+			Uuid{u4{2997171466607061553,10508274327367151331}}
+			Uuid{u4{11960863243818654858,5350332143745804069}}
+			Uuid{u4{10586566134764281992,4877020024083397624}}
+			Uuid{u4{10214557179094405055,4670919385830993657}}
 		}
+	}
+}
+o
+{
+	Uuid %id{u4{11781921527944143157,10069756065127922408}}
+	s %t{"ezStateMachineState_Script"}
+	u3 %v{1}
+	p
+	{
+		VarDict %Parameters{}
+		s %ScriptClass{"{ 71b29ab8-b97d-4211-b635-9cbf8aa47871 }"}
+	}
+}
+o
+{
+	Uuid %id{u4{9892047085936591425,10377554671119627988}}
+	s %t{"ezStateMachineState_SendMsg"}
+	u3 %v{1}
+	p
+	{
+		b %LogOnEnter{1}
+		b %LogOnExit{0}
+		Time %MessageDelay{d{0}}
+		b %SendMessageOnEnter{1}
+		b %SendMessageOnExit{0}
+	}
+}
+o
+{
+	Uuid %id{u4{4298437499779136068,10493372777512850025}}
+	s %t{"ezStateMachineTransition_Timeout"}
+	u3 %v{1}
+	p
+	{
+		Time %Timeout{d{0x0000000000000040}}
+	}
+}
+o
+{
+	Uuid %id{u4{2997171466607061553,10508274327367151331}}
+	s %t{"ezStateMachineConnection"}
+	u3 %v{1}
+	p
+	{
+		Uuid %Connection::Source{u4{5153447804287539061,2370759095620262416}}
+		s %Connection::SourcePin{"Exit"}
+		Uuid %Connection::Target{u4{4922848157847222045,11006962748324703846}}
+		s %Connection::TargetPin{"Enter"}
+		Uuid %Type{u4{11136119621818472714,10976333091712700755}}
+	}
+}
+o
+{
+	Uuid %id{u4{7332827995482136081,10522933449590202198}}
+	s %t{"ezStateMachineConnection"}
+	u3 %v{1}
+	p
+	{
+		Uuid %Connection::Source{u4{4922848157847222045,11006962748324703846}}
+		s %Connection::SourcePin{"Exit"}
+		Uuid %Connection::Target{u4{5153447804287539061,2370759095620262416}}
+		s %Connection::TargetPin{"Enter"}
+		Uuid %Type{u4{4298437499779136068,10493372777512850025}}
+	}
+}
+o
+{
+	Uuid %id{u4{967194249836923430,10612279372397175515}}
+	s %t{"ezBlackboardCondition"}
+	u3 %v{1}
+	p
+	{
+		d %ComparisonValue{0x0000000000001440}
+		s %EntryName{"Round"}
+		s %Operator{"ezComparisonOperator::LessEqual"}
+	}
+}
+o
+{
+	Uuid %id{u4{3299369928732152367,10739465614460342260}}
+	s %t{"ezStateMachineNode"}
+	u3 %v{1}
+	p
+	{
+		s %Name{"Fight 2"}
+		Vec2 %Node::Pos{f{0x9D533D44,0x74AE2544}}
+		Uuid %Type{u4{11781921527944143157,10069756065127922408}}
+	}
+}
+o
+{
+	Uuid %id{u4{13140390445635751176,10836603640380972226}}
+	s %t{"ezStateMachineState_Script"}
+	u3 %v{1}
+	p
+	{
+		VarDict %Parameters
+		{
+			s %SpawnNodeName{"Spawn-Blue"}
+		}
+		s %ScriptClass{"{ c86d0682-9622-469a-a9f9-038b4ad4e0f4 }"}
+	}
+}
+o
+{
+	Uuid %id{u4{7352472207488839483,10909755302177404754}}
+	s %t{"ezStateMachineState_Script"}
+	u3 %v{1}
+	p
+	{
+		VarDict %Parameters{}
+		s %ScriptClass{"{ 312eec35-288e-4a16-b517-ab2682e51814 }"}
+	}
+}
+o
+{
+	Uuid %id{u4{11136119621818472714,10976333091712700755}}
+	s %t{"ezStateMachineTransition_Compound"}
+	u3 %v{1}
+	p
+	{
+		s %Operator{"ezStateMachineLogicOperator::And"}
+		VarArray %SubTransitions
+		{
+			Uuid{u4{7506065669634381088,10995421436050868104}}
+		}
+	}
+}
+o
+{
+	Uuid %id{u4{7506065669634381088,10995421436050868104}}
+	s %t{"ezStateMachineTransition_BlackboardConditions"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Conditions
+		{
+			Uuid{u4{967194249836923430,10612279372397175515}}
+		}
+		s %Operator{"ezStateMachineLogicOperator::And"}
+	}
+}
+o
+{
+	Uuid %id{u4{4922848157847222045,11006962748324703846}}
+	s %t{"ezStateMachineNode"}
+	u3 %v{1}
+	p
+	{
+		s %Name{"Wave 2"}
+		Vec2 %Node::Pos{f{0x10AE1844,0x5ADEFE43}}
+		Uuid %Type{u4{13140390445635751176,10836603640380972226}}
+	}
+}
+o
+{
+	Uuid %id{u4{17581673993409861968,11080114410121136374}}
+	s %t{"ezStateMachineNode"}
+	u3 %v{1}
+	p
+	{
+		s %Name{"Countdown"}
+		Vec2 %Node::Pos{f{0x370DA143,0x49131E43}}
+		Uuid %Type{u4{7352472207488839483,10909755302177404754}}
 	}
 }
 o
@@ -290,9 +810,9 @@ o
 	u3 %v{1}
 	p
 	{
-		s %Name{"Next Wave"}
-		Vec2 %Node::Pos{f{0x94E0A143,0x0F8FC443}}
-		Uuid %Type{u4{4551468412939794575,5210949883314258339}}
+		s %Name{"Wave Loop 1"}
+		Vec2 %Node::Pos{f{0xAEC3EF43,0x7CE79A43}}
+		Uuid %Type{u4{14317599931257699771,5127726314072926383}}
 	}
 }
 }
@@ -516,6 +1036,23 @@ o
 		s %PluginName{"Static"}
 		VarArray %Properties{}
 		s %TypeName{"ezStateMachineTransition_BlackboardConditions"}
+		u3 %TypeVersion{1}
+	}
+}
+o
+{
+	Uuid %id{u4{4091127404087176962,12316384328150243321}}
+	s %t{"ezReflectedTypeDescriptor"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Attributes{}
+		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
+		VarArray %Functions{}
+		s %ParentTypeName{"ezStateMachineNodeBase"}
+		s %PluginName{"ezEditorPluginAssets"}
+		VarArray %Properties{}
+		s %TypeName{"ezStateMachineNodeAny"}
 		u3 %TypeVersion{1}
 	}
 }

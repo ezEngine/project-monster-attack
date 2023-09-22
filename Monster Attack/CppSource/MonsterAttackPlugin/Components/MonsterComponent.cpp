@@ -18,11 +18,12 @@
 #include <MonsterAttackPlugin/GameState/MonsterAttackGameState.h>
 
 // clang-format off
-EZ_BEGIN_COMPONENT_TYPE(ezMonsterComponent, 2, ezComponentMode::Dynamic)
+EZ_BEGIN_COMPONENT_TYPE(ezMonsterComponent, 3, ezComponentMode::Dynamic)
 {
   EZ_BEGIN_PROPERTIES
   {
     EZ_MEMBER_PROPERTY("Health", m_iHealthPoints)->AddAttributes(new ezDefaultValueAttribute(100)),
+    EZ_MEMBER_PROPERTY("MoneyReward", m_iMoneyReward)->AddAttributes(new ezDefaultValueAttribute(100)),
     EZ_MEMBER_PROPERTY("WalkSpeed", m_fWalkSpeed)->AddAttributes(new ezDefaultValueAttribute(4.0f)),
     EZ_MEMBER_PROPERTY("NavmeshConfig", m_sNavmeshConfig)->AddAttributes(new ezDynamicStringEnumAttribute("AiNavmeshConfig")),
     EZ_MEMBER_PROPERTY("PathSearchConfig", m_sPathSearchConfig)->AddAttributes(new ezDynamicStringEnumAttribute("AiPathSearchConfig")),
@@ -52,6 +53,7 @@ void ezMonsterComponent::SerializeComponent(ezWorldWriter& stream) const
   s << m_sPathSearchConfig;
   s << m_iHealthPoints;
   s << m_fWalkSpeed;
+  s << m_iMoneyReward;
 }
 
 void ezMonsterComponent::DeserializeComponent(ezWorldReader& stream)
@@ -69,6 +71,11 @@ void ezMonsterComponent::DeserializeComponent(ezWorldReader& stream)
     s >> m_iHealthPoints;
     s >> m_fWalkSpeed;
   }
+
+  if (uiVersion >= 3)
+  {
+    s >> m_iMoneyReward;
+  }
 }
 
 void ezMonsterComponent::OnSimulationStarted()
@@ -79,6 +86,11 @@ void ezMonsterComponent::OnSimulationStarted()
   if (GetWorld()->TryGetObjectWithGlobalKey("Goal", pMoveToTarget))
   {
     m_hMoveToTarget = pMoveToTarget->GetHandle();
+  }
+
+  if (MonsterAttackGameState* pGameState = ezDynamicCast<MonsterAttackGameState*>(ezGameApplication::GetGameApplicationInstance()->GetActiveGameState()))
+  {
+    pGameState->AddMonster();
   }
 }
 
@@ -177,7 +189,6 @@ void ezMonsterComponent::Update()
   }
 }
 
-
 void ezMonsterComponent::CheckGroundType()
 {
   const ezTime tNow = GetWorld()->GetClock().GetAccumulatedTime();
@@ -239,7 +250,7 @@ void ezMonsterComponent::OnMsgDamage(ezMsgDamage& msg)
   {
     if (MonsterAttackGameState* pGameState = ezDynamicCast<MonsterAttackGameState*>(ezGameApplication::GetGameApplicationInstance()->GetActiveGameState()))
     {
-      pGameState->AddDeadMonster(GetOwner()->GetHandle());
+      pGameState->AddDeadMonster(GetOwner()->GetHandle(), m_iMoneyReward);
     }
 
     if (auto pBoard = ezBlackboardComponent::FindBlackboard(GetOwner()))

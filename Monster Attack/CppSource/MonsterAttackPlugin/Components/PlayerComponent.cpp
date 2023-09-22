@@ -52,6 +52,27 @@ void ezPlayerComponent::DeserializeComponent(ezWorldReader& stream)
 void ezPlayerComponent::OnSimulationStarted()
 {
   SUPER::OnSimulationStarted();
+
+  ezHashedString sName;
+  sName.Assign("LevelState");
+  m_pLevelState = ezBlackboard::GetOrCreateGlobal(sName);
+
+  sName.Assign("Money");
+  m_pLevelState->RegisterEntry(sName, 0);
+  m_pLevelState->SetEntryValue(sName, 0).AssertSuccess();
+
+  sName.Assign("Points");
+  m_pLevelState->RegisterEntry(sName, 1000);
+  m_pLevelState->SetEntryValue(sName, 1000).AssertSuccess();
+
+  sName.Assign("Monsters");
+  m_pLevelState->RegisterEntry(sName, 0);
+  m_pLevelState->SetEntryValue(sName, 0).AssertSuccess();
+
+  // TODO: remove
+  sName.Assign("Round");
+  m_pLevelState->RegisterEntry(sName, 0);
+  m_pLevelState->SetEntryValue(sName, 0).AssertSuccess();
 }
 
 void ezPlayerComponent::OnMsgInputActionTriggered(ezMsgInputActionTriggered& msg)
@@ -75,6 +96,7 @@ void ezPlayerComponent::OnMsgInputActionTriggered(ezMsgInputActionTriggered& msg
     {
       m_Action = PlayerAction::ShootMagicBullet;
       m_TrapPlacement = TrapPlacement::None;
+      m_iRequiredMoney = 0;
       ClearPrevizObject();
       return;
     }
@@ -82,6 +104,7 @@ void ezPlayerComponent::OnMsgInputActionTriggered(ezMsgInputActionTriggered& msg
     {
       m_Action = PlayerAction::PlaceSpikeTrap;
       m_TrapPlacement = TrapPlacement::Floor;
+      m_iRequiredMoney = 1000;
       m_hPrevizPrefab = ezResourceManager::LoadResource<ezPrefabResource>("Vis-Trap-Spike");
       m_hPlacePrefab = ezResourceManager::LoadResource<ezPrefabResource>("Trap-Spike");
       ClearPrevizObject();
@@ -91,6 +114,7 @@ void ezPlayerComponent::OnMsgInputActionTriggered(ezMsgInputActionTriggered& msg
     {
       m_Action = PlayerAction::PlaceArrowTrap;
       m_TrapPlacement = TrapPlacement::Wall;
+      m_iRequiredMoney = 2000;
       m_hPrevizPrefab = ezResourceManager::LoadResource<ezPrefabResource>("Vis-Trap-Arrow");
       m_hPlacePrefab = ezResourceManager::LoadResource<ezPrefabResource>("Trap-Arrow");
       ClearPrevizObject();
@@ -100,6 +124,7 @@ void ezPlayerComponent::OnMsgInputActionTriggered(ezMsgInputActionTriggered& msg
     {
       m_Action = PlayerAction::PlaceTarTrap;
       m_TrapPlacement = TrapPlacement::Floor;
+      m_iRequiredMoney = 500;
       m_hPrevizPrefab = ezResourceManager::LoadResource<ezPrefabResource>("Vis-Trap-Tar");
       m_hPlacePrefab = ezResourceManager::LoadResource<ezPrefabResource>("Trap-Tar");
       ClearPrevizObject();
@@ -129,8 +154,12 @@ void ezPlayerComponent::OnMsgInputActionTriggered(ezMsgInputActionTriggered& msg
   {
     if (msg.m_sInputAction == ezTempHashedString("Shoot") && msg.m_TriggerState == ezTriggerState::Activated)
     {
-      if (!m_hPrevizObject.IsInvalidated())
+      ezInt32 iMoney = m_pLevelState->GetEntry("Money")->m_Value.ConvertTo<ezInt32>();
+
+      if (!m_hPrevizObject.IsInvalidated() && iMoney >= m_iRequiredMoney)
       {
+        m_pLevelState->SetEntryValue("Money", iMoney - m_iRequiredMoney).AssertSuccess();
+
         ClearPrevizObject();
 
         ezResourceLock<ezPrefabResource> pPrefab(m_hPlacePrefab, ezResourceAcquireMode::BlockTillLoaded_NeverFail);

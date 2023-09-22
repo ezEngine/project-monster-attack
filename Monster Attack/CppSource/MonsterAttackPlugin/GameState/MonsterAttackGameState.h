@@ -24,7 +24,8 @@ public:
   ezSelectedObjectsContext m_ObjectsToHighlight;
 
   void MonsterReachedGoal();
-  void AddDeadMonster(ezGameObjectHandle hObject);
+  void AddDeadMonster(ezGameObjectHandle hObject, ezInt32 iMoneyReward);
+  void AddMonster();
 
 protected:
   virtual void ConfigureMainWindowInputDevices(ezWindow* pWindow) override;
@@ -37,7 +38,7 @@ private:
   virtual void BeforeWorldUpdate() override;
   virtual void AfterWorldUpdate() override;
 
-  ezUInt32 m_uiMonstersReachedGoal = 0;
-
+  ezSharedPtr<ezBlackboard> m_pLevelState;
   ezDeque<ezGameObjectHandle> m_DeadMonsters;
+
 };
