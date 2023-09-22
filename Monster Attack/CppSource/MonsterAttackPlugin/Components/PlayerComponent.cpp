@@ -191,12 +191,12 @@ bool ezPlayerComponent::DetermineTrapPlacement(const ezGameObject* pCameraObject
   if (!pPhysics)
     return false;
 
-  const ezInt32 iColFilter = pPhysics->GetCollisionFilterConfig().GetFilterGroupByName("Interaction Raycast");
-  EZ_ASSERT_DEBUG(iColFilter >= 0, "Collision filter is unknown.");
+  const ezUInt32 uiColFilter = pPhysics->GetCollisionLayerByName("Interaction Raycast");
+  EZ_ASSERT_DEBUG(uiColFilter != ezInvalidIndex, "Collision filter is unknown.");
 
   ezPhysicsQueryParameters params;
   params.m_bIgnoreInitialOverlap = true;
-  params.m_uiCollisionLayer = (ezUInt8)iColFilter;
+  params.m_uiCollisionLayer = (ezUInt8)uiColFilter;
   params.m_ShapeTypes = ezPhysicsShapeType::Static;
 
   ezPhysicsCastResult result;

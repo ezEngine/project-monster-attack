@@ -192,12 +192,12 @@ void ezMonsterComponent::CheckGroundType()
   if (!pPhysics)
     return;
 
-  const ezInt32 iColFilter = pPhysics->GetCollisionFilterConfig().GetFilterGroupByName("Ground Raycast");
-  EZ_ASSERT_DEBUG(iColFilter >= 0, "Collision filter is unknown.");
+  const ezUInt32 uiColFilter = pPhysics->GetCollisionLayerByName("Ground Raycast");
+  EZ_ASSERT_DEBUG(uiColFilter != ezInvalidIndex, "Collision filter is unknown.");
 
   ezPhysicsQueryParameters params;
   params.m_bIgnoreInitialOverlap = true;
-  params.m_uiCollisionLayer = (ezUInt8)iColFilter;
+  params.m_uiCollisionLayer = (ezUInt8)uiColFilter;
   params.m_ShapeTypes = ezPhysicsShapeType::Static | ezPhysicsShapeType::Query;
 
   ezPhysicsCastResult result;
