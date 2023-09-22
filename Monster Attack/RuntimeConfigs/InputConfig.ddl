@@ -188,3 +188,14 @@ InputAction
 		float %Scale{1}
 	}
 }
+InputAction
+{
+	string %Set{"Default"}
+	string %Action{"StartRound"}
+	bool %TimeScale{false}
+	Slot
+	{
+		string %Key{"keyboard_g"}
+		float %Scale{1}
+	}
+}

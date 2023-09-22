@@ -10,6 +10,7 @@
 #include <GameEngine/Gameplay/SpawnComponent.h>
 #include <GameEngine/Physics/CharacterControllerComponent.h>
 #include <GameEngine/Physics/CollisionFilter.h>
+#include <GameEngine/StateMachine/StateMachineComponent.h>
 #include <MonsterAttackPlugin/Components/PlayerComponent.h>
 #include <MonsterAttackPlugin/GameState/MonsterAttackGameState.h>
 
@@ -57,6 +58,19 @@ void ezPlayerComponent::OnMsgInputActionTriggered(ezMsgInputActionTriggered& msg
 {
   if (msg.m_TriggerState == ezTriggerState::Activated)
   {
+    if (msg.m_sInputAction == ezTempHashedString("StartRound"))
+    {
+      ezGameObject* pObj;
+      if (GetWorld()->TryGetObjectWithGlobalKey("LevelLogic", pObj))
+      {
+        ezStateMachineComponent* pSM;
+        if (pObj->TryGetComponentOfBaseType(pSM))
+        {
+          pSM->FireTransitionEvent("StartRound");
+        }
+      }
+      return;
+    }
     if (msg.m_sInputAction == ezTempHashedString("Select_MagicBullet"))
     {
       m_Action = PlayerAction::ShootMagicBullet;
