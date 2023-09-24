@@ -98,10 +98,10 @@ void MonsterAttackGameState::ProcessInput()
 void MonsterAttackGameState::MonsterReachedGoal()
 {
   const ezInt32 iPoints = ezMath::Max(0, m_pLevelState->GetEntry("Points")->m_Value.ConvertTo<ezInt32>() - 1);
-  m_pLevelState->SetEntryValue("Points", iPoints).AssertSuccess();
+  m_pLevelState->SetEntryValue("Points", iPoints);
 
   const ezInt32 iMonsters = ezMath::Max(0, m_pLevelState->GetEntry("Monsters")->m_Value.ConvertTo<ezInt32>() - 1);
-  m_pLevelState->SetEntryValue("Monsters", iMonsters).AssertSuccess();
+  m_pLevelState->SetEntryValue("Monsters", iMonsters);
 }
 
 void MonsterAttackGameState::AddDeadMonster(ezGameObjectHandle hObject, ezInt32 iMoneyReward)
@@ -109,16 +109,16 @@ void MonsterAttackGameState::AddDeadMonster(ezGameObjectHandle hObject, ezInt32 
   m_DeadMonsters.PushBack(hObject);
 
   const ezInt32 iMoney = m_pLevelState->GetEntry("Money")->m_Value.ConvertTo<ezInt32>() + iMoneyReward;
-  m_pLevelState->SetEntryValue("Money", iMoney).AssertSuccess();
+  m_pLevelState->SetEntryValue("Money", iMoney);
 
   const ezInt32 iMonsters = ezMath::Max(0, m_pLevelState->GetEntry("Monsters")->m_Value.ConvertTo<ezInt32>() - 1);
-  m_pLevelState->SetEntryValue("Monsters", iMonsters).AssertSuccess();
+  m_pLevelState->SetEntryValue("Monsters", iMonsters);
 }
 
 void MonsterAttackGameState::AddMonster()
 {
   const ezInt32 iMonsters = m_pLevelState->GetEntry("Monsters")->m_Value.ConvertTo<ezInt32>() + 1;
-  m_pLevelState->SetEntryValue("Monsters", iMonsters).AssertSuccess();
+  m_pLevelState->SetEntryValue("Monsters", iMonsters);
 }
 
 void MonsterAttackGameState::ConfigureMainCamera()

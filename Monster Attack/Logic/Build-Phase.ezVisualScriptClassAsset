@@ -24,7 +24,7 @@ o
 		s %AssetType{"VisualScriptClass"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{13469633564773291199,5115471729823526797}}
-		u4 %Hash{4226556041840034462}
+		u4 %Hash{3431158919756113759}
 		VarArray %MetaInfo
 		{
 			Uuid{u4{5869984133418948191,4639989621256849021}}
@@ -497,7 +497,7 @@ o
 	u3 %v{1}
 	p
 	{
-		Vec2 %Node::Pos{f{0xF670B544,0xDFD30CC2}}
+		Vec2 %Node::Pos{f{0x9530B544,0x9E2845C2}}
 		s %Type{"ezVisualScriptDataType::Int"}
 	}
 }
@@ -555,7 +555,7 @@ o
 	u3 %v{1}
 	p
 	{
-		HashedString %Name{s{"Money"}}
+		s %Name{"Money"}
 		Vec2 %Node::Pos{f{0x500EC744,0x8FF8FBC3}}
 		i3 %Value{0}
 	}
@@ -855,7 +855,7 @@ o
 		Invalid %ConstantValue{}
 		s %Flags{"ezPropertyFlags::StandardType|ezPropertyFlags::Phantom"}
 		s %Name{"Name"}
-		s %Type{"ezHashedString"}
+		s %Type{"ezString"}
 	}
 }
 o

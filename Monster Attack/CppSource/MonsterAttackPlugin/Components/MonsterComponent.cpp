@@ -183,8 +183,8 @@ void ezMonsterComponent::Update()
 
     if (auto pBoard = ezBlackboardComponent::FindBlackboard(GetOwner()))
     {
-      pBoard->SetEntryValue("State", 1).IgnoreResult(); // "walk" animation
-      pBoard->SetEntryValue("MoveSpeed", ezMath::Clamp(steering.m_vVelocity.GetLength() * 0.5f, 0.0f, 2.0f)).IgnoreResult();
+      pBoard->SetEntryValue("State", 1); // "walk" animation
+      pBoard->SetEntryValue("MoveSpeed", ezMath::Clamp(steering.m_vVelocity.GetLength() * 0.5f, 0.0f, 2.0f));
     }
   }
 }
@@ -255,7 +255,7 @@ void ezMonsterComponent::OnMsgDamage(ezMsgDamage& msg)
 
     if (auto pBoard = ezBlackboardComponent::FindBlackboard(GetOwner()))
     {
-      pBoard->SetEntryValue("State", 2).IgnoreResult(); // "die" animation
+      pBoard->SetEntryValue("State", 2); // "die" animation
     }
   }
 }

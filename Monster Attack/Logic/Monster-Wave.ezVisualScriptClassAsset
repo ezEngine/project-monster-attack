@@ -21,7 +21,7 @@ o
 		s %AssetType{"VisualScriptClass"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{17645336756662565289,5087543805204039298}}
-		u4 %Hash{15595943229917592988}
+		u4 %Hash{18237578620731572873}
 		VarArray %MetaInfo
 		{
 			Uuid{u4{11573012798580934522,4726721281650221815}}
@@ -208,7 +208,7 @@ o
 	{
 		b %IgnoreSpawnDelay{1}
 		Vec3 %LocalOffset{f{0,0,0}}
-		Vec2 %Node::Pos{f{0x83480544,0x386E73C3}}
+		Vec2 %Node::Pos{f{0x83480544,0xC27276C3}}
 	}
 }
 o
@@ -465,7 +465,7 @@ o
 	u3 %v{1}
 	p
 	{
-		HashedString %Name{s{"Round"}}
+		s %Name{"Round"}
 		Vec2 %Node::Pos{f{0x5CCFAD44,0xD1DAD343}}
 		i3 %Value{0}
 	}
@@ -1197,7 +1197,7 @@ o
 		Invalid %ConstantValue{}
 		s %Flags{"ezPropertyFlags::StandardType|ezPropertyFlags::Phantom"}
 		s %Name{"Name"}
-		s %Type{"ezHashedString"}
+		s %Type{"ezString"}
 	}
 }
 o
