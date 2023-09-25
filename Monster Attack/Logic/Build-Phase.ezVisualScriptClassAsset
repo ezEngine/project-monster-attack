@@ -24,7 +24,7 @@ o
 		s %AssetType{"VisualScriptClass"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{13469633564773291199,5115471729823526797}}
-		u4 %Hash{3431158919756113759}
+		u4 %Hash{10337267724633132474}
 		VarArray %MetaInfo
 		{
 			Uuid{u4{5869984133418948191,4639989621256849021}}
@@ -42,7 +42,7 @@ o
 	p
 	{
 		VarArray %Attributes{}
-		i3 %DefaultValue{5000}
+		i3 %DefaultValue{0}
 		s %Name{"AddMoney"}
 		s %Type{""}
 	}
@@ -393,7 +393,7 @@ o
 	u3 %v{1}
 	p
 	{
-		i3 %DefaultValue{5000}
+		i3 %DefaultValue{0}
 		b %Expose{1}
 		HashedString %Name{s{"AddMoney"}}
 	}
@@ -693,7 +693,10 @@ o
 	u3 %v{2}
 	p
 	{
-		VarArray %Attributes{}
+		VarArray %Attributes
+		{
+			Uuid{u4{16067337455299421113,8580442489101944949}}
+		}
 		s %Category{"ezPropertyCategory::Member"}
 		Invalid %ConstantValue{}
 		s %Flags{"ezPropertyFlags::StandardType|ezPropertyFlags::Phantom"}
@@ -850,7 +853,10 @@ o
 	u3 %v{2}
 	p
 	{
-		VarArray %Attributes{}
+		VarArray %Attributes
+		{
+			Uuid{u4{15772433660748401426,18037605005375837989}}
+		}
 		s %Category{"ezPropertyCategory::Member"}
 		Invalid %ConstantValue{}
 		s %Flags{"ezPropertyFlags::StandardType|ezPropertyFlags::Phantom"}
@@ -1122,6 +1128,16 @@ o
 }
 o
 {
+	Uuid %id{u4{16067337455299421113,8580442489101944949}}
+	s %t{"ezDynamicStringEnumAttribute"}
+	u3 %v{1}
+	p
+	{
+		s %DynamicEnum{"BlackboardNamesEnum"}
+	}
+}
+o
+{
 	Uuid %id{u4{6089094783765586323,8705960867921430659}}
 	s %t{"ezReflectedTypeDescriptor"}
 	u3 %v{1}
@@ -1306,6 +1322,16 @@ o
 		s %Flags{"ezPropertyFlags::IsEnum|ezPropertyFlags::Phantom"}
 		s %Name{"Type"}
 		s %Type{"ezVisualScriptDataType"}
+	}
+}
+o
+{
+	Uuid %id{u4{92386330916517772,12172228747308144681}}
+	s %t{"ezDynamicStringEnumAttribute"}
+	u3 %v{1}
+	p
+	{
+		s %DynamicEnum{"BlackboardKeysEnum"}
 	}
 }
 o
@@ -1507,7 +1533,10 @@ o
 	u3 %v{2}
 	p
 	{
-		VarArray %Attributes{}
+		VarArray %Attributes
+		{
+			Uuid{u4{92386330916517772,12172228747308144681}}
+		}
 		s %Category{"ezPropertyCategory::Member"}
 		Invalid %ConstantValue{}
 		s %Flags{"ezPropertyFlags::StandardType|ezPropertyFlags::Phantom"}
@@ -1648,6 +1677,16 @@ o
 		VarArray %Properties{}
 		s %TypeName{"ezReflectedClass"}
 		u3 %TypeVersion{1}
+	}
+}
+o
+{
+	Uuid %id{u4{15772433660748401426,18037605005375837989}}
+	s %t{"ezDynamicStringEnumAttribute"}
+	u3 %v{1}
+	p
+	{
+		s %DynamicEnum{"BlackboardKeysEnum"}
 	}
 }
 o

@@ -56,23 +56,6 @@ void ezPlayerComponent::OnSimulationStarted()
   ezHashedString sName;
   sName.Assign("LevelState");
   m_pLevelState = ezBlackboard::GetOrCreateGlobal(sName);
-
-  sName.Assign("Money");
-  m_pLevelState->RegisterEntry(sName, 0);
-  m_pLevelState->SetEntryValue(sName, 0);
-
-  sName.Assign("Points");
-  m_pLevelState->RegisterEntry(sName, 1000);
-  m_pLevelState->SetEntryValue(sName, 1000);
-
-  sName.Assign("Monsters");
-  m_pLevelState->RegisterEntry(sName, 0);
-  m_pLevelState->SetEntryValue(sName, 0);
-
-  // TODO: remove
-  sName.Assign("Round");
-  m_pLevelState->RegisterEntry(sName, 0);
-  m_pLevelState->SetEntryValue(sName, 0);
 }
 
 void ezPlayerComponent::OnMsgInputActionTriggered(ezMsgInputActionTriggered& msg)
