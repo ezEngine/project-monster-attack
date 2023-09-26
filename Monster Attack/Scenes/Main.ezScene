@@ -11,7 +11,7 @@ o
 		s %AssetType{"Scene"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{2395698263442221958,4715710380130620745}}
-		u4 %Hash{14582774193369312953}
+		u4 %Hash{14605610498859266439}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps
@@ -286,6 +286,7 @@ o
 		b %Active{1}
 		s %BlackboardName{"LevelState"}
 		s %InitMode{"ezGlobalBlackboardInitMode::ClearEntireBlackboard"}
+		b %ShowDebugInfo{0}
 		s %Template{"{ 6caf7f9e-4794-4ce8-a8bc-f0163db7a203 }"}
 	}
 }
@@ -501,8 +502,8 @@ o
 o
 {
 	Uuid %id{u4{16750808024454450876,5397505454172389753}}
-	s %t{"ezBlackboardComponent"}
-	u3 %v{2}
+	s %t{"ezLocalBlackboardComponent"}
+	u3 %v{1}
 	p
 	{
 		b %Active{1}
@@ -748,6 +749,23 @@ o
 }
 o
 {
+	Uuid %id{u4{18348731351651790920,4897320743890407264}}
+	s %t{"ezReflectedTypeDescriptor"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Attributes{}
+		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
+		VarArray %Functions{}
+		s %ParentTypeName{"ezBlackboardComponent"}
+		s %PluginName{"Static"}
+		VarArray %Properties{}
+		s %TypeName{"ezLocalBlackboardComponent"}
+		u3 %TypeVersion{1}
+	}
+}
+o
+{
 	Uuid %id{u4{5195345338716098525,5056385137718360950}}
 	s %t{"ezReflectedTypeDescriptor"}
 	u3 %v{1}
@@ -788,13 +806,13 @@ o
 	p
 	{
 		VarArray %Attributes{}
-		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
+		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Abstract|ezTypeFlags::Minimal"}
 		VarArray %Functions{}
 		s %ParentTypeName{"ezComponent"}
 		s %PluginName{"Static"}
 		VarArray %Properties{}
 		s %TypeName{"ezBlackboardComponent"}
-		u3 %TypeVersion{2}
+		u3 %TypeVersion{3}
 	}
 }
 o
@@ -1232,7 +1250,7 @@ o
 		VarArray %Attributes{}
 		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
 		VarArray %Functions{}
-		s %ParentTypeName{"ezComponent"}
+		s %ParentTypeName{"ezBlackboardComponent"}
 		s %PluginName{"Static"}
 		VarArray %Properties{}
 		s %TypeName{"ezGlobalBlackboardComponent"}

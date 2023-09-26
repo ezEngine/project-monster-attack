@@ -9,9 +9,12 @@ o
 	p
 	{
 		s %AssetType{"BlackboardTemplate"}
-		VarArray %Dependencies{}
+		VarArray %Dependencies
+		{
+			s{"{ 11b04ae6-c3a4-44c2-9c62-43421b9244b4 }"}
+		}
 		Uuid %DocumentID{u4{261973201346673832,5541758044283568030}}
-		u4 %Hash{4008390818651067872}
+		u4 %Hash{4416659167255071292}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps{}
@@ -40,7 +43,10 @@ o
 	u3 %v{1}
 	p
 	{
-		VarArray %BaseTemplates{}
+		VarArray %BaseTemplates
+		{
+			s{"{ 11b04ae6-c3a4-44c2-9c62-43421b9244b4 }"}
+		}
 		VarArray %Entries
 		{
 			Uuid{u4{1241925382907451792,4668541860692836812}}

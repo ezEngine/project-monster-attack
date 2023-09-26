@@ -21,7 +21,7 @@ o
 		s %AssetType{"VisualScriptClass"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{17291441150378757563,4938412379335619126}}
-		u4 %Hash{4899097325484787897}
+		u4 %Hash{15712552413044536987}
 		VarArray %MetaInfo
 		{
 			Uuid{u4{4749735180171849681,4607492996527252214}}
@@ -34,19 +34,6 @@ o
 }
 Objects
 {
-o
-{
-	Uuid %id{u4{4659874350092047285,4715430157724932929}}
-	s %t{"DocumentNodeManager_DefaultConnection"}
-	u3 %v{1}
-	p
-	{
-		Uuid %Connection::Source{u4{949540026831062971,5063452394267056123}}
-		s %Connection::SourcePin{"Component"}
-		Uuid %Connection::Target{u4{1727973536794968732,4735683651209511960}}
-		s %Connection::TargetPin{"Component"}
-	}
-}
 o
 {
 	Uuid %id{u4{1727973536794968732,4735683651209511960}}
@@ -78,6 +65,19 @@ o
 	{
 		Vec2 %Node::Pos{f{0xF973C843,0x297A5343}}
 		s %TypeName{"ezStateMachineComponent"}
+	}
+}
+o
+{
+	Uuid %id{u4{5008998749979631033,5106273102977335606}}
+	s %t{"DocumentNodeManager_DefaultConnection"}
+	u3 %v{1}
+	p
+	{
+		Uuid %Connection::Source{u4{949540026831062971,5063452394267056123}}
+		s %Connection::SourcePin{"Component"}
+		Uuid %Connection::Target{u4{1727973536794968732,4735683651209511960}}
+		s %Connection::TargetPin{"StateMachineComponent"}
 	}
 }
 o
@@ -155,11 +155,11 @@ o
 			Uuid{u4{16131628620043903620,4808342130211467499}}
 			Uuid{u4{949540026831062971,5063452394267056123}}
 			Uuid{u4{1727973536794968732,4735683651209511960}}
-			Uuid{u4{4659874350092047285,4715430157724932929}}
 			Uuid{u4{2660969229557614755,5648048898238461563}}
 			Uuid{u4{9366978418150750141,5477113505090462804}}
 			Uuid{u4{8372607217346101639,5696918514143225178}}
 			Uuid{u4{383363576410048384,5604413030851164214}}
+			Uuid{u4{5008998749979631033,5106273102977335606}}
 		}
 	}
 }

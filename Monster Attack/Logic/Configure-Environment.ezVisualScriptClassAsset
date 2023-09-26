@@ -11,7 +11,7 @@ o
 		s %AssetType{"VisualScriptClass"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{7829505383130465170,5749873886899031452}}
-		u4 %Hash{13008821769222730191}
+		u4 %Hash{11116604368814530425}
 		VarArray %MetaInfo
 		{
 			Uuid{u4{5865425497123248158,8871016646301024355}}
@@ -114,6 +114,19 @@ o
 }
 o
 {
+	Uuid %id{u4{5351812083533960071,4785174759974547040}}
+	s %t{"DocumentNodeManager_DefaultConnection"}
+	u3 %v{1}
+	p
+	{
+		Uuid %Connection::Source{u4{13252999454979275,15733585419320962210}}
+		s %Connection::SourcePin{"Result"}
+		Uuid %Connection::Target{u4{14268381449555157477,15921370219537973697}}
+		s %Connection::TargetPin{"Blackboard"}
+	}
+}
+o
+{
 	Uuid %id{u4{12749849174814944640,5194499331330062891}}
 	s %t{"ezVisualScriptVariable"}
 	u3 %v{1}
@@ -122,6 +135,19 @@ o
 		i3 %DefaultValue{5000}
 		b %Expose{1}
 		HashedString %Name{s{"StartMoney"}}
+	}
+}
+o
+{
+	Uuid %id{u4{3950966306599484832,5242040396829363299}}
+	s %t{"DocumentNodeManager_DefaultConnection"}
+	u3 %v{1}
+	p
+	{
+		Uuid %Connection::Source{u4{13252999454979275,15733585419320962210}}
+		s %Connection::SourcePin{"Result"}
+		Uuid %Connection::Target{u4{12551302534150232188,2233168960972186315}}
+		s %Connection::TargetPin{"Blackboard"}
 	}
 }
 o
@@ -155,19 +181,6 @@ o
 }
 o
 {
-	Uuid %id{u4{610065789438917527,5519971980769107675}}
-	s %t{"DocumentNodeManager_DefaultConnection"}
-	u3 %v{1}
-	p
-	{
-		Uuid %Connection::Source{u4{13252999454979275,15733585419320962210}}
-		s %Connection::SourcePin{"Result"}
-		Uuid %Connection::Target{u4{12551302534150232188,2233168960972186315}}
-		s %Connection::TargetPin{"Object"}
-	}
-}
-o
-{
 	Uuid %id{u4{2899188767906512012,5684211960141387287}}
 	s %t{"DocumentNodeManager_DefaultConnection"}
 	u3 %v{1}
@@ -193,16 +206,16 @@ o
 			Uuid{u4{2493369750885974225,15305574462858405867}}
 			Uuid{u4{14268381449555157477,15921370219537973697}}
 			Uuid{u4{13252999454979275,15733585419320962210}}
-			Uuid{u4{8420056942073295200,10448566353777208389}}
 			Uuid{u4{321190653987759345,16044765322019215588}}
 			Uuid{u4{15534082923389395448,15139392782931989450}}
 			Uuid{u4{2899188767906512012,5684211960141387287}}
 			Uuid{u4{12551302534150232188,2233168960972186315}}
 			Uuid{u4{17050855812292385672,2356564063453428206}}
 			Uuid{u4{1182109852501586723,10442754775285151521}}
-			Uuid{u4{610065789438917527,5519971980769107675}}
 			Uuid{u4{17282959616916308371,4749492970839222528}}
 			Uuid{u4{16447470436949032124,5243200963235130173}}
+			Uuid{u4{5351812083533960071,4785174759974547040}}
+			Uuid{u4{3950966306599484832,5242040396829363299}}
 		}
 	}
 }
@@ -217,19 +230,6 @@ o
 		s %Connection::SourcePin{"Value"}
 		Uuid %Connection::Target{u4{12551302534150232188,2233168960972186315}}
 		s %Connection::TargetPin{"Value"}
-	}
-}
-o
-{
-	Uuid %id{u4{8420056942073295200,10448566353777208389}}
-	s %t{"DocumentNodeManager_DefaultConnection"}
-	u3 %v{1}
-	p
-	{
-		Uuid %Connection::Source{u4{13252999454979275,15733585419320962210}}
-		s %Connection::SourcePin{"Result"}
-		Uuid %Connection::Target{u4{14268381449555157477,15921370219537973697}}
-		s %Connection::TargetPin{"Object"}
 	}
 }
 o
@@ -310,7 +310,10 @@ o
 	u3 %v{2}
 	p
 	{
-		VarArray %Attributes{}
+		VarArray %Attributes
+		{
+			Uuid{u4{16067337455299421113,8580442489101944949}}
+		}
 		s %Category{"ezPropertyCategory::Member"}
 		Invalid %ConstantValue{}
 		s %Flags{"ezPropertyFlags::StandardType|ezPropertyFlags::Phantom"}
@@ -427,7 +430,10 @@ o
 	u3 %v{2}
 	p
 	{
-		VarArray %Attributes{}
+		VarArray %Attributes
+		{
+			Uuid{u4{15772433660748401426,18037605005375837989}}
+		}
 		s %Category{"ezPropertyCategory::Member"}
 		Invalid %ConstantValue{}
 		s %Flags{"ezPropertyFlags::StandardType|ezPropertyFlags::Phantom"}
@@ -522,6 +528,16 @@ o
 	p
 	{
 		s %Category{"Blackboard"}
+	}
+}
+o
+{
+	Uuid %id{u4{16067337455299421113,8580442489101944949}}
+	s %t{"ezDynamicStringEnumAttribute"}
+	u3 %v{1}
+	p
+	{
+		s %DynamicEnum{"BlackboardNamesEnum"}
 	}
 }
 o
@@ -790,6 +806,16 @@ o
 		VarArray %Properties{}
 		s %TypeName{"ezReflectedClass"}
 		u3 %TypeVersion{1}
+	}
+}
+o
+{
+	Uuid %id{u4{15772433660748401426,18037605005375837989}}
+	s %t{"ezDynamicStringEnumAttribute"}
+	u3 %v{1}
+	p
+	{
+		s %DynamicEnum{"BlackboardKeysEnum"}
 	}
 }
 }

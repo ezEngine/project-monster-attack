@@ -11,7 +11,7 @@ o
 		s %AssetType{"VisualScriptClass"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{8176466039318263222,4760790229536905912}}
-		u4 %Hash{6008284520441032581}
+		u4 %Hash{7581520353001755711}
 		VarArray %MetaInfo
 		{
 			Uuid{u4{11781420671416618087,17050951298368771150}}
@@ -98,7 +98,7 @@ o
 }
 o
 {
-	Uuid %id{u4{3855291377004014481,5124655840634481261}}
+	Uuid %id{u4{6730375056917673363,4846251065257250237}}
 	s %t{"DocumentNodeManager_DefaultConnection"}
 	u3 %v{1}
 	p
@@ -106,7 +106,33 @@ o
 		Uuid %Connection::Source{u4{14338030335729686221,16371465666036448506}}
 		s %Connection::SourcePin{"Result"}
 		Uuid %Connection::Target{u4{18316719675115878260,13255646992314176984}}
-		s %Connection::TargetPin{"Object"}
+		s %Connection::TargetPin{"Blackboard"}
+	}
+}
+o
+{
+	Uuid %id{u4{4021480654126907829,5206518225623918216}}
+	s %t{"DocumentNodeManager_DefaultConnection"}
+	u3 %v{1}
+	p
+	{
+		Uuid %Connection::Source{u4{14338030335729686221,16371465666036448506}}
+		s %Connection::SourcePin{"Result"}
+		Uuid %Connection::Target{u4{11470210911824032240,8042139633341996328}}
+		s %Connection::TargetPin{"Blackboard"}
+	}
+}
+o
+{
+	Uuid %id{u4{271477207966160555,5311580838300613352}}
+	s %t{"DocumentNodeManager_DefaultConnection"}
+	u3 %v{1}
+	p
+	{
+		Uuid %Connection::Source{u4{14338030335729686221,16371465666036448506}}
+		s %Connection::SourcePin{"Result"}
+		Uuid %Connection::Target{u4{14565036755561461597,2398207561629944521}}
+		s %Connection::TargetPin{"Blackboard"}
 	}
 }
 o
@@ -212,7 +238,6 @@ o
 		{
 			Uuid{u4{15151692977726006695,4702435812963390880}}
 			Uuid{u4{11470210911824032240,8042139633341996328}}
-			Uuid{u4{15145412082139746884,10901065980177170995}}
 			Uuid{u4{17835905314500175908,7341991207525877333}}
 			Uuid{u4{6966954134749488893,15502129901553164235}}
 			Uuid{u4{17116619379253282544,15530887058852557677}}
@@ -220,7 +245,6 @@ o
 			Uuid{u4{13676344277868806717,10821381406768188359}}
 			Uuid{u4{5528711424152113605,15834351545691866970}}
 			Uuid{u4{3220006379111184729,10425648889686160212}}
-			Uuid{u4{2774792237599747921,10114987605056338661}}
 			Uuid{u4{18443533416139232335,3314105581905095799}}
 			Uuid{u4{10532269994737027476,2210883992103871113}}
 			Uuid{u4{14338030335729686221,16371465666036448506}}
@@ -229,7 +253,6 @@ o
 			Uuid{u4{18343094761311397634,8074392584865813209}}
 			Uuid{u4{4807949301749217713,5492660020839547013}}
 			Uuid{u4{18316719675115878260,13255646992314176984}}
-			Uuid{u4{3855291377004014481,5124655840634481261}}
 			Uuid{u4{3877662250218915765,12214554047571515949}}
 			Uuid{u4{15734024985814058152,5566870875368446998}}
 			Uuid{u4{12644016285857543298,4745379263232939753}}
@@ -238,6 +261,9 @@ o
 			Uuid{u4{12620877398643026844,5483908412458308994}}
 			Uuid{u4{8798755588055757495,5546015559669436820}}
 			Uuid{u4{8854121991006280604,5381421841948935300}}
+			Uuid{u4{271477207966160555,5311580838300613352}}
+			Uuid{u4{4021480654126907829,5206518225623918216}}
+			Uuid{u4{6730375056917673363,4846251065257250237}}
 		}
 	}
 }
@@ -280,19 +306,6 @@ o
 }
 o
 {
-	Uuid %id{u4{2774792237599747921,10114987605056338661}}
-	s %t{"DocumentNodeManager_DefaultConnection"}
-	u3 %v{1}
-	p
-	{
-		Uuid %Connection::Source{u4{14338030335729686221,16371465666036448506}}
-		s %Connection::SourcePin{"Result"}
-		Uuid %Connection::Target{u4{14565036755561461597,2398207561629944521}}
-		s %Connection::TargetPin{"Object"}
-	}
-}
-o
-{
 	Uuid %id{u4{3220006379111184729,10425648889686160212}}
 	s %t{"DocumentNodeManager_DefaultConnection"}
 	u3 %v{1}
@@ -315,19 +328,6 @@ o
 		s %Connection::SourcePin{""}
 		Uuid %Connection::Target{u4{14338030335729686221,16371465666036448506}}
 		s %Connection::TargetPin{""}
-	}
-}
-o
-{
-	Uuid %id{u4{15145412082139746884,10901065980177170995}}
-	s %t{"DocumentNodeManager_DefaultConnection"}
-	u3 %v{1}
-	p
-	{
-		Uuid %Connection::Source{u4{14338030335729686221,16371465666036448506}}
-		s %Connection::SourcePin{"Result"}
-		Uuid %Connection::Target{u4{11470210911824032240,8042139633341996328}}
-		s %Connection::TargetPin{"Object"}
 	}
 }
 o
@@ -492,7 +492,10 @@ o
 	u3 %v{2}
 	p
 	{
-		VarArray %Attributes{}
+		VarArray %Attributes
+		{
+			Uuid{u4{16067337455299421113,8580442489101944949}}
+		}
 		s %Category{"ezPropertyCategory::Member"}
 		Invalid %ConstantValue{}
 		s %Flags{"ezPropertyFlags::StandardType|ezPropertyFlags::Phantom"}
@@ -767,6 +770,16 @@ o
 }
 o
 {
+	Uuid %id{u4{16067337455299421113,8580442489101944949}}
+	s %t{"ezDynamicStringEnumAttribute"}
+	u3 %v{1}
+	p
+	{
+		s %DynamicEnum{"BlackboardNamesEnum"}
+	}
+}
+o
+{
 	Uuid %id{u4{6089094783765586323,8705960867921430659}}
 	s %t{"ezReflectedTypeDescriptor"}
 	u3 %v{1}
@@ -897,6 +910,16 @@ o
 		s %Flags{"ezPropertyFlags::IsEnum|ezPropertyFlags::Phantom"}
 		s %Name{"Type"}
 		s %Type{"ezVisualScriptDataType"}
+	}
+}
+o
+{
+	Uuid %id{u4{92386330916517772,12172228747308144681}}
+	s %t{"ezDynamicStringEnumAttribute"}
+	u3 %v{1}
+	p
+	{
+		s %DynamicEnum{"BlackboardKeysEnum"}
 	}
 }
 o
@@ -1038,7 +1061,10 @@ o
 	u3 %v{2}
 	p
 	{
-		VarArray %Attributes{}
+		VarArray %Attributes
+		{
+			Uuid{u4{92386330916517772,12172228747308144681}}
+		}
 		s %Category{"ezPropertyCategory::Member"}
 		Invalid %ConstantValue{}
 		s %Flags{"ezPropertyFlags::StandardType|ezPropertyFlags::Phantom"}

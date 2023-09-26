@@ -11,7 +11,7 @@ o
 		s %AssetType{"Prefab"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{14322564914651393684,4963922866170075549}}
-		u4 %Hash{11068605340123100127}
+		u4 %Hash{17180727481610156507}
 		VarArray %MetaInfo
 		{
 			Uuid{u4{12440196303460809848,14710351079864222681}}
@@ -84,11 +84,12 @@ o
 {
 	Uuid %id{u4{7489573408712554901,5282313501795719622}}
 	s %t{"ezMonsterComponent"}
-	u3 %v{2}
+	u3 %v{3}
 	p
 	{
 		b %Active{1}
 		i3 %Health{100}
+		i3 %MoneyReward{100}
 		HashedString %NavmeshConfig{s{"Default"}}
 		HashedString %PathSearchConfig{s{"Default"}}
 		f %WalkSpeed{0x00008040}
@@ -109,8 +110,8 @@ o
 o
 {
 	Uuid %id{u4{5640131724605288833,5519171159445546657}}
-	s %t{"ezBlackboardComponent"}
-	u3 %v{2}
+	s %t{"ezLocalBlackboardComponent"}
+	u3 %v{1}
 	p
 	{
 		b %Active{1}
@@ -490,11 +491,11 @@ o
 o
 {
 	Uuid %id{u4{4200982773813287904,2842212148927493982}}
-	s %t{"ezDynamicStringEnumAttribute"}
+	s %t{"ezDefaultValueAttribute"}
 	u3 %v{1}
 	p
 	{
-		s %DynamicEnum{"AiNavmeshConfig"}
+		f %Value{0x00008040}
 	}
 }
 o
@@ -663,8 +664,8 @@ o
 		s %Category{"ezPropertyCategory::Member"}
 		Invalid %ConstantValue{}
 		s %Flags{"ezPropertyFlags::StandardType|ezPropertyFlags::Phantom"}
-		s %Name{"WalkSpeed"}
-		s %Type{"float"}
+		s %Name{"MoneyReward"}
+		s %Type{"ezInt32"}
 	}
 }
 o
@@ -681,8 +682,25 @@ o
 		s %Category{"ezPropertyCategory::Member"}
 		Invalid %ConstantValue{}
 		s %Flags{"ezPropertyFlags::StandardType|ezPropertyFlags::Phantom"}
-		s %Name{"NavmeshConfig"}
-		s %Type{"ezHashedString"}
+		s %Name{"WalkSpeed"}
+		s %Type{"float"}
+	}
+}
+o
+{
+	Uuid %id{u4{18348731351651790920,4897320743890407264}}
+	s %t{"ezReflectedTypeDescriptor"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Attributes{}
+		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
+		VarArray %Functions{}
+		s %ParentTypeName{"ezBlackboardComponent"}
+		s %PluginName{"Static"}
+		VarArray %Properties{}
+		s %TypeName{"ezLocalBlackboardComponent"}
+		u3 %TypeVersion{1}
 	}
 }
 o
@@ -842,13 +860,13 @@ o
 	p
 	{
 		VarArray %Attributes{}
-		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
+		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Abstract|ezTypeFlags::Minimal"}
 		VarArray %Functions{}
 		s %ParentTypeName{"ezComponent"}
 		s %PluginName{"Static"}
 		VarArray %Properties{}
 		s %TypeName{"ezBlackboardComponent"}
-		u3 %TypeVersion{2}
+		u3 %TypeVersion{3}
 	}
 }
 o
@@ -1083,9 +1101,10 @@ o
 			Uuid{u4{7600809575812605786,4692391718551750473}}
 			Uuid{u4{4504615383615310465,4833045350569287382}}
 			Uuid{u4{6997428743734299661,8459742691309881615}}
+			Uuid{u4{1749343607899699929,10374059907269797803}}
 		}
 		s %TypeName{"ezMonsterComponent"}
-		u3 %TypeVersion{2}
+		u3 %TypeVersion{3}
 	}
 }
 o
@@ -1143,7 +1162,7 @@ o
 		s %Category{"ezPropertyCategory::Member"}
 		Invalid %ConstantValue{}
 		s %Flags{"ezPropertyFlags::StandardType|ezPropertyFlags::Phantom"}
-		s %Name{"PathSearchConfig"}
+		s %Name{"NavmeshConfig"}
 		s %Type{"ezHashedString"}
 	}
 }
@@ -1359,6 +1378,16 @@ o
 }
 o
 {
+	Uuid %id{u4{9721072429335994462,10201246061176440721}}
+	s %t{"ezDynamicStringEnumAttribute"}
+	u3 %v{1}
+	p
+	{
+		s %DynamicEnum{"AiPathSearchConfig"}
+	}
+}
+o
+{
 	Uuid %id{u4{5972548128304058585,10335424577519147538}}
 	s %t{"ezReflectedPropertyDescriptor"}
 	u3 %v{2}
@@ -1374,6 +1403,24 @@ o
 		s %Flags{"ezPropertyFlags::StandardType|ezPropertyFlags::Phantom"}
 		s %Name{"Height"}
 		s %Type{"float"}
+	}
+}
+o
+{
+	Uuid %id{u4{1749343607899699929,10374059907269797803}}
+	s %t{"ezReflectedPropertyDescriptor"}
+	u3 %v{2}
+	p
+	{
+		VarArray %Attributes
+		{
+			Uuid{u4{9721072429335994462,10201246061176440721}}
+		}
+		s %Category{"ezPropertyCategory::Member"}
+		Invalid %ConstantValue{}
+		s %Flags{"ezPropertyFlags::StandardType|ezPropertyFlags::Phantom"}
+		s %Name{"PathSearchConfig"}
+		s %Type{"ezHashedString"}
 	}
 }
 o
@@ -1653,7 +1700,7 @@ o
 	u3 %v{1}
 	p
 	{
-		f %Value{0x00008040}
+		i3 %Value{100}
 	}
 }
 o
@@ -1866,7 +1913,7 @@ o
 	u3 %v{1}
 	p
 	{
-		s %DynamicEnum{"AiPathSearchConfig"}
+		s %DynamicEnum{"AiNavmeshConfig"}
 	}
 }
 o
