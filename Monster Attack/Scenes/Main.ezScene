@@ -11,7 +11,7 @@ o
 		s %AssetType{"Scene"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{2395698263442221958,4715710380130620745}}
-		u4 %Hash{14605610498859266439}
+		u4 %Hash{11444961933537313983}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps
@@ -292,32 +292,6 @@ o
 }
 o
 {
-	Uuid %id{u4{16142188911668902534,4876416952430344896}}
-	s %t{"ezGameObject"}
-	u3 %v{1}
-	p
-	{
-		b %Active{1}
-		VarArray %Children{}
-		VarArray %Components
-		{
-			Uuid{u4{16750808024454450876,5397505454172389753}}
-		}
-		s %GlobalKey{""}
-		Vec3 %LocalPosition{f{0xCDCC9441,0xCDCC3C41,0x9A991940}}
-		Quat %LocalRotation{f{0,0,0,0x0000803F}}
-		Vec3 %LocalScaling{f{0x0000803F,0x0000803F,0x0000803F}}
-		f %LocalUniformScaling{0x0000803F}
-		s %Mode{"ezObjectMode::Automatic"}
-		s %Name{""}
-		VarArray %Tags
-		{
-			s{"CastShadow"}
-		}
-	}
-}
-o
-{
 	Uuid %id{u4{15429881462864883354,4959684847185012581}}
 	s %t{"ezGameObject"}
 	u3 %v{1}
@@ -501,21 +475,6 @@ o
 }
 o
 {
-	Uuid %id{u4{16750808024454450876,5397505454172389753}}
-	s %t{"ezLocalBlackboardComponent"}
-	u3 %v{1}
-	p
-	{
-		b %Active{1}
-		s %BlackboardName{""}
-		VarArray %Entries{}
-		b %SendEntryChangedMessage{0}
-		b %ShowDebugInfo{0}
-		s %Template{""}
-	}
-}
-o
-{
 	Uuid %id{u4{18096612296587978288,6449934965513159559}}
 	s %t{"ezSceneDocumentRoot"}
 	u3 %v{2}
@@ -531,7 +490,6 @@ o
 			Uuid{u4{15429881462864883354,4959684847185012581}}
 			Uuid{u4{10273475871614432585,10324724570660651528}}
 			Uuid{u4{6364801692714939295,4970109331990311901}}
-			Uuid{u4{16142188911668902534,4876416952430344896}}
 		}
 		Uuid %Settings{u4{16752723250588932764,4244571982856876854}}
 	}
@@ -744,23 +702,6 @@ o
 		s %PluginName{"Static"}
 		VarArray %Properties{}
 		s %TypeName{"ezCategoryAttribute"}
-		u3 %TypeVersion{1}
-	}
-}
-o
-{
-	Uuid %id{u4{18348731351651790920,4897320743890407264}}
-	s %t{"ezReflectedTypeDescriptor"}
-	u3 %v{1}
-	p
-	{
-		VarArray %Attributes{}
-		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
-		VarArray %Functions{}
-		s %ParentTypeName{"ezBlackboardComponent"}
-		s %PluginName{"Static"}
-		VarArray %Properties{}
-		s %TypeName{"ezLocalBlackboardComponent"}
 		u3 %TypeVersion{1}
 	}
 }
@@ -987,23 +928,6 @@ o
 }
 o
 {
-	Uuid %id{u4{4287215348751137938,10033073971716187673}}
-	s %t{"ezReflectedTypeDescriptor"}
-	u3 %v{1}
-	p
-	{
-		VarArray %Attributes{}
-		s %Flags{"ezTypeFlags::Bitflags|ezTypeFlags::Minimal"}
-		VarArray %Functions{}
-		s %ParentTypeName{"ezBitflagsBase"}
-		s %PluginName{"Static"}
-		VarArray %Properties{}
-		s %TypeName{"ezBlackboardEntryFlags"}
-		u3 %TypeVersion{1}
-	}
-}
-o
-{
 	Uuid %id{u4{14700230518358869173,11472901527618371423}}
 	s %t{"ezReflectedTypeDescriptor"}
 	u3 %v{1}
@@ -1152,23 +1076,6 @@ o
 		s %PluginName{"Static"}
 		VarArray %Properties{}
 		s %TypeName{"ezEnumBase"}
-		u3 %TypeVersion{1}
-	}
-}
-o
-{
-	Uuid %id{u4{48220615166662949,15649640188828373689}}
-	s %t{"ezReflectedTypeDescriptor"}
-	u3 %v{1}
-	p
-	{
-		VarArray %Attributes{}
-		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
-		VarArray %Functions{}
-		s %ParentTypeName{""}
-		s %PluginName{"Static"}
-		VarArray %Properties{}
-		s %TypeName{"ezBlackboardEntry"}
 		u3 %TypeVersion{1}
 	}
 }

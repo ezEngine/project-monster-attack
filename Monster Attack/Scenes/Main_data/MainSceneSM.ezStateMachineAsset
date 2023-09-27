@@ -11,7 +11,7 @@ o
 		s %AssetType{"StateMachine"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{5949685087984140977,5735382051221935934}}
-		u4 %Hash{6490108300452061086}
+		u4 %Hash{6947042213421748837}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps
@@ -39,25 +39,13 @@ Objects
 {
 o
 {
-	Uuid %id{u4{5153447804287539061,2370759095620262416}}
-	s %t{"ezStateMachineNode"}
-	u3 %v{1}
-	p
-	{
-		s %Name{"Wave Loop 2"}
-		Vec2 %Node::Pos{f{0xD7981344,0x348F2644}}
-		Uuid %Type{u4{9892047085936591425,10377554671119627988}}
-	}
-}
-o
-{
 	Uuid %id{u4{5227260283433533622,4648683002801642040}}
 	s %t{"ezStateMachineNode"}
 	u3 %v{1}
 	p
 	{
 		s %Name{"Build 1"}
-		Vec2 %Node::Pos{f{0xE1C9A643,0xEC3B1342}}
+		Vec2 %Node::Pos{f{0x5EC8A543,0xFA411742}}
 		Uuid %Type{u4{9897917762547502509,4891855562424593219}}
 	}
 }
@@ -101,6 +89,20 @@ o
 		Uuid %Connection::Target{u4{1851063097239798716,5250093619384221562}}
 		s %Connection::TargetPin{"Enter"}
 		Uuid %Type{u4{16707345347113051570,5521823685673154400}}
+	}
+}
+o
+{
+	Uuid %id{u4{7998551109720501164,4687283478575757017}}
+	s %t{"ezStateMachineConnection"}
+	u3 %v{1}
+	p
+	{
+		Uuid %Connection::Source{u4{4922848157847222045,11006962748324703846}}
+		s %Connection::SourcePin{"Exit"}
+		Uuid %Connection::Target{u4{3299369928732152367,10739465614460342260}}
+		s %Connection::TargetPin{"Enter"}
+		Uuid %Type{u4{0,0}}
 	}
 }
 o
@@ -150,34 +152,6 @@ o
 }
 o
 {
-	Uuid %id{u4{10586566134764281992,4877020024083397624}}
-	s %t{"ezStateMachineConnection"}
-	u3 %v{1}
-	p
-	{
-		Uuid %Connection::Source{u4{5153447804287539061,2370759095620262416}}
-		s %Connection::SourcePin{"Exit"}
-		Uuid %Connection::Target{u4{3299369928732152367,10739465614460342260}}
-		s %Connection::TargetPin{"Enter"}
-		Uuid %Type{u4{3382724059059074452,4992596507201943020}}
-	}
-}
-o
-{
-	Uuid %id{u4{1733922683035626421,4887181873920601122}}
-	s %t{"ezStateMachineConnection"}
-	u3 %v{1}
-	p
-	{
-		Uuid %Connection::Source{u4{9579000649608647407,15567674812283112427}}
-		s %Connection::SourcePin{"Exit"}
-		Uuid %Connection::Target{u4{17910370855463720844,5431440063034425159}}
-		s %Connection::TargetPin{"Enter"}
-		Uuid %Type{u4{2197508816197111437,5402052877959406922}}
-	}
-}
-o
-{
 	Uuid %id{u4{9897917762547502509,4891855562424593219}}
 	s %t{"ezStateMachineState_Script"}
 	u3 %v{1}
@@ -223,20 +197,6 @@ o
 }
 o
 {
-	Uuid %id{u4{3382724059059074452,4992596507201943020}}
-	s %t{"ezStateMachineTransition_BlackboardConditions"}
-	u3 %v{1}
-	p
-	{
-		VarArray %Conditions
-		{
-			Uuid{u4{14072348818337634985,5039770068487807413}}
-		}
-		s %Operator{"ezStateMachineLogicOperator::And"}
-	}
-}
-o
-{
 	Uuid %id{u4{16269236440461760400,5017825396453649249}}
 	s %t{"ezStateMachineState_Script"}
 	u3 %v{1}
@@ -244,18 +204,6 @@ o
 	{
 		VarDict %Parameters{}
 		s %ScriptClass{"{ 384de184-6ea0-4c7b-a5b5-f28ffe62c275 }"}
-	}
-}
-o
-{
-	Uuid %id{u4{14072348818337634985,5039770068487807413}}
-	s %t{"ezBlackboardCondition"}
-	u3 %v{1}
-	p
-	{
-		d %ComparisonValue{0x0000000000001840}
-		HashedString %EntryName{s{"Round"}}
-		s %Operator{"ezComparisonOperator::GreaterEqual"}
 	}
 }
 o
@@ -281,22 +229,8 @@ o
 	{
 		b %IsInitialState{1}
 		s %Name{"None"}
-		Vec2 %Node::Pos{f{0x7E279443,0x5F4758C3}}
-		Uuid %Type{u4{359368889824297126,5225878631021951270}}
-	}
-}
-o
-{
-	Uuid %id{u4{14317599931257699771,5127726314072926383}}
-	s %t{"ezStateMachineState_SendMsg"}
-	u3 %v{1}
-	p
-	{
-		b %LogOnEnter{1}
-		b %LogOnExit{0}
-		Time %MessageDelay{d{0}}
-		b %SendMessageOnEnter{1}
-		b %SendMessageOnExit{0}
+		Vec2 %Node::Pos{f{0x6B079543,0xAF60E0C2}}
+		Uuid %Type{u4{0,0}}
 	}
 }
 o
@@ -340,37 +274,13 @@ o
 }
 o
 {
-	Uuid %id{u4{359368889824297126,5225878631021951270}}
-	s %t{"ezStateMachineState_SendMsg"}
-	u3 %v{1}
-	p
-	{
-		b %LogOnEnter{0}
-		b %LogOnExit{0}
-		Time %MessageDelay{d{0}}
-		b %SendMessageOnEnter{0}
-		b %SendMessageOnExit{0}
-	}
-}
-o
-{
-	Uuid %id{u4{8723990345100244414,5243544420466148420}}
-	s %t{"ezStateMachineTransition_Timeout"}
-	u3 %v{1}
-	p
-	{
-		Time %Timeout{d{0x0000000000000040}}
-	}
-}
-o
-{
 	Uuid %id{u4{1851063097239798716,5250093619384221562}}
 	s %t{"ezStateMachineNode"}
 	u3 %v{1}
 	p
 	{
 		s %Name{"Win"}
-		Vec2 %Node::Pos{f{0x08BF6244,0x71DA2644}}
+		Vec2 %Node::Pos{f{0x2BAB2D44,0x7F38E343}}
 		Uuid %Type{u4{3990778659247645105,5191963354175855081}}
 	}
 }
@@ -384,34 +294,6 @@ o
 		d %ComparisonValue{0}
 		HashedString %EntryName{s{"Points"}}
 		s %Operator{"ezComparisonOperator::Equal"}
-	}
-}
-o
-{
-	Uuid %id{u4{7422724311928169899,5258445970320449726}}
-	s %t{"ezStateMachineConnection"}
-	u3 %v{1}
-	p
-	{
-		Uuid %Connection::Source{u4{9579000649608647407,15567674812283112427}}
-		s %Connection::SourcePin{"Exit"}
-		Uuid %Connection::Target{u4{9348401003168330391,5757134391278002241}}
-		s %Connection::TargetPin{"Enter"}
-		Uuid %Type{u4{15561672467139581060,5726504734665999150}}
-	}
-}
-o
-{
-	Uuid %id{u4{11758380840803244427,5273105092543500593}}
-	s %t{"ezStateMachineConnection"}
-	u3 %v{1}
-	p
-	{
-		Uuid %Connection::Source{u4{9348401003168330391,5757134391278002241}}
-		s %Connection::SourcePin{"Exit"}
-		Uuid %Connection::Target{u4{9579000649608647407,15567674812283112427}}
-		s %Connection::TargetPin{"Enter"}
-		Uuid %Type{u4{8723990345100244414,5243544420466148420}}
 	}
 }
 o
@@ -430,51 +312,13 @@ o
 }
 o
 {
-	Uuid %id{u4{5392747095158031776,5362451015350473910}}
-	s %t{"ezBlackboardCondition"}
-	u3 %v{1}
-	p
-	{
-		d %ComparisonValue{0x0000000000000040}
-		HashedString %EntryName{s{"Round"}}
-		s %Operator{"ezComparisonOperator::LessEqual"}
-	}
-}
-o
-{
-	Uuid %id{u4{9139074654911152535,5372281412190286286}}
-	s %t{"ezBlackboardCondition"}
-	u3 %v{1}
-	p
-	{
-		d %ComparisonValue{0x0000000000000840}
-		HashedString %EntryName{s{"Round"}}
-		s %Operator{"ezComparisonOperator::GreaterEqual"}
-	}
-}
-o
-{
-	Uuid %id{u4{2197508816197111437,5402052877959406922}}
-	s %t{"ezStateMachineTransition_BlackboardConditions"}
-	u3 %v{1}
-	p
-	{
-		VarArray %Conditions
-		{
-			Uuid{u4{9139074654911152535,5372281412190286286}}
-		}
-		s %Operator{"ezStateMachineLogicOperator::And"}
-	}
-}
-o
-{
 	Uuid %id{u4{17910370855463720844,5431440063034425159}}
 	s %t{"ezStateMachineNode"}
 	u3 %v{1}
 	p
 	{
 		s %Name{"Fight 1"}
-		Vec2 %Node::Pos{f{0xE94CA043,0x3892FE43}}
+		Vec2 %Node::Pos{f{0xF4509E43,0x076AE843}}
 		Uuid %Type{u4{7946178380966160018,4761730513702005307}}
 	}
 }
@@ -534,6 +378,20 @@ o
 }
 o
 {
+	Uuid %id{u4{16163834872091979422,5634742494218988359}}
+	s %t{"ezStateMachineConnection"}
+	u3 %v{1}
+	p
+	{
+		Uuid %Connection::Source{u4{9348401003168330391,5757134391278002241}}
+		s %Connection::SourcePin{"Exit"}
+		Uuid %Connection::Target{u4{17910370855463720844,5431440063034425159}}
+		s %Connection::TargetPin{"Enter"}
+		Uuid %Type{u4{0,0}}
+	}
+}
+o
+{
 	Uuid %id{u4{1456464873005213101,5681070859845895036}}
 	s %t{"ezStateMachineNodeAny"}
 	u3 %v{1}
@@ -544,41 +402,13 @@ o
 }
 o
 {
-	Uuid %id{u4{15561672467139581060,5726504734665999150}}
-	s %t{"ezStateMachineTransition_Compound"}
-	u3 %v{1}
-	p
-	{
-		s %Operator{"ezStateMachineLogicOperator::And"}
-		VarArray %SubTransitions
-		{
-			Uuid{u4{11931618514955489434,5745593079004166499}}
-		}
-	}
-}
-o
-{
-	Uuid %id{u4{11931618514955489434,5745593079004166499}}
-	s %t{"ezStateMachineTransition_BlackboardConditions"}
-	u3 %v{1}
-	p
-	{
-		VarArray %Conditions
-		{
-			Uuid{u4{5392747095158031776,5362451015350473910}}
-		}
-		s %Operator{"ezStateMachineLogicOperator::And"}
-	}
-}
-o
-{
 	Uuid %id{u4{9348401003168330391,5757134391278002241}}
 	s %t{"ezStateMachineNode"}
 	u3 %v{1}
 	p
 	{
 		s %Name{"Wave 1"}
-		Vec2 %Node::Pos{f{0xEC99A543,0x6A5C9B43}}
+		Vec2 %Node::Pos{f{0x07A4A043,0x75609943}}
 		Uuid %Type{u4{17565943290956859522,5586775283334270621}}
 	}
 }
@@ -593,9 +423,6 @@ o
 		VarArray %Children
 		{
 			Uuid{u4{9348401003168330391,5757134391278002241}}
-			Uuid{u4{9579000649608647407,15567674812283112427}}
-			Uuid{u4{11758380840803244427,5273105092543500593}}
-			Uuid{u4{7422724311928169899,5258445970320449726}}
 			Uuid{u4{17581673993409861968,11080114410121136374}}
 			Uuid{u4{17454232720236233883,4657141102720163655}}
 			Uuid{u4{5227260283433533622,4648683002801642040}}
@@ -604,20 +431,17 @@ o
 			Uuid{u4{10035194786858935991,4694953574628490733}}
 			Uuid{u4{8778985662722527381,4932071508758820985}}
 			Uuid{u4{17910370855463720844,5431440063034425159}}
-			Uuid{u4{1733922683035626421,4887181873920601122}}
 			Uuid{u4{1851063097239798716,5250093619384221562}}
 			Uuid{u4{7183665312338664381,5093501843989201551}}
 			Uuid{u4{3299369928732152367,10739465614460342260}}
 			Uuid{u4{4922848157847222045,11006962748324703846}}
-			Uuid{u4{5153447804287539061,2370759095620262416}}
-			Uuid{u4{7332827995482136081,10522933449590202198}}
-			Uuid{u4{2997171466607061553,10508274327367151331}}
-			Uuid{u4{10586566134764281992,4877020024083397624}}
 			Uuid{u4{10214557179094405055,4670919385830993657}}
 			Uuid{u4{1329207869478715813,5192465669720914348}}
 			Uuid{u4{11490606459366855376,15885399457517625568}}
 			Uuid{u4{9466545710596392365,5549120402116398922}}
 			Uuid{u4{2152317709893256117,5301953609940990221}}
+			Uuid{u4{16163834872091979422,5634742494218988359}}
+			Uuid{u4{7998551109720501164,4687283478575757017}}
 		}
 	}
 }
@@ -634,77 +458,13 @@ o
 }
 o
 {
-	Uuid %id{u4{9892047085936591425,10377554671119627988}}
-	s %t{"ezStateMachineState_SendMsg"}
-	u3 %v{1}
-	p
-	{
-		b %LogOnEnter{1}
-		b %LogOnExit{0}
-		Time %MessageDelay{d{0}}
-		b %SendMessageOnEnter{1}
-		b %SendMessageOnExit{0}
-	}
-}
-o
-{
-	Uuid %id{u4{4298437499779136068,10493372777512850025}}
-	s %t{"ezStateMachineTransition_Timeout"}
-	u3 %v{1}
-	p
-	{
-		Time %Timeout{d{0x0000000000000040}}
-	}
-}
-o
-{
-	Uuid %id{u4{2997171466607061553,10508274327367151331}}
-	s %t{"ezStateMachineConnection"}
-	u3 %v{1}
-	p
-	{
-		Uuid %Connection::Source{u4{5153447804287539061,2370759095620262416}}
-		s %Connection::SourcePin{"Exit"}
-		Uuid %Connection::Target{u4{4922848157847222045,11006962748324703846}}
-		s %Connection::TargetPin{"Enter"}
-		Uuid %Type{u4{11136119621818472714,10976333091712700755}}
-	}
-}
-o
-{
-	Uuid %id{u4{7332827995482136081,10522933449590202198}}
-	s %t{"ezStateMachineConnection"}
-	u3 %v{1}
-	p
-	{
-		Uuid %Connection::Source{u4{4922848157847222045,11006962748324703846}}
-		s %Connection::SourcePin{"Exit"}
-		Uuid %Connection::Target{u4{5153447804287539061,2370759095620262416}}
-		s %Connection::TargetPin{"Enter"}
-		Uuid %Type{u4{4298437499779136068,10493372777512850025}}
-	}
-}
-o
-{
-	Uuid %id{u4{967194249836923430,10612279372397175515}}
-	s %t{"ezBlackboardCondition"}
-	u3 %v{1}
-	p
-	{
-		d %ComparisonValue{0x0000000000001440}
-		HashedString %EntryName{s{"Round"}}
-		s %Operator{"ezComparisonOperator::LessEqual"}
-	}
-}
-o
-{
 	Uuid %id{u4{3299369928732152367,10739465614460342260}}
 	s %t{"ezStateMachineNode"}
 	u3 %v{1}
 	p
 	{
 		s %Name{"Fight 2"}
-		Vec2 %Node::Pos{f{0x9D533D44,0x74AE2544}}
+		Vec2 %Node::Pos{f{0x645FF643,0x64D4E643}}
 		Uuid %Type{u4{11781921527944143157,10069756065127922408}}
 	}
 }
@@ -735,41 +495,13 @@ o
 }
 o
 {
-	Uuid %id{u4{11136119621818472714,10976333091712700755}}
-	s %t{"ezStateMachineTransition_Compound"}
-	u3 %v{1}
-	p
-	{
-		s %Operator{"ezStateMachineLogicOperator::And"}
-		VarArray %SubTransitions
-		{
-			Uuid{u4{7506065669634381088,10995421436050868104}}
-		}
-	}
-}
-o
-{
-	Uuid %id{u4{7506065669634381088,10995421436050868104}}
-	s %t{"ezStateMachineTransition_BlackboardConditions"}
-	u3 %v{1}
-	p
-	{
-		VarArray %Conditions
-		{
-			Uuid{u4{967194249836923430,10612279372397175515}}
-		}
-		s %Operator{"ezStateMachineLogicOperator::And"}
-	}
-}
-o
-{
 	Uuid %id{u4{4922848157847222045,11006962748324703846}}
 	s %t{"ezStateMachineNode"}
 	u3 %v{1}
 	p
 	{
 		s %Name{"Wave 2"}
-		Vec2 %Node::Pos{f{0x10AE1844,0x5ADEFE43}}
+		Vec2 %Node::Pos{f{0x71D9F343,0xD6559A43}}
 		Uuid %Type{u4{13140390445635751176,10836603640380972226}}
 	}
 }
@@ -783,18 +515,6 @@ o
 		s %Name{"Countdown 1"}
 		Vec2 %Node::Pos{f{0x370DA143,0x49131E43}}
 		Uuid %Type{u4{7352472207488839483,10909755302177404754}}
-	}
-}
-o
-{
-	Uuid %id{u4{9579000649608647407,15567674812283112427}}
-	s %t{"ezStateMachineNode"}
-	u3 %v{1}
-	p
-	{
-		s %Name{"Wave Loop 1"}
-		Vec2 %Node::Pos{f{0xAEC3EF43,0x7CE79A43}}
-		Uuid %Type{u4{14317599931257699771,5127726314072926383}}
 	}
 }
 o
@@ -816,7 +536,7 @@ o
 	p
 	{
 		s %Name{"Countdown 2"}
-		Vec2 %Node::Pos{f{0x1A55E443,0x1257FE43}}
+		Vec2 %Node::Pos{f{0xA89FE943,0x93712143}}
 		Uuid %Type{u4{1261404673445832891,15715040349573893948}}
 	}
 }
@@ -871,23 +591,6 @@ o
 		s %PluginName{"Static"}
 		VarArray %Properties{}
 		s %TypeName{"ezStateMachineTransition"}
-		u3 %TypeVersion{1}
-	}
-}
-o
-{
-	Uuid %id{u4{219779765415136218,3256450268205370147}}
-	s %t{"ezReflectedTypeDescriptor"}
-	u3 %v{1}
-	p
-	{
-		VarArray %Attributes{}
-		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
-		VarArray %Functions{}
-		s %ParentTypeName{"ezStateMachineTransition"}
-		s %PluginName{"Static"}
-		VarArray %Properties{}
-		s %TypeName{"ezStateMachineTransition_Timeout"}
 		u3 %TypeVersion{1}
 	}
 }
@@ -1063,23 +766,6 @@ o
 }
 o
 {
-	Uuid %id{u4{7221023124933570664,14175982573820959709}}
-	s %t{"ezReflectedTypeDescriptor"}
-	u3 %v{1}
-	p
-	{
-		VarArray %Attributes{}
-		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
-		VarArray %Functions{}
-		s %ParentTypeName{"ezStateMachineState"}
-		s %PluginName{"Static"}
-		VarArray %Properties{}
-		s %TypeName{"ezStateMachineState_SendMsg"}
-		u3 %TypeVersion{1}
-	}
-}
-o
-{
 	Uuid %id{u4{13343460939675617904,14220125077447103969}}
 	s %t{"ezReflectedTypeDescriptor"}
 	u3 %v{1}
@@ -1109,23 +795,6 @@ o
 		s %PluginName{"Static"}
 		VarArray %Properties{}
 		s %TypeName{"ezEnumBase"}
-		u3 %TypeVersion{1}
-	}
-}
-o
-{
-	Uuid %id{u4{6749735196937192528,17387544071479029423}}
-	s %t{"ezReflectedTypeDescriptor"}
-	u3 %v{1}
-	p
-	{
-		VarArray %Attributes{}
-		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
-		VarArray %Functions{}
-		s %ParentTypeName{"ezStateMachineTransition"}
-		s %PluginName{"Static"}
-		VarArray %Properties{}
-		s %TypeName{"ezStateMachineTransition_Compound"}
 		u3 %TypeVersion{1}
 	}
 }
