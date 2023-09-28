@@ -11,7 +11,7 @@ o
 		s %AssetType{"Scene"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{117841739265092255,5146024719127381543}}
-		u4 %Hash{2915372086976599290}
+		u4 %Hash{13135526472276977046}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps
@@ -23,14 +23,12 @@ o
 			s{"{ e144a1f6-6381-4e65-bc92-855d374f2bac }"}
 			s{"{ ef9a1147-4e6d-4ce0-a81e-0e56a09756e0 }"}
 			s{"{ f66cf763-9e82-4d2d-8b25-54d9a14044ef }"}
-			s{"{ fa81999d-658b-44e3-94ee-44dae7f8c3c6 }"}
 		}
 		VarArray %References
 		{
 			s{"{ 0b202e08-a64f-465d-b38e-15b81d161822 }"}
 			s{"{ 7d719163-a10e-42a0-88e9-6a706ecdb6fb }"}
 			s{"{ e144a1f6-6381-4e65-bc92-855d374f2bac }"}
-			s{"{ fa81999d-658b-44e3-94ee-44dae7f8c3c6 }"}
 		}
 	}
 }
@@ -160,18 +158,6 @@ o
 }
 o
 {
-	Uuid %id{u4{1155611617662477718,4772361791884458533}}
-	s %t{"ezPrefabReferenceComponent"}
-	u3 %v{4}
-	p
-	{
-		b %Active{1}
-		VarDict %Parameters{}
-		s %Prefab{"{ fa81999d-658b-44e3-94ee-44dae7f8c3c6 }"}
-	}
-}
-o
-{
 	Uuid %id{u4{7813270459758695601,4827123624464211322}}
 	s %t{"ezGameObject"}
 	u3 %v{1}
@@ -242,7 +228,7 @@ o
 		f %NearPlane{0}
 		f %Radius{0x00004842}
 		s %ReflectionProbeMode{"ezReflectionProbeMode::Static"}
-		b %ShowDebugInfo{1}
+		b %ShowDebugInfo{0}
 		b %ShowMipMaps{0}
 		b %SphereProjection{1}
 	}
@@ -405,32 +391,6 @@ o
 }
 o
 {
-	Uuid %id{u4{3774868568943766670,5469617248725931422}}
-	s %t{"ezGameObject"}
-	u3 %v{1}
-	p
-	{
-		b %Active{1}
-		VarArray %Children{}
-		VarArray %Components
-		{
-			Uuid{u4{1155611617662477718,4772361791884458533}}
-		}
-		s %GlobalKey{""}
-		Vec3 %LocalPosition{f{0x0000A0C0,0x000000C0,0}}
-		Quat %LocalRotation{f{0,0,0,0x0000803F}}
-		Vec3 %LocalScaling{f{0x0000803F,0x0000803F,0x0000803F}}
-		f %LocalUniformScaling{0x0000803F}
-		s %Mode{"ezObjectMode::Automatic"}
-		s %Name{""}
-		VarArray %Tags
-		{
-			s{"CastShadow"}
-		}
-	}
-}
-o
-{
 	Uuid %id{u4{111748054636751286,5522896169849599975}}
 	s %t{"ezGameObject"}
 	u3 %v{1}
@@ -558,7 +518,6 @@ o
 			Uuid{u4{3094079173986904009,5643076846361130728}}
 			Uuid{u4{3645790116589953956,5451752918229693268}}
 			Uuid{u4{7813270459758695601,4827123624464211322}}
-			Uuid{u4{3774868568943766670,5469617248725931422}}
 		}
 		Uuid %Settings{u4{14474866726411803061,4674886321853637652}}
 	}

@@ -11,7 +11,7 @@ o
 		s %AssetType{"Prefab"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{10765258787575156668,4917150795581098592}}
-		u4 %Hash{1479068152368642841}
+		u4 %Hash{5198101449863291048}
 		VarArray %MetaInfo
 		{
 			Uuid{u4{10552695842367236186,7307573395047560116}}
@@ -49,7 +49,7 @@ o
 	p
 	{
 		b %Active{1}
-		Color %Color{f{0x8323CB3E,0x8B0A5D3E,0x55A7103E,0x0000803F}}
+		Color %Color{f{0xA3E52840,0xAFA5E73E,0xF7F9473D,0x0000803F}}
 		VarArray %Materials{}
 		s %Mesh{"{ 218e3aa5-599a-4da7-ac5a-ae2b81729580 }"}
 		f %SortingDepthOffset{0}

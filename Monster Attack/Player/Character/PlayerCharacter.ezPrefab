@@ -11,7 +11,7 @@ o
 		s %AssetType{"Prefab"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{4807102616338341041,4830533069843689837}}
-		u4 %Hash{16044294723147750471}
+		u4 %Hash{10023156573329304545}
 		VarArray %MetaInfo
 		{
 			Uuid{u4{84311642083157784,14446715351038868960}}
@@ -221,11 +221,11 @@ o
 		VarArray %ExcludeTags{}
 		f %ExposureCompensation{0}
 		f %FOV{0x00007042}
-		f %FarPlane{0x00007A44}
+		f %FarPlane{0x0000C842}
 		f %ISO{0x0000C842}
 		VarArray %IncludeTags{}
 		s %Mode{"ezCameraMode::PerspectiveFixedFovY"}
-		f %NearPlane{0x0000803E}
+		f %NearPlane{0xCDCCCC3D}
 		s %RenderTarget{""}
 		Vec2 %RenderTargetOffset{f{0,0}}
 		Vec2 %RenderTargetSize{f{0x0000803F,0x0000803F}}

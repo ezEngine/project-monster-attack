@@ -11,7 +11,7 @@ o
 		s %AssetType{"Layer"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{15445678948864199100,5328628080256783631}}
-		u4 %Hash{10758842612096935405}
+		u4 %Hash{3952495765639431692}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps
@@ -697,7 +697,8 @@ o
 		b %Active{1}
 		VarDict %Parameters
 		{
-			b %Ceiling{1}
+			b %Ceiling{0}
+			b %CeilingWithBars{1}
 		}
 		s %Prefab{"{ 11bf3593-a63b-4ba3-9d87-ca35b95e23cd }"}
 	}
@@ -722,7 +723,11 @@ o
 	p
 	{
 		b %Active{1}
-		VarDict %Parameters{}
+		VarDict %Parameters
+		{
+			b %Ceiling{1}
+			b %CeilingWithBars{0}
+		}
 		s %Prefab{"{ d068268c-ffa3-4d41-8860-733b5201e089 }"}
 	}
 }
@@ -852,7 +857,8 @@ o
 		b %Active{1}
 		VarDict %Parameters
 		{
-			b %Ceiling{1}
+			b %Ceiling{0}
+			b %CeilingWithBars{1}
 		}
 		s %Prefab{"{ d068268c-ffa3-4d41-8860-733b5201e089 }"}
 	}
@@ -1301,7 +1307,11 @@ o
 	p
 	{
 		b %Active{1}
-		VarDict %Parameters{}
+		VarDict %Parameters
+		{
+			b %Ceiling{0}
+			b %CeilingWithBars{1}
+		}
 		s %Prefab{"{ 11bf3593-a63b-4ba3-9d87-ca35b95e23cd }"}
 	}
 }
@@ -1560,7 +1570,11 @@ o
 	p
 	{
 		b %Active{1}
-		VarDict %Parameters{}
+		VarDict %Parameters
+		{
+			b %Ceiling{0}
+			b %CeilingWithBars{1}
+		}
 		s %Prefab{"{ 11bf3593-a63b-4ba3-9d87-ca35b95e23cd }"}
 	}
 }
@@ -1623,7 +1637,11 @@ o
 	p
 	{
 		b %Active{1}
-		VarDict %Parameters{}
+		VarDict %Parameters
+		{
+			b %Ceiling{0}
+			b %CeilingWithBars{1}
+		}
 		s %Prefab{"{ d068268c-ffa3-4d41-8860-733b5201e089 }"}
 	}
 }
@@ -1728,7 +1746,11 @@ o
 	p
 	{
 		b %Active{1}
-		VarDict %Parameters{}
+		VarDict %Parameters
+		{
+			b %Ceiling{0}
+			b %CeilingWithBars{1}
+		}
 		s %Prefab{"{ 11bf3593-a63b-4ba3-9d87-ca35b95e23cd }"}
 	}
 }
@@ -1886,7 +1908,11 @@ o
 	p
 	{
 		b %Active{1}
-		VarDict %Parameters{}
+		VarDict %Parameters
+		{
+			b %Ceiling{0}
+			b %CeilingWithBars{1}
+		}
 		s %Prefab{"{ 11bf3593-a63b-4ba3-9d87-ca35b95e23cd }"}
 	}
 }
@@ -1965,7 +1991,11 @@ o
 	p
 	{
 		b %Active{1}
-		VarDict %Parameters{}
+		VarDict %Parameters
+		{
+			b %Ceiling{0}
+			b %CeilingWithBars{1}
+		}
 		s %Prefab{"{ 11bf3593-a63b-4ba3-9d87-ca35b95e23cd }"}
 	}
 }
@@ -2327,6 +2357,7 @@ o
 		VarDict %Parameters
 		{
 			b %Ceiling{1}
+			b %CeilingWithBars{0}
 		}
 		s %Prefab{"{ d068268c-ffa3-4d41-8860-733b5201e089 }"}
 	}
