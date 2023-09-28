@@ -11,7 +11,7 @@ o
 		s %AssetType{"Layer"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{17562063295357204691,5532850859589672258}}
-		u4 %Hash{5414574045888200930}
+		u4 %Hash{15121805644492176223}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps
@@ -24,12 +24,51 @@ o
 		VarArray %References
 		{
 			s{"{ 6caf7f9e-4794-4ce8-a8bc-f0163db7a203 }"}
+			s{"{ fa81999d-658b-44e3-94ee-44dae7f8c3c6 }"}
 		}
 	}
 }
 }
 Objects
 {
+o
+{
+	Uuid %id{u4{10527158752819726474,4874028883864520502}}
+	s %t{"ezGameObject"}
+	u3 %v{1}
+	p
+	{
+		b %Active{1}
+		VarArray %Children{}
+		VarArray %Components
+		{
+			Uuid{u4{17042271308346830729,4963461578033095065}}
+		}
+		s %GlobalKey{""}
+		Vec3 %LocalPosition{f{0xCDCC84C1,0x33332341,0}}
+		Quat %LocalRotation{f{0,0,0,0x0000803F}}
+		Vec3 %LocalScaling{f{0x0000803F,0x0000803F,0x0000803F}}
+		f %LocalUniformScaling{0x0000803F}
+		s %Mode{"ezObjectMode::Automatic"}
+		s %Name{""}
+		VarArray %Tags
+		{
+			s{"CastShadow"}
+		}
+	}
+}
+o
+{
+	Uuid %id{u4{17042271308346830729,4963461578033095065}}
+	s %t{"ezPrefabReferenceComponent"}
+	u3 %v{4}
+	p
+	{
+		b %Active{1}
+		VarDict %Parameters{}
+		s %Prefab{"{ fa81999d-658b-44e3-94ee-44dae7f8c3c6 }"}
+	}
+}
 o
 {
 	Uuid %id{u4{4837418853318023353,5116626972768920833}}
@@ -196,6 +235,7 @@ o
 			Uuid{u4{2773320445936994731,5665645599091186346}}
 			Uuid{u4{7386277286148191925,5669963798441351104}}
 			Uuid{u4{8975589607503724633,10838035726086464766}}
+			Uuid{u4{10527158752819726474,4874028883864520502}}
 		}
 		Uuid %Settings{u4{3667370858770890952,6087045726297815110}}
 	}
@@ -214,7 +254,7 @@ o
 			Uuid{u4{10283148413001889847,10802243995920081461}}
 		}
 		s %GlobalKey{"Goal"}
-		Vec3 %LocalPosition{f{0x0000B0C1,0,0}}
+		Vec3 %LocalPosition{f{0x3333CBC1,0,0}}
 		Quat %LocalRotation{f{0,0,0,0x0000803F}}
 		Vec3 %LocalScaling{f{0x0000803F,0x0000803F,0x0000803F}}
 		f %LocalUniformScaling{0x0000803F}
@@ -384,6 +424,23 @@ o
 		VarArray %Properties{}
 		s %TypeName{"ezSpawnBoxComponent"}
 		u3 %TypeVersion{1}
+	}
+}
+o
+{
+	Uuid %id{u4{1168477127324465164,3417260966341483024}}
+	s %t{"ezReflectedTypeDescriptor"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Attributes{}
+		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
+		VarArray %Functions{}
+		s %ParentTypeName{"ezComponent"}
+		s %PluginName{"Static"}
+		VarArray %Properties{}
+		s %TypeName{"ezPrefabReferenceComponent"}
+		u3 %TypeVersion{4}
 	}
 }
 o
