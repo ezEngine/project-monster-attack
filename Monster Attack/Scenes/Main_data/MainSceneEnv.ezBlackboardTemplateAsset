@@ -14,7 +14,7 @@ o
 			s{"{ 11b04ae6-c3a4-44c2-9c62-43421b9244b4 }"}
 		}
 		Uuid %DocumentID{u4{261973201346673832,5541758044283568030}}
-		u4 %Hash{4416659167255071292}
+		u4 %Hash{13215351627574566089}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps{}
@@ -38,6 +38,18 @@ o
 }
 o
 {
+	Uuid %id{u4{3993220376841706675,5379041275382533761}}
+	s %t{"ezBlackboardEntry"}
+	u3 %v{1}
+	p
+	{
+		s %Flags{""}
+		i3 %InitialValue{30000}
+		HashedString %Name{s{"Money"}}
+	}
+}
+o
+{
 	Uuid %id{u4{7540683553593173931,5702789119630429312}}
 	s %t{"ezBlackboardTemplateAssetObject"}
 	u3 %v{1}
@@ -50,6 +62,7 @@ o
 		VarArray %Entries
 		{
 			Uuid{u4{1241925382907451792,4668541860692836812}}
+			Uuid{u4{3993220376841706675,5379041275382533761}}
 		}
 	}
 }

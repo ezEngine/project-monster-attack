@@ -11,7 +11,7 @@ o
 		s %AssetType{"Prefab"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{14322564914651393684,4963922866170075549}}
-		u4 %Hash{17180727481610156507}
+		u4 %Hash{3820794742635874278}
 		VarArray %MetaInfo
 		{
 			Uuid{u4{12440196303460809848,14710351079864222681}}
@@ -89,7 +89,7 @@ o
 	{
 		b %Active{1}
 		i3 %Health{100}
-		i3 %MoneyReward{100}
+		i3 %MoneyReward{200}
 		HashedString %NavmeshConfig{s{"Default"}}
 		HashedString %PathSearchConfig{s{"Default"}}
 		f %WalkSpeed{0x00008040}
