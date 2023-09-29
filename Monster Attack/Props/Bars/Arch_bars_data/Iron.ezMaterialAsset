@@ -14,18 +14,16 @@ o
 			s{"{ 7c71fc2d-2a1a-4938-9305-f3a0f26d73cc }"}
 		}
 		Uuid %DocumentID{u4{15127385371219245219,5665308617472290414}}
-		u4 %Hash{8609642231069145619}
+		u4 %Hash{15502934478035798129}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps
 		{
-			s{"White.color"}
 			s{"{ 4dc82890-39e3-4bfc-a97d-86a984d4d3db }"}
 			s{"{ 7c71fc2d-2a1a-4938-9305-f3a0f26d73cc }"}
 		}
 		VarArray %References
 		{
-			s{"White.color"}
 			s{"{ 4dc82890-39e3-4bfc-a97d-86a984d4d3db }"}
 			s{"{ 7c71fc2d-2a1a-4938-9305-f3a0f26d73cc }"}
 		}
@@ -42,17 +40,17 @@ o
 	p
 	{
 		s %BLEND_MODE{"BLEND_MODE::BLEND_MODE_OPAQUE"}
-		Color %BaseColor{f{0x77F5463D,0xF7A6BF3C,0xA817A03C,0x0000803F}}
+		Color %BaseColor{f{0xED23FA3D,0xF618903D,0x29DD7A3D,0x0000803F}}
 		s %BaseTexture{"RebeccaPurple.color"}
 		Color %EmissiveColor{f{0,0,0,0x0000803F}}
 		s %EmissiveTexture{""}
 		f %MaskThreshold{0x0000803E}
 		s %MetallicTexture{""}
-		f %MetallicValue{0}
+		f %MetallicValue{0x0000803F}
 		s %NormalTexture{"{ 4dc82890-39e3-4bfc-a97d-86a984d4d3db }"}
 		s %OcclusionTexture{""}
 		s %OrmTexture{""}
-		s %RoughnessTexture{"White.color"}
+		s %RoughnessTexture{""}
 		f %RoughnessValue{0xE85FD83E}
 		s %SHADING_MODE{"SHADING_MODE::SHADING_MODE_LIT"}
 		b %TWO_SIDED{0}
