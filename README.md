@@ -9,6 +9,10 @@ However, this project is work-in-progress. If you like, you are welcome to contr
 
 ![Monster Attack Screenshot](MonsterAttack-Main.jpg)
 
+Click the image below to see a playthrough video:
+
+[![Demo Playthrough](http://img.youtube.com/vi/upe5Hbk8z-w/0.jpg)](http://www.youtube.com/watch?v=upe5Hbk8z-w "Monster Attack Playthrough")
+
 ## How to Build
 
 This repository is fully self-sufficient, since it pulls in ezEngine as a submodule. This guarantees that it uses the correct version.
