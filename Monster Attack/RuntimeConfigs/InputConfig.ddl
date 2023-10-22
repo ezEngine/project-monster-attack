@@ -46,7 +46,7 @@ InputAction
 {
 	string %Set{"Default"}
 	string %Action{"RotateLeft"}
-	bool %TimeScale{false}
+	bool %TimeScale{true}
 	Slot
 	{
 		string %Key{"keyboard_left"}
@@ -62,7 +62,7 @@ InputAction
 {
 	string %Set{"Default"}
 	string %Action{"RotateRight"}
-	bool %TimeScale{false}
+	bool %TimeScale{true}
 	Slot
 	{
 		string %Key{"keyboard_right"}
@@ -100,7 +100,7 @@ InputAction
 {
 	string %Set{"Default"}
 	string %Action{"LookUp"}
-	bool %TimeScale{false}
+	bool %TimeScale{true}
 	Slot
 	{
 		string %Key{"keyboard_up"}
@@ -116,7 +116,7 @@ InputAction
 {
 	string %Set{"Default"}
 	string %Action{"LookDown"}
-	bool %TimeScale{false}
+	bool %TimeScale{true}
 	Slot
 	{
 		string %Key{"keyboard_down"}
