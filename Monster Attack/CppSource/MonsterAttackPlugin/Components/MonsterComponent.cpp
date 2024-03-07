@@ -133,9 +133,13 @@ void ezMonsterComponent::Update()
   const bool bVisualizePathCorridor = false;
   const bool bVisualizePathLine = false;
 
-  if (bVisualizePathCorridor || bVisualizePathLine)
+  if (bVisualizePathCorridor)
   {
-    m_Navigation.DebugDraw(GetWorld(), bVisualizePathCorridor ? ezColor::Aquamarine.WithAlpha(0.2f) : ezColor::MakeZero(), bVisualizePathLine ? ezColor::Lime : ezColor::MakeZero());
+    m_Navigation.DebugDrawPathCorridor(GetWorld(), ezColor::Aquamarine.WithAlpha(0.2f));
+  }
+  if (bVisualizePathLine)
+  {
+    m_Navigation.DebugDrawPathLine(GetWorld(), ezColor::Lime);
   }
 
   if (m_Navigation.GetState() != ezAiNavigation::State::FullPathFound)
