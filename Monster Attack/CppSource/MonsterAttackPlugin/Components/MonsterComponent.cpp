@@ -7,6 +7,7 @@
 #include <Core/Messages/CommonMessages.h>
 #include <Core/Messages/SetColorMessage.h>
 #include <Core/Physics/SurfaceResource.h>
+#include <GameEngine/Animation/Skeletal/AnimationControllerComponent.h>
 #include <GameEngine/GameApplication/GameApplication.h>
 #include <GameEngine/GameState/GameState.h>
 #include <GameEngine/Gameplay/BlackboardComponent.h>
@@ -15,6 +16,7 @@
 #include <GameEngine/Messages/DamageMessage.h>
 #include <GameEngine/Physics/CharacterControllerComponent.h>
 #include <GameEngine/Physics/CollisionFilter.h>
+#include <JoltPlugin/Components/JoltRagdollComponent.h>
 #include <MonsterAttackPlugin/Components/MonsterComponent.h>
 #include <MonsterAttackPlugin/GameState/MonsterAttackGameState.h>
 
@@ -196,10 +198,29 @@ void ezMonsterComponent::OnMsgDamage(ezMsgDamage& msg)
       pBoard->SetEntryValue("State", 2); // "die" animation
     }
 
+    ezJoltRagdollComponent* pRD = nullptr;
+    if (GetOwner()->TryGetComponentOfBaseType(pRD))
+    {
+      pRD->SetActiveFlag(true);
+
+      // we need to disable the animation controller, so that it doesn't override the result of the ragdoll
+      ezAnimationControllerComponent* pAnim = nullptr;
+      if (GetOwner()->TryGetComponentOfBaseType(pAnim))
+      {
+        pAnim->SetActiveFlag(false);
+      }
+    }
+
+    if (ezGameObject* pPresenceBody = GetOwner()->FindChildByName("PresenceBody"))
+    {
+      pPresenceBody->SetActiveFlag(false);
+    }
+
     ezAiNavigationComponent* pNav = nullptr;
     if (GetOwner()->TryGetComponentOfBaseType(pNav))
     {
-      pNav->CancelNavigation();
+      // not only cancel navigation, but disable it completely, to also stop the step up/down function
+      pNav->SetActiveFlag(false);
     }
   }
 }

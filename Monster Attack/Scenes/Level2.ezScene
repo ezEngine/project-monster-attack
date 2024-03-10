@@ -11,7 +11,7 @@ o
 		s %AssetType{"Scene"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{117841739265092255,5146024719127381543}}
-		u4 %Hash{4810939920785771403}
+		u4 %Hash{7084439980044487048}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps
@@ -54,6 +54,7 @@ o
 			s{"{ ebad76f9-2191-415a-8840-0c53959d18bb }"}
 			s{"{ f738082e-3f14-45ea-a534-7bf24c7dafc5 }"}
 		}
+		s %Tags{""}
 	}
 }
 }
@@ -1108,7 +1109,10 @@ o
 		u3 %NumCascades{2}
 		f %PenumbraSize{0xCDCCCC3D}
 		f %SlopeBias{0x0000803E}
+		f %SpecularMultiplier{0x0000803F}
 		f %SplitModeWeight{0x3333333F}
+		u3 %Temperature{6550}
+		b %UseColorTemperature{0}
 	}
 }
 o
@@ -2341,7 +2345,7 @@ o
 		s %PluginName{"Static"}
 		VarArray %Properties{}
 		s %TypeName{"ezLightComponent"}
-		u3 %TypeVersion{4}
+		u3 %TypeVersion{5}
 	}
 }
 o
