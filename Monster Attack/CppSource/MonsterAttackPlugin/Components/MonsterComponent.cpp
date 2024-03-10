@@ -1,5 +1,6 @@
 #include <MonsterAttackPlugin/MonsterAttackPluginPCH.h>
 
+#include <AiPlugin/Navigation/Components/NavigationComponent.h>
 #include <AiPlugin/Navigation/NavMeshWorldModule.h>
 #include <AiPlugin/Navigation/Steering.h>
 #include <Core/GameState/GameStateBase.h>
@@ -18,15 +19,12 @@
 #include <MonsterAttackPlugin/GameState/MonsterAttackGameState.h>
 
 // clang-format off
-EZ_BEGIN_COMPONENT_TYPE(ezMonsterComponent, 3, ezComponentMode::Dynamic)
+EZ_BEGIN_COMPONENT_TYPE(ezMonsterComponent, 4, ezComponentMode::Dynamic)
 {
   EZ_BEGIN_PROPERTIES
   {
     EZ_MEMBER_PROPERTY("Health", m_iHealthPoints)->AddAttributes(new ezDefaultValueAttribute(100)),
     EZ_MEMBER_PROPERTY("MoneyReward", m_iMoneyReward)->AddAttributes(new ezDefaultValueAttribute(100)),
-    EZ_MEMBER_PROPERTY("WalkSpeed", m_fWalkSpeed)->AddAttributes(new ezDefaultValueAttribute(4.0f)),
-    EZ_MEMBER_PROPERTY("NavmeshConfig", m_sNavmeshConfig)->AddAttributes(new ezDynamicStringEnumAttribute("AiNavmeshConfig")),
-    EZ_MEMBER_PROPERTY("PathSearchConfig", m_sPathSearchConfig)->AddAttributes(new ezDynamicStringEnumAttribute("AiPathSearchConfig")),
   }
   EZ_END_PROPERTIES;
   EZ_BEGIN_MESSAGEHANDLERS
@@ -49,10 +47,7 @@ void ezMonsterComponent::SerializeComponent(ezWorldWriter& stream) const
 
   auto& s = stream.GetStream();
 
-  s << m_sNavmeshConfig;
-  s << m_sPathSearchConfig;
   s << m_iHealthPoints;
-  s << m_fWalkSpeed;
   s << m_iMoneyReward;
 }
 
@@ -63,19 +58,8 @@ void ezMonsterComponent::DeserializeComponent(ezWorldReader& stream)
 
   auto& s = stream.GetStream();
 
-  s >> m_sNavmeshConfig;
-  s >> m_sPathSearchConfig;
-
-  if (uiVersion >= 2)
-  {
-    s >> m_iHealthPoints;
-    s >> m_fWalkSpeed;
-  }
-
-  if (uiVersion >= 3)
-  {
-    s >> m_iMoneyReward;
-  }
+  s >> m_iHealthPoints;
+  s >> m_iMoneyReward;
 }
 
 void ezMonsterComponent::OnSimulationStarted()
@@ -86,6 +70,12 @@ void ezMonsterComponent::OnSimulationStarted()
   if (GetWorld()->TryGetObjectWithGlobalKey("Goal", pMoveToTarget))
   {
     m_hMoveToTarget = pMoveToTarget->GetHandle();
+
+    ezAiNavigationComponent* pNav = nullptr;
+    if (GetOwner()->TryGetComponentOfBaseType(pNav))
+    {
+      pNav->SetDestination(pMoveToTarget->GetGlobalPosition(), true);
+    }
   }
 
   if (MonsterAttackGameState* pGameState = ezDynamicCast<MonsterAttackGameState*>(ezGameApplication::GetGameApplicationInstance()->GetActiveGameState()))
@@ -99,18 +89,9 @@ void ezMonsterComponent::Update()
   if (m_iHealthPoints <= 0)
     return;
 
-  if (ezAiNavMeshWorldModule* pNavMeshModule = GetWorld()->GetOrCreateModule<ezAiNavMeshWorldModule>())
-  {
-    m_Navigation.SetNavmesh(*pNavMeshModule->GetNavMesh(m_sNavmeshConfig));
-    m_Navigation.SetQueryFilter(pNavMeshModule->GetPathSearchFilter(m_sPathSearchConfig));
-  }
-
   ezGameObject* pMoveToTarget = nullptr;
   if (GetWorld()->TryGetObject(m_hMoveToTarget, pMoveToTarget))
   {
-    m_Navigation.SetCurrentPosition(GetOwner()->GetGlobalPosition());
-    m_Navigation.SetTargetPosition(pMoveToTarget->GetGlobalPosition());
-
     if ((pMoveToTarget->GetGlobalPosition() - GetOwner()->GetGlobalPosition()).GetLengthSquared() < ezMath::Square(1.5f))
     {
       // reached the goal
@@ -123,29 +104,14 @@ void ezMonsterComponent::Update()
       }
     }
   }
-  else
-  {
-    m_Navigation.CancelNavigation();
-  }
-
-  m_Navigation.Update();
-
-  const bool bVisualizePathCorridor = false;
-  const bool bVisualizePathLine = false;
-
-  if (bVisualizePathCorridor)
-  {
-    m_Navigation.DebugDrawPathCorridor(GetWorld(), ezColor::Aquamarine.WithAlpha(0.2f));
-  }
-  if (bVisualizePathLine)
-  {
-    m_Navigation.DebugDrawPathLine(GetWorld(), ezColor::Lime);
-  }
-
-  if (m_Navigation.GetState() != ezAiNavigation::State::FullPathFound)
-    return;
 
   CheckGroundType();
+
+  if (auto pBoard = ezBlackboardComponent::FindBlackboard(GetOwner()))
+  {
+    pBoard->SetEntryValue("State", 1); // "walk" animation
+    pBoard->SetEntryValue("MoveSpeed", ezMath::Clamp(GetOwner()->GetLinearVelocity().GetLength() * 0.5f, 0.0f, 2.0f));
+  }
 
   if (m_fGroundWalkSpeed >= 1.0f)
   {
@@ -158,38 +124,6 @@ void ezMonsterComponent::Update()
     ezMsgSetColor msg;
     msg.m_Color = ezColor::DarkGrey;
     GetOwner()->SendMessageRecursive(msg);
-  }
-
-  if (m_fWalkSpeed > 0)
-  {
-    ezVec2 vForwardDir = GetOwner()->GetGlobalDirForwards().GetAsVec2();
-    vForwardDir.NormalizeIfNotZero(ezVec2(1, 0)).IgnoreResult();
-
-    ezAiSteering steering;
-
-    steering.m_vPosition = GetOwner()->GetGlobalPosition();
-    steering.m_qRotation = GetOwner()->GetGlobalRotation();
-    steering.m_vVelocity = GetOwner()->GetLinearVelocity();
-    steering.m_fMaxSpeed = m_fWalkSpeed * m_fGroundWalkSpeed;
-    steering.m_MinTurnSpeed = ezAngle::MakeFromDegree(180);
-    steering.m_fAcceleration = 5;
-    steering.m_fDecceleration = 10;
-
-    const float fBrakingDistance = 1.2f * (ezMath::Square(steering.m_fMaxSpeed) / (2.0f * steering.m_fDecceleration));
-
-    m_Navigation.ComputeSteeringInfo(steering.m_Info, vForwardDir, fBrakingDistance);
-    steering.Calculate(GetWorld()->GetClock().GetTimeDiff().AsFloatInSeconds(), GetWorld());
-
-    steering.m_vPosition.z = m_Navigation.GetCurrentElevation();
-
-    GetOwner()->SetGlobalPosition(steering.m_vPosition);
-    GetOwner()->SetGlobalRotation(steering.m_qRotation);
-
-    if (auto pBoard = ezBlackboardComponent::FindBlackboard(GetOwner()))
-    {
-      pBoard->SetEntryValue("State", 1); // "walk" animation
-      pBoard->SetEntryValue("MoveSpeed", ezMath::Clamp(steering.m_vVelocity.GetLength() * 0.5f, 0.0f, 2.0f));
-    }
   }
 }
 
@@ -260,6 +194,12 @@ void ezMonsterComponent::OnMsgDamage(ezMsgDamage& msg)
     if (auto pBoard = ezBlackboardComponent::FindBlackboard(GetOwner()))
     {
       pBoard->SetEntryValue("State", 2); // "die" animation
+    }
+
+    ezAiNavigationComponent* pNav = nullptr;
+    if (GetOwner()->TryGetComponentOfBaseType(pNav))
+    {
+      pNav->CancelNavigation();
     }
   }
 }

@@ -24,11 +24,6 @@ protected:
   //////////////////////////////////////////////////////////////////////////
   // ezMonsterComponent
 
-public:
-  ezHashedString m_sNavmeshConfig;
-  ezHashedString m_sPathSearchConfig;
-  float m_fWalkSpeed = 4.0f;
-
 private:
   void Update();
   void CheckGroundType();
@@ -37,11 +32,8 @@ private:
 
   ezInt32 m_iHealthPoints = 100;
   ezInt32 m_iMoneyReward = 100;
-
-  ezTime m_LastCheckGround = ezTime::MakeZero();
   float m_fGroundWalkSpeed = 1.0f;
-
-  ezAiNavigation m_Navigation;
+  ezTime m_LastCheckGround;
 
   ezGameObjectHandle m_hMoveToTarget;
 };
