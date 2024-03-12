@@ -170,6 +170,8 @@ void ezMonsterComponent::OnMsgDamage(ezMsgDamage& msg)
   if (m_iHealthPoints <= 0)
     return;
 
+  auto pBoard = ezBlackboardComponent::FindBlackboard(GetOwner());
+
   const ezInt32 iDamage = (ezInt32)msg.m_fDamage;
 
   if (iDamage >= 5)
@@ -184,6 +186,11 @@ void ezMonsterComponent::OnMsgDamage(ezMsgDamage& msg)
     pPrefab->InstantiatePrefab(*GetWorld(), GetOwner()->GetGlobalTransform(), opt);
   }
 
+  if (pBoard)
+  {
+    pBoard->SetEntryValue("React-Hit", true); // play additive hit reaction animation
+  }
+
   m_iHealthPoints -= iDamage;
 
   if (m_iHealthPoints <= 0)
@@ -193,7 +200,7 @@ void ezMonsterComponent::OnMsgDamage(ezMsgDamage& msg)
       pGameState->AddDeadMonster(GetOwner()->GetHandle(), m_iMoneyReward);
     }
 
-    if (auto pBoard = ezBlackboardComponent::FindBlackboard(GetOwner()))
+    if (pBoard)
     {
       pBoard->SetEntryValue("State", 2); // "die" animation
     }

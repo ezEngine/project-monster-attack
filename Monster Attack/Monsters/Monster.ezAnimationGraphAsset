@@ -32,6 +32,7 @@ o
 			s{"{ 9f44a3a7-c625-4c3f-8e88-7144365eee56 }"}
 			s{"{ f506fc27-f461-4dde-b708-feddc8e6a465 }"}
 		}
+		s %Tags{""}
 	}
 }
 }
@@ -543,7 +544,7 @@ o
 		s %CustomTitle{""}
 		Uuid %InActivate{u4{5952214850020420936,3840139338261858028}}
 		Uuid %InBool{u4{18035265369602515505,3170248330669043539}}
-		Vec2 %Node::Pos{f{0xD7F94641,0x93232A44}}
+		Vec2 %Node::Pos{f{0xA2DF4543,0x76732B44}}
 	}
 }
 o
