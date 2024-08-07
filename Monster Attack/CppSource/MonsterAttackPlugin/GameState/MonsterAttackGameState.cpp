@@ -15,11 +15,11 @@ EZ_END_DYNAMIC_REFLECTED_TYPE;
 MonsterAttackGameState::MonsterAttackGameState() = default;
 MonsterAttackGameState::~MonsterAttackGameState() = default;
 
-void MonsterAttackGameState::OnActivation(ezWorld* pWorld, const ezTransform* pStartPosition)
+void MonsterAttackGameState::OnActivation(ezWorld* pWorld, ezStringView sStartPosition, const ezTransform* pStartPosition)
 {
   EZ_LOG_BLOCK("GameState::Activate");
 
-  SUPER::OnActivation(pWorld, pStartPosition);
+  SUPER::OnActivation(pWorld, sStartPosition, pStartPosition);
 
   ezView* pView = nullptr;
   if (ezRenderWorld::TryGetView(m_hMainView, pView))
@@ -56,11 +56,6 @@ void MonsterAttackGameState::BeforeWorldUpdate()
 
     m_DeadMonsters.PopFront();
   }
-}
-
-ezGameStatePriority MonsterAttackGameState::DeterminePriority(ezWorld* pWorld) const
-{
-  return ezGameStatePriority::Default;
 }
 
 void MonsterAttackGameState::ConfigureMainWindowInputDevices(ezWindow* pWindow)

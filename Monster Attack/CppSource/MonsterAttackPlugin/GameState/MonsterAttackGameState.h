@@ -9,15 +9,13 @@
 #include <MonsterAttackPlugin/MonsterAttackPluginDLL.h>
 #include <RendererCore/Pipeline/Extractor.h>
 
-class MonsterAttackGameState : public ezFallbackGameState
+class MonsterAttackGameState : public ezGameState
 {
-  EZ_ADD_DYNAMIC_REFLECTION(MonsterAttackGameState, ezFallbackGameState);
+  EZ_ADD_DYNAMIC_REFLECTION(MonsterAttackGameState, ezGameState);
 
 public:
   MonsterAttackGameState();
   ~MonsterAttackGameState();
-
-  virtual ezGameStatePriority DeterminePriority(ezWorld* pWorld) const override;
 
   virtual void ProcessInput() override;
 
@@ -33,12 +31,11 @@ protected:
   virtual void ConfigureMainCamera() override;
 
 private:
-  virtual void OnActivation(ezWorld* pWorld, const ezTransform* pStartPosition) override;
+  virtual void OnActivation(ezWorld* pWorld, ezStringView sStartPosition, const ezTransform* pStartPosition) override;
   virtual void OnDeactivation() override;
   virtual void BeforeWorldUpdate() override;
   virtual void AfterWorldUpdate() override;
 
   ezSharedPtr<ezBlackboard> m_pLevelState;
   ezDeque<ezGameObjectHandle> m_DeadMonsters;
-
 };
