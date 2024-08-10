@@ -15,11 +15,11 @@ EZ_END_DYNAMIC_REFLECTED_TYPE;
 MonsterAttackGameState::MonsterAttackGameState() = default;
 MonsterAttackGameState::~MonsterAttackGameState() = default;
 
-void MonsterAttackGameState::OnActivation(ezWorld* pWorld, ezStringView sStartPosition, const ezTransform* pStartPosition)
+void MonsterAttackGameState::OnActivation(ezWorld* pWorld, ezStringView sStartPosition, const ezTransform& startPositionOffset)
 {
   EZ_LOG_BLOCK("GameState::Activate");
 
-  SUPER::OnActivation(pWorld, sStartPosition, pStartPosition);
+  SUPER::OnActivation(pWorld, sStartPosition, startPositionOffset);
 
   ezView* pView = nullptr;
   if (ezRenderWorld::TryGetView(m_hMainView, pView))
