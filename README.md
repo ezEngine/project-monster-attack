@@ -33,7 +33,7 @@ This repository is fully self-sufficient, since it pulls in ezEngine as a submod
 1. Run the editor.
 1. In the dashboard under *Projects* select **Browse...** and select the file `project-monster-attack/Monster Attack/ezProject`
 1. When asked to build the engine plugin, click *Apply*.
-1. Open the *Scene* **Level2** (working title)
+1. Open the *Scene* **Main**
 1. To edit / compile the C++ plugin, choose `Project > C++ Project > Open Solution`
 1. To play the game from the editor, press `Ctrl+F5`
 1. To play the game in stand-alone mode, press `Ctrl+R` and choose **Export & Run**.
