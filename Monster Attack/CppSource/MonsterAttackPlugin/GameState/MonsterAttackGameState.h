@@ -19,8 +19,6 @@ public:
 
   virtual void ProcessInput() override;
 
-  ezSelectedObjectsContext m_ObjectsToHighlight;
-
   void MonsterReachedGoal();
   void AddDeadMonster(ezGameObjectHandle hObject, ezInt32 iMoneyReward);
   void AddMonster();

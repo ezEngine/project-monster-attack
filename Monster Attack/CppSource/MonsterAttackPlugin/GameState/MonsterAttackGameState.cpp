@@ -21,12 +21,6 @@ void MonsterAttackGameState::OnActivation(ezWorld* pWorld, ezStringView sStartPo
 
   SUPER::OnActivation(pWorld, sStartPosition, startPositionOffset);
 
-  ezView* pView = nullptr;
-  if (ezRenderWorld::TryGetView(m_hMainView, pView))
-  {
-    pView->SetExtractorProperty("HighlightObjects", "SelectionContext", &m_ObjectsToHighlight);
-  }
-
   ezGameApplication::cvar_AppVSync = true;
 
   ezHashedString sName;
@@ -84,10 +78,6 @@ void MonsterAttackGameState::ConfigureInputActions()
 void MonsterAttackGameState::ProcessInput()
 {
   SUPER::ProcessInput();
-
-  ezWorld* pWorld = m_pMainWorld;
-
-  m_ObjectsToHighlight.m_Objects.Clear();
 }
 
 void MonsterAttackGameState::MonsterReachedGoal()

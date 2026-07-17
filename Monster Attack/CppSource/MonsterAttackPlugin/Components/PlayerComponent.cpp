@@ -4,7 +4,6 @@
 #include <Core/Messages/CommonMessages.h>
 #include <GameComponentsPlugin/Gameplay/HeadBoneComponent.h>
 #include <GameEngine/GameApplication/GameApplication.h>
-#include <GameEngine/Gameplay/BlackboardComponent.h>
 #include <GameEngine/Gameplay/GrabbableItemComponent.h>
 #include <GameEngine/Gameplay/InputComponent.h>
 #include <GameEngine/Gameplay/SpawnComponent.h>
@@ -13,6 +12,7 @@
 #include <GameEngine/StateMachine/StateMachineComponent.h>
 #include <MonsterAttackPlugin/Components/PlayerComponent.h>
 #include <MonsterAttackPlugin/GameState/MonsterAttackGameState.h>
+#include <RendererCore/Components/BlackboardComponent.h>
 
 // clang-format off
 EZ_BEGIN_COMPONENT_TYPE(ezPlayerComponent, 1, ezComponentMode::Dynamic)

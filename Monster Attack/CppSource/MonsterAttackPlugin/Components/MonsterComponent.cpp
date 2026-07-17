@@ -10,7 +10,6 @@
 #include <GameEngine/Animation/Skeletal/AnimationControllerComponent.h>
 #include <GameEngine/GameApplication/GameApplication.h>
 #include <GameEngine/GameState/GameState.h>
-#include <GameEngine/Gameplay/BlackboardComponent.h>
 #include <GameEngine/Gameplay/InputComponent.h>
 #include <GameEngine/Gameplay/SpawnComponent.h>
 #include <GameEngine/Messages/DamageMessage.h>
@@ -19,6 +18,7 @@
 #include <JoltPlugin/Components/JoltRagdollComponent.h>
 #include <MonsterAttackPlugin/Components/MonsterComponent.h>
 #include <MonsterAttackPlugin/GameState/MonsterAttackGameState.h>
+#include <RendererCore/Components/BlackboardComponent.h>
 
 // clang-format off
 EZ_BEGIN_COMPONENT_TYPE(ezMonsterComponent, 4, ezComponentMode::Dynamic)
@@ -109,7 +109,7 @@ void ezMonsterComponent::Update()
 
   CheckGroundType();
 
-  if (auto pBoard = ezBlackboardComponent::FindBlackboard(GetOwner()))
+  if (auto pBoard = ezBlackboardComponent::FindBlackboard(*GetOwner()))
   {
     pBoard->SetEntryValue("State", 1); // "walk" animation
     pBoard->SetEntryValue("MoveSpeed", ezMath::Clamp(GetOwner()->GetLinearVelocity().GetLength() * 0.5f, 0.0f, 2.0f));
@@ -170,7 +170,7 @@ void ezMonsterComponent::OnMsgDamage(ezMsgDamage& msg)
   if (m_iHealthPoints <= 0)
     return;
 
-  auto pBoard = ezBlackboardComponent::FindBlackboard(GetOwner());
+  auto pBoard = ezBlackboardComponent::FindBlackboard(*GetOwner());
 
   const ezInt32 iDamage = (ezInt32)msg.m_fDamage;
 
