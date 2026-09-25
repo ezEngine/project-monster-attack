@@ -1,5 +1,10 @@
-#ez-version 2
+#ez-version 4
 cmake_minimum_required(VERSION 3.21)
+
+# Set CMake policies
+if (${CMAKE_VERSION} VERSION_GREATER_EQUAL "4.1")
+  cmake_policy(SET CMP0194 OLD)
+endif()
 
 project (MonsterAttack VERSION 1.0 LANGUAGES C CXX)
 
@@ -9,9 +14,16 @@ if(PROJECT_IS_TOP_LEVEL)
 
 	message(STATUS "EZ_SDK_DIR is set to '${EZ_SDK_DIR}'")
 
-	# fix output directory
-	set (EZ_OUTPUT_DIRECTORY_LIB "${EZ_SDK_DIR}/Output/Lib" CACHE PATH "Where to store the compiled .lib files." FORCE)
-	set (EZ_OUTPUT_DIRECTORY_DLL "${EZ_SDK_DIR}/Output/Bin" CACHE PATH "Where to store the compiled .dll files." FORCE)
+	# Where the SDK's binaries are. The plugin has to be built into the same directories, or the editor
+	# does not find it. The editor passes them in through CMakeUserPresets.json, because an SDK can be
+	# built into a directory other than the default one below.
+	if (NOT EZ_OUTPUT_DIRECTORY_LIB)
+		set (EZ_OUTPUT_DIRECTORY_LIB "${EZ_SDK_DIR}/Output/Lib" CACHE PATH "Where to store the compiled .lib files." FORCE)
+	endif()
+
+	if (NOT EZ_OUTPUT_DIRECTORY_DLL)
+		set (EZ_OUTPUT_DIRECTORY_DLL "${EZ_SDK_DIR}/Output/Bin" CACHE PATH "Where to store the compiled .dll files." FORCE)
+	endif()
 
 	include("${EZ_SDK_DIR}/ezCMakeConfig.cmake")
 	get_property(EZ_CMAKE_RELPATH GLOBAL PROPERTY EZ_CMAKE_RELPATH)

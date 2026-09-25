@@ -36,13 +36,13 @@ PluginState
 }
 PluginState
 {
-	string %ID{"VisualScript"}
+	string %ID{"RmlUi"}
 	bool %Selected{true}
 	bool %LoadCopy{false}
 }
 PluginState
 {
-	string %ID{"XBoxController"}
+	string %ID{"VisualScript"}
 	bool %Selected{true}
 	bool %LoadCopy{false}
 }

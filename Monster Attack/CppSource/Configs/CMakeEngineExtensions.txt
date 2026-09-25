@@ -8,5 +8,6 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
   GameComponentsPlugin
   JoltPlugin
   ParticlePlugin
+  RmlUiPlugin
   VisualScriptPlugin
 )

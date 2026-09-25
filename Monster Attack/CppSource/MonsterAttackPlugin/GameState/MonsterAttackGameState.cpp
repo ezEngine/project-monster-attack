@@ -5,6 +5,7 @@
 #include <Core/World/World.h>
 #include <Foundation/Configuration/CVar.h>
 #include <Foundation/Logging/Log.h>
+#include <GameEngine/UI/MainMenuComponent.h>
 #include <MonsterAttackPlugin/GameState/MonsterAttackGameState.h>
 #include <RendererCore/Debug/DebugRenderer.h>
 #include <RendererCore/Meshes/MeshComponent.h>
@@ -78,6 +79,73 @@ void MonsterAttackGameState::ConfigureInputActions()
 void MonsterAttackGameState::ProcessInput()
 {
   SUPER::ProcessInput();
+
+  if (ezInputManager::GetExclusiveInputSet().IsEmpty() || ezInputManager::GetExclusiveInputSet() == "ezMainMenu")
+  {
+    if (IsMainMenuOpen())
+    {
+      // keeps the scene from getting any input while the menu is open
+      ezInputManager::SetExclusiveInputSet("ezMainMenu");
+      return;
+    }
+    else if (ezInputManager::GetExclusiveInputSet() == "ezMainMenu")
+    {
+      ezInputManager::SetExclusiveInputSet("");
+    }
+  }
+}
+
+ezMainMenuComponent* MonsterAttackGameState::GetMainMenu()
+{
+  if (m_pMainWorld == nullptr || IsInLoadingScreen())
+    return nullptr;
+
+  if (!m_bSearchedMainMenu)
+  {
+    m_bSearchedMainMenu = true;
+    m_hMainMenu = ezMainMenuComponent::FindInWorld(*m_pMainWorld);
+  }
+
+  ezMainMenuComponent* pMenu = nullptr;
+  if (!m_pMainWorld->TryGetComponent(m_hMainMenu, pMenu))
+    return nullptr;
+
+  return pMenu;
+}
+
+bool MonsterAttackGameState::IsMainMenuOpen()
+{
+  if (m_pMainWorld == nullptr)
+    return false;
+
+  EZ_LOCK(m_pMainWorld->GetWriteMarker());
+
+  ezMainMenuComponent* pMenu = GetMainMenu();
+  return pMenu != nullptr && pMenu->IsMenuOpen();
+}
+
+void MonsterAttackGameState::RequestQuit(ezStringView sRequestedBy)
+{
+  if (m_pMainWorld != nullptr && (sRequestedBy == "dev-esc" || sRequestedBy == "editor-esc"))
+  {
+    EZ_LOCK(m_pMainWorld->GetWriteMarker());
+
+    if (ezMainMenuComponent* pMenu = GetMainMenu())
+    {
+      pMenu->OpenMenu();
+      return;
+    }
+  }
+
+  SUPER::RequestQuit(sRequestedBy);
+}
+
+void MonsterAttackGameState::OnChangedMainWorld(ezWorld* pPrevWorld, ezWorld* pNewWorld, ezStringView sStartPosition, const ezTransform& startPositionOffset)
+{
+  m_hMainMenu.Invalidate();
+  m_bSearchedMainMenu = false;
+
+  SUPER::OnChangedMainWorld(pPrevWorld, pNewWorld, sStartPosition, startPositionOffset);
 }
 
 void MonsterAttackGameState::MonsterReachedGoal()
