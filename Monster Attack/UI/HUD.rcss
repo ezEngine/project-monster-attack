@@ -40,6 +40,13 @@ div {
   display: none;
 }
 
+#hud.hub #items,
+#hud.hub #placement,
+#hud.hub #stats,
+#hud.hub #controls {
+  display: none;
+}
+
 .panel {
   decorator: ninepatch(panel-outer, panel-inner, 1.0);
   padding: 12dp 16dp;

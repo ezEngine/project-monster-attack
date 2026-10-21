@@ -6,7 +6,9 @@
 #include <Foundation/Configuration/CVar.h>
 #include <Foundation/IO/FileSystem/FileSystem.h>
 #include <Foundation/Logging/Log.h>
+#include <GameEngine/Gameplay/SceneTransitionComponent.h>
 #include <GameEngine/UI/MainMenuComponent.h>
+#include <MonsterAttackPlugin/Components/LevelPortalComponent.h>
 #include <MonsterAttackPlugin/GameState/MonsterAttackGameState.h>
 #include <RendererCore/Debug/DebugRenderer.h>
 #include <RendererCore/Meshes/MeshComponent.h>
@@ -44,16 +46,98 @@ void MonsterAttackGameState::AfterWorldUpdate()
 
 void MonsterAttackGameState::BeforeWorldUpdate()
 {
-  EZ_LOCK(m_pMainWorld->GetWriteMarker());
-
-  while (m_DeadMonsters.GetCount() > 20)
   {
-    m_pMainWorld->DeleteObjectDelayed(m_DeadMonsters.PeekFront());
+    EZ_LOCK(m_pMainWorld->GetWriteMarker());
 
-    m_DeadMonsters.PopFront();
+    while (m_DeadMonsters.GetCount() > 20)
+    {
+      m_pMainWorld->DeleteObjectDelayed(m_DeadMonsters.PeekFront());
+
+      m_DeadMonsters.PopFront();
+    }
+
+    UpdateHudState();
   }
 
-  UpdateHudState();
+  // may switch to another world, so this must not happen while the current one is locked
+  UpdateLevelExit();
+}
+
+void MonsterAttackGameState::UpdateLevelExit()
+{
+  if (m_pLevelState == nullptr || IsInLoadingScreen())
+    return;
+
+  const ezBlackboard::Entry* pPhase = m_pLevelState->GetEntry("Phase");
+  if (pPhase == nullptr)
+    return;
+
+  const ezTime tNow = m_pMainWorld->GetClock().GetAccumulatedTime();
+
+  if (pPhase->m_uiChangeCounter != m_uiPhaseChangeCounter)
+  {
+    m_uiPhaseChangeCounter = pPhase->m_uiChangeCounter;
+    m_LevelExitTime = ezTime::MakeZero();
+
+    const ezString sPhase = pPhase->m_Value.ConvertTo<ezString>();
+
+    if (sPhase == "Won")
+    {
+      ezLevelPortalComponent::MarkCurrentLevelWon();
+    }
+
+    if (sPhase == "Won" || sPhase == "Lost")
+    {
+      EZ_LOCK(m_pMainWorld->GetReadMarker());
+
+      const ezGameObject* pExit = nullptr;
+      if (m_pMainWorld->TryGetObjectWithGlobalKey("LevelExit", pExit))
+      {
+        m_LevelExitTime = tNow + ezTime::MakeFromSeconds(6);
+        m_iLevelExitCountdown = 0;
+      }
+    }
+  }
+
+  if (m_LevelExitTime.IsZero())
+    return;
+
+  const ezInt32 iSecondsLeft = (ezInt32)ezMath::Ceil((m_LevelExitTime - tNow).GetSeconds());
+
+  if (iSecondsLeft > 0)
+  {
+    if (iSecondsLeft != m_iLevelExitCountdown && m_pLevelState->HasEntry("Notice"))
+    {
+      m_iLevelExitCountdown = iSecondsLeft;
+
+      ezStringBuilder sNotice;
+      sNotice.SetFormat("Returning to the hub in {}", iSecondsLeft);
+      m_pLevelState->SetEntryValue("Notice", sNotice.GetView());
+    }
+
+    return;
+  }
+
+  m_LevelExitTime = ezTime::MakeZero();
+  m_pLevelState->SetEntryValue("Notice", "");
+
+  ezHashedString sTargetScene, sSpawnPoint;
+  {
+    EZ_LOCK(m_pMainWorld->GetReadMarker());
+
+    const ezGameObject* pExit = nullptr;
+    const ezSceneTransitionComponent* pTransition = nullptr;
+    if (!m_pMainWorld->TryGetObjectWithGlobalKey("LevelExit", pExit) || !pExit->TryGetComponentOfBaseType(pTransition))
+      return;
+
+    sTargetScene = pTransition->m_sTargetScene;
+    sSpawnPoint = pTransition->m_sSpawnPoint;
+  }
+
+  // the level was finished, so nobody will come back to it
+  ezLevelPortalComponent::ClearCurrentLevel();
+
+  LoadScene(sTargetScene, {}, sSpawnPoint, ezTransform::MakeIdentity());
 }
 
 void MonsterAttackGameState::UpdateHudState()
@@ -292,6 +376,19 @@ void MonsterAttackGameState::OnChangedMainWorld(ezWorld* pPrevWorld, ezWorld* pN
   m_hMainMenu.Invalidate();
   m_bSearchedMainMenu = false;
   m_uiMessageChangeCounter = ezInvalidIndex;
+  m_LevelExitTime = ezTime::MakeZero();
+
+  // the handles belong to the previous world, which deletes its objects itself
+  m_DeadMonsters.Clear();
+
+  // the phase may still be left over from the previous level
+  if (m_pLevelState != nullptr)
+  {
+    if (const ezBlackboard::Entry* pPhase = m_pLevelState->GetEntry("Phase"))
+    {
+      m_uiPhaseChangeCounter = pPhase->m_uiChangeCounter;
+    }
+  }
 
   SUPER::OnChangedMainWorld(pPrevWorld, pNewWorld, sStartPosition, startPositionOffset);
 }

@@ -8,7 +8,8 @@
   <!-- All values come from the global 'LevelState' blackboard (see UI/HUD.ezBlackboardTemplateAsset and Configs/AllScenesEnv.ezBlackboardTemplateAsset).
        The game logic writes the values, the HUD only displays them. -->
   <body data-model="LevelState">
-    <div id="hud" data-class-hidden="MenuOpen">
+    <!-- the hub has nothing to defend, so it only shows messages -->
+    <div id="hud" data-class-hidden="MenuOpen" data-class-hub="Phase == 'Hub'">
 
       <!-- Items: select with the number keys or cycle through them -->
       <div id="items">

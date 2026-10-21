@@ -137,9 +137,13 @@ void ezPlayerComponent::OnMsgInputActionTriggered(ezMsgInputActionTriggered& msg
 
 void ezPlayerComponent::SelectItem(ezUInt32 uiItem)
 {
-  m_uiActiveItem = uiItem;
-
   const ItemDesc& item = s_Items[uiItem];
+
+  // there is nothing to defend in the hub
+  if (item.m_Placement != TrapPlacement::None && m_pLevelState && m_pLevelState->GetEntryValue("Phase").ConvertTo<ezString>() == "Hub")
+    return;
+
+  m_uiActiveItem = uiItem;
 
   if (item.m_szPrevizPrefab != nullptr)
   {

@@ -44,6 +44,12 @@ protected:
   /// Returns the path to the Kenney input prompt image for the given input slot, or an empty string if there is none.
   ezStringView GetInputPromptIcon(ezStringView sInputSlot);
 
+  /// Once a level is won or lost, goes back to the hub after a short delay.
+  ///
+  /// Levels define where to return to through an ezSceneTransitionComponent on an object with the global key "LevelExit".
+  /// Levels without such an object just stay in the final phase.
+  void UpdateLevelExit();
+
 private:
   virtual void OnActivation(ezWorld* pWorld, ezStringView sStartPosition, const ezTransform& startPositionOffset) override;
   virtual void OnDeactivation() override;
@@ -61,4 +67,8 @@ private:
 
   ezUInt32 m_uiMessageChangeCounter = ezInvalidIndex;
   ezTime m_MessageHideTime;
+
+  ezUInt32 m_uiPhaseChangeCounter = ezInvalidIndex;
+  ezTime m_LevelExitTime;
+  ezInt32 m_iLevelExitCountdown = 0;
 };
