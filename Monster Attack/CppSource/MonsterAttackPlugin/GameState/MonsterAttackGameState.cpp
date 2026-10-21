@@ -53,7 +53,7 @@ void MonsterAttackGameState::BeforeWorldUpdate()
   }
 }
 
-void MonsterAttackGameState::ConfigureMainWindowInputDevices(ezWindow* pWindow)
+void MonsterAttackGameState::ConfigureMainWindowInputDevices(ezWindowPlatformShared* pWindow)
 {
   SUPER::ConfigureMainWindowInputDevices(pWindow);
 

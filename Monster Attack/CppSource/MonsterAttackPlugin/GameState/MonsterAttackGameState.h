@@ -29,7 +29,7 @@ public:
   void AddMonster();
 
 protected:
-  virtual void ConfigureMainWindowInputDevices(ezWindow* pWindow) override;
+  virtual void ConfigureMainWindowInputDevices(ezWindowPlatformShared* pWindow) override;
   virtual void ConfigureInputActions() override;
   virtual void ConfigureMainCamera() override;
   virtual void OnChangedMainWorld(ezWorld* pPrevWorld, ezWorld* pNewWorld, ezStringView sStartPosition, const ezTransform& startPositionOffset) override;
