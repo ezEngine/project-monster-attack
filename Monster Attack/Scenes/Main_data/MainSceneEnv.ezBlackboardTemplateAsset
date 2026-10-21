@@ -14,7 +14,7 @@ o
 			s{"{ 11b04ae6-c3a4-44c2-9c62-43421b9244b4 }"}
 		}
 		Uuid %DocumentID{u4{261973201346673832,5541758044283568030}}
-		u4 %Hash{13215351627574566089}
+		u4 %Hash{2339012711774506827}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps{}
@@ -33,7 +33,7 @@ o
 	{
 		s %Flags{""}
 		i3 %InitialValue{20}
-		HashedString %Name{s{"Points"}}
+		HashedString %Name{s{"Lives"}}
 	}
 }
 o
@@ -63,6 +63,7 @@ o
 		{
 			Uuid{u4{1241925382907451792,4668541860692836812}}
 			Uuid{u4{3993220376841706675,5379041275382533761}}
+			Uuid{u4{12966813171717148101,3495581851023522541}}
 		}
 	}
 }
@@ -78,6 +79,18 @@ o
 		{
 			Uuid{u4{7540683553593173931,5702789119630429312}}
 		}
+	}
+}
+o
+{
+	Uuid %id{u4{12966813171717148101,3495581851023522541}}
+	s %t{"ezBlackboardEntry"}
+	u3 %v{1}
+	p
+	{
+		s %Flags{""}
+		i3 %InitialValue{2}
+		HashedString %Name{s{"RoundCount"}}
 	}
 }
 }

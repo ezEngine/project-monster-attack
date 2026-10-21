@@ -1,0 +1,289 @@
+/* Panels and frames from the Kenney 'UI Pack - Adventure' (CC0), the 2x versions are used for crisp edges. */
+
+@spritesheet hud-panel {
+  src: Kenney.nl/UI/panel_brown_dark.png;
+  resolution: 2x;
+  panel-outer: 0px 0px 128px 128px;
+  panel-inner: 16px 16px 96px 96px;
+}
+
+@spritesheet hud-frame {
+  src: Kenney.nl/UI/panel_border_brown.png;
+  resolution: 2x;
+  frame-outer: 0px 0px 128px 128px;
+  frame-inner: 32px 32px 64px 64px;
+}
+
+/* RmlUi has no default style sheet, so even the basics need to be set up */
+body {
+  font-family: LatoLatin;
+  font-weight: bold;
+  font-size: 18dp;
+  color: #fff3dc;
+  width: 100%;
+  height: 100%;
+
+  /* the HUD never takes input */
+  pointer-events: none;
+}
+
+div {
+  display: block;
+}
+
+#hud {
+  width: 100%;
+  height: 100%;
+}
+
+#hud.hidden {
+  display: none;
+}
+
+.panel {
+  decorator: ninepatch(panel-outer, panel-inner, 1.0);
+  padding: 12dp 16dp;
+}
+
+/* ---------------------------------------------------------------------------------------- */
+/* Item bar */
+
+#items {
+  position: absolute;
+  top: 16dp;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.slot {
+  width: 120dp;
+  margin: 0 8dp;
+  text-align: center;
+  opacity: 0.8;
+}
+
+.slot.active {
+  opacity: 1;
+}
+
+.slot .item {
+  position: relative;
+  width: 96dp;
+  height: 96dp;
+  margin: 0 auto;
+  padding: 8dp;
+  decorator: ninepatch(panel-outer, panel-inner, 1.0);
+}
+
+.slot .thumbnail {
+  width: 80dp;
+  height: 80dp;
+}
+
+.slot.unaffordable .thumbnail {
+  image-color: #8a8a8a;
+}
+
+/* the frame with the metal corners marks the selected item */
+.slot .outline {
+  display: none;
+  position: absolute;
+  top: -10dp;
+  left: -10dp;
+  right: -10dp;
+  bottom: -10dp;
+}
+
+.slot.active .outline {
+  display: block;
+  decorator: ninepatch(frame-outer, frame-inner, 1.0);
+}
+
+.slot .key {
+  position: absolute;
+  top: -12dp;
+  left: -12dp;
+}
+
+.slot .name {
+  margin-top: 14dp;
+  font-size: 16dp;
+  font-effect: outline(2dp #2a1a0e);
+}
+
+.slot.active .name {
+  color: #ffd75e;
+}
+
+.cost {
+  font-size: 15dp;
+  color: #ffd75e;
+  font-effect: outline(2dp #2a1a0e);
+}
+
+.slot.unaffordable .cost {
+  color: #ff6a50;
+}
+
+img.gold {
+  width: 14dp;
+  height: 14dp;
+  margin-right: 3dp;
+}
+
+#placement {
+  position: absolute;
+  top: 218dp;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 15dp;
+  color: #e8d9bc;
+  font-effect: outline(2dp #2a1a0e);
+}
+
+/* ---------------------------------------------------------------------------------------- */
+/* Key prompts, see MonsterAttackGameState::UpdateHudState() */
+
+img.key-icon {
+  width: 40dp;
+  height: 40dp;
+}
+
+span.key-text {
+  display: inline-block;
+  min-width: 18dp;
+  padding: 2dp 8dp;
+  background-color: #fff3dc;
+  border-radius: 6dp;
+  color: #2a1a0e;
+  font-size: 15dp;
+  text-align: center;
+}
+
+.key-inline {
+  display: inline-block;
+}
+
+.key-inline img.key-icon {
+  width: 32dp;
+  height: 32dp;
+  vertical-align: middle;
+}
+
+/* ---------------------------------------------------------------------------------------- */
+/* Game state */
+
+#stats {
+  position: absolute;
+  top: 16dp;
+  left: 16dp;
+  width: 200dp;
+}
+
+#stats .row {
+  display: flex;
+  justify-content: space-between;
+  line-height: 30dp;
+}
+
+#stats .label {
+  color: #d8c39a;
+}
+
+#stats .value {
+  font-size: 22dp;
+}
+
+#stats .gold-text {
+  color: #ffd75e;
+}
+
+#stats .danger .value {
+  color: #ff6a50;
+}
+
+/* ---------------------------------------------------------------------------------------- */
+/* Messages */
+
+#banner {
+  position: absolute;
+  top: 250dp;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+#banner.visible {
+  opacity: 1;
+}
+
+/* the banner stays on one line and grows with longer messages */
+#banner-box {
+  display: inline-block;
+  min-width: 440dp;
+  height: 110dp;
+  padding: 0 56dp;
+  box-sizing: border-box;
+  white-space: nowrap;
+  decorator: image(Kenney.nl/UI/banner_hanging.png);
+}
+
+#message {
+  /* the red inner area of the banner image is centered slightly below the middle of the image */
+  line-height: 118dp;
+  text-align: center;
+  font-size: 26dp;
+  color: #fff8ec;
+  font-effect: outline(3dp #6a2418);
+}
+
+#start-hint {
+  position: absolute;
+  bottom: 64dp;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 22dp;
+  font-effect: outline(2dp #2a1a0e);
+}
+
+#crosshair {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 44dp;
+  height: 44dp;
+  margin-top: -22dp;
+  margin-left: -22dp;
+  image-color: rgba(255, 255, 255, 200);
+}
+
+#notice {
+  position: absolute;
+  top: 58%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 24dp;
+  color: #ff7a5c;
+  font-effect: outline(3dp #2a0e08);
+}
+
+/* ---------------------------------------------------------------------------------------- */
+/* Controls */
+
+#controls {
+  position: absolute;
+  right: 16dp;
+  bottom: 16dp;
+  font-size: 16dp;
+}
+
+#controls .row {
+  line-height: 36dp;
+}

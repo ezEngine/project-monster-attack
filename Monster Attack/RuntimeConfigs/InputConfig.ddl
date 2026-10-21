@@ -195,7 +195,7 @@ InputAction
 	}
 	Slot
 	{
-		string %Key{"controller0_right_shoulder"}
+		string %Key{"controller0_right_trigger"}
 		float %Scale{1}
 	}
 }
@@ -260,6 +260,48 @@ InputAction
 	Slot
 	{
 		string %Key{"controller0_pad_down"}
+		float %Scale{1}
+	}
+}
+InputAction
+{
+	string %Set{"Default"}
+	string %Action{"Select_Prev"}
+	bool %TimeScale{false}
+	Slot
+	{
+		string %Key{"keyboard_q"}
+		float %Scale{1}
+	}
+	Slot
+	{
+		string %Key{"mouse_wheel_up"}
+		float %Scale{1}
+	}
+	Slot
+	{
+		string %Key{"controller0_left_shoulder"}
+		float %Scale{1}
+	}
+}
+InputAction
+{
+	string %Set{"Default"}
+	string %Action{"Select_Next"}
+	bool %TimeScale{false}
+	Slot
+	{
+		string %Key{"keyboard_e"}
+		float %Scale{1}
+	}
+	Slot
+	{
+		string %Key{"mouse_wheel_down"}
+		float %Scale{1}
+	}
+	Slot
+	{
+		string %Key{"controller0_right_shoulder"}
 		float %Scale{1}
 	}
 }

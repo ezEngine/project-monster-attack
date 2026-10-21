@@ -11,7 +11,7 @@ o
 		s %AssetType{"VisualScriptClass"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{7829505383130465170,5749873886899031452}}
-		u4 %Hash{11116604368814530425}
+		u4 %Hash{7318307033852380813}
 		VarArray %MetaInfo
 		{
 			Uuid{u4{5865425497123248158,8871016646301024355}}
@@ -44,7 +44,7 @@ o
 	{
 		VarArray %Attributes{}
 		i3 %DefaultValue{20}
-		s %Name{"StartPoints"}
+		s %Name{"StartLives"}
 		s %Type{""}
 	}
 }
@@ -71,7 +71,7 @@ o
 	u3 %v{1}
 	p
 	{
-		s %Name{"Points"}
+		s %Name{"Lives"}
 		Vec2 %Node::Pos{f{0x033EB844,0xDC0781C3}}
 		i3 %Value{0}
 	}
@@ -83,7 +83,7 @@ o
 	u3 %v{1}
 	p
 	{
-		s %Name{"StartPoints"}
+		s %Name{"StartLives"}
 		Vec2 %Node::Pos{f{0xE349A644,0xCD2090C2}}
 	}
 }
@@ -96,7 +96,7 @@ o
 	{
 		i3 %DefaultValue{20}
 		b %Expose{1}
-		HashedString %Name{s{"StartPoints"}}
+		HashedString %Name{s{"StartLives"}}
 	}
 }
 o

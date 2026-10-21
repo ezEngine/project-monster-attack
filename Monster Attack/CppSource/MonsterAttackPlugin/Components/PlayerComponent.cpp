@@ -49,6 +49,18 @@ void ezPlayerComponent::DeserializeComponent(ezWorldReader& stream)
   auto& s = stream.GetStream();
 }
 
+// clang-format off
+const ezPlayerComponent::ItemDesc ezPlayerComponent::s_Items[] =
+{
+  {PlayerAction::ShootMagicBullet, TrapPlacement::None,  "Select_MagicBullet", nullptr,          0,    nullptr,          nullptr},
+  {PlayerAction::PlaceSpikeTrap,   TrapPlacement::Floor, "Select_SpikeTrap",   "Cost_SpikeTrap", 1000, "Vis-Trap-Spike", "Trap-Spike"},
+  {PlayerAction::PlaceArrowTrap,   TrapPlacement::Wall,  "Select_ArrowTrap",   "Cost_ArrowTrap", 2000, "Vis-Trap-Arrow", "Trap-Arrow"},
+  {PlayerAction::PlaceTarTrap,     TrapPlacement::Floor, "Select_TarTrap",     "Cost_TarTrap",   500,  "Vis-Trap-Tar",   "Trap-Tar"},
+};
+// clang-format on
+
+const ezUInt32 ezPlayerComponent::s_uiNumItems = EZ_ARRAY_SIZE(ezPlayerComponent::s_Items);
+
 void ezPlayerComponent::OnSimulationStarted()
 {
   SUPER::OnSimulationStarted();
@@ -56,6 +68,8 @@ void ezPlayerComponent::OnSimulationStarted()
   ezHashedString sName;
   sName.Assign("LevelState");
   m_pLevelState = ezBlackboard::GetOrCreateGlobal(sName);
+
+  SelectItem(0);
 }
 
 void ezPlayerComponent::OnMsgInputActionTriggered(ezMsgInputActionTriggered& msg)
@@ -75,81 +89,117 @@ void ezPlayerComponent::OnMsgInputActionTriggered(ezMsgInputActionTriggered& msg
       }
       return;
     }
-    if (msg.m_sInputAction == ezTempHashedString("Select_MagicBullet"))
-    {
-      m_Action = PlayerAction::ShootMagicBullet;
-      m_TrapPlacement = TrapPlacement::None;
-      m_iRequiredMoney = 0;
-      ClearPrevizObject();
-      return;
-    }
-    if (msg.m_sInputAction == ezTempHashedString("Select_SpikeTrap"))
-    {
-      m_Action = PlayerAction::PlaceSpikeTrap;
-      m_TrapPlacement = TrapPlacement::Floor;
-      m_iRequiredMoney = 1000;
-      m_hPrevizPrefab = ezResourceManager::LoadResource<ezPrefabResource>("Vis-Trap-Spike");
-      m_hPlacePrefab = ezResourceManager::LoadResource<ezPrefabResource>("Trap-Spike");
-      ClearPrevizObject();
-      return;
-    }
-    if (msg.m_sInputAction == ezTempHashedString("Select_ArrowTrap"))
-    {
-      m_Action = PlayerAction::PlaceArrowTrap;
-      m_TrapPlacement = TrapPlacement::Wall;
-      m_iRequiredMoney = 2000;
-      m_hPrevizPrefab = ezResourceManager::LoadResource<ezPrefabResource>("Vis-Trap-Arrow");
-      m_hPlacePrefab = ezResourceManager::LoadResource<ezPrefabResource>("Trap-Arrow");
-      ClearPrevizObject();
-      return;
-    }
-    if (msg.m_sInputAction == ezTempHashedString("Select_TarTrap"))
-    {
-      m_Action = PlayerAction::PlaceTarTrap;
-      m_TrapPlacement = TrapPlacement::Floor;
-      m_iRequiredMoney = 500;
-      m_hPrevizPrefab = ezResourceManager::LoadResource<ezPrefabResource>("Vis-Trap-Tar");
-      m_hPlacePrefab = ezResourceManager::LoadResource<ezPrefabResource>("Trap-Tar");
-      ClearPrevizObject();
-      return;
-    }
-  }
 
-  if (m_Action == PlayerAction::ShootMagicBullet)
-  {
-    if (msg.m_sInputAction == ezTempHashedString("Shoot") && msg.m_TriggerState == ezTriggerState::Activated)
+    if (msg.m_sInputAction == ezTempHashedString("Select_Next"))
     {
-      if (ezGameObject* pSpawnBulletObj = GetOwner()->FindChildByName("Spawn_MagicBullet", true))
+      SelectItem((m_uiActiveItem + 1) % s_uiNumItems);
+      return;
+    }
+
+    if (msg.m_sInputAction == ezTempHashedString("Select_Prev"))
+    {
+      SelectItem((m_uiActiveItem + s_uiNumItems - 1) % s_uiNumItems);
+      return;
+    }
+
+    for (ezUInt32 i = 0; i < s_uiNumItems; ++i)
+    {
+      if (msg.m_sInputAction == ezTempHashedString(s_Items[i].m_szSelectAction))
       {
-        ezSpawnComponent* pSpawnBulletComp = nullptr;
-        if (pSpawnBulletObj->TryGetComponentOfBaseType(pSpawnBulletComp))
+        SelectItem(i);
+        return;
+      }
+    }
+
+    if (msg.m_sInputAction == ezTempHashedString("Shoot"))
+    {
+      if (s_Items[m_uiActiveItem].m_Action == PlayerAction::ShootMagicBullet)
+      {
+        if (ezGameObject* pSpawnBulletObj = GetOwner()->FindChildByName("Spawn_MagicBullet", true))
         {
-          if (pSpawnBulletComp->CanTriggerManualSpawn())
+          ezSpawnComponent* pSpawnBulletComp = nullptr;
+          if (pSpawnBulletObj->TryGetComponentOfBaseType(pSpawnBulletComp))
           {
-            pSpawnBulletComp->TriggerManualSpawn();
+            if (pSpawnBulletComp->CanTriggerManualSpawn())
+            {
+              pSpawnBulletComp->TriggerManualSpawn();
+            }
           }
         }
       }
-    }
-  }
-
-  if (m_Action == PlayerAction::PlaceSpikeTrap || m_Action == PlayerAction::PlaceArrowTrap || m_Action == PlayerAction::PlaceTarTrap)
-  {
-    if (msg.m_sInputAction == ezTempHashedString("Shoot") && msg.m_TriggerState == ezTriggerState::Activated)
-    {
-      ezInt32 iMoney = m_pLevelState->GetEntry("Money")->m_Value.ConvertTo<ezInt32>();
-
-      if (!m_hPrevizObject.IsInvalidated() && iMoney >= m_iRequiredMoney)
+      else
       {
-        m_pLevelState->SetEntryValue("Money", iMoney - m_iRequiredMoney);
-
-        ClearPrevizObject();
-
-        ezResourceLock<ezPrefabResource> pPrefab(m_hPlacePrefab, ezResourceAcquireMode::BlockTillLoaded_NeverFail);
-        pPrefab->InstantiatePrefab(*GetWorld(), ezTransform::Make(m_vPrevizPosition, m_qPrevizRotation), {});
+        PlaceTrap();
       }
     }
   }
+}
+
+void ezPlayerComponent::SelectItem(ezUInt32 uiItem)
+{
+  m_uiActiveItem = uiItem;
+
+  const ItemDesc& item = s_Items[uiItem];
+
+  if (item.m_szPrevizPrefab != nullptr)
+  {
+    m_hPrevizPrefab = ezResourceManager::LoadResource<ezPrefabResource>(item.m_szPrevizPrefab);
+    m_hPlacePrefab = ezResourceManager::LoadResource<ezPrefabResource>(item.m_szPlacePrefab);
+  }
+
+  ClearPrevizObject();
+
+  if (m_pLevelState && m_pLevelState->HasEntry("ActiveItem"))
+  {
+    m_pLevelState->SetEntryValue("ActiveItem", (ezInt32)uiItem);
+  }
+}
+
+ezInt32 ezPlayerComponent::GetItemCost(ezUInt32 uiItem) const
+{
+  const ItemDesc& item = s_Items[uiItem];
+
+  if (item.m_szCostKey == nullptr)
+    return 0;
+
+  if (const ezBlackboard::Entry* pEntry = m_pLevelState->GetEntry(ezTempHashedString(item.m_szCostKey)))
+    return pEntry->m_Value.ConvertTo<ezInt32>();
+
+  return item.m_iDefaultCost;
+}
+
+void ezPlayerComponent::PlaceTrap()
+{
+  if (m_hPrevizObject.IsInvalidated())
+  {
+    ShowNotice("Can't place this trap here");
+    return;
+  }
+
+  const ezInt32 iCost = GetItemCost(m_uiActiveItem);
+  const ezInt32 iMoney = m_pLevelState->GetEntry("Money")->m_Value.ConvertTo<ezInt32>();
+
+  if (iMoney < iCost)
+  {
+    ShowNotice("Not enough gold");
+    return;
+  }
+
+  m_pLevelState->SetEntryValue("Money", iMoney - iCost);
+
+  ClearPrevizObject();
+
+  ezResourceLock<ezPrefabResource> pPrefab(m_hPlacePrefab, ezResourceAcquireMode::BlockTillLoaded_NeverFail);
+  pPrefab->InstantiatePrefab(*GetWorld(), ezTransform::Make(m_vPrevizPosition, m_qPrevizRotation), {});
+}
+
+void ezPlayerComponent::ShowNotice(ezStringView sText)
+{
+  if (!m_pLevelState || !m_pLevelState->HasEntry("Notice"))
+    return;
+
+  m_pLevelState->SetEntryValue("Notice", sText);
+  m_NoticeEndTime = GetWorld()->GetClock().GetAccumulatedTime() + ezTime::MakeFromSeconds(2.0);
 }
 
 void ezPlayerComponent::Update()
@@ -188,17 +238,19 @@ void ezPlayerComponent::Update()
     pHeadBone->ChangeVerticalRotation(down - up);
   }
 
-  if (m_Action == PlayerAction::ShootMagicBullet)
+  if (s_Items[m_uiActiveItem].m_Placement == TrapPlacement::None)
+  {
+    ClearPrevizObject();
+  }
+  else if (!DetermineTrapPlacement(pCameraObject))
   {
     ClearPrevizObject();
   }
 
-  if (m_Action == PlayerAction::PlaceSpikeTrap || m_Action == PlayerAction::PlaceArrowTrap || m_Action == PlayerAction::PlaceTarTrap)
+  if (m_NoticeEndTime.IsPositive() && GetWorld()->GetClock().GetAccumulatedTime() >= m_NoticeEndTime)
   {
-    if (!DetermineTrapPlacement(pCameraObject))
-    {
-      ClearPrevizObject();
-    }
+    m_NoticeEndTime = ezTime::MakeZero();
+    m_pLevelState->SetEntryValue("Notice", "");
   }
 }
 
@@ -231,28 +283,30 @@ bool ezPlayerComponent::DetermineTrapPlacement(const ezGameObject* pCameraObject
 
   m_vPrevizPosition = result.m_vPosition;
 
-  if (m_TrapPlacement == TrapPlacement::Floor)
+  const TrapPlacement placement = s_Items[m_uiActiveItem].m_Placement;
+
+  if (placement == TrapPlacement::Floor)
   {
     // only allow flat floors
     if (!result.m_vNormal.IsEqual(ezVec3(0, 0, 1), 0.05f))
       return false;
   }
 
-  if (m_TrapPlacement == TrapPlacement::Ceiling)
+  if (placement == TrapPlacement::Ceiling)
   {
     // only allow flat ceilings
     if (!result.m_vNormal.IsEqual(ezVec3(0, 0, -1), 0.05f))
       return false;
   }
 
-  if (m_TrapPlacement == TrapPlacement::Wall)
+  if (placement == TrapPlacement::Wall)
   {
     // only allow straight up walls
     if (!ezMath::IsZero(result.m_vNormal.z, 0.01f))
       return false;
   }
 
-  if (m_TrapPlacement == TrapPlacement::Floor || m_TrapPlacement == TrapPlacement::Ceiling)
+  if (placement == TrapPlacement::Floor || placement == TrapPlacement::Ceiling)
   {
     // place it at the picked height, but on a 2D grid
     m_vPrevizPosition.x = ezMath::Round(m_vPrevizPosition.x);
@@ -262,7 +316,7 @@ bool ezPlayerComponent::DetermineTrapPlacement(const ezGameObject* pCameraObject
     // TODO: more validation
   }
 
-  if (m_TrapPlacement == TrapPlacement::Wall)
+  if (placement == TrapPlacement::Wall)
   {
     // TODO: allowed position needs way more validation (walls at any angle ?)
     m_vPrevizPosition.x = ezMath::Round(m_vPrevizPosition.x);

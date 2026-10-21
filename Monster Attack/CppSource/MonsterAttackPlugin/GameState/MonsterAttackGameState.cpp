@@ -4,6 +4,7 @@
 #include <Core/System/Window.h>
 #include <Core/World/World.h>
 #include <Foundation/Configuration/CVar.h>
+#include <Foundation/IO/FileSystem/FileSystem.h>
 #include <Foundation/Logging/Log.h>
 #include <GameEngine/UI/MainMenuComponent.h>
 #include <MonsterAttackPlugin/GameState/MonsterAttackGameState.h>
@@ -51,6 +52,152 @@ void MonsterAttackGameState::BeforeWorldUpdate()
 
     m_DeadMonsters.PopFront();
   }
+
+  UpdateHudState();
+}
+
+void MonsterAttackGameState::UpdateHudState()
+{
+  // the HUD only binds to entries that exist when it is created, so we only update entries that the level's blackboard template provides
+  if (m_pLevelState == nullptr || !m_pLevelState->HasEntry("MenuOpen"))
+    return;
+
+  m_pLevelState->SetEntryValue("MenuOpen", IsMainMenuOpen());
+
+  // the game logic decides how long a message stays, 0 means until it gets replaced
+  if (const ezBlackboard::Entry* pMessage = m_pLevelState->GetEntry("Message"))
+  {
+    const ezTime tNow = m_pMainWorld->GetClock().GetAccumulatedTime();
+
+    if (pMessage->m_uiChangeCounter != m_uiMessageChangeCounter)
+    {
+      m_uiMessageChangeCounter = pMessage->m_uiChangeCounter;
+
+      const ezBlackboard::Entry* pDuration = m_pLevelState->GetEntry("MessageDuration");
+      const float fDuration = pDuration ? pDuration->m_Value.ConvertTo<float>() : 0.0f;
+      m_MessageHideTime = fDuration > 0.0f ? tNow + ezTime::MakeFromSeconds(fDuration) : ezTime::MakeZero();
+    }
+
+    const bool bTimedOut = m_MessageHideTime.IsPositive() && tNow >= m_MessageHideTime;
+    m_pLevelState->SetEntryValue("MessageVisible", !pMessage->m_Value.ConvertTo<ezString>().IsEmpty() && !bTimedOut);
+  }
+
+  // show the prompts for whatever device was used last
+  {
+    const ezStringView sPressed = ezInputManager::GetPressedInputSlot(ezInputSlotFlags::None, ezInputSlotFlags::None);
+
+    if (sPressed.StartsWith("controller"))
+      m_bUsingController = true;
+    else if (sPressed.StartsWith("keyboard_") || sPressed.StartsWith("mouse_"))
+      m_bUsingController = false;
+
+    m_pLevelState->SetEntryValue("UsingController", m_bUsingController);
+  }
+
+  struct HudKey
+  {
+    const char* m_szAction;
+    bool m_bPreferMouse;
+  };
+
+  // clang-format off
+  static constexpr HudKey s_HudKeys[] = {
+    {"Select_MagicBullet", false},
+    {"Select_SpikeTrap",   false},
+    {"Select_ArrowTrap",   false},
+    {"Select_TarTrap",     false},
+    {"Select_Prev",        false},
+    {"Select_Next",        false},
+    {"StartRound",         false},
+    {"Shoot",              true},
+  };
+  // clang-format on
+
+  ezStringBuilder sKey, sRml, sName;
+
+  for (const HudKey& key : s_HudKeys)
+  {
+    // keys can be rebound in the main menu, so always show what is currently configured
+    const ezInputActionConfig cfg = ezInputManager::GetInputActionConfig("Default", key.m_szAction);
+
+    ezStringView sSlot;
+    for (ezUInt32 i = 0; i < ezInputActionConfig::MaxInputSlotAlternatives; ++i)
+    {
+      const ezStringView sTrigger = cfg.m_sInputSlotTrigger[i];
+
+      if (m_bUsingController)
+      {
+        if (sTrigger.StartsWith("controller"))
+        {
+          sSlot = sTrigger;
+          break;
+        }
+
+        continue;
+      }
+
+      if (sTrigger.StartsWith("mouse_") && key.m_bPreferMouse)
+      {
+        sSlot = sTrigger;
+        break;
+      }
+
+      if (sSlot.IsEmpty() && (sTrigger.StartsWith("keyboard_") || sTrigger.StartsWith("mouse_")))
+      {
+        sSlot = sTrigger;
+
+        if (!key.m_bPreferMouse)
+          break;
+      }
+    }
+
+    sName = sSlot.IsEmpty() ? ezStringView("-") : ezInputManager::GetInputSlotDisplayName(sSlot);
+
+    // the HUD inserts this as RML, either an input prompt image or the name of the key
+    const ezStringView sIcon = GetInputPromptIcon(sSlot);
+    if (!sIcon.IsEmpty())
+    {
+      sRml.SetFormat("<img class=\"key-icon\" src=\"{}\" />", sIcon);
+    }
+    else
+    {
+      sRml = sName;
+      sRml.ReplaceAll("&", "&amp;");
+      sRml.ReplaceAll("<", "&lt;");
+      sRml.ReplaceAll(">", "&gt;");
+      sRml.PrependFormat("<span class=\"key-text\">");
+      sRml.Append("</span>");
+    }
+
+    sKey.SetFormat("Key_{}", key.m_szAction);
+    m_pLevelState->SetEntryValue(sKey, sName.GetView());
+
+    sKey.SetFormat("KeyRml_{}", key.m_szAction);
+    m_pLevelState->SetEntryValue(sKey, sRml.GetView());
+  }
+}
+
+ezStringView MonsterAttackGameState::GetInputPromptIcon(ezStringView sInputSlot)
+{
+  if (sInputSlot.IsEmpty())
+    return {};
+
+  bool bExisted = false;
+  auto it = m_InputPromptIcons.FindOrAdd(sInputSlot, &bExisted);
+
+  if (!bExisted)
+  {
+    // the icons are named after the input slots, but not every slot has one
+    ezStringBuilder sPath;
+    sPath.SetFormat("Kenney.nl/InputPrompts/{}.png", sInputSlot);
+
+    if (ezFileSystem::ExistsFile(sPath))
+    {
+      it.Value() = sPath;
+    }
+  }
+
+  return it.Value();
 }
 
 void MonsterAttackGameState::ConfigureMainWindowInputDevices(ezWindowPlatformShared* pWindow)
@@ -144,14 +291,15 @@ void MonsterAttackGameState::OnChangedMainWorld(ezWorld* pPrevWorld, ezWorld* pN
 {
   m_hMainMenu.Invalidate();
   m_bSearchedMainMenu = false;
+  m_uiMessageChangeCounter = ezInvalidIndex;
 
   SUPER::OnChangedMainWorld(pPrevWorld, pNewWorld, sStartPosition, startPositionOffset);
 }
 
 void MonsterAttackGameState::MonsterReachedGoal()
 {
-  const ezInt32 iPoints = ezMath::Max(0, m_pLevelState->GetEntry("Points")->m_Value.ConvertTo<ezInt32>() - 1);
-  m_pLevelState->SetEntryValue("Points", iPoints);
+  const ezInt32 iLives = ezMath::Max(0, m_pLevelState->GetEntry("Lives")->m_Value.ConvertTo<ezInt32>() - 1);
+  m_pLevelState->SetEntryValue("Lives", iLives);
 
   const ezInt32 iMonsters = ezMath::Max(0, m_pLevelState->GetEntry("Monsters")->m_Value.ConvertTo<ezInt32>() - 1);
   m_pLevelState->SetEntryValue("Monsters", iMonsters);

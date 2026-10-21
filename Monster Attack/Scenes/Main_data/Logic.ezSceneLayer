@@ -11,11 +11,12 @@ o
 		s %AssetType{"Layer"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{17562063295357204691,5532850859589672258}}
-		u4 %Hash{15302263613026579994}
+		u4 %Hash{5930706332854386968}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps
 		{
+			s{"{ 152cea84-7981-aee0-6e8b-3c449dc150b4 }"}
 			s{"{ 6caf7f9e-4794-4ce8-a8bc-f0163db7a203 }"}
 			s{"{ 963c173e-2b96-4f98-b1c2-bb9210879152 }"}
 			s{"{ c7971a15-7aac-488d-a021-7ba399bb6123 }"}
@@ -24,6 +25,7 @@ o
 		}
 		VarArray %References
 		{
+			s{"{ 152cea84-7981-aee0-6e8b-3c449dc150b4 }"}
 			s{"{ 6caf7f9e-4794-4ce8-a8bc-f0163db7a203 }"}
 			s{"{ c7971a15-7aac-488d-a021-7ba399bb6123 }"}
 		}
@@ -188,7 +190,10 @@ o
 	p
 	{
 		b %Active{1}
-		VarArray %Children{}
+		VarArray %Children
+		{
+			Uuid{u4{7899404656022506487,12952687159822961983}}
+		}
 		VarArray %Components
 		{
 			Uuid{u4{11544984111276201118,5551772373948838206}}
@@ -515,6 +520,48 @@ o
 		b %Active{1}
 		VarDict %Parameters{}
 		s %Prefab{"{ c7971a15-7aac-488d-a021-7ba399bb6123 }"}
+	}
+}
+o
+{
+	Uuid %id{u4{7899404656022506487,12952687159822961983}}
+	s %t{"ezGameObject"}
+	u3 %v{1}
+	p
+	{
+		b %Active{1}
+		VarArray %Children{}
+		VarArray %Components
+		{
+			Uuid{u4{14979519889346935128,14152531113317666017}}
+		}
+		s %GlobalKey{""}
+		Vec3 %LocalPosition{f{0,0,0}}
+		Quat %LocalRotation{f{0,0,0,0x0000803F}}
+		Vec3 %LocalScaling{f{0x0000803F,0x0000803F,0x0000803F}}
+		f %LocalUniformScaling{0x0000803F}
+		s %Mode{"ezObjectMode::Automatic"}
+		s %Name{"HUD"}
+		VarArray %Tags{}
+	}
+}
+o
+{
+	Uuid %id{u4{14979519889346935128,14152531113317666017}}
+	s %t{"ezRmlUiCanvas2DComponent"}
+	u3 %v{5}
+	p
+	{
+		b %Active{1}
+		Vec2 %AnchorPoint{f{0,0}}
+		b %AutobindBlackboards{1}
+		f %CustomScale{0x0000803F}
+		Vec2i %Offset{i3{0,0}}
+		b %OnDemandUpdate{1}
+		b %PassInput{0}
+		s %RmlFile{"{ 152cea84-7981-aee0-6e8b-3c449dc150b4 }"}
+		b %SendEventMessage{0}
+		Vec2u %Size{u3{0,0}}
 	}
 }
 }
@@ -1075,6 +1122,40 @@ o
 		VarArray %Properties{}
 		s %TypeName{"ezConeLengthManipulatorAttribute"}
 		u3 %TypeVersion{1}
+	}
+}
+o
+{
+	Uuid %id{u4{5944471609892995972,3373323694501583966}}
+	s %t{"ezReflectedTypeDescriptor"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Attributes{}
+		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
+		VarArray %Functions{}
+		s %ParentTypeName{"ezRmlUiCanvasComponentBase"}
+		s %PluginName{"ezEditorPluginRmlUi"}
+		VarArray %Properties{}
+		s %TypeName{"ezRmlUiCanvas2DComponent"}
+		u3 %TypeVersion{5}
+	}
+}
+o
+{
+	Uuid %id{u4{12154821427648791411,8421033311880761472}}
+	s %t{"ezReflectedTypeDescriptor"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Attributes{}
+		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Abstract|ezTypeFlags::Minimal"}
+		VarArray %Functions{}
+		s %ParentTypeName{"ezRenderComponent"}
+		s %PluginName{"ezEditorPluginRmlUi"}
+		VarArray %Properties{}
+		s %TypeName{"ezRmlUiCanvasComponentBase"}
+		u3 %TypeVersion{2}
 	}
 }
 }

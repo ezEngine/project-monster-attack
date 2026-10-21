@@ -9,9 +9,12 @@ o
 	p
 	{
 		s %AssetType{"BlackboardTemplate"}
-		VarArray %Dependencies{}
+		VarArray %Dependencies
+		{
+			s{"{ 08dbe8b5-d272-0577-5f44-0fb61736c1b1 }"}
+		}
 		Uuid %DocumentID{u4{12989667871016837788,4954737649499785958}}
-		u4 %Hash{12543866788388412175}
+		u4 %Hash{3805109452959602444}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps{}
@@ -40,13 +43,20 @@ o
 	u3 %v{1}
 	p
 	{
-		VarArray %BaseTemplates{}
+		VarArray %BaseTemplates
+		{
+			s{"{ 08dbe8b5-d272-0577-5f44-0fb61736c1b1 }"}
+		}
 		VarArray %Entries
 		{
 			Uuid{u4{13812150983143995812,5497179577874985494}}
 			Uuid{u4{11356079510606596516,5155821541620234607}}
 			Uuid{u4{5727029445688313498,5058784344807572472}}
 			Uuid{u4{396491243989199757,4752288986806087246}}
+			Uuid{u4{15835688433922850737,13642024480693852160}}
+			Uuid{u4{16400593245387111002,10284110291702785265}}
+			Uuid{u4{15132601161403713682,11183433875402543933}}
+			Uuid{u4{5999977166237373884,367173399369352220}}
 		}
 	}
 }
@@ -59,7 +69,7 @@ o
 	{
 		s %Flags{""}
 		i3 %InitialValue{20}
-		HashedString %Name{s{"Points"}}
+		HashedString %Name{s{"Lives"}}
 	}
 }
 o
@@ -98,6 +108,54 @@ o
 		{
 			Uuid{u4{1904796935854037945,4825292316454339374}}
 		}
+	}
+}
+o
+{
+	Uuid %id{u4{15835688433922850737,13642024480693852160}}
+	s %t{"ezBlackboardEntry"}
+	u3 %v{1}
+	p
+	{
+		s %Flags{""}
+		i3 %InitialValue{0}
+		HashedString %Name{s{"RoundCount"}}
+	}
+}
+o
+{
+	Uuid %id{u4{16400593245387111002,10284110291702785265}}
+	s %t{"ezBlackboardEntry"}
+	u3 %v{1}
+	p
+	{
+		s %Flags{""}
+		i3 %InitialValue{1000}
+		HashedString %Name{s{"Cost_SpikeTrap"}}
+	}
+}
+o
+{
+	Uuid %id{u4{15132601161403713682,11183433875402543933}}
+	s %t{"ezBlackboardEntry"}
+	u3 %v{1}
+	p
+	{
+		s %Flags{""}
+		i3 %InitialValue{2000}
+		HashedString %Name{s{"Cost_ArrowTrap"}}
+	}
+}
+o
+{
+	Uuid %id{u4{5999977166237373884,367173399369352220}}
+	s %t{"ezBlackboardEntry"}
+	u3 %v{1}
+	p
+	{
+		s %Flags{""}
+		i3 %InitialValue{500}
+		HashedString %Name{s{"Cost_TarTrap"}}
 	}
 }
 }

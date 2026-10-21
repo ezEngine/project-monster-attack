@@ -1,0 +1,468 @@
+HeaderV2
+{
+o
+{
+	Uuid %id{u4{12808578290685002847,394014879634942133}}
+	s %t{"ezAssetDocumentInfo"}
+	u3 %v{2}
+	s %n{"Header"}
+	p
+	{
+		s %AssetType{"BlackboardTemplate"}
+		VarArray %Dependencies{}
+		Uuid %DocumentID{u4{12808578290685002847,394014879634942133}}
+		u4 %Hash{4182672015214881233}
+		VarArray %MetaInfo{}
+		VarArray %Outputs{}
+		VarArray %PackageDeps{}
+		VarArray %References{}
+	}
+}
+}
+Objects
+{
+o
+{
+	Uuid %id{u4{1904796935854037945,4825292316454339374}}
+	s %t{"ezBlackboardTemplateAssetObject"}
+	u3 %v{1}
+	p
+	{
+		VarArray %BaseTemplates{}
+		VarArray %Entries
+		{
+			Uuid{u4{3650825439020379573,18288926416616660462}}
+			Uuid{u4{9119461812030374129,6638741620166608367}}
+			Uuid{u4{10583673175592435354,7970749614650087460}}
+			Uuid{u4{14429166610712240878,8005108142379469601}}
+			Uuid{u4{14965368047792473110,16418322930448510956}}
+			Uuid{u4{18415550698314709927,7476979650715043893}}
+			Uuid{u4{14527641774448895669,6462298002915389068}}
+			Uuid{u4{12801465845567321913,13781930503710933116}}
+			Uuid{u4{2968943964520020967,8760460573134079706}}
+			Uuid{u4{9622162671228975362,13136126712296150082}}
+			Uuid{u4{6679463778834022784,10824733969383872538}}
+			Uuid{u4{8634775503853193218,16704703355313590780}}
+			Uuid{u4{6931740291966642341,3909347435997585080}}
+			Uuid{u4{7310851214400445955,12264217514457567450}}
+			Uuid{u4{2329210508647498120,3549484042897711586}}
+			Uuid{u4{12067432139739877798,420952923261066060}}
+			Uuid{u4{4438294258994988490,5659716835152328922}}
+			Uuid{u4{3936395653352518034,7167487697710348425}}
+			Uuid{u4{2551340591570466055,8712476363298636922}}
+			Uuid{u4{10730006183438248874,4599473972448088860}}
+			Uuid{u4{15268666001278011421,9685910141916740848}}
+			Uuid{u4{6992289625587710924,17103920489971075225}}
+			Uuid{u4{660255653359867420,11587726305201507784}}
+			Uuid{u4{12041737429676222653,437713876363254973}}
+		}
+	}
+}
+o
+{
+	Uuid %id{u4{18096612296587978288,6449934965513159559}}
+	s %t{"ezDocumentRoot"}
+	u3 %v{1}
+	s %n{"ObjectTree"}
+	p
+	{
+		VarArray %Children
+		{
+			Uuid{u4{1904796935854037945,4825292316454339374}}
+		}
+	}
+}
+o
+{
+	Uuid %id{u4{3650825439020379573,18288926416616660462}}
+	s %t{"ezBlackboardEntry"}
+	u3 %v{1}
+	p
+	{
+		s %Flags{""}
+		s %InitialValue{""}
+		HashedString %Name{s{"Phase"}}
+	}
+}
+o
+{
+	Uuid %id{u4{9119461812030374129,6638741620166608367}}
+	s %t{"ezBlackboardEntry"}
+	u3 %v{1}
+	p
+	{
+		s %Flags{""}
+		s %InitialValue{""}
+		HashedString %Name{s{"Message"}}
+	}
+}
+o
+{
+	Uuid %id{u4{10583673175592435354,7970749614650087460}}
+	s %t{"ezBlackboardEntry"}
+	u3 %v{1}
+	p
+	{
+		s %Flags{""}
+		s %InitialValue{""}
+		HashedString %Name{s{"Notice"}}
+	}
+}
+o
+{
+	Uuid %id{u4{14429166610712240878,8005108142379469601}}
+	s %t{"ezBlackboardEntry"}
+	u3 %v{1}
+	p
+	{
+		s %Flags{""}
+		i3 %InitialValue{0}
+		HashedString %Name{s{"ActiveItem"}}
+	}
+}
+o
+{
+	Uuid %id{u4{14965368047792473110,16418322930448510956}}
+	s %t{"ezBlackboardEntry"}
+	u3 %v{1}
+	p
+	{
+		s %Flags{""}
+		b %InitialValue{0}
+		HashedString %Name{s{"MenuOpen"}}
+	}
+}
+o
+{
+	Uuid %id{u4{18415550698314709927,7476979650715043893}}
+	s %t{"ezBlackboardEntry"}
+	u3 %v{1}
+	p
+	{
+		s %Flags{""}
+		s %InitialValue{""}
+		HashedString %Name{s{"Key_Select_MagicBullet"}}
+	}
+}
+o
+{
+	Uuid %id{u4{14527641774448895669,6462298002915389068}}
+	s %t{"ezBlackboardEntry"}
+	u3 %v{1}
+	p
+	{
+		s %Flags{""}
+		s %InitialValue{""}
+		HashedString %Name{s{"KeyRml_Select_MagicBullet"}}
+	}
+}
+o
+{
+	Uuid %id{u4{12801465845567321913,13781930503710933116}}
+	s %t{"ezBlackboardEntry"}
+	u3 %v{1}
+	p
+	{
+		s %Flags{""}
+		s %InitialValue{""}
+		HashedString %Name{s{"Key_Select_SpikeTrap"}}
+	}
+}
+o
+{
+	Uuid %id{u4{2968943964520020967,8760460573134079706}}
+	s %t{"ezBlackboardEntry"}
+	u3 %v{1}
+	p
+	{
+		s %Flags{""}
+		s %InitialValue{""}
+		HashedString %Name{s{"KeyRml_Select_SpikeTrap"}}
+	}
+}
+o
+{
+	Uuid %id{u4{9622162671228975362,13136126712296150082}}
+	s %t{"ezBlackboardEntry"}
+	u3 %v{1}
+	p
+	{
+		s %Flags{""}
+		s %InitialValue{""}
+		HashedString %Name{s{"Key_Select_ArrowTrap"}}
+	}
+}
+o
+{
+	Uuid %id{u4{6679463778834022784,10824733969383872538}}
+	s %t{"ezBlackboardEntry"}
+	u3 %v{1}
+	p
+	{
+		s %Flags{""}
+		s %InitialValue{""}
+		HashedString %Name{s{"KeyRml_Select_ArrowTrap"}}
+	}
+}
+o
+{
+	Uuid %id{u4{8634775503853193218,16704703355313590780}}
+	s %t{"ezBlackboardEntry"}
+	u3 %v{1}
+	p
+	{
+		s %Flags{""}
+		s %InitialValue{""}
+		HashedString %Name{s{"Key_Select_TarTrap"}}
+	}
+}
+o
+{
+	Uuid %id{u4{6931740291966642341,3909347435997585080}}
+	s %t{"ezBlackboardEntry"}
+	u3 %v{1}
+	p
+	{
+		s %Flags{""}
+		s %InitialValue{""}
+		HashedString %Name{s{"KeyRml_Select_TarTrap"}}
+	}
+}
+o
+{
+	Uuid %id{u4{7310851214400445955,12264217514457567450}}
+	s %t{"ezBlackboardEntry"}
+	u3 %v{1}
+	p
+	{
+		s %Flags{""}
+		s %InitialValue{""}
+		HashedString %Name{s{"Key_Select_Prev"}}
+	}
+}
+o
+{
+	Uuid %id{u4{2329210508647498120,3549484042897711586}}
+	s %t{"ezBlackboardEntry"}
+	u3 %v{1}
+	p
+	{
+		s %Flags{""}
+		s %InitialValue{""}
+		HashedString %Name{s{"KeyRml_Select_Prev"}}
+	}
+}
+o
+{
+	Uuid %id{u4{12067432139739877798,420952923261066060}}
+	s %t{"ezBlackboardEntry"}
+	u3 %v{1}
+	p
+	{
+		s %Flags{""}
+		s %InitialValue{""}
+		HashedString %Name{s{"Key_Select_Next"}}
+	}
+}
+o
+{
+	Uuid %id{u4{4438294258994988490,5659716835152328922}}
+	s %t{"ezBlackboardEntry"}
+	u3 %v{1}
+	p
+	{
+		s %Flags{""}
+		s %InitialValue{""}
+		HashedString %Name{s{"KeyRml_Select_Next"}}
+	}
+}
+o
+{
+	Uuid %id{u4{3936395653352518034,7167487697710348425}}
+	s %t{"ezBlackboardEntry"}
+	u3 %v{1}
+	p
+	{
+		s %Flags{""}
+		s %InitialValue{""}
+		HashedString %Name{s{"Key_StartRound"}}
+	}
+}
+o
+{
+	Uuid %id{u4{2551340591570466055,8712476363298636922}}
+	s %t{"ezBlackboardEntry"}
+	u3 %v{1}
+	p
+	{
+		s %Flags{""}
+		s %InitialValue{""}
+		HashedString %Name{s{"KeyRml_StartRound"}}
+	}
+}
+o
+{
+	Uuid %id{u4{10730006183438248874,4599473972448088860}}
+	s %t{"ezBlackboardEntry"}
+	u3 %v{1}
+	p
+	{
+		s %Flags{""}
+		s %InitialValue{""}
+		HashedString %Name{s{"Key_Shoot"}}
+	}
+}
+o
+{
+	Uuid %id{u4{15268666001278011421,9685910141916740848}}
+	s %t{"ezBlackboardEntry"}
+	u3 %v{1}
+	p
+	{
+		s %Flags{""}
+		s %InitialValue{""}
+		HashedString %Name{s{"KeyRml_Shoot"}}
+	}
+}
+o
+{
+	Uuid %id{u4{6992289625587710924,17103920489971075225}}
+	s %t{"ezBlackboardEntry"}
+	u3 %v{1}
+	p
+	{
+		s %Flags{""}
+		b %InitialValue{0}
+		HashedString %Name{s{"UsingController"}}
+	}
+}
+o
+{
+	Uuid %id{u4{660255653359867420,11587726305201507784}}
+	s %t{"ezBlackboardEntry"}
+	u3 %v{1}
+	p
+	{
+		s %Flags{""}
+		i3 %InitialValue{0}
+		HashedString %Name{s{"MessageDuration"}}
+	}
+}
+o
+{
+	Uuid %id{u4{12041737429676222653,437713876363254973}}
+	s %t{"ezBlackboardEntry"}
+	u3 %v{1}
+	p
+	{
+		s %Flags{""}
+		b %InitialValue{0}
+		HashedString %Name{s{"MessageVisible"}}
+	}
+}
+}
+Types
+{
+o
+{
+	Uuid %id{u4{11005437603101136476,7368533338987833088}}
+	s %t{"ezReflectedTypeDescriptor"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Attributes{}
+		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
+		VarArray %Functions{}
+		s %ParentTypeName{""}
+		s %PluginName{"Static"}
+		VarArray %Properties{}
+		s %TypeName{"ezBitflagsBase"}
+		u3 %TypeVersion{1}
+	}
+}
+o
+{
+	Uuid %id{u4{8593378931789007309,8402358305252805234}}
+	s %t{"ezReflectedTypeDescriptor"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Attributes{}
+		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
+		VarArray %Functions{}
+		s %ParentTypeName{"ezReflectedClass"}
+		s %PluginName{"ezEditorPluginAssets"}
+		VarArray %Properties{}
+		s %TypeName{"ezBlackboardTemplateAssetObject"}
+		u3 %TypeVersion{1}
+	}
+}
+o
+{
+	Uuid %id{u4{6089094783765586323,8705960867921430659}}
+	s %t{"ezReflectedTypeDescriptor"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Attributes{}
+		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
+		VarArray %Functions{}
+		s %ParentTypeName{"ezReflectedClass"}
+		s %PluginName{"Static"}
+		VarArray %Properties{}
+		s %TypeName{"ezDocumentRoot"}
+		u3 %TypeVersion{1}
+	}
+}
+o
+{
+	Uuid %id{u4{4287215348751137938,10033073971716187673}}
+	s %t{"ezReflectedTypeDescriptor"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Attributes{}
+		s %Flags{"ezTypeFlags::Bitflags|ezTypeFlags::Minimal"}
+		VarArray %Functions{}
+		s %ParentTypeName{"ezBitflagsBase"}
+		s %PluginName{"Static"}
+		VarArray %Properties{}
+		s %TypeName{"ezBlackboardEntryFlags"}
+		u3 %TypeVersion{1}
+	}
+}
+o
+{
+	Uuid %id{u4{48220615166662949,15649640188828373689}}
+	s %t{"ezReflectedTypeDescriptor"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Attributes{}
+		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
+		VarArray %Functions{}
+		s %ParentTypeName{""}
+		s %PluginName{"Static"}
+		VarArray %Properties{}
+		s %TypeName{"ezBlackboardEntry"}
+		u3 %TypeVersion{1}
+	}
+}
+o
+{
+	Uuid %id{u4{983387834180907111,17935407260904399048}}
+	s %t{"ezReflectedTypeDescriptor"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Attributes{}
+		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
+		VarArray %Functions{}
+		s %ParentTypeName{""}
+		s %PluginName{"Static"}
+		VarArray %Properties{}
+		s %TypeName{"ezReflectedClass"}
+		u3 %TypeVersion{1}
+	}
+}
+}

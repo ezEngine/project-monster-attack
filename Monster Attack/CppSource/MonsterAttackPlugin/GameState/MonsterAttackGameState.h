@@ -38,6 +38,12 @@ protected:
   ezMainMenuComponent* GetMainMenu();
   bool IsMainMenuOpen();
 
+  /// Writes the state that the HUD displays, but isn't owned by the game logic (e.g. key bindings) into the level blackboard.
+  void UpdateHudState();
+
+  /// Returns the path to the Kenney input prompt image for the given input slot, or an empty string if there is none.
+  ezStringView GetInputPromptIcon(ezStringView sInputSlot);
+
 private:
   virtual void OnActivation(ezWorld* pWorld, ezStringView sStartPosition, const ezTransform& startPositionOffset) override;
   virtual void OnDeactivation() override;
@@ -49,4 +55,10 @@ private:
 
   ezComponentHandle m_hMainMenu;
   bool m_bSearchedMainMenu = false;
+
+  ezMap<ezString, ezString> m_InputPromptIcons;
+  bool m_bUsingController = false;
+
+  ezUInt32 m_uiMessageChangeCounter = ezInvalidIndex;
+  ezTime m_MessageHideTime;
 };

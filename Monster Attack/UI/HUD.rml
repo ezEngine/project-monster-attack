@@ -1,0 +1,116 @@
+<rml>
+
+  <head>
+    <title>HUD</title>
+    <link type="text/rcss" href="HUD.rcss" />
+  </head>
+
+  <!-- All values come from the global 'LevelState' blackboard (see UI/HUD.ezBlackboardTemplateAsset and Configs/AllScenesEnv.ezBlackboardTemplateAsset).
+       The game logic writes the values, the HUD only displays them. -->
+  <body data-model="LevelState">
+    <div id="hud" data-class-hidden="MenuOpen">
+
+      <!-- Items: select with the number keys or cycle through them -->
+      <div id="items">
+        <div class="slot" data-class-active="ActiveItem == 0">
+          <div class="item">
+            <img class="thumbnail" src="Items/MagicBullet.jpg" />
+            <div class="key" data-rml="KeyRml_Select_MagicBullet"></div>
+            <div class="outline"></div>
+          </div>
+          <div class="name">Magic Bullet</div>
+          <div class="cost">free</div>
+        </div>
+
+        <div class="slot" data-class-active="ActiveItem == 1" data-class-unaffordable="Money &lt; Cost_SpikeTrap">
+          <div class="item">
+            <img class="thumbnail" src="Items/SpikeTrap.jpg" />
+            <div class="key" data-rml="KeyRml_Select_SpikeTrap"></div>
+            <div class="outline"></div>
+          </div>
+          <div class="name">Spike Trap</div>
+          <div class="cost"><img class="gold" src="Kenney.nl/UI/minimap_icon_jewel_yellow.png" />{{Cost_SpikeTrap}}</div>
+        </div>
+
+        <div class="slot" data-class-active="ActiveItem == 2" data-class-unaffordable="Money &lt; Cost_ArrowTrap">
+          <div class="item">
+            <img class="thumbnail" src="Items/ArrowTrap.jpg" />
+            <div class="key" data-rml="KeyRml_Select_ArrowTrap"></div>
+            <div class="outline"></div>
+          </div>
+          <div class="name">Arrow Trap</div>
+          <div class="cost"><img class="gold" src="Kenney.nl/UI/minimap_icon_jewel_yellow.png" />{{Cost_ArrowTrap}}</div>
+        </div>
+
+        <div class="slot" data-class-active="ActiveItem == 3" data-class-unaffordable="Money &lt; Cost_TarTrap">
+          <div class="item">
+            <img class="thumbnail" src="Items/TarTrap.jpg" />
+            <div class="key" data-rml="KeyRml_Select_TarTrap"></div>
+            <div class="outline"></div>
+          </div>
+          <div class="name">Tar Trap</div>
+          <div class="cost"><img class="gold" src="Kenney.nl/UI/minimap_icon_jewel_yellow.png" />{{Cost_TarTrap}}</div>
+        </div>
+      </div>
+
+      <div id="placement">
+        <span data-if="ActiveItem == 0">Shoot the monsters</span>
+        <span data-if="ActiveItem == 1 || ActiveItem == 3">Place on the floor</span>
+        <span data-if="ActiveItem == 2">Place on a wall</span>
+      </div>
+
+      <!-- Game state -->
+      <div id="stats" class="panel">
+        <div class="row">
+          <span class="label">Round</span>
+          <span class="value">{{Round}}<span data-if="RoundCount > 0"> / {{RoundCount}}</span></span>
+        </div>
+        <div class="row">
+          <span class="label">Gold</span>
+          <span class="value gold-text"><img class="gold" src="Kenney.nl/UI/minimap_icon_jewel_yellow.png" />{{Money}}</span>
+        </div>
+        <div class="row" data-class-danger="Lives &lt;= 5">
+          <span class="label">Lives</span>
+          <span class="value">{{Lives}}</span>
+        </div>
+        <div class="row" data-if="Phase == 'Fight'">
+          <span class="label">Monsters</span>
+          <span class="value">{{Monsters}}</span>
+        </div>
+      </div>
+
+      <!-- Whatever the game logic wants to tell the player -->
+      <div id="banner" data-class-visible="MessageVisible" data-class-won="Phase == 'Won'" data-class-lost="Phase == 'Lost'">
+        <div id="banner-box"><div id="message">{{Message}}</div></div>
+      </div>
+
+      <div id="start-hint" data-if="Phase == 'Build'">
+        Press <span class="key-inline" data-rml="KeyRml_StartRound"></span> to start the wave
+      </div>
+
+      <img id="crosshair" src="Kenney.nl/UI/crosshair.png" />
+
+      <div id="notice" data-if="Notice != ''">{{Notice}}</div>
+
+      <!-- Controls -->
+      <div id="controls" class="panel">
+        <div class="row">
+          <span class="key-inline" data-rml="KeyRml_Shoot"></span>
+          <span data-if="ActiveItem == 0">Shoot</span>
+          <span data-if="ActiveItem != 0">Place trap</span>
+        </div>
+        <div class="row" data-if="!UsingController">
+          <span class="key-inline" data-rml="KeyRml_Select_Prev"></span>
+          <span class="key-inline" data-rml="KeyRml_Select_Next"></span>
+          Switch item
+        </div>
+        <!-- with a controller the items are selected directly with the d-pad -->
+        <div class="row" data-if="UsingController">
+          <span class="key-inline"><img class="key-icon" src="Kenney.nl/InputPrompts/controller0_dpad.png" /></span>
+          Select item
+        </div>
+      </div>
+
+    </div>
+  </body>
+</rml>

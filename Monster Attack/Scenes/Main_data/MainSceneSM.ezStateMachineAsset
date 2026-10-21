@@ -11,7 +11,7 @@ o
 		s %AssetType{"StateMachine"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{5949685087984140977,5735382051221935934}}
-		u4 %Hash{5475473367824427831}
+		u4 %Hash{7943734174905872577}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps
@@ -303,7 +303,7 @@ o
 	p
 	{
 		d %ComparisonValue{0}
-		HashedString %EntryName{s{"Points"}}
+		HashedString %EntryName{s{"Lives"}}
 		s %Operator{"ezComparisonOperator::Equal"}
 	}
 }
