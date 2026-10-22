@@ -24,6 +24,7 @@ o
 			s{"{ 842824d5-0b94-40ba-ad41-fb9fe9dec7e3 }"}
 		}
 		VarArray %References{}
+		s %Tags{""}
 	}
 }
 }

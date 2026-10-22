@@ -14,7 +14,7 @@ o
 			s{"Pieces/Walls/Curved/Curve_1.obj"}
 		}
 		Uuid %DocumentID{u4{12682130829203381895,4981934696689803737}}
-		u4 %Hash{1650276010353087260}
+		u4 %Hash{7378926271467781363}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps
@@ -25,6 +25,7 @@ o
 		{
 			s{"Pieces/Walls/Curved/Curve_1.obj"}
 		}
+		s %Tags{""}
 	}
 }
 }
@@ -34,19 +35,28 @@ o
 {
 	Uuid %id{u4{3710326863696786828,5054629493635000770}}
 	s %t{"ezJoltCollisionMeshAssetProperties"}
-	u3 %v{1}
+	u3 %v{3}
 	p
 	{
+		b %AggressiveSimplification{0}
 		s %ConvexMeshType{"ezJoltConvexCollisionMeshType::ConvexHull"}
 		u1 %Detail{1}
 		b %FlipForwardDir{0}
 		f %Height{0x0000803F}
+		s %ImportTransform{"ezMeshImportTransform::Custom"}
 		b %IsConvexMesh{0}
 		u2 %MaxConvexPieces{5}
+		u1 %MaxSimplificationError{20}
+		s %MeshExcludeTags{""}
 		s %MeshFile{"Pieces/Walls/Curved/Curve_1.obj"}
+		s %MeshIncludeTags{""}
+		u1 %MeshSimplification{50}
+		f %NormalWeight{0x0000003F}
+		Vec3 %PositionOffset{f{0,0,0}}
 		f %Radius{0x0000003F}
 		f %Radius2{0x0000003F}
 		s %RightDir{"ezBasisAxis::PositiveX"}
+		b %SimplifyMesh{0}
 		s %Surface{""}
 		VarArray %Surfaces
 		{
@@ -146,7 +156,7 @@ o
 		s %PluginName{"ezEditorPluginJolt"}
 		VarArray %Properties{}
 		s %TypeName{"ezJoltCollisionMeshAssetProperties"}
-		u3 %TypeVersion{1}
+		u3 %TypeVersion{3}
 	}
 }
 o
@@ -163,6 +173,23 @@ o
 		s %PluginName{"Static"}
 		VarArray %Properties{}
 		s %TypeName{"ezDocumentRoot"}
+		u3 %TypeVersion{1}
+	}
+}
+o
+{
+	Uuid %id{u4{16959510582460493866,8962221111705621108}}
+	s %t{"ezReflectedTypeDescriptor"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Attributes{}
+		s %Flags{"ezTypeFlags::IsEnum|ezTypeFlags::Minimal"}
+		VarArray %Functions{}
+		s %ParentTypeName{"ezEnumBase"}
+		s %PluginName{"Static"}
+		VarArray %Properties{}
+		s %TypeName{"ezMeshImportTransform"}
 		u3 %TypeVersion{1}
 	}
 }

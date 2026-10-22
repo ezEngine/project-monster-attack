@@ -11,7 +11,7 @@ o
 		s %AssetType{"VisualScriptClass"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{7829505383130465170,5749873886899031452}}
-		u4 %Hash{7318307033852380813}
+		u4 %Hash{6015103270320700479}
 		VarArray %MetaInfo
 		{
 			Uuid{u4{5865425497123248158,8871016646301024355}}
@@ -19,6 +19,7 @@ o
 		VarArray %Outputs{}
 		VarArray %PackageDeps{}
 		VarArray %References{}
+		s %Tags{""}
 	}
 }
 o
@@ -39,26 +40,28 @@ o
 {
 	Uuid %id{u4{16826719871185922922,17333600734504807264}}
 	s %t{"ezExposedParameter"}
-	u3 %v{2}
+	u3 %v{3}
 	p
 	{
 		VarArray %Attributes{}
+		s %Category{"ezPropertyCategory::Member"}
 		i3 %DefaultValue{20}
 		s %Name{"StartLives"}
-		s %Type{""}
+		s %Type{"ezInt32"}
 	}
 }
 o
 {
 	Uuid %id{u4{16143583561110106513,17400346782705740434}}
 	s %t{"ezExposedParameter"}
-	u3 %v{2}
+	u3 %v{3}
 	p
 	{
 		VarArray %Attributes{}
+		s %Category{"ezPropertyCategory::Member"}
 		i3 %DefaultValue{5000}
 		s %Name{"StartMoney"}
-		s %Type{""}
+		s %Type{"ezInt32"}
 	}
 }
 }
@@ -89,78 +92,120 @@ o
 }
 o
 {
+	Uuid %id{u4{6411177057310357937,4633460084016307052}}
+	s %t{"ezDocumentObject_ConnectionBase"}
+	u3 %v{1}
+	p
+	{
+		Uuid %Source{u4{13252999454979275,15733585419320962210}}
+		s %SourcePin{"Result"}
+		Uuid %Target{u4{12551302534150232188,2233168960972186315}}
+		s %TargetPin{"Blackboard"}
+	}
+}
+o
+{
+	Uuid %id{u4{16072613090535033533,4649986886901904134}}
+	s %t{"ezDocumentObject_ConnectionBase"}
+	u3 %v{1}
+	p
+	{
+		Uuid %Source{u4{14268381449555157477,15921370219537973697}}
+		s %SourcePin{""}
+		Uuid %Target{u4{12551302534150232188,2233168960972186315}}
+		s %TargetPin{""}
+	}
+}
+o
+{
 	Uuid %id{u4{8428182821487263158,4699305089589542110}}
 	s %t{"ezVisualScriptVariable"}
-	u3 %v{1}
+	u3 %v{3}
 	p
 	{
+		b %ClampRange{0}
 		i3 %DefaultValue{20}
-		b %Expose{1}
+		d %MaxValue{0x000000000000F03F}
+		d %MinValue{0}
 		HashedString %Name{s{"StartLives"}}
+		ezVisualScriptVariableTypeDeclaration %Type
+		{
+			i4 %Type{3}
+			i4 %Category{0}
+			b %Public{1}
+		}
 	}
 }
 o
 {
-	Uuid %id{u4{17282959616916308371,4749492970839222528}}
-	s %t{"DocumentNodeManager_DefaultConnection"}
+	Uuid %id{u4{921067596396865210,4701001197881661244}}
+	s %t{"ezDocumentObject_ConnectionBase"}
 	u3 %v{1}
 	p
 	{
-		Uuid %Connection::Source{u4{13252999454979275,15733585419320962210}}
-		s %Connection::SourcePin{""}
-		Uuid %Connection::Target{u4{14268381449555157477,15921370219537973697}}
-		s %Connection::TargetPin{""}
+		Uuid %Source{u4{13252999454979275,15733585419320962210}}
+		s %SourcePin{"Result"}
+		Uuid %Target{u4{14268381449555157477,15921370219537973697}}
+		s %TargetPin{"Blackboard"}
 	}
 }
 o
 {
-	Uuid %id{u4{5351812083533960071,4785174759974547040}}
-	s %t{"DocumentNodeManager_DefaultConnection"}
+	Uuid %id{u4{307240786975086481,5012670472772375250}}
+	s %t{"ezDocumentObject_ConnectionBase"}
 	u3 %v{1}
 	p
 	{
-		Uuid %Connection::Source{u4{13252999454979275,15733585419320962210}}
-		s %Connection::SourcePin{"Result"}
-		Uuid %Connection::Target{u4{14268381449555157477,15921370219537973697}}
-		s %Connection::TargetPin{"Blackboard"}
+		Uuid %Source{u4{321190653987759345,16044765322019215588}}
+		s %SourcePin{"Value"}
+		Uuid %Target{u4{14268381449555157477,15921370219537973697}}
+		s %TargetPin{"Value"}
 	}
 }
 o
 {
 	Uuid %id{u4{12749849174814944640,5194499331330062891}}
 	s %t{"ezVisualScriptVariable"}
-	u3 %v{1}
+	u3 %v{3}
 	p
 	{
+		b %ClampRange{0}
 		i3 %DefaultValue{5000}
-		b %Expose{1}
+		d %MaxValue{0x000000000000F03F}
+		d %MinValue{0}
 		HashedString %Name{s{"StartMoney"}}
+		ezVisualScriptVariableTypeDeclaration %Type
+		{
+			i4 %Type{3}
+			i4 %Category{0}
+			b %Public{1}
+		}
 	}
 }
 o
 {
-	Uuid %id{u4{3950966306599484832,5242040396829363299}}
-	s %t{"DocumentNodeManager_DefaultConnection"}
+	Uuid %id{u4{13870514350277272239,5283342859756977970}}
+	s %t{"ezDocumentObject_ConnectionBase"}
 	u3 %v{1}
 	p
 	{
-		Uuid %Connection::Source{u4{13252999454979275,15733585419320962210}}
-		s %Connection::SourcePin{"Result"}
-		Uuid %Connection::Target{u4{12551302534150232188,2233168960972186315}}
-		s %Connection::TargetPin{"Blackboard"}
+		Uuid %Source{u4{17050855812292385672,2356564063453428206}}
+		s %SourcePin{"Value"}
+		Uuid %Target{u4{12551302534150232188,2233168960972186315}}
+		s %TargetPin{"Value"}
 	}
 }
 o
 {
-	Uuid %id{u4{16447470436949032124,5243200963235130173}}
-	s %t{"DocumentNodeManager_DefaultConnection"}
+	Uuid %id{u4{843424318993290429,5367191138423018638}}
+	s %t{"ezDocumentObject_ConnectionBase"}
 	u3 %v{1}
 	p
 	{
-		Uuid %Connection::Source{u4{14268381449555157477,15921370219537973697}}
-		s %Connection::SourcePin{""}
-		Uuid %Connection::Target{u4{12551302534150232188,2233168960972186315}}
-		s %Connection::TargetPin{""}
+		Uuid %Source{u4{13252999454979275,15733585419320962210}}
+		s %SourcePin{""}
+		Uuid %Target{u4{14268381449555157477,15921370219537973697}}
+		s %TargetPin{""}
 	}
 }
 o
@@ -181,15 +226,15 @@ o
 }
 o
 {
-	Uuid %id{u4{2899188767906512012,5684211960141387287}}
-	s %t{"DocumentNodeManager_DefaultConnection"}
+	Uuid %id{u4{9700841939696116919,5570807063144952445}}
+	s %t{"ezDocumentObject_ConnectionBase"}
 	u3 %v{1}
 	p
 	{
-		Uuid %Connection::Source{u4{321190653987759345,16044765322019215588}}
-		s %Connection::SourcePin{"Value"}
-		Uuid %Connection::Target{u4{14268381449555157477,15921370219537973697}}
-		s %Connection::TargetPin{"Value"}
+		Uuid %Source{u4{2493369750885974225,15305574462858405867}}
+		s %SourcePin{""}
+		Uuid %Target{u4{13252999454979275,15733585419320962210}}
+		s %TargetPin{""}
 	}
 }
 o
@@ -207,42 +252,16 @@ o
 			Uuid{u4{14268381449555157477,15921370219537973697}}
 			Uuid{u4{13252999454979275,15733585419320962210}}
 			Uuid{u4{321190653987759345,16044765322019215588}}
-			Uuid{u4{15534082923389395448,15139392782931989450}}
-			Uuid{u4{2899188767906512012,5684211960141387287}}
 			Uuid{u4{12551302534150232188,2233168960972186315}}
 			Uuid{u4{17050855812292385672,2356564063453428206}}
-			Uuid{u4{1182109852501586723,10442754775285151521}}
-			Uuid{u4{17282959616916308371,4749492970839222528}}
-			Uuid{u4{16447470436949032124,5243200963235130173}}
-			Uuid{u4{5351812083533960071,4785174759974547040}}
-			Uuid{u4{3950966306599484832,5242040396829363299}}
+			Uuid{u4{843424318993290429,5367191138423018638}}
+			Uuid{u4{921067596396865210,4701001197881661244}}
+			Uuid{u4{6411177057310357937,4633460084016307052}}
+			Uuid{u4{16072613090535033533,4649986886901904134}}
+			Uuid{u4{307240786975086481,5012670472772375250}}
+			Uuid{u4{13870514350277272239,5283342859756977970}}
+			Uuid{u4{9700841939696116919,5570807063144952445}}
 		}
-	}
-}
-o
-{
-	Uuid %id{u4{1182109852501586723,10442754775285151521}}
-	s %t{"DocumentNodeManager_DefaultConnection"}
-	u3 %v{1}
-	p
-	{
-		Uuid %Connection::Source{u4{17050855812292385672,2356564063453428206}}
-		s %Connection::SourcePin{"Value"}
-		Uuid %Connection::Target{u4{12551302534150232188,2233168960972186315}}
-		s %Connection::TargetPin{"Value"}
-	}
-}
-o
-{
-	Uuid %id{u4{15534082923389395448,15139392782931989450}}
-	s %t{"DocumentNodeManager_DefaultConnection"}
-	u3 %v{1}
-	p
-	{
-		Uuid %Connection::Source{u4{2493369750885974225,15305574462858405867}}
-		s %Connection::SourcePin{""}
-		Uuid %Connection::Target{u4{13252999454979275,15733585419320962210}}
-		s %Connection::TargetPin{""}
 	}
 }
 o
@@ -296,11 +315,11 @@ Types
 o
 {
 	Uuid %id{u4{13987191707528524745,1035435365998279916}}
-	s %t{"ezCategoryAttribute"}
+	s %t{"ezColorAttribute"}
 	u3 %v{1}
 	p
 	{
-		s %Category{"Add Event Handler/StateMachineState"}
+		Color %Color{f{0x49413E3C,0xBF69683E,0x118F193E,0x0000803F}}
 	}
 }
 o
@@ -316,7 +335,7 @@ o
 		}
 		s %Category{"ezPropertyCategory::Member"}
 		Invalid %ConstantValue{}
-		s %Flags{"ezPropertyFlags::StandardType|ezPropertyFlags::Phantom"}
+		s %Flags{"ezPropertyFlags::StandardType"}
 		s %Name{"Name"}
 		s %Type{"ezHashedString"}
 	}
@@ -335,7 +354,7 @@ o
 		s %PluginName{"ezEditorPluginVisualScript"}
 		VarArray %Properties{}
 		s %TypeName{"ezVisualScriptVariable"}
-		u3 %TypeVersion{1}
+		u3 %TypeVersion{3}
 	}
 }
 o
@@ -346,7 +365,7 @@ o
 	p
 	{
 		VarArray %Attributes{}
-		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Abstract|ezTypeFlags::Phantom"}
+		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Abstract"}
 		VarArray %Functions{}
 		s %ParentTypeName{"ezReflectedClass"}
 		s %PluginName{"EditorPluginVisualScript"}
@@ -366,9 +385,8 @@ o
 		{
 			Uuid{u4{5456488892108602413,13284261879998793045}}
 			Uuid{u4{1464327810898653550,9992711822873213388}}
-			Uuid{u4{6400352193967495845,8939306506251272495}}
 		}
-		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Phantom"}
+		s %Flags{"ezTypeFlags::Class"}
 		VarArray %Functions{}
 		s %ParentTypeName{"ezVisualScriptNodeBase"}
 		s %PluginName{"EditorPluginVisualScript"}
@@ -392,9 +410,8 @@ o
 		{
 			Uuid{u4{10565660444029247733,13112019080651800471}}
 			Uuid{u4{12853193107308548865,11181181523898019189}}
-			Uuid{u4{7836312134234513142,5292285375887309656}}
 		}
-		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Phantom"}
+		s %Flags{"ezTypeFlags::Class"}
 		VarArray %Functions{}
 		s %ParentTypeName{"ezVisualScriptNodeBase"}
 		s %PluginName{"EditorPluginVisualScript"}
@@ -403,23 +420,6 @@ o
 			Uuid{u4{16099069544287472150,17621308392081790365}}
 		}
 		s %TypeName{"VisualScriptNode_Builtin_GetVariable"}
-		u3 %TypeVersion{1}
-	}
-}
-o
-{
-	Uuid %id{u4{17523044089822028024,3521005166208929094}}
-	s %t{"ezReflectedTypeDescriptor"}
-	u3 %v{1}
-	p
-	{
-		VarArray %Attributes{}
-		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
-		VarArray %Functions{}
-		s %ParentTypeName{"ezPropertyAttribute"}
-		s %PluginName{"Static"}
-		VarArray %Properties{}
-		s %TypeName{"ezCategoryAttribute"}
 		u3 %TypeVersion{1}
 	}
 }
@@ -436,7 +436,7 @@ o
 		}
 		s %Category{"ezPropertyCategory::Member"}
 		Invalid %ConstantValue{}
-		s %Flags{"ezPropertyFlags::StandardType|ezPropertyFlags::Phantom"}
+		s %Flags{"ezPropertyFlags::StandardType"}
 		s %Name{"Name"}
 		s %Type{"ezString"}
 	}
@@ -477,16 +477,6 @@ o
 }
 o
 {
-	Uuid %id{u4{7836312134234513142,5292285375887309656}}
-	s %t{"ezTitleAttribute"}
-	u3 %v{1}
-	p
-	{
-		s %Title{"Get {Name}"}
-	}
-}
-o
-{
 	Uuid %id{u4{9458079730812994728,5633584282219100768}}
 	s %t{"ezReflectedTypeDescriptor"}
 	u3 %v{1}
@@ -496,9 +486,8 @@ o
 		{
 			Uuid{u4{18376868910980729851,7350607772104388544}}
 			Uuid{u4{16147469892662607059,12384234027373377458}}
-			Uuid{u4{4492392090802928850,6806723488648083755}}
 		}
-		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Phantom"}
+		s %Flags{"ezTypeFlags::Class"}
 		VarArray %Functions{}
 		s %ParentTypeName{"ezVisualScriptNodeBase"}
 		s %PluginName{"EditorPluginVisualScript"}
@@ -512,22 +501,29 @@ o
 }
 o
 {
-	Uuid %id{u4{4492392090802928850,6806723488648083755}}
-	s %t{"ezTitleAttribute"}
+	Uuid %id{u4{5514559133848394859,6944786798886162182}}
+	s %t{"ezReflectedTypeDescriptor"}
 	u3 %v{1}
 	p
 	{
-		s %Title{"Blackboard::GetOrCreateGlobal {Name}"}
+		VarArray %Attributes{}
+		s %Flags{"ezTypeFlags::IsEnum|ezTypeFlags::Minimal"}
+		VarArray %Functions{}
+		s %ParentTypeName{"ezEnumBase"}
+		s %PluginName{"ezEditorPluginVisualScript"}
+		VarArray %Properties{}
+		s %TypeName{"ezVisualScriptVariableCategory"}
+		u3 %TypeVersion{1}
 	}
 }
 o
 {
 	Uuid %id{u4{18376868910980729851,7350607772104388544}}
-	s %t{"ezCategoryAttribute"}
+	s %t{"ezColorAttribute"}
 	u3 %v{1}
 	p
 	{
-		s %Category{"Blackboard"}
+		Color %Color{f{0x20ACBD3C,0xC214803E,0x1291B53D,0x0000803F}}
 	}
 }
 o
@@ -559,12 +555,19 @@ o
 }
 o
 {
-	Uuid %id{u4{6400352193967495845,8939306506251272495}}
-	s %t{"ezTitleAttribute"}
+	Uuid %id{u4{17031262981869958585,9370940739905747393}}
+	s %t{"ezReflectedTypeDescriptor"}
 	u3 %v{1}
 	p
 	{
-		s %Title{"Blackboard::SetEntryValue {Name}"}
+		VarArray %Attributes{}
+		s %Flags{"ezTypeFlags::IsEnum|ezTypeFlags::Minimal"}
+		VarArray %Functions{}
+		s %ParentTypeName{"ezEnumBase"}
+		s %PluginName{"ezEditorPluginVisualScript"}
+		VarArray %Properties{}
+		s %TypeName{"ezVisualScriptVariableType"}
+		u3 %TypeVersion{1}
 	}
 }
 o
@@ -577,9 +580,8 @@ o
 		VarArray %Attributes
 		{
 			Uuid{u4{13987191707528524745,1035435365998279916}}
-			Uuid{u4{2406924333614902576,15796532515813153895}}
 		}
-		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Phantom"}
+		s %Flags{"ezTypeFlags::Class"}
 		VarArray %Functions{}
 		s %ParentTypeName{"ezVisualScriptNodeBase"}
 		s %PluginName{"EditorPluginVisualScript"}
@@ -594,28 +596,11 @@ o
 o
 {
 	Uuid %id{u4{1464327810898653550,9992711822873213388}}
-	s %t{"ezColorAttribute"}
+	s %t{"ezTitleAttribute"}
 	u3 %v{1}
 	p
 	{
-		Color %Color{f{0x20ACBD3C,0xC214803E,0x1291B53D,0x0000803F}}
-	}
-}
-o
-{
-	Uuid %id{u4{1988646526571382668,10729334715299371304}}
-	s %t{"ezReflectedTypeDescriptor"}
-	u3 %v{1}
-	p
-	{
-		VarArray %Attributes{}
-		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
-		VarArray %Functions{}
-		s %ParentTypeName{"ezReflectedClass"}
-		s %PluginName{"Static"}
-		VarArray %Properties{}
-		s %TypeName{"DocumentNodeManager_DefaultConnection"}
-		u3 %TypeVersion{1}
+		s %Title{"Blackboard::SetEntryValue {Name}"}
 	}
 }
 o
@@ -638,21 +623,21 @@ o
 o
 {
 	Uuid %id{u4{12853193107308548865,11181181523898019189}}
-	s %t{"ezColorAttribute"}
+	s %t{"ezTitleAttribute"}
 	u3 %v{1}
 	p
 	{
-		Color %Color{f{0xE9A4553E,0x20476C3E,0x3C20823E,0x0000803F}}
+		s %Title{"Get {Name}"}
 	}
 }
 o
 {
 	Uuid %id{u4{16147469892662607059,12384234027373377458}}
-	s %t{"ezColorAttribute"}
+	s %t{"ezTitleAttribute"}
 	u3 %v{1}
 	p
 	{
-		Color %Color{f{0x20ACBD3C,0xC214803E,0x1291B53D,0x0000803F}}
+		s %Title{"Blackboard::GetOrCreateGlobal {Name}"}
 	}
 }
 o
@@ -675,21 +660,21 @@ o
 o
 {
 	Uuid %id{u4{10565660444029247733,13112019080651800471}}
-	s %t{"ezCategoryAttribute"}
+	s %t{"ezColorAttribute"}
 	u3 %v{1}
 	p
 	{
-		s %Category{"Variables"}
+		Color %Color{f{0xE9A4553E,0x20476C3E,0x3C20823E,0x0000803F}}
 	}
 }
 o
 {
 	Uuid %id{u4{5456488892108602413,13284261879998793045}}
-	s %t{"ezCategoryAttribute"}
+	s %t{"ezColorAttribute"}
 	u3 %v{1}
 	p
 	{
-		s %Category{"Blackboard"}
+		Color %Color{f{0x20ACBD3C,0xC214803E,0x1291B53D,0x0000803F}}
 	}
 }
 o
@@ -702,7 +687,7 @@ o
 		VarArray %Attributes{}
 		s %Category{"ezPropertyCategory::Member"}
 		Invalid %ConstantValue{}
-		s %Flags{"ezPropertyFlags::IsEnum|ezPropertyFlags::Phantom"}
+		s %Flags{"ezPropertyFlags::IsEnum"}
 		s %Name{"CoroutineMode"}
 		s %Type{"ezScriptCoroutineCreationMode"}
 	}
@@ -733,6 +718,23 @@ o
 }
 o
 {
+	Uuid %id{u4{16046955658216964626,14620062218799320494}}
+	s %t{"ezReflectedTypeDescriptor"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Attributes{}
+		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
+		VarArray %Functions{}
+		s %ParentTypeName{""}
+		s %PluginName{"ezEditorPluginVisualScript"}
+		VarArray %Properties{}
+		s %TypeName{"ezVisualScriptVariableTypeDeclaration"}
+		u3 %TypeVersion{1}
+	}
+}
+o
+{
 	Uuid %id{u4{2947336711354777548,15013008608905564043}}
 	s %t{"ezReflectedTypeDescriptor"}
 	u3 %v{1}
@@ -750,16 +752,6 @@ o
 }
 o
 {
-	Uuid %id{u4{2406924333614902576,15796532515813153895}}
-	s %t{"ezColorAttribute"}
-	u3 %v{1}
-	p
-	{
-		Color %Color{f{0x49413E3C,0xBF69683E,0x118F193E,0x0000803F}}
-	}
-}
-o
-{
 	Uuid %id{u4{2112614867679389751,16054775428167971728}}
 	s %t{"ezReflectedPropertyDescriptor"}
 	u3 %v{2}
@@ -771,9 +763,26 @@ o
 		}
 		s %Category{"ezPropertyCategory::Member"}
 		Invalid %ConstantValue{}
-		s %Flags{"ezPropertyFlags::StandardType|ezPropertyFlags::Phantom"}
+		s %Flags{"ezPropertyFlags::StandardType"}
 		s %Name{"Value"}
 		s %Type{"ezVariant"}
+	}
+}
+o
+{
+	Uuid %id{u4{13983305718315019434,17572363554072221229}}
+	s %t{"ezReflectedTypeDescriptor"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Attributes{}
+		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
+		VarArray %Functions{}
+		s %ParentTypeName{"ezReflectedClass"}
+		s %PluginName{"Static"}
+		VarArray %Properties{}
+		s %TypeName{"ezDocumentObject_ConnectionBase"}
+		u3 %TypeVersion{1}
 	}
 }
 o
@@ -786,7 +795,7 @@ o
 		VarArray %Attributes{}
 		s %Category{"ezPropertyCategory::Member"}
 		Invalid %ConstantValue{}
-		s %Flags{"ezPropertyFlags::StandardType|ezPropertyFlags::Phantom"}
+		s %Flags{"ezPropertyFlags::StandardType"}
 		s %Name{"Name"}
 		s %Type{"ezString"}
 	}

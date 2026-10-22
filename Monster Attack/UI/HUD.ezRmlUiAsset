@@ -15,18 +15,38 @@ o
 			s{"UI/HUD.rml"}
 		}
 		Uuid %DocumentID{u4{12993097806162725742,12601205352695655044}}
-		u4 %Hash{8765605970030608888}
+		u4 %Hash{1493060506881932483}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps
 		{
+			s{"Kenney.nl/InputPrompts/controller0_dpad.png"}
+			s{"Kenney.nl/UI/banner_hanging.png"}
+			s{"Kenney.nl/UI/crosshair.png"}
+			s{"Kenney.nl/UI/minimap_icon_jewel_yellow.png"}
+			s{"Kenney.nl/UI/panel_border_brown.png"}
+			s{"Kenney.nl/UI/panel_brown_dark.png"}
 			s{"UI/HUD.rcss"}
 			s{"UI/HUD.rml"}
+			s{"UI/Items/ArrowTrap.jpg"}
+			s{"UI/Items/MagicBullet.jpg"}
+			s{"UI/Items/SpikeTrap.jpg"}
+			s{"UI/Items/TarTrap.jpg"}
 		}
 		VarArray %References
 		{
+			s{"Kenney.nl/InputPrompts/controller0_dpad.png"}
+			s{"Kenney.nl/UI/banner_hanging.png"}
+			s{"Kenney.nl/UI/crosshair.png"}
+			s{"Kenney.nl/UI/minimap_icon_jewel_yellow.png"}
+			s{"Kenney.nl/UI/panel_border_brown.png"}
+			s{"Kenney.nl/UI/panel_brown_dark.png"}
 			s{"UI/HUD.rcss"}
 			s{"UI/HUD.rml"}
+			s{"UI/Items/ArrowTrap.jpg"}
+			s{"UI/Items/MagicBullet.jpg"}
+			s{"UI/Items/SpikeTrap.jpg"}
+			s{"UI/Items/TarTrap.jpg"}
 		}
 		s %Tags{""}
 	}

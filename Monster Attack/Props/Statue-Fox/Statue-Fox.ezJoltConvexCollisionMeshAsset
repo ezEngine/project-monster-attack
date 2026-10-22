@@ -14,7 +14,7 @@ o
 			s{"Props/Statue-Fox/Statue_Fox.obj"}
 		}
 		Uuid %DocumentID{u4{9253401572370142364,5264779259153940613}}
-		u4 %Hash{3114540176788937469}
+		u4 %Hash{9573491994055433536}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps{}
@@ -22,6 +22,7 @@ o
 		{
 			s{"Props/Statue-Fox/Statue_Fox.obj"}
 		}
+		s %Tags{""}
 	}
 }
 }
@@ -31,19 +32,28 @@ o
 {
 	Uuid %id{u4{8950790148069787058,5686524805794820709}}
 	s %t{"ezJoltCollisionMeshAssetProperties"}
-	u3 %v{1}
+	u3 %v{3}
 	p
 	{
+		b %AggressiveSimplification{0}
 		s %ConvexMeshType{"ezJoltConvexCollisionMeshType::ConvexHull"}
 		u1 %Detail{1}
 		b %FlipForwardDir{0}
 		f %Height{0x0000803F}
+		s %ImportTransform{"ezMeshImportTransform::Custom"}
 		b %IsConvexMesh{1}
 		u2 %MaxConvexPieces{5}
+		u1 %MaxSimplificationError{20}
+		s %MeshExcludeTags{""}
 		s %MeshFile{"Props/Statue-Fox/Statue_Fox.obj"}
+		s %MeshIncludeTags{""}
+		u1 %MeshSimplification{50}
+		f %NormalWeight{0x0000003F}
+		Vec3 %PositionOffset{f{0,0,0}}
 		f %Radius{0x0000003F}
 		f %Radius2{0x0000003F}
 		s %RightDir{"ezBasisAxis::PositiveX"}
+		b %SimplifyMesh{0}
 		s %Surface{""}
 		VarArray %Surfaces{}
 		f %UniformScaling{0x0000803F}
@@ -115,7 +125,7 @@ o
 		s %PluginName{"ezEditorPluginJolt"}
 		VarArray %Properties{}
 		s %TypeName{"ezJoltCollisionMeshAssetProperties"}
-		u3 %TypeVersion{1}
+		u3 %TypeVersion{3}
 	}
 }
 o
@@ -132,6 +142,23 @@ o
 		s %PluginName{"Static"}
 		VarArray %Properties{}
 		s %TypeName{"ezDocumentRoot"}
+		u3 %TypeVersion{1}
+	}
+}
+o
+{
+	Uuid %id{u4{16959510582460493866,8962221111705621108}}
+	s %t{"ezReflectedTypeDescriptor"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Attributes{}
+		s %Flags{"ezTypeFlags::IsEnum|ezTypeFlags::Minimal"}
+		VarArray %Functions{}
+		s %ParentTypeName{"ezEnumBase"}
+		s %PluginName{"Static"}
+		VarArray %Properties{}
+		s %TypeName{"ezMeshImportTransform"}
 		u3 %TypeVersion{1}
 	}
 }

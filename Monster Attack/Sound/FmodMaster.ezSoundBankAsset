@@ -22,6 +22,7 @@ o
 		{
 			s{"Sound/SoundBanks/Desktop/Master.bank"}
 		}
+		s %Tags{""}
 	}
 }
 }

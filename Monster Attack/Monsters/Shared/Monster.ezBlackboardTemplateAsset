@@ -11,11 +11,12 @@ o
 		s %AssetType{"BlackboardTemplate"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{14034861266640255893,5322652024691810448}}
-		u4 %Hash{15273364332371025200}
+		u4 %Hash{1693870939314237774}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps{}
 		VarArray %References{}
+		s %Tags{""}
 	}
 }
 }
@@ -30,7 +31,7 @@ o
 	{
 		s %Flags{""}
 		i3 %InitialValue{0}
-		s %Name{"State"}
+		HashedString %Name{s{"State"}}
 	}
 }
 o
@@ -42,7 +43,7 @@ o
 	{
 		s %Flags{""}
 		b %InitialValue{0}
-		s %Name{"React-Hit"}
+		HashedString %Name{s{"React-Hit"}}
 	}
 }
 o
@@ -54,7 +55,7 @@ o
 	{
 		s %Flags{""}
 		f %InitialValue{0x0000803F}
-		s %Name{"MoveSpeed"}
+		HashedString %Name{s{"MoveSpeed"}}
 	}
 }
 o
@@ -66,7 +67,7 @@ o
 	{
 		s %Flags{""}
 		b %InitialValue{0}
-		s %Name{"Attack-Melee"}
+		HashedString %Name{s{"Attack-Melee"}}
 	}
 }
 o

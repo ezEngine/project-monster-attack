@@ -11,7 +11,7 @@ o
 		s %AssetType{"Prefab"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{13137184389008137346,5013965863384013943}}
-		u4 %Hash{3953857129968369223}
+		u4 %Hash{17560165854419658400}
 		VarArray %MetaInfo
 		{
 			Uuid{u4{4614414125599776824,5223836944547665609}}
@@ -29,6 +29,7 @@ o
 			s{"{ 9ce0db2a-284c-4cfd-a938-1eaded885932 }"}
 			s{"{ b7e21eee-b75d-41bc-95de-a90a05f7552c }"}
 		}
+		s %Tags{""}
 	}
 }
 o
@@ -45,13 +46,14 @@ o
 {
 	Uuid %id{u4{9500924395355657204,5169394970833503676}}
 	s %t{"ezExposedParameter"}
-	u3 %v{2}
+	u3 %v{3}
 	p
 	{
 		VarArray %Attributes
 		{
 			Uuid{u4{15398684737506248423,5028482293303658960}}
 		}
+		s %Category{"ezPropertyCategory::Member"}
 		b %DefaultValue{0}
 		s %Name{"Torch"}
 		s %Type{"bool"}
@@ -108,6 +110,7 @@ o
 	{
 		b %Active{1}
 		Color %Color{f{0x0000803F,0x0000803F,0x0000803F,0x0000803F}}
+		Vec4 %CustomData{f{0,0x0000803F,0,0x0000803F}}
 		VarArray %Materials{}
 		s %Mesh{"{ b7e21eee-b75d-41bc-95de-a90a05f7552c }"}
 		f %SortingDepthOffset{0}
@@ -148,6 +151,7 @@ o
 	{
 		b %Active{1}
 		Color %Color{f{0x0000803F,0x0000803F,0x0000803F,0x0000803F}}
+		Vec4 %CustomData{f{0,0x0000803F,0,0x0000803F}}
 		VarArray %Materials{}
 		s %Mesh{"{ b7e21eee-b75d-41bc-95de-a90a05f7552c }"}
 		f %SortingDepthOffset{0}
@@ -157,15 +161,15 @@ o
 {
 	Uuid %id{u4{3858917216871640951,5080069656833198988}}
 	s %t{"ezGreyBoxComponent"}
-	u3 %v{5}
+	u3 %v{7}
 	p
 	{
 		b %Active{1}
 		Color %Color{f{0x0000803F,0x0000803F,0x0000803F,0x0000803F}}
 		Angle %Curvature{f{0}}
+		Vec4 %CustomData{f{0,0x0000803F,0,0x0000803F}}
 		u3 %Detail{16}
 		b %GenerateCollision{1}
-		b %IncludeInNavmesh{1}
 		s %Material{"{ 9ce0db2a-284c-4cfd-a938-1eaded885932 }"}
 		s %Shape{"ezGreyBoxShape::Box"}
 		f %SizeNegX{0}
@@ -307,6 +311,7 @@ o
 	{
 		b %Active{1}
 		Color %Color{f{0x0000803F,0x0000803F,0x0000803F,0x0000803F}}
+		Vec4 %CustomData{f{0,0x0000803F,0,0x0000803F}}
 		VarArray %Materials{}
 		s %Mesh{"{ b7e21eee-b75d-41bc-95de-a90a05f7552c }"}
 		f %SortingDepthOffset{0}
@@ -321,6 +326,7 @@ o
 	{
 		b %Active{1}
 		Color %Color{f{0x0000803F,0x0000803F,0x0000803F,0x0000803F}}
+		Vec4 %CustomData{f{0,0x0000803F,0,0x0000803F}}
 		VarArray %Materials{}
 		s %Mesh{"{ b7e21eee-b75d-41bc-95de-a90a05f7552c }"}
 		f %SortingDepthOffset{0}
@@ -362,6 +368,7 @@ o
 		b %Active{1}
 		VarDict %Parameters{}
 		s %Prefab{"{ 7860fe91-1b6a-4bdb-9b80-1e1f4afe6437 }"}
+		b %ShowShapeIcons{0}
 	}
 }
 o
@@ -373,6 +380,7 @@ o
 	{
 		b %Active{1}
 		Color %Color{f{0x0000803F,0x0000803F,0x0000803F,0x0000803F}}
+		Vec4 %CustomData{f{0,0x0000803F,0,0x0000803F}}
 		VarArray %Materials{}
 		s %Mesh{"{ b7e21eee-b75d-41bc-95de-a90a05f7552c }"}
 		f %SortingDepthOffset{0}
@@ -529,6 +537,7 @@ o
 	{
 		b %Active{1}
 		Color %Color{f{0x0000803F,0x0000803F,0x0000803F,0x0000803F}}
+		Vec4 %CustomData{f{0,0x0000803F,0,0x0000803F}}
 		VarArray %Materials{}
 		s %Mesh{"{ b7e21eee-b75d-41bc-95de-a90a05f7552c }"}
 		f %SortingDepthOffset{0}
@@ -543,6 +552,7 @@ o
 	{
 		b %Active{1}
 		Color %Color{f{0x0000803F,0x0000803F,0x0000803F,0x0000803F}}
+		Vec4 %CustomData{f{0,0x0000803F,0,0x0000803F}}
 		VarArray %Materials{}
 		s %Mesh{"{ b7e21eee-b75d-41bc-95de-a90a05f7552c }"}
 		f %SortingDepthOffset{0}
@@ -557,6 +567,7 @@ o
 	{
 		b %Active{1}
 		Color %Color{f{0x0000803F,0x0000803F,0x0000803F,0x0000803F}}
+		Vec4 %CustomData{f{0,0x0000803F,0,0x0000803F}}
 		VarArray %Materials{}
 		s %Mesh{"{ b7e21eee-b75d-41bc-95de-a90a05f7552c }"}
 		f %SortingDepthOffset{0}
@@ -566,15 +577,15 @@ o
 {
 	Uuid %id{u4{13715114647205792495,17730554177182915855}}
 	s %t{"ezGreyBoxComponent"}
-	u3 %v{5}
+	u3 %v{7}
 	p
 	{
 		b %Active{1}
 		Color %Color{f{0x0000803F,0x0000803F,0x0000803F,0x0000803F}}
 		Angle %Curvature{f{0}}
+		Vec4 %CustomData{f{0,0x0000803F,0,0x0000803F}}
 		u3 %Detail{16}
 		b %GenerateCollision{1}
-		b %IncludeInNavmesh{1}
 		s %Material{"{ 9ce0db2a-284c-4cfd-a938-1eaded885932 }"}
 		s %Shape{"ezGreyBoxShape::Box"}
 		f %SizeNegX{0}
@@ -657,7 +668,7 @@ o
 		s %PluginName{"Static"}
 		VarArray %Properties{}
 		s %TypeName{"ezGreyBoxShape"}
-		u3 %TypeVersion{1}
+		u3 %TypeVersion{2}
 	}
 }
 o
@@ -759,7 +770,7 @@ o
 		s %PluginName{"Static"}
 		VarArray %Properties{}
 		s %TypeName{"ezMeshComponentBase"}
-		u3 %TypeVersion{3}
+		u3 %TypeVersion{4}
 	}
 }
 o
@@ -895,7 +906,7 @@ o
 		s %PluginName{"Static"}
 		VarArray %Properties{}
 		s %TypeName{"ezGreyBoxComponent"}
-		u3 %TypeVersion{5}
+		u3 %TypeVersion{7}
 	}
 }
 o

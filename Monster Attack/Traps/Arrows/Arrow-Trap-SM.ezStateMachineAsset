@@ -11,11 +11,12 @@ o
 		s %AssetType{"StateMachine"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{8368271432729945757,5292683577810847645}}
-		u4 %Hash{11838163932760998101}
+		u4 %Hash{13337889688073445224}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps{}
 		VarArray %References{}
+		s %Tags{""}
 	}
 }
 }
@@ -28,10 +29,10 @@ o
 	u3 %v{1}
 	p
 	{
-		Uuid %Connection::Source{u4{14761460156996083682,15769544827013682481}}
-		s %Connection::SourcePin{"Exit"}
-		Uuid %Connection::Target{u4{1921289742027176589,5973936386776428252}}
-		s %Connection::TargetPin{"Enter"}
+		Uuid %Source{u4{14761460156996083682,15769544827013682481}}
+		s %SourcePin{"Exit"}
+		Uuid %Target{u4{1921289742027176589,5973936386776428252}}
+		s %TargetPin{"Enter"}
 		Uuid %Type{u4{0,0}}
 	}
 }
@@ -72,6 +73,7 @@ o
 	u3 %v{1}
 	p
 	{
+		b %IsInitialState{0}
 		s %Name{"Firing 1"}
 		Vec2 %Node::Pos{f{0xF621C943,0x591A1344}}
 		Uuid %Type{u4{12683164521338905219,6051647305991453210}}
@@ -84,10 +86,10 @@ o
 	u3 %v{1}
 	p
 	{
-		Uuid %Connection::Source{u4{8007051930943003799,5261831035567486885}}
-		s %Connection::SourcePin{"Exit"}
-		Uuid %Connection::Target{u4{3309773275815067518,5131283780371957256}}
-		s %Connection::TargetPin{"Enter"}
+		Uuid %Source{u4{8007051930943003799,5261831035567486885}}
+		s %SourcePin{"Exit"}
+		Uuid %Target{u4{3309773275815067518,5131283780371957256}}
+		s %TargetPin{"Enter"}
 		Uuid %Type{u4{10467789593694246262,4997851501988065621}}
 	}
 }
@@ -108,6 +110,7 @@ o
 	u3 %v{1}
 	p
 	{
+		b %IsInitialState{0}
 		s %Name{"Loaded"}
 		Vec2 %Node::Pos{f{0x10E71843,0x53BA1344}}
 		Uuid %Type{u4{7099564315191671151,5542301956858020392}}
@@ -154,10 +157,10 @@ o
 	u3 %v{1}
 	p
 	{
-		Uuid %Connection::Source{u4{3309773275815067518,5131283780371957256}}
-		s %Connection::SourcePin{"Exit"}
-		Uuid %Connection::Target{u4{4984103180103272494,10500439566226587559}}
-		s %Connection::TargetPin{"Enter"}
+		Uuid %Source{u4{3309773275815067518,5131283780371957256}}
+		s %SourcePin{"Exit"}
+		Uuid %Target{u4{4984103180103272494,10500439566226587559}}
+		s %TargetPin{"Enter"}
 		Uuid %Type{u4{18009545517975651983,5688797578512588856}}
 	}
 }
@@ -168,10 +171,10 @@ o
 	u3 %v{1}
 	p
 	{
-		Uuid %Connection::Source{u4{8274825955832742200,10461561014099661154}}
-		s %Connection::SourcePin{"Exit"}
-		Uuid %Connection::Target{u4{11470737381266613976,15808423379140608886}}
-		s %Connection::TargetPin{"Enter"}
+		Uuid %Source{u4{8274825955832742200,10461561014099661154}}
+		s %SourcePin{"Exit"}
+		Uuid %Target{u4{11470737381266613976,15808423379140608886}}
+		s %TargetPin{"Enter"}
 		Uuid %Type{u4{6547208907561144983,4727569361977616125}}
 	}
 }
@@ -194,10 +197,10 @@ o
 	u3 %v{1}
 	p
 	{
-		Uuid %Connection::Source{u4{4984103180103272494,10500439566226587559}}
-		s %Connection::SourcePin{"Exit"}
-		Uuid %Connection::Target{u4{8274825955832742200,10461561014099661154}}
-		s %Connection::TargetPin{"Enter"}
+		Uuid %Source{u4{4984103180103272494,10500439566226587559}}
+		s %SourcePin{"Exit"}
+		Uuid %Target{u4{8274825955832742200,10461561014099661154}}
+		s %TargetPin{"Enter"}
 		Uuid %Type{u4{17622549321836656005,5068715352326912718}}
 	}
 }
@@ -208,10 +211,10 @@ o
 	u3 %v{1}
 	p
 	{
-		Uuid %Connection::Source{u4{1921289742027176589,5973936386776428252}}
-		s %Connection::SourcePin{"Exit"}
-		Uuid %Connection::Target{u4{8007051930943003799,5261831035567486885}}
-		s %Connection::TargetPin{"Enter"}
+		Uuid %Source{u4{1921289742027176589,5973936386776428252}}
+		s %SourcePin{"Exit"}
+		Uuid %Target{u4{8007051930943003799,5261831035567486885}}
+		s %TargetPin{"Enter"}
 		Uuid %Type{u4{4314442809882237595,5240228173079484811}}
 	}
 }
@@ -285,6 +288,7 @@ o
 	u3 %v{1}
 	p
 	{
+		b %IsInitialState{0}
 		s %Name{"Firing 2"}
 		Vec2 %Node::Pos{f{0x4DCDC843,0x0F5EE843}}
 		Uuid %Type{u4{17648217201356579901,11381924539719157108}}
@@ -297,6 +301,7 @@ o
 	u3 %v{1}
 	p
 	{
+		b %IsInitialState{0}
 		s %Name{"Reload 1"}
 		Vec2 %Node::Pos{f{0x8DDCF943,0xC4580444}}
 		Uuid %Type{u4{4076615564351939846,10780910487517121066}}
@@ -333,10 +338,10 @@ o
 	u3 %v{1}
 	p
 	{
-		Uuid %Connection::Source{u4{11470737381266613976,15808423379140608886}}
-		s %Connection::SourcePin{"Exit"}
-		Uuid %Connection::Target{u4{14761460156996083682,15769544827013682481}}
-		s %Connection::TargetPin{"Enter"}
+		Uuid %Source{u4{11470737381266613976,15808423379140608886}}
+		s %SourcePin{"Exit"}
+		Uuid %Target{u4{14761460156996083682,15769544827013682481}}
+		s %TargetPin{"Enter"}
 		Uuid %Type{u4{4632210261721335976,5423956614945679805}}
 	}
 }
@@ -360,6 +365,7 @@ o
 	u3 %v{1}
 	p
 	{
+		b %IsInitialState{0}
 		s %Name{"Firing 3"}
 		Vec2 %Node::Pos{f{0xFAFDC843,0x6F9AB143}}
 		Uuid %Type{u4{5688107328810369767,16689908352633178435}}
@@ -372,6 +378,7 @@ o
 	u3 %v{1}
 	p
 	{
+		b %IsInitialState{0}
 		s %Name{"Reload 2"}
 		Vec2 %Node::Pos{f{0x6255FC43,0x90DFD643}}
 		Uuid %Type{u4{10563249765515281328,16088894300431142393}}
@@ -580,7 +587,7 @@ o
 		VarArray %Attributes{}
 		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
 		VarArray %Functions{}
-		s %ParentTypeName{"ezReflectedClass"}
+		s %ParentTypeName{"ezDocumentObject_ConnectionBase"}
 		s %PluginName{"ezEditorPluginAssets"}
 		VarArray %Properties{}
 		s %TypeName{"ezStateMachineConnection"}
@@ -601,6 +608,23 @@ o
 		s %PluginName{"ezEditorPluginAssets"}
 		VarArray %Properties{}
 		s %TypeName{"ezStateMachineNodeBase"}
+		u3 %TypeVersion{1}
+	}
+}
+o
+{
+	Uuid %id{u4{13983305718315019434,17572363554072221229}}
+	s %t{"ezReflectedTypeDescriptor"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Attributes{}
+		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
+		VarArray %Functions{}
+		s %ParentTypeName{"ezReflectedClass"}
+		s %PluginName{"Static"}
+		VarArray %Properties{}
+		s %TypeName{"ezDocumentObject_ConnectionBase"}
 		u3 %TypeVersion{1}
 	}
 }

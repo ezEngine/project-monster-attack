@@ -14,7 +14,7 @@ o
 			s{"Monsters/BlueDemon/BlueDemon.gltf"}
 		}
 		Uuid %DocumentID{u4{18029612430859297409,5661057763567911916}}
-		u4 %Hash{10005167698533531040}
+		u4 %Hash{10311218994112046554}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps
@@ -38,6 +38,7 @@ o
 			s{"{ d67cb38e-aa3f-4d8b-aa5f-d9ceb18cb101 }"}
 			s{"{ fdf30a6a-bbd6-4d58-a45b-6660d0a67228 }"}
 		}
+		s %Tags{""}
 	}
 }
 }
@@ -69,11 +70,12 @@ o
 {
 	Uuid %id{u4{17292944264567452347,4903015251749806802}}
 	s %t{"ezAnimatedMeshAssetProperties"}
-	u3 %v{2}
+	u3 %v{4}
 	p
 	{
-		s %BoneWeightPrecision{"ezMeshBoneWeigthPrecision::_8Bit"}
+		b %AggressiveSimplification{0}
 		s %DefaultSkeleton{"{ b1903f1c-847d-42b7-a19b-3eef192a20c2 }"}
+		b %HighPrecision{0}
 		b %ImportMaterials{1}
 		VarArray %Materials
 		{
@@ -84,12 +86,17 @@ o
 			Uuid{u4{13577548565847862177,5044932437143711490}}
 			Uuid{u4{6096722958382718372,5206951518914479598}}
 		}
+		u1 %MaxSimplificationError{5}
+		s %MeshExcludeTags{"$;UCX_"}
 		s %MeshFile{"Monsters/BlueDemon/BlueDemon.gltf"}
-		s %NormalPrecision{"ezMeshNormalPrecision::_10Bit"}
+		s %MeshIncludeTags{""}
+		u1 %MeshSimplification{50}
+		f %NormalWeight{0x0000003F}
 		b %NormalizeWeights{1}
 		b %RecalculateNormals{0}
 		b %RecalculateTangents{1}
-		s %TexCoordPrecision{"ezMeshTexCoordPrecision::_16Bit"}
+		b %SimplifyMesh{0}
+		s %VertexColorConversion{"ezMeshVertexColorConversion::None"}
 	}
 }
 o
@@ -167,24 +174,7 @@ o
 		s %PluginName{"ezEditorPluginAssets"}
 		VarArray %Properties{}
 		s %TypeName{"ezAnimatedMeshAssetProperties"}
-		u3 %TypeVersion{2}
-	}
-}
-o
-{
-	Uuid %id{u4{14196080311825956621,8048256116943370769}}
-	s %t{"ezReflectedTypeDescriptor"}
-	u3 %v{1}
-	p
-	{
-		VarArray %Attributes{}
-		s %Flags{"ezTypeFlags::IsEnum|ezTypeFlags::Minimal"}
-		VarArray %Functions{}
-		s %ParentTypeName{"ezEnumBase"}
-		s %PluginName{"Static"}
-		VarArray %Properties{}
-		s %TypeName{"ezMeshBoneWeigthPrecision"}
-		u3 %TypeVersion{1}
+		u3 %TypeVersion{4}
 	}
 }
 o
@@ -223,7 +213,7 @@ o
 }
 o
 {
-	Uuid %id{u4{3437852327385397451,11533535376753039907}}
+	Uuid %id{u4{1149684950174857976,12897203947091760514}}
 	s %t{"ezReflectedTypeDescriptor"}
 	u3 %v{1}
 	p
@@ -234,24 +224,7 @@ o
 		s %ParentTypeName{"ezEnumBase"}
 		s %PluginName{"Static"}
 		VarArray %Properties{}
-		s %TypeName{"ezMeshTexCoordPrecision"}
-		u3 %TypeVersion{1}
-	}
-}
-o
-{
-	Uuid %id{u4{3566230308987241816,14467924040829974905}}
-	s %t{"ezReflectedTypeDescriptor"}
-	u3 %v{1}
-	p
-	{
-		VarArray %Attributes{}
-		s %Flags{"ezTypeFlags::IsEnum|ezTypeFlags::Minimal"}
-		VarArray %Functions{}
-		s %ParentTypeName{"ezEnumBase"}
-		s %PluginName{"Static"}
-		VarArray %Properties{}
-		s %TypeName{"ezMeshNormalPrecision"}
+		s %TypeName{"ezMeshVertexColorConversion"}
 		u3 %TypeVersion{1}
 	}
 }

@@ -14,13 +14,14 @@ o
 {
 	Uuid %id{u4{12476006034990267078,1985818451140305115}}
 	s %t{"ezExposedParameter"}
-	u3 %v{2}
+	u3 %v{3}
 	p
 	{
 		VarArray %Attributes
 		{
 			Uuid{u4{6712064210054566085,12471779672958802332}}
 		}
+		s %Category{"ezPropertyCategory::Member"}
 		b %DefaultValue{1}
 		s %Name{"Ceiling"}
 		s %Type{"bool"}
@@ -37,7 +38,7 @@ o
 		s %AssetType{"Prefab"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{14781762551524525981,5450382746679457171}}
-		u4 %Hash{17470632421204944832}
+		u4 %Hash{2631606979356536735}
 		VarArray %MetaInfo
 		{
 			Uuid{u4{12498282060814941492,11822668050586489292}}
@@ -55,6 +56,7 @@ o
 			s{"{ 953cc66e-10dc-4c95-9a24-d4ddb83814dc }"}
 			s{"{ 9ce0db2a-284c-4cfd-a938-1eaded885932 }"}
 		}
+		s %Tags{""}
 	}
 }
 o
@@ -85,13 +87,14 @@ o
 {
 	Uuid %id{u4{14191748175017159799,16242324350472263987}}
 	s %t{"ezExposedParameter"}
-	u3 %v{2}
+	u3 %v{3}
 	p
 	{
 		VarArray %Attributes
 		{
 			Uuid{u4{8555807234718722888,1862205001739542474}}
 		}
+		s %Category{"ezPropertyCategory::Member"}
 		b %DefaultValue{0}
 		s %Name{"CeilingWithBars"}
 		s %Type{"bool"}
@@ -130,15 +133,15 @@ o
 {
 	Uuid %id{u4{10253938647674264894,3346714101775050834}}
 	s %t{"ezGreyBoxComponent"}
-	u3 %v{5}
+	u3 %v{7}
 	p
 	{
 		b %Active{1}
 		Color %Color{f{0x0000803F,0x0000803F,0x0000803F,0x0000803F}}
 		Angle %Curvature{f{0}}
+		Vec4 %CustomData{f{0,0x0000803F,0,0x0000803F}}
 		u3 %Detail{16}
 		b %GenerateCollision{1}
-		b %IncludeInNavmesh{1}
 		s %Material{"{ 9ce0db2a-284c-4cfd-a938-1eaded885932 }"}
 		s %Shape{"ezGreyBoxShape::Box"}
 		f %SizeNegX{0x00000040}
@@ -162,6 +165,7 @@ o
 	{
 		b %Active{1}
 		Color %Color{f{0x0000803F,0x0000803F,0x0000803F,0x0000803F}}
+		Vec4 %CustomData{f{0,0x0000803F,0,0x0000803F}}
 		VarArray %Materials{}
 		s %Mesh{"{ 7f77b3b9-fd39-4fd5-aa93-24e113e7f995 }"}
 		f %SortingDepthOffset{0}
@@ -226,6 +230,7 @@ o
 	{
 		b %Active{1}
 		Color %Color{f{0x0000803F,0x0000803F,0x0000803F,0x0000803F}}
+		Vec4 %CustomData{f{0,0x0000803F,0,0x0000803F}}
 		VarArray %Materials{}
 		s %Mesh{"{ 953cc66e-10dc-4c95-9a24-d4ddb83814dc }"}
 		f %SortingDepthOffset{0}
@@ -346,15 +351,15 @@ o
 {
 	Uuid %id{u4{17913295533950115792,9063231887347460303}}
 	s %t{"ezGreyBoxComponent"}
-	u3 %v{5}
+	u3 %v{7}
 	p
 	{
 		b %Active{1}
 		Color %Color{f{0x0000803F,0x0000803F,0x0000803F,0x0000803F}}
 		Angle %Curvature{f{0}}
+		Vec4 %CustomData{f{0,0x0000803F,0,0x0000803F}}
 		u3 %Detail{16}
 		b %GenerateCollision{1}
-		b %IncludeInNavmesh{1}
 		s %Material{"{ 9ce0db2a-284c-4cfd-a938-1eaded885932 }"}
 		s %Shape{"ezGreyBoxShape::Box"}
 		f %SizeNegX{0x00000040}
@@ -378,6 +383,7 @@ o
 	{
 		b %Active{1}
 		Color %Color{f{0x0000803F,0x0000803F,0x0000803F,0x0000803F}}
+		Vec4 %CustomData{f{0,0x0000803F,0,0x0000803F}}
 		VarArray %Materials{}
 		s %Mesh{"{ 953cc66e-10dc-4c95-9a24-d4ddb83814dc }"}
 		f %SortingDepthOffset{0}
@@ -392,6 +398,7 @@ o
 	{
 		b %Active{1}
 		Color %Color{f{0x0000803F,0x0000803F,0x0000803F,0x0000803F}}
+		Vec4 %CustomData{f{0,0x0000803F,0,0x0000803F}}
 		VarArray %Materials{}
 		s %Mesh{"{ 953cc66e-10dc-4c95-9a24-d4ddb83814dc }"}
 		f %SortingDepthOffset{0}
@@ -479,15 +486,15 @@ o
 {
 	Uuid %id{u4{1514564989639555098,11149198232774211366}}
 	s %t{"ezGreyBoxComponent"}
-	u3 %v{5}
+	u3 %v{7}
 	p
 	{
 		b %Active{1}
 		Color %Color{f{0x0000803F,0x0000803F,0x0000803F,0x0000803F}}
 		Angle %Curvature{f{0}}
+		Vec4 %CustomData{f{0,0x0000803F,0,0x0000803F}}
 		u3 %Detail{16}
 		b %GenerateCollision{1}
-		b %IncludeInNavmesh{1}
 		s %Material{"{ 9ce0db2a-284c-4cfd-a938-1eaded885932 }"}
 		s %Shape{"ezGreyBoxShape::Box"}
 		f %SizeNegX{0x00000040}
@@ -566,15 +573,15 @@ o
 {
 	Uuid %id{u4{9065990870506909310,14298607751972309224}}
 	s %t{"ezGreyBoxComponent"}
-	u3 %v{5}
+	u3 %v{7}
 	p
 	{
 		b %Active{1}
 		Color %Color{f{0x0000803F,0x0000803F,0x0000803F,0x0000803F}}
 		Angle %Curvature{f{0}}
+		Vec4 %CustomData{f{0,0x0000803F,0,0x0000803F}}
 		u3 %Detail{16}
 		b %GenerateCollision{1}
-		b %IncludeInNavmesh{1}
 		s %Material{"{ 9ce0db2a-284c-4cfd-a938-1eaded885932 }"}
 		s %Shape{"ezGreyBoxShape::Box"}
 		f %SizeNegX{0x66660640}
@@ -598,6 +605,7 @@ o
 	{
 		b %Active{1}
 		Color %Color{f{0x0000803F,0x0000803F,0x0000803F,0x0000803F}}
+		Vec4 %CustomData{f{0,0x0000803F,0,0x0000803F}}
 		VarArray %Materials{}
 		s %Mesh{"{ 953cc66e-10dc-4c95-9a24-d4ddb83814dc }"}
 		f %SortingDepthOffset{0}
@@ -659,15 +667,15 @@ o
 {
 	Uuid %id{u4{3246453099954887592,16150954491072959657}}
 	s %t{"ezGreyBoxComponent"}
-	u3 %v{5}
+	u3 %v{7}
 	p
 	{
 		b %Active{1}
 		Color %Color{f{0x0000803F,0x0000803F,0x0000803F,0x0000803F}}
 		Angle %Curvature{f{0}}
+		Vec4 %CustomData{f{0,0x0000803F,0,0x0000803F}}
 		u3 %Detail{16}
 		b %GenerateCollision{1}
-		b %IncludeInNavmesh{1}
 		s %Material{"{ 9ce0db2a-284c-4cfd-a938-1eaded885932 }"}
 		s %Shape{"ezGreyBoxShape::Box"}
 		f %SizeNegX{0x00000040}
@@ -686,15 +694,15 @@ o
 {
 	Uuid %id{u4{15359692809722181130,18166971060478359083}}
 	s %t{"ezGreyBoxComponent"}
-	u3 %v{5}
+	u3 %v{7}
 	p
 	{
 		b %Active{1}
 		Color %Color{f{0x0000803F,0x0000803F,0x0000803F,0x0000803F}}
 		Angle %Curvature{f{0}}
+		Vec4 %CustomData{f{0,0x0000803F,0,0x0000803F}}
 		u3 %Detail{16}
 		b %GenerateCollision{1}
-		b %IncludeInNavmesh{1}
 		s %Material{"{ 9ce0db2a-284c-4cfd-a938-1eaded885932 }"}
 		s %Shape{"ezGreyBoxShape::Box"}
 		f %SizeNegX{0x00000040}
@@ -777,7 +785,7 @@ o
 		s %PluginName{"Static"}
 		VarArray %Properties{}
 		s %TypeName{"ezGreyBoxShape"}
-		u3 %TypeVersion{1}
+		u3 %TypeVersion{2}
 	}
 }
 o
@@ -862,7 +870,7 @@ o
 		s %PluginName{"Static"}
 		VarArray %Properties{}
 		s %TypeName{"ezMeshComponentBase"}
-		u3 %TypeVersion{3}
+		u3 %TypeVersion{4}
 	}
 }
 o
@@ -998,7 +1006,7 @@ o
 		s %PluginName{"Static"}
 		VarArray %Properties{}
 		s %TypeName{"ezGreyBoxComponent"}
-		u3 %TypeVersion{5}
+		u3 %TypeVersion{7}
 	}
 }
 o

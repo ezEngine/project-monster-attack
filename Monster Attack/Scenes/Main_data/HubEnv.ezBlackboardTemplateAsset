@@ -14,16 +14,41 @@ o
 			s{"{ 11b04ae6-c3a4-44c2-9c62-43421b9244b4 }"}
 		}
 		Uuid %DocumentID{u4{14189435443296956074,4874479045620849511}}
-		u4 %Hash{5260388497978554792}
+		u4 %Hash{9698153286117455493}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps{}
 		VarArray %References{}
+		s %Tags{""}
 	}
 }
 }
 Objects
 {
+o
+{
+	Uuid %id{u4{3765360974764883385,4645681326144347635}}
+	s %t{"ezBlackboardEntry"}
+	u3 %v{1}
+	p
+	{
+		s %Flags{""}
+		s %InitialValue{"Hub"}
+		HashedString %Name{s{"Phase"}}
+	}
+}
+o
+{
+	Uuid %id{u4{5833335346960908931,5034496353418350253}}
+	s %t{"ezBlackboardEntry"}
+	u3 %v{1}
+	p
+	{
+		s %Flags{""}
+		i3 %InitialValue{0}
+		HashedString %Name{s{"MessageDuration"}}
+	}
+}
 o
 {
 	Uuid %id{u4{13749045870738129080,5261792110318436891}}
@@ -45,32 +70,6 @@ o
 }
 o
 {
-	Uuid %id{u4{18096612296587978288,6449934965513159559}}
-	s %t{"ezDocumentRoot"}
-	u3 %v{1}
-	s %n{"ObjectTree"}
-	p
-	{
-		VarArray %Children
-		{
-			Uuid{u4{13749045870738129080,5261792110318436891}}
-		}
-	}
-}
-o
-{
-	Uuid %id{u4{3765360974764883385,4645681326144347635}}
-	s %t{"ezBlackboardEntry"}
-	u3 %v{1}
-	p
-	{
-		s %Flags{""}
-		s %InitialValue{"Hub"}
-		HashedString %Name{s{"Phase"}}
-	}
-}
-o
-{
 	Uuid %id{u4{10786273277649686693,5303484542491811833}}
 	s %t{"ezBlackboardEntry"}
 	u3 %v{1}
@@ -83,14 +82,16 @@ o
 }
 o
 {
-	Uuid %id{u4{5833335346960908931,5034496353418350253}}
-	s %t{"ezBlackboardEntry"}
+	Uuid %id{u4{18096612296587978288,6449934965513159559}}
+	s %t{"ezDocumentRoot"}
 	u3 %v{1}
+	s %n{"ObjectTree"}
 	p
 	{
-		s %Flags{""}
-		i3 %InitialValue{0}
-		HashedString %Name{s{"MessageDuration"}}
+		VarArray %Children
+		{
+			Uuid{u4{13749045870738129080,5261792110318436891}}
+		}
 	}
 }
 }

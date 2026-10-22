@@ -14,7 +14,7 @@ o
 			s{"Kenney.nl/Particles/fire_01.png"}
 		}
 		Uuid %DocumentID{u4{4570519047690762680,4783813075946167940}}
-		u4 %Hash{1707568802168244108}
+		u4 %Hash{16089991820549762496}
 		VarArray %MetaInfo{}
 		VarArray %Outputs
 		{
@@ -25,6 +25,7 @@ o
 		{
 			s{"Kenney.nl/Particles/fire_01.png"}
 		}
+		s %Tags{""}
 	}
 }
 }
@@ -34,13 +35,15 @@ o
 {
 	Uuid %id{u4{8063694204055974536,5222675364344339042}}
 	s %t{"ezTextureAssetProperties"}
-	u3 %v{5}
+	u3 %v{6}
 	p
 	{
 		s %AddressModeU{"ezImageAddressMode::Clamp"}
 		s %AddressModeV{"ezImageAddressMode::Clamp"}
 		s %AddressModeW{"ezImageAddressMode::Repeat"}
 		f %AlphaThreshold{0x0000003F}
+		s %ArrayChannelMapping{"ezTextureArrayChannelMappingEnum::RGBA"}
+		VarArray %ArraySlices{}
 		f %CVarResScale{0x0000803F}
 		s %ChannelMapping{"ezTexture2DChannelMappingEnum::RGBA1"}
 		s %CompressionMode{"ezTexConvCompressionMode::Medium"}
@@ -52,6 +55,7 @@ o
 		s %Input2{""}
 		s %Input3{""}
 		s %Input4{""}
+		b %IsArrayTexture{0}
 		b %IsRenderTarget{0}
 		s %MipmapMode{"ezTexConvMipmapMode::Kaiser"}
 		b %PremultipliedAlpha{0}
@@ -109,7 +113,7 @@ o
 		s %PluginName{"ezEditorPluginAssets"}
 		VarArray %Properties{}
 		s %TypeName{"ezTextureAssetProperties"}
-		u3 %TypeVersion{5}
+		u3 %TypeVersion{6}
 	}
 }
 o
@@ -143,6 +147,23 @@ o
 		s %PluginName{"ezEditorPluginAssets"}
 		VarArray %Properties{}
 		s %TypeName{"ezRenderTargetFormat"}
+		u3 %TypeVersion{1}
+	}
+}
+o
+{
+	Uuid %id{u4{4439624141160076334,7137082278828783315}}
+	s %t{"ezReflectedTypeDescriptor"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Attributes{}
+		s %Flags{"ezTypeFlags::IsEnum|ezTypeFlags::Minimal"}
+		VarArray %Functions{}
+		s %ParentTypeName{"ezEnumBase"}
+		s %PluginName{"ezEditorPluginAssets"}
+		VarArray %Properties{}
+		s %TypeName{"ezTextureArrayChannelMappingEnum"}
 		u3 %TypeVersion{1}
 	}
 }

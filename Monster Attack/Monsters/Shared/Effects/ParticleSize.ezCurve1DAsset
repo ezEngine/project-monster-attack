@@ -11,11 +11,12 @@ o
 		s %AssetType{"Curve1D"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{6641151622693756861,5070537612529553364}}
-		u4 %Hash{16674655242419486985}
+		u4 %Hash{17628902209721946449}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps{}
 		VarArray %References{}
+		s %Tags{""}
 	}
 }
 }

@@ -11,7 +11,7 @@ o
 		s %AssetType{"Prefab"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{8174456610659689658,5571018608430638924}}
-		u4 %Hash{3011146721827615716}
+		u4 %Hash{18159678746443488138}
 		VarArray %MetaInfo
 		{
 			Uuid{u4{5970620316332486341,9801594913096898064}}
@@ -25,6 +25,7 @@ o
 		{
 			s{"{ 953cc66e-10dc-4c95-9a24-d4ddb83814dc }"}
 		}
+		s %Tags{""}
 	}
 }
 o
@@ -75,6 +76,7 @@ o
 	{
 		b %Active{1}
 		Color %Color{f{0x2E15393D,0x2E15393D,0x2E15393D,0x0000803F}}
+		Vec4 %CustomData{f{0,0x0000803F,0,0x0000803F}}
 		VarArray %Materials{}
 		s %Mesh{"{ 953cc66e-10dc-4c95-9a24-d4ddb83814dc }"}
 		f %SortingDepthOffset{0}
@@ -233,7 +235,7 @@ o
 		s %PluginName{"Static"}
 		VarArray %Properties{}
 		s %TypeName{"ezMeshComponentBase"}
-		u3 %TypeVersion{3}
+		u3 %TypeVersion{4}
 	}
 }
 o

@@ -11,16 +11,77 @@ o
 		s %AssetType{"BlackboardTemplate"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{12808578290685002847,394014879634942133}}
-		u4 %Hash{4182672015214881233}
+		u4 %Hash{11085843457953283305}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps{}
 		VarArray %References{}
+		s %Tags{""}
 	}
 }
 }
 Objects
 {
+o
+{
+	Uuid %id{u4{12067432139739877798,420952923261066060}}
+	s %t{"ezBlackboardEntry"}
+	u3 %v{1}
+	p
+	{
+		s %Flags{""}
+		s %InitialValue{""}
+		HashedString %Name{s{"Key_Select_Next"}}
+	}
+}
+o
+{
+	Uuid %id{u4{12041737429676222653,437713876363254973}}
+	s %t{"ezBlackboardEntry"}
+	u3 %v{1}
+	p
+	{
+		s %Flags{""}
+		b %InitialValue{0}
+		HashedString %Name{s{"MessageVisible"}}
+	}
+}
+o
+{
+	Uuid %id{u4{2329210508647498120,3549484042897711586}}
+	s %t{"ezBlackboardEntry"}
+	u3 %v{1}
+	p
+	{
+		s %Flags{""}
+		s %InitialValue{""}
+		HashedString %Name{s{"KeyRml_Select_Prev"}}
+	}
+}
+o
+{
+	Uuid %id{u4{6931740291966642341,3909347435997585080}}
+	s %t{"ezBlackboardEntry"}
+	u3 %v{1}
+	p
+	{
+		s %Flags{""}
+		s %InitialValue{""}
+		HashedString %Name{s{"KeyRml_Select_TarTrap"}}
+	}
+}
+o
+{
+	Uuid %id{u4{10730006183438248874,4599473972448088860}}
+	s %t{"ezBlackboardEntry"}
+	u3 %v{1}
+	p
+	{
+		s %Flags{""}
+		s %InitialValue{""}
+		HashedString %Name{s{"Key_Shoot"}}
+	}
+}
 o
 {
 	Uuid %id{u4{1904796935854037945,4825292316454339374}}
@@ -60,6 +121,18 @@ o
 }
 o
 {
+	Uuid %id{u4{4438294258994988490,5659716835152328922}}
+	s %t{"ezBlackboardEntry"}
+	u3 %v{1}
+	p
+	{
+		s %Flags{""}
+		s %InitialValue{""}
+		HashedString %Name{s{"KeyRml_Select_Next"}}
+	}
+}
+o
+{
 	Uuid %id{u4{18096612296587978288,6449934965513159559}}
 	s %t{"ezDocumentRoot"}
 	u3 %v{1}
@@ -74,14 +147,14 @@ o
 }
 o
 {
-	Uuid %id{u4{3650825439020379573,18288926416616660462}}
+	Uuid %id{u4{14527641774448895669,6462298002915389068}}
 	s %t{"ezBlackboardEntry"}
 	u3 %v{1}
 	p
 	{
 		s %Flags{""}
 		s %InitialValue{""}
-		HashedString %Name{s{"Phase"}}
+		HashedString %Name{s{"KeyRml_Select_MagicBullet"}}
 	}
 }
 o
@@ -94,6 +167,30 @@ o
 		s %Flags{""}
 		s %InitialValue{""}
 		HashedString %Name{s{"Message"}}
+	}
+}
+o
+{
+	Uuid %id{u4{3936395653352518034,7167487697710348425}}
+	s %t{"ezBlackboardEntry"}
+	u3 %v{1}
+	p
+	{
+		s %Flags{""}
+		s %InitialValue{""}
+		HashedString %Name{s{"Key_StartRound"}}
+	}
+}
+o
+{
+	Uuid %id{u4{18415550698314709927,7476979650715043893}}
+	s %t{"ezBlackboardEntry"}
+	u3 %v{1}
+	p
+	{
+		s %Flags{""}
+		s %InitialValue{""}
+		HashedString %Name{s{"Key_Select_MagicBullet"}}
 	}
 }
 o
@@ -122,50 +219,14 @@ o
 }
 o
 {
-	Uuid %id{u4{14965368047792473110,16418322930448510956}}
-	s %t{"ezBlackboardEntry"}
-	u3 %v{1}
-	p
-	{
-		s %Flags{""}
-		b %InitialValue{0}
-		HashedString %Name{s{"MenuOpen"}}
-	}
-}
-o
-{
-	Uuid %id{u4{18415550698314709927,7476979650715043893}}
+	Uuid %id{u4{2551340591570466055,8712476363298636922}}
 	s %t{"ezBlackboardEntry"}
 	u3 %v{1}
 	p
 	{
 		s %Flags{""}
 		s %InitialValue{""}
-		HashedString %Name{s{"Key_Select_MagicBullet"}}
-	}
-}
-o
-{
-	Uuid %id{u4{14527641774448895669,6462298002915389068}}
-	s %t{"ezBlackboardEntry"}
-	u3 %v{1}
-	p
-	{
-		s %Flags{""}
-		s %InitialValue{""}
-		HashedString %Name{s{"KeyRml_Select_MagicBullet"}}
-	}
-}
-o
-{
-	Uuid %id{u4{12801465845567321913,13781930503710933116}}
-	s %t{"ezBlackboardEntry"}
-	u3 %v{1}
-	p
-	{
-		s %Flags{""}
-		s %InitialValue{""}
-		HashedString %Name{s{"Key_Select_SpikeTrap"}}
+		HashedString %Name{s{"KeyRml_StartRound"}}
 	}
 }
 o
@@ -182,14 +243,14 @@ o
 }
 o
 {
-	Uuid %id{u4{9622162671228975362,13136126712296150082}}
+	Uuid %id{u4{15268666001278011421,9685910141916740848}}
 	s %t{"ezBlackboardEntry"}
 	u3 %v{1}
 	p
 	{
 		s %Flags{""}
 		s %InitialValue{""}
-		HashedString %Name{s{"Key_Select_ArrowTrap"}}
+		HashedString %Name{s{"KeyRml_Shoot"}}
 	}
 }
 o
@@ -206,26 +267,14 @@ o
 }
 o
 {
-	Uuid %id{u4{8634775503853193218,16704703355313590780}}
+	Uuid %id{u4{660255653359867420,11587726305201507784}}
 	s %t{"ezBlackboardEntry"}
 	u3 %v{1}
 	p
 	{
 		s %Flags{""}
-		s %InitialValue{""}
-		HashedString %Name{s{"Key_Select_TarTrap"}}
-	}
-}
-o
-{
-	Uuid %id{u4{6931740291966642341,3909347435997585080}}
-	s %t{"ezBlackboardEntry"}
-	u3 %v{1}
-	p
-	{
-		s %Flags{""}
-		s %InitialValue{""}
-		HashedString %Name{s{"KeyRml_Select_TarTrap"}}
+		i3 %InitialValue{0}
+		HashedString %Name{s{"MessageDuration"}}
 	}
 }
 o
@@ -242,86 +291,50 @@ o
 }
 o
 {
-	Uuid %id{u4{2329210508647498120,3549484042897711586}}
+	Uuid %id{u4{9622162671228975362,13136126712296150082}}
 	s %t{"ezBlackboardEntry"}
 	u3 %v{1}
 	p
 	{
 		s %Flags{""}
 		s %InitialValue{""}
-		HashedString %Name{s{"KeyRml_Select_Prev"}}
+		HashedString %Name{s{"Key_Select_ArrowTrap"}}
 	}
 }
 o
 {
-	Uuid %id{u4{12067432139739877798,420952923261066060}}
+	Uuid %id{u4{12801465845567321913,13781930503710933116}}
 	s %t{"ezBlackboardEntry"}
 	u3 %v{1}
 	p
 	{
 		s %Flags{""}
 		s %InitialValue{""}
-		HashedString %Name{s{"Key_Select_Next"}}
+		HashedString %Name{s{"Key_Select_SpikeTrap"}}
 	}
 }
 o
 {
-	Uuid %id{u4{4438294258994988490,5659716835152328922}}
+	Uuid %id{u4{14965368047792473110,16418322930448510956}}
 	s %t{"ezBlackboardEntry"}
 	u3 %v{1}
 	p
 	{
 		s %Flags{""}
-		s %InitialValue{""}
-		HashedString %Name{s{"KeyRml_Select_Next"}}
+		b %InitialValue{0}
+		HashedString %Name{s{"MenuOpen"}}
 	}
 }
 o
 {
-	Uuid %id{u4{3936395653352518034,7167487697710348425}}
+	Uuid %id{u4{8634775503853193218,16704703355313590780}}
 	s %t{"ezBlackboardEntry"}
 	u3 %v{1}
 	p
 	{
 		s %Flags{""}
 		s %InitialValue{""}
-		HashedString %Name{s{"Key_StartRound"}}
-	}
-}
-o
-{
-	Uuid %id{u4{2551340591570466055,8712476363298636922}}
-	s %t{"ezBlackboardEntry"}
-	u3 %v{1}
-	p
-	{
-		s %Flags{""}
-		s %InitialValue{""}
-		HashedString %Name{s{"KeyRml_StartRound"}}
-	}
-}
-o
-{
-	Uuid %id{u4{10730006183438248874,4599473972448088860}}
-	s %t{"ezBlackboardEntry"}
-	u3 %v{1}
-	p
-	{
-		s %Flags{""}
-		s %InitialValue{""}
-		HashedString %Name{s{"Key_Shoot"}}
-	}
-}
-o
-{
-	Uuid %id{u4{15268666001278011421,9685910141916740848}}
-	s %t{"ezBlackboardEntry"}
-	u3 %v{1}
-	p
-	{
-		s %Flags{""}
-		s %InitialValue{""}
-		HashedString %Name{s{"KeyRml_Shoot"}}
+		HashedString %Name{s{"Key_Select_TarTrap"}}
 	}
 }
 o
@@ -338,26 +351,14 @@ o
 }
 o
 {
-	Uuid %id{u4{660255653359867420,11587726305201507784}}
+	Uuid %id{u4{3650825439020379573,18288926416616660462}}
 	s %t{"ezBlackboardEntry"}
 	u3 %v{1}
 	p
 	{
 		s %Flags{""}
-		i3 %InitialValue{0}
-		HashedString %Name{s{"MessageDuration"}}
-	}
-}
-o
-{
-	Uuid %id{u4{12041737429676222653,437713876363254973}}
-	s %t{"ezBlackboardEntry"}
-	u3 %v{1}
-	p
-	{
-		s %Flags{""}
-		b %InitialValue{0}
-		HashedString %Name{s{"MessageVisible"}}
+		s %InitialValue{""}
+		HashedString %Name{s{"Phase"}}
 	}
 }
 }

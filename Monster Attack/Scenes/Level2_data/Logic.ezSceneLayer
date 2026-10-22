@@ -11,7 +11,7 @@ o
 		s %AssetType{"Layer"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{7761849275296084914,5491668146033759735}}
-		u4 %Hash{7906425065799073903}
+		u4 %Hash{13740089083485227100}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps
@@ -25,7 +25,6 @@ o
 		VarArray %References
 		{
 			s{"{ 6caf7f9e-4794-4ce8-a8bc-f0163db7a203 }"}
-			s{"{ 723a5471-03be-475c-b33d-a92b82c4e84f }"}
 		}
 		s %Tags{""}
 	}
@@ -166,6 +165,44 @@ o
 }
 o
 {
+	Uuid %id{u4{6862846406665626303,5355450084765209470}}
+	s %t{"ezSceneTransitionComponent"}
+	u3 %v{1}
+	p
+	{
+		b %Active{1}
+		s %Mode{"ezSceneLoadMode::None"}
+		HashedString %PreloadCollection{s{""}}
+		b %RelativeSpawnPosition{0}
+		HashedString %SpawnPoint{s{"From-Level2"}}
+		HashedString %TargetScene{s{"{ 723a5471-03be-475c-b33d-a92b82c4e84f }"}}
+	}
+}
+o
+{
+	Uuid %id{u4{17492956279113451184,5516214230694477128}}
+	s %t{"ezGameObject"}
+	u3 %v{1}
+	p
+	{
+		b %Active{1}
+		VarArray %Children{}
+		VarArray %Components
+		{
+			Uuid{u4{6862846406665626303,5355450084765209470}}
+		}
+		s %GlobalKey{"LevelExit"}
+		Vec3 %LocalPosition{f{0,0,0x0000003F}}
+		Quat %LocalRotation{f{0,0,0,0x0000803F}}
+		Vec3 %LocalScaling{f{0x0000803F,0x0000803F,0x0000803F}}
+		f %LocalUniformScaling{0x0000803F}
+		s %Mode{"ezObjectMode::Automatic"}
+		s %Name{"LevelExit"}
+		VarArray %Tags{}
+	}
+}
+o
+{
 	Uuid %id{u4{7990031609942232755,5552819160233966074}}
 	s %t{"ezGameObject"}
 	u3 %v{1}
@@ -296,44 +333,6 @@ o
 		Uuid %Settings{u4{15824736659518667929,5574182445735038401}}
 	}
 }
-o
-{
-	Uuid %id{u4{6862846406665626303,5355450084765209470}}
-	s %t{"ezSceneTransitionComponent"}
-	u3 %v{1}
-	p
-	{
-		b %Active{1}
-		s %Mode{"ezSceneLoadMode::None"}
-		HashedString %PreloadCollection{s{""}}
-		b %RelativeSpawnPosition{0}
-		HashedString %SpawnPoint{s{"From-Level2"}}
-		HashedString %TargetScene{s{"{ 723a5471-03be-475c-b33d-a92b82c4e84f }"}}
-	}
-}
-o
-{
-	Uuid %id{u4{17492956279113451184,5516214230694477128}}
-	s %t{"ezGameObject"}
-	u3 %v{1}
-	p
-	{
-		b %Active{1}
-		VarArray %Children{}
-		VarArray %Components
-		{
-			Uuid{u4{6862846406665626303,5355450084765209470}}
-		}
-		s %GlobalKey{"LevelExit"}
-		Vec3 %LocalPosition{f{0,0,0x0000003F}}
-		Quat %LocalRotation{f{0,0,0,0x0000803F}}
-		Vec3 %LocalScaling{f{0x0000803F,0x0000803F,0x0000803F}}
-		f %LocalUniformScaling{0x0000803F}
-		s %Mode{"ezObjectMode::Automatic"}
-		s %Name{"LevelExit"}
-		VarArray %Tags{}
-	}
-}
 }
 Types
 {
@@ -368,6 +367,23 @@ o
 		s %PluginName{"Static"}
 		VarArray %Properties{}
 		s %TypeName{"ezComponent"}
+		u3 %TypeVersion{1}
+	}
+}
+o
+{
+	Uuid %id{u4{8368567981785606343,1191668598542069412}}
+	s %t{"ezReflectedTypeDescriptor"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Attributes{}
+		s %Flags{"ezTypeFlags::IsEnum|ezTypeFlags::Minimal"}
+		VarArray %Functions{}
+		s %ParentTypeName{"ezEnumBase"}
+		s %PluginName{"Static"}
+		VarArray %Properties{}
+		s %TypeName{"ezSceneLoadMode"}
 		u3 %TypeVersion{1}
 	}
 }
@@ -498,6 +514,23 @@ o
 		VarArray %Properties{}
 		s %TypeName{"ezBlackboardComponent"}
 		u3 %TypeVersion{3}
+	}
+}
+o
+{
+	Uuid %id{u4{13110592936928813368,6435800931852943367}}
+	s %t{"ezReflectedTypeDescriptor"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Attributes{}
+		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
+		VarArray %Functions{}
+		s %ParentTypeName{"ezComponent"}
+		s %PluginName{"Static"}
+		VarArray %Properties{}
+		s %TypeName{"ezSceneTransitionComponent"}
+		u3 %TypeVersion{1}
 	}
 }
 o
@@ -874,40 +907,6 @@ o
 		s %PluginName{"Static"}
 		VarArray %Properties{}
 		s %TypeName{"ezConeLengthManipulatorAttribute"}
-		u3 %TypeVersion{1}
-	}
-}
-o
-{
-	Uuid %id{u4{8368567981785606343,1191668598542069412}}
-	s %t{"ezReflectedTypeDescriptor"}
-	u3 %v{1}
-	p
-	{
-		VarArray %Attributes{}
-		s %Flags{"ezTypeFlags::IsEnum|ezTypeFlags::Minimal"}
-		VarArray %Functions{}
-		s %ParentTypeName{"ezEnumBase"}
-		s %PluginName{"Static"}
-		VarArray %Properties{}
-		s %TypeName{"ezSceneLoadMode"}
-		u3 %TypeVersion{1}
-	}
-}
-o
-{
-	Uuid %id{u4{13110592936928813368,6435800931852943367}}
-	s %t{"ezReflectedTypeDescriptor"}
-	u3 %v{1}
-	p
-	{
-		VarArray %Attributes{}
-		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
-		VarArray %Functions{}
-		s %ParentTypeName{"ezComponent"}
-		s %PluginName{"Static"}
-		VarArray %Properties{}
-		s %TypeName{"ezSceneTransitionComponent"}
 		u3 %TypeVersion{1}
 	}
 }

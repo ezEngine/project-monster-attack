@@ -14,16 +14,29 @@ o
 			s{"{ 08dbe8b5-d272-0577-5f44-0fb61736c1b1 }"}
 		}
 		Uuid %DocumentID{u4{12989667871016837788,4954737649499785958}}
-		u4 %Hash{3805109452959602444}
+		u4 %Hash{16512156523665154529}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps{}
 		VarArray %References{}
+		s %Tags{""}
 	}
 }
 }
 Objects
 {
+o
+{
+	Uuid %id{u4{5999977166237373884,367173399369352220}}
+	s %t{"ezBlackboardEntry"}
+	u3 %v{1}
+	p
+	{
+		s %Flags{""}
+		i3 %InitialValue{500}
+		HashedString %Name{s{"Cost_TarTrap"}}
+	}
+}
 o
 {
 	Uuid %id{u4{396491243989199757,4752288986806087246}}
@@ -112,18 +125,6 @@ o
 }
 o
 {
-	Uuid %id{u4{15835688433922850737,13642024480693852160}}
-	s %t{"ezBlackboardEntry"}
-	u3 %v{1}
-	p
-	{
-		s %Flags{""}
-		i3 %InitialValue{0}
-		HashedString %Name{s{"RoundCount"}}
-	}
-}
-o
-{
 	Uuid %id{u4{16400593245387111002,10284110291702785265}}
 	s %t{"ezBlackboardEntry"}
 	u3 %v{1}
@@ -148,14 +149,14 @@ o
 }
 o
 {
-	Uuid %id{u4{5999977166237373884,367173399369352220}}
+	Uuid %id{u4{15835688433922850737,13642024480693852160}}
 	s %t{"ezBlackboardEntry"}
 	u3 %v{1}
 	p
 	{
 		s %Flags{""}
-		i3 %InitialValue{500}
-		HashedString %Name{s{"Cost_TarTrap"}}
+		i3 %InitialValue{0}
+		HashedString %Name{s{"RoundCount"}}
 	}
 }
 }

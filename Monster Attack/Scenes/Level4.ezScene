@@ -11,11 +11,11 @@ o
 		s %AssetType{"Scene"}
 		VarArray %Dependencies
 		{
-			s{"{ b399009c-fe13-4dba-9729-212fbc7c09b7 }"}
 			s{"{ 1c1de068-f956-415e-aa4c-e4577ff20749 }"}
+			s{"{ b399009c-fe13-4dba-9729-212fbc7c09b7 }"}
 		}
 		Uuid %DocumentID{u4{1598911591057920133,5745673427835189588}}
-		u4 %Hash{4695360709195542277}
+		u4 %Hash{14836739619966725528}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps
@@ -31,10 +31,10 @@ o
 		VarArray %References
 		{
 			s{"{ 0b202e08-a64f-465d-b38e-15b81d161822 }"}
+			s{"{ 1c1de068-f956-415e-aa4c-e4577ff20749 }"}
 			s{"{ 1c5c6a91-80d3-ccce-3c89-ac2150700d87 }"}
 			s{"{ 31a4e443-c1eb-e15d-3bfc-6e5750ce191a }"}
 			s{"{ b399009c-fe13-4dba-9729-212fbc7c09b7 }"}
-			s{"{ 1c1de068-f956-415e-aa4c-e4577ff20749 }"}
 		}
 		s %Tags{""}
 	}
@@ -44,12 +44,168 @@ Objects
 {
 o
 {
-	Uuid %id{u4{9786460145612359052,5711544653560110802}}
+	Uuid %id{u4{17219217682504332727,4727346134776633914}}
+	s %t{"ezGameObject"}
+	u3 %v{1}
+	p
+	{
+		b %Active{1}
+		VarArray %Children{}
+		VarArray %Components
+		{
+			Uuid{u4{1364067233005321866,5564043172963295229}}
+		}
+		s %GlobalKey{""}
+		Vec3 %LocalPosition{f{0,0,0}}
+		Quat %LocalRotation{f{0,0,0,0x0000803F}}
+		Vec3 %LocalScaling{f{0x0000803F,0x0000803F,0x0000803F}}
+		f %LocalUniformScaling{0x0000803F}
+		s %Mode{"ezObjectMode::Automatic"}
+		s %Name{""}
+		VarArray %Tags
+		{
+			s{"CastShadow"}
+		}
+	}
+}
+o
+{
+	Uuid %id{u4{11633675667191854008,4929105000993927028}}
+	s %t{"ezGameObject"}
+	u3 %v{1}
+	p
+	{
+		b %Active{1}
+		VarArray %Children{}
+		VarArray %Components
+		{
+			Uuid{u4{9571441656371338649,5531930775619396723}}
+		}
+		s %GlobalKey{""}
+		Vec3 %LocalPosition{f{0,0x000080C0,0}}
+		Quat %LocalRotation{f{0,0,0,0x0000803F}}
+		Vec3 %LocalScaling{f{0x0000803F,0x0000803F,0x0000803F}}
+		f %LocalUniformScaling{0x0000803F}
+		s %Mode{"ezObjectMode::Automatic"}
+		s %Name{""}
+		VarArray %Tags
+		{
+			s{"CastShadow"}
+		}
+	}
+}
+o
+{
+	Uuid %id{u4{14439104479616966790,4974937638746046120}}
+	s %t{"ezCollectionComponent"}
+	u3 %v{2}
+	p
+	{
+		b %Active{1}
+		s %Collection{"{ ef9a1147-4e6d-4ce0-a81e-0e56a09756e0 }"}
+		b %RegisterNames{1}
+	}
+}
+o
+{
+	Uuid %id{u4{2373285242730657178,4994285560720636440}}
 	s %t{"ezSceneLayer"}
 	u3 %v{1}
 	p
 	{
-		Uuid %Layer{u4{1598911591057920133,5745673427835189588}}
+		Uuid %Layer{u4{13189210131417606551,5601068447159615644}}
+	}
+}
+o
+{
+	Uuid %id{u4{5770834916589157504,5106029825750474499}}
+	s %t{"ezSkyLightComponent"}
+	u3 %v{4}
+	p
+	{
+		b %Active{1}
+		s %CubeMap{""}
+		f %DiffuseIntensity{0xCDCC4C3E}
+		f %DiffuseSaturation{0x0000803F}
+		VarArray %ExcludeTags{}
+		f %FarPlane{0x0000C842}
+		VarArray %IncludeTags
+		{
+			s{"SkyLight"}
+		}
+		f %NearPlane{0}
+		s %ReflectionProbeMode{"ezReflectionProbeMode::Dynamic"}
+		b %ShowDebugInfo{0}
+		b %ShowMipMaps{0}
+		f %SpecularIntensity{0x0000803F}
+	}
+}
+o
+{
+	Uuid %id{u4{50787996136095376,5203561914781558436}}
+	s %t{"ezGameObject"}
+	u3 %v{1}
+	p
+	{
+		b %Active{1}
+		VarArray %Children{}
+		VarArray %Components
+		{
+			Uuid{u4{5770834916589157504,5106029825750474499}}
+			Uuid{u4{9156280159401500552,5546528873272272295}}
+		}
+		s %GlobalKey{""}
+		Vec3 %LocalPosition{f{0x9899193F,0,0x00000040}}
+		Quat %LocalRotation{f{0xBE2BA7BE,0xBD2BA73E,0xED90203F,0xEC90203F}}
+		Vec3 %LocalScaling{f{0x0000803F,0x0000803F,0x0000803F}}
+		f %LocalUniformScaling{0x0000803F}
+		s %Mode{"ezObjectMode::Automatic"}
+		s %Name{""}
+		VarArray %Tags
+		{
+			s{"CastShadow"}
+		}
+	}
+}
+o
+{
+	Uuid %id{u4{13967557593750821544,5236349079634676210}}
+	s %t{"ezGameObject"}
+	u3 %v{1}
+	p
+	{
+		b %Active{1}
+		VarArray %Children{}
+		VarArray %Components
+		{
+			Uuid{u4{3106953304319666849,5645514556052402739}}
+		}
+		s %GlobalKey{""}
+		Vec3 %LocalPosition{f{0,0,0x0000803F}}
+		Quat %LocalRotation{f{0,0,0,0x0000803F}}
+		Vec3 %LocalScaling{f{0x0000803F,0x0000803F,0x0000803F}}
+		f %LocalUniformScaling{0x0000803F}
+		s %Mode{"ezObjectMode::Automatic"}
+		s %Name{""}
+		VarArray %Tags
+		{
+			s{"SkyLight"}
+		}
+	}
+}
+o
+{
+	Uuid %id{u4{856448159348083372,5296074540886443074}}
+	s %t{"ezSceneDocumentSettings"}
+	u3 %v{2}
+	p
+	{
+		VarArray %Layers
+		{
+			Uuid{u4{9786460145612359052,5711544653560110802}}
+			Uuid{u4{2373285242730657178,4994285560720636440}}
+			Uuid{u4{15335584887368494527,5625433765044661231}}
+		}
 	}
 }
 o
@@ -108,177 +264,14 @@ o
 }
 o
 {
-	Uuid %id{u4{3106953304319666849,5645514556052402739}}
-	s %t{"ezSkyBoxComponent"}
-	u3 %v{4}
-	p
-	{
-		b %Active{1}
-		s %CubeMap{"{ 0b202e08-a64f-465d-b38e-15b81d161822 }"}
-		f %ExposureBias{0x0000803F}
-		b %InverseTonemap{0}
-		b %UseFog{1}
-		f %VirtualDistance{0x00007A44}
-	}
-}
-o
-{
-	Uuid %id{u4{50787996136095376,5203561914781558436}}
-	s %t{"ezGameObject"}
-	u3 %v{1}
-	p
-	{
-		b %Active{1}
-		VarArray %Children{}
-		VarArray %Components
-		{
-			Uuid{u4{5770834916589157504,5106029825750474499}}
-			Uuid{u4{9156280159401500552,5546528873272272295}}
-		}
-		s %GlobalKey{""}
-		Vec3 %LocalPosition{f{0x9899193F,0,0x00000040}}
-		Quat %LocalRotation{f{0xBE2BA7BE,0xBD2BA73E,0xED90203F,0xEC90203F}}
-		Vec3 %LocalScaling{f{0x0000803F,0x0000803F,0x0000803F}}
-		f %LocalUniformScaling{0x0000803F}
-		s %Mode{"ezObjectMode::Automatic"}
-		s %Name{""}
-		VarArray %Tags
-		{
-			s{"CastShadow"}
-		}
-	}
-}
-o
-{
-	Uuid %id{u4{1364067233005321866,5564043172963295229}}
-	s %t{"ezRmlUiMainMenuComponent"}
+	Uuid %id{u4{9571441656371338649,5531930775619396723}}
+	s %t{"ezPlayerStartPointComponent"}
 	u3 %v{2}
 	p
 	{
 		b %Active{1}
-		VarArray %InputSets
-		{
-			s{"Default"}
-		}
-		s %MenuFile{"{ 1c5c6a91-80d3-ccce-3c89-ac2150700d87 }"}
-		b %PauseWorld{1}
-		s %SettingsFile{"{ 31a4e443-c1eb-e15d-3bfc-6e5750ce191a }"}
-		VarArray %SoundGroups{}
-		s %StyleSheet{""}
-		s %Title{""}
-	}
-}
-o
-{
-	Uuid %id{u4{856448159348083372,5296074540886443074}}
-	s %t{"ezSceneDocumentSettings"}
-	u3 %v{2}
-	p
-	{
-		VarArray %Layers
-		{
-			Uuid{u4{9786460145612359052,5711544653560110802}}
-			Uuid{u4{2373285242730657178,4994285560720636440}}
-			Uuid{u4{15335584887368494527,5625433765044661231}}
-		}
-	}
-}
-o
-{
-	Uuid %id{u4{13967557593750821544,5236349079634676210}}
-	s %t{"ezGameObject"}
-	u3 %v{1}
-	p
-	{
-		b %Active{1}
-		VarArray %Children{}
-		VarArray %Components
-		{
-			Uuid{u4{3106953304319666849,5645514556052402739}}
-		}
-		s %GlobalKey{""}
-		Vec3 %LocalPosition{f{0,0,0x0000803F}}
-		Quat %LocalRotation{f{0,0,0,0x0000803F}}
-		Vec3 %LocalScaling{f{0x0000803F,0x0000803F,0x0000803F}}
-		f %LocalUniformScaling{0x0000803F}
-		s %Mode{"ezObjectMode::Automatic"}
-		s %Name{""}
-		VarArray %Tags
-		{
-			s{"SkyLight"}
-		}
-	}
-}
-o
-{
-	Uuid %id{u4{9457423770387884206,5573298815271707132}}
-	s %t{"ezSphereReflectionProbeComponent"}
-	u3 %v{2}
-	p
-	{
-		b %Active{1}
-		Vec3 %CaptureOffset{f{0,0,0}}
-		VarArray %ExcludeTags
-		{
-			s{"SkyLight"}
-		}
-		f %Falloff{0xCDCCCC3D}
-		f %FarPlane{0x0000C842}
-		VarArray %IncludeTags{}
-		f %NearPlane{0}
-		f %Radius{0x00004842}
-		s %ReflectionProbeMode{"ezReflectionProbeMode::Static"}
-		b %ShowDebugInfo{0}
-		b %ShowMipMaps{0}
-		b %SphereProjection{1}
-	}
-}
-o
-{
-	Uuid %id{u4{5770834916589157504,5106029825750474499}}
-	s %t{"ezSkyLightComponent"}
-	u3 %v{4}
-	p
-	{
-		b %Active{1}
-		s %CubeMap{""}
-		f %DiffuseIntensity{0xCDCC4C3E}
-		f %DiffuseSaturation{0x0000803F}
-		VarArray %ExcludeTags{}
-		f %FarPlane{0x0000C842}
-		VarArray %IncludeTags
-		{
-			s{"SkyLight"}
-		}
-		f %NearPlane{0}
-		s %ReflectionProbeMode{"ezReflectionProbeMode::Dynamic"}
-		b %ShowDebugInfo{0}
-		b %ShowMipMaps{0}
-		f %SpecularIntensity{0x0000803F}
-	}
-}
-o
-{
-	Uuid %id{u4{14439104479616966790,4974937638746046120}}
-	s %t{"ezCollectionComponent"}
-	u3 %v{2}
-	p
-	{
-		b %Active{1}
-		s %Collection{"{ ef9a1147-4e6d-4ce0-a81e-0e56a09756e0 }"}
-		b %RegisterNames{1}
-	}
-}
-o
-{
-	Uuid %id{u4{4189035461605154705,5560419756105325249}}
-	s %t{"ezCollectionComponent"}
-	u3 %v{2}
-	p
-	{
-		b %Active{1}
-		s %Collection{"{ 08c46ea5-a3b7-421e-ad12-3a5f2ea62e88 }"}
-		b %RegisterNames{1}
+		VarDict %Parameters{}
+		s %PlayerPrefab{"{ d7cf716d-803b-4309-b19c-b2455c42b642 }"}
 	}
 }
 o
@@ -311,12 +304,58 @@ o
 }
 o
 {
-	Uuid %id{u4{2373285242730657178,4994285560720636440}}
-	s %t{"ezSceneLayer"}
-	u3 %v{1}
+	Uuid %id{u4{4189035461605154705,5560419756105325249}}
+	s %t{"ezCollectionComponent"}
+	u3 %v{2}
 	p
 	{
-		Uuid %Layer{u4{13189210131417606551,5601068447159615644}}
+		b %Active{1}
+		s %Collection{"{ 08c46ea5-a3b7-421e-ad12-3a5f2ea62e88 }"}
+		b %RegisterNames{1}
+	}
+}
+o
+{
+	Uuid %id{u4{1364067233005321866,5564043172963295229}}
+	s %t{"ezRmlUiMainMenuComponent"}
+	u3 %v{2}
+	p
+	{
+		b %Active{1}
+		VarArray %InputSets
+		{
+			s{"Default"}
+		}
+		s %MenuFile{"{ 1c5c6a91-80d3-ccce-3c89-ac2150700d87 }"}
+		b %PauseWorld{1}
+		s %SettingsFile{"{ 31a4e443-c1eb-e15d-3bfc-6e5750ce191a }"}
+		VarArray %SoundGroups{}
+		s %StyleSheet{""}
+		s %Title{""}
+	}
+}
+o
+{
+	Uuid %id{u4{9457423770387884206,5573298815271707132}}
+	s %t{"ezSphereReflectionProbeComponent"}
+	u3 %v{2}
+	p
+	{
+		b %Active{1}
+		Vec3 %CaptureOffset{f{0,0,0}}
+		VarArray %ExcludeTags
+		{
+			s{"SkyLight"}
+		}
+		f %Falloff{0xCDCCCC3D}
+		f %FarPlane{0x0000C842}
+		VarArray %IncludeTags{}
+		f %NearPlane{0}
+		f %Radius{0x00004842}
+		s %ReflectionProbeMode{"ezReflectionProbeMode::Static"}
+		b %ShowDebugInfo{0}
+		b %ShowMipMaps{0}
+		b %SphereProjection{1}
 	}
 }
 o
@@ -331,78 +370,27 @@ o
 }
 o
 {
-	Uuid %id{u4{17219217682504332727,4727346134776633914}}
-	s %t{"ezGameObject"}
+	Uuid %id{u4{3106953304319666849,5645514556052402739}}
+	s %t{"ezSkyBoxComponent"}
+	u3 %v{4}
+	p
+	{
+		b %Active{1}
+		s %CubeMap{"{ 0b202e08-a64f-465d-b38e-15b81d161822 }"}
+		f %ExposureBias{0x0000803F}
+		b %InverseTonemap{0}
+		b %UseFog{1}
+		f %VirtualDistance{0x00007A44}
+	}
+}
+o
+{
+	Uuid %id{u4{9786460145612359052,5711544653560110802}}
+	s %t{"ezSceneLayer"}
 	u3 %v{1}
 	p
 	{
-		b %Active{1}
-		VarArray %Children{}
-		VarArray %Components
-		{
-			Uuid{u4{1364067233005321866,5564043172963295229}}
-		}
-		s %GlobalKey{""}
-		Vec3 %LocalPosition{f{0,0,0}}
-		Quat %LocalRotation{f{0,0,0,0x0000803F}}
-		Vec3 %LocalScaling{f{0x0000803F,0x0000803F,0x0000803F}}
-		f %LocalUniformScaling{0x0000803F}
-		s %Mode{"ezObjectMode::Automatic"}
-		s %Name{""}
-		VarArray %Tags
-		{
-			s{"CastShadow"}
-		}
-	}
-}
-o
-{
-	Uuid %id{u4{9571441656371338649,5531930775619396723}}
-	s %t{"ezPlayerStartPointComponent"}
-	u3 %v{2}
-	p
-	{
-		b %Active{1}
-		VarDict %Parameters{}
-		s %PlayerPrefab{"{ d7cf716d-803b-4309-b19c-b2455c42b642 }"}
-	}
-}
-o
-{
-	Uuid %id{u4{11633675667191854008,4929105000993927028}}
-	s %t{"ezGameObject"}
-	u3 %v{1}
-	p
-	{
-		b %Active{1}
-		VarArray %Children{}
-		VarArray %Components
-		{
-			Uuid{u4{9571441656371338649,5531930775619396723}}
-		}
-		s %GlobalKey{""}
-		Vec3 %LocalPosition{f{0,0x000080C0,0}}
-		Quat %LocalRotation{f{0,0,0,0x0000803F}}
-		Vec3 %LocalScaling{f{0x0000803F,0x0000803F,0x0000803F}}
-		f %LocalUniformScaling{0x0000803F}
-		s %Mode{"ezObjectMode::Automatic"}
-		s %Name{""}
-		VarArray %Tags
-		{
-			s{"CastShadow"}
-		}
-	}
-}
-o
-{
-	Uuid %id{u4{12897548756321536431,5763166069206238532}}
-	s %t{"ezCollectionComponent"}
-	u3 %v{2}
-	p
-	{
-		b %Active{1}
-		s %Collection{"{ f66cf763-9e82-4d2d-8b25-54d9a14044ef }"}
-		b %RegisterNames{1}
+		Uuid %Layer{u4{1598911591057920133,5745673427835189588}}
 	}
 }
 o
@@ -431,6 +419,18 @@ o
 		{
 			s{"CastShadow"}
 		}
+	}
+}
+o
+{
+	Uuid %id{u4{12897548756321536431,5763166069206238532}}
+	s %t{"ezCollectionComponent"}
+	u3 %v{2}
+	p
+	{
+		b %Active{1}
+		s %Collection{"{ f66cf763-9e82-4d2d-8b25-54d9a14044ef }"}
+		b %RegisterNames{1}
 	}
 }
 o

@@ -11,7 +11,7 @@ o
 		s %AssetType{"Layer"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{4801076150672871386,5733561380798495052}}
-		u4 %Hash{7984461796270552908}
+		u4 %Hash{11923610579096978745}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps
@@ -92,6 +92,7 @@ o
 		b %Active{1}
 		VarDict %Parameters{}
 		s %Prefab{"{ 3af05c77-2f63-4595-821c-a31799a750b6 }"}
+		b %ShowShapeIcons{0}
 	}
 }
 o
@@ -130,6 +131,7 @@ o
 		b %Active{1}
 		VarDict %Parameters{}
 		s %Prefab{"{ 3af05c77-2f63-4595-821c-a31799a750b6 }"}
+		b %ShowShapeIcons{0}
 	}
 }
 o
@@ -146,6 +148,7 @@ o
 			b %CeilingWithBars{0}
 		}
 		s %Prefab{"{ d068268c-ffa3-4d41-8860-733b5201e089 }"}
+		b %ShowShapeIcons{0}
 	}
 }
 o
@@ -188,6 +191,7 @@ o
 			b %CeilingWithBars{0}
 		}
 		s %Prefab{"{ d068268c-ffa3-4d41-8860-733b5201e089 }"}
+		b %ShowShapeIcons{0}
 	}
 }
 o
@@ -200,6 +204,7 @@ o
 		b %Active{1}
 		VarDict %Parameters{}
 		s %Prefab{"{ 3af05c77-2f63-4595-821c-a31799a750b6 }"}
+		b %ShowShapeIcons{0}
 	}
 }
 o
@@ -268,6 +273,7 @@ o
 			b %CeilingWithBars{0}
 		}
 		s %Prefab{"{ d068268c-ffa3-4d41-8860-733b5201e089 }"}
+		b %ShowShapeIcons{0}
 	}
 }
 o
@@ -306,6 +312,7 @@ o
 		b %Active{1}
 		VarDict %Parameters{}
 		s %Prefab{"{ 3af05c77-2f63-4595-821c-a31799a750b6 }"}
+		b %ShowShapeIcons{0}
 	}
 }
 o
@@ -412,6 +419,7 @@ o
 		b %Active{1}
 		VarDict %Parameters{}
 		s %Prefab{"{ 3af05c77-2f63-4595-821c-a31799a750b6 }"}
+		b %ShowShapeIcons{0}
 	}
 }
 o
@@ -424,6 +432,7 @@ o
 		b %Active{1}
 		VarDict %Parameters{}
 		s %Prefab{"{ 3af05c77-2f63-4595-821c-a31799a750b6 }"}
+		b %ShowShapeIcons{0}
 	}
 }
 o
@@ -440,6 +449,7 @@ o
 			b %CeilingWithBars{0}
 		}
 		s %Prefab{"{ d068268c-ffa3-4d41-8860-733b5201e089 }"}
+		b %ShowShapeIcons{0}
 	}
 }
 o
@@ -508,6 +518,7 @@ o
 			b %CeilingWithBars{0}
 		}
 		s %Prefab{"{ d068268c-ffa3-4d41-8860-733b5201e089 }"}
+		b %ShowShapeIcons{0}
 	}
 }
 o
@@ -572,6 +583,7 @@ o
 		b %Active{1}
 		VarDict %Parameters{}
 		s %Prefab{"{ 3af05c77-2f63-4595-821c-a31799a750b6 }"}
+		b %ShowShapeIcons{0}
 	}
 }
 o
@@ -588,6 +600,7 @@ o
 			b %CeilingWithBars{0}
 		}
 		s %Prefab{"{ d068268c-ffa3-4d41-8860-733b5201e089 }"}
+		b %ShowShapeIcons{0}
 	}
 }
 o
@@ -600,6 +613,7 @@ o
 		b %Active{1}
 		VarDict %Parameters{}
 		s %Prefab{"{ 3af05c77-2f63-4595-821c-a31799a750b6 }"}
+		b %ShowShapeIcons{0}
 	}
 }
 o
@@ -664,6 +678,7 @@ o
 		b %Active{1}
 		VarDict %Parameters{}
 		s %Prefab{"{ 3af05c77-2f63-4595-821c-a31799a750b6 }"}
+		b %ShowShapeIcons{0}
 	}
 }
 o
@@ -754,6 +769,7 @@ o
 		b %Active{1}
 		VarDict %Parameters{}
 		s %Prefab{"{ 3af05c77-2f63-4595-821c-a31799a750b6 }"}
+		b %ShowShapeIcons{0}
 	}
 }
 o
@@ -770,6 +786,7 @@ o
 			b %CeilingWithBars{0}
 		}
 		s %Prefab{"{ d068268c-ffa3-4d41-8860-733b5201e089 }"}
+		b %ShowShapeIcons{0}
 	}
 }
 o
@@ -786,6 +803,7 @@ o
 			b %CeilingWithBars{0}
 		}
 		s %Prefab{"{ d068268c-ffa3-4d41-8860-733b5201e089 }"}
+		b %ShowShapeIcons{0}
 	}
 }
 o
@@ -798,6 +816,7 @@ o
 		b %Active{1}
 		VarDict %Parameters{}
 		s %Prefab{"{ 3af05c77-2f63-4595-821c-a31799a750b6 }"}
+		b %ShowShapeIcons{0}
 	}
 }
 o
@@ -862,6 +881,7 @@ o
 		b %Active{1}
 		VarDict %Parameters{}
 		s %Prefab{"{ 3af05c77-2f63-4595-821c-a31799a750b6 }"}
+		b %ShowShapeIcons{0}
 	}
 }
 o
@@ -878,6 +898,7 @@ o
 			b %CeilingWithBars{0}
 		}
 		s %Prefab{"{ d068268c-ffa3-4d41-8860-733b5201e089 }"}
+		b %ShowShapeIcons{0}
 	}
 }
 o

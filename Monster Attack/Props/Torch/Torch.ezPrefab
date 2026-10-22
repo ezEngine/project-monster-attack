@@ -21,7 +21,7 @@ o
 		s %AssetType{"Prefab"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{3991594764060229787,5465992716844334737}}
-		u4 %Hash{16395994569331042116}
+		u4 %Hash{15387320724074094186}
 		VarArray %MetaInfo
 		{
 			Uuid{u4{9980683547130679760,2624536765470458447}}
@@ -35,6 +35,7 @@ o
 		{
 			s{"{ 2499e47c-41a0-4f83-bfd4-3d991b441146 }"}
 		}
+		s %Tags{""}
 	}
 }
 }
@@ -49,6 +50,7 @@ o
 	{
 		b %Active{1}
 		Color %Color{f{0x0000803F,0x0000803F,0x0000803F,0x0000803F}}
+		Vec4 %CustomData{f{0,0x0000803F,0,0x0000803F}}
 		VarArray %Materials{}
 		s %Mesh{"{ 2499e47c-41a0-4f83-bfd4-3d991b441146 }"}
 		f %SortingDepthOffset{0}
@@ -85,17 +87,25 @@ o
 {
 	Uuid %id{u4{8606208031572779963,5067788235227167493}}
 	s %t{"ezPointLightComponent"}
-	u3 %v{2}
+	u3 %v{4}
 	p
 	{
 		b %Active{1}
 		b %CastShadows{0}
 		f %ConstantBias{0xCDCCCC3D}
+		ColorGamma %EffectiveColor{u1{255,255,255,255}}
 		f %Intensity{0x00004842}
+		f %Length{0}
 		ColorGamma %LightColor{u1{255,182,26,255}}
 		f %PenumbraSize{0xCDCCCC3D}
+		f %Radius{0}
 		f %Range{0x0000A040}
+		f %ShadowFadeOutRange{0}
 		f %SlopeBias{0x0000803E}
+		f %SpecularMultiplier{0x0000803F}
+		u3 %Temperature{6550}
+		b %TransparentShadows{0}
+		b %UseColorTemperature{0}
 	}
 }
 o
@@ -311,7 +321,7 @@ o
 		s %PluginName{"Static"}
 		VarArray %Properties{}
 		s %TypeName{"ezMeshComponentBase"}
-		u3 %TypeVersion{3}
+		u3 %TypeVersion{4}
 	}
 }
 o
@@ -430,7 +440,7 @@ o
 		s %PluginName{"Static"}
 		VarArray %Properties{}
 		s %TypeName{"ezPointLightComponent"}
-		u3 %TypeVersion{2}
+		u3 %TypeVersion{4}
 	}
 }
 o
@@ -498,7 +508,7 @@ o
 		s %PluginName{"Static"}
 		VarArray %Properties{}
 		s %TypeName{"ezLightComponent"}
-		u3 %TypeVersion{4}
+		u3 %TypeVersion{6}
 	}
 }
 o

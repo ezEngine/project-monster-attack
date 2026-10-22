@@ -11,11 +11,12 @@ o
 		s %AssetType{"StateMachine"}
 		VarArray %Dependencies{}
 		Uuid %DocumentID{u4{4264823504054834098,4934801297746165666}}
-		u4 %Hash{16845714012831797870}
+		u4 %Hash{15451711001845059328}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps{}
 		VarArray %References{}
+		s %Tags{""}
 	}
 }
 }
@@ -38,10 +39,10 @@ o
 	u3 %v{1}
 	p
 	{
-		Uuid %Connection::Source{u4{8723262967062255135,9895206278042478648}}
-		s %Connection::SourcePin{"Exit"}
-		Uuid %Connection::Target{u4{16264585887061616546,5616054106711746273}}
-		s %Connection::TargetPin{"Enter"}
+		Uuid %Source{u4{8723262967062255135,9895206278042478648}}
+		s %SourcePin{"Exit"}
+		Uuid %Target{u4{16264585887061616546,5616054106711746273}}
+		s %TargetPin{"Enter"}
 		Uuid %Type{u4{4244604300455159716,5288152184735706421}}
 	}
 }
@@ -62,6 +63,7 @@ o
 	u3 %v{1}
 	p
 	{
+		b %IsInitialState{0}
 		s %Name{"Firing"}
 		Vec2 %Node::Pos{f{0xC0E0B643,0xCEF21944}}
 		Uuid %Type{u4{8579716592663793560,5693765025926771231}}
@@ -74,10 +76,10 @@ o
 	u3 %v{1}
 	p
 	{
-		Uuid %Connection::Source{u4{3903604002267892140,4903948755502804906}}
-		s %Connection::SourcePin{"Exit"}
-		Uuid %Connection::Target{u4{17653069420849507475,4773401500307275277}}
-		s %Connection::TargetPin{"Enter"}
+		Uuid %Source{u4{3903604002267892140,4903948755502804906}}
+		s %SourcePin{"Exit"}
+		Uuid %Target{u4{17653069420849507475,4773401500307275277}}
+		s %TargetPin{"Enter"}
 		Uuid %Type{u4{6364341665019134603,4639969221923383642}}
 	}
 }
@@ -98,6 +100,7 @@ o
 	u3 %v{1}
 	p
 	{
+		b %IsInitialState{0}
 		s %Name{"Loaded"}
 		Vec2 %Node::Pos{f{0x7F6C1A43,0x6B311A44}}
 		Uuid %Type{u4{2996116386516559492,5184419676793338413}}
@@ -156,10 +159,10 @@ o
 	u3 %v{1}
 	p
 	{
-		Uuid %Connection::Source{u4{16264585887061616546,5616054106711746273}}
-		s %Connection::SourcePin{"Exit"}
-		Uuid %Connection::Target{u4{3903604002267892140,4903948755502804906}}
-		s %Connection::TargetPin{"Enter"}
+		Uuid %Source{u4{16264585887061616546,5616054106711746273}}
+		s %SourcePin{"Exit"}
+		Uuid %Target{u4{3903604002267892140,4903948755502804906}}
+		s %TargetPin{"Enter"}
 		Uuid %Type{u4{210994881207125936,4882345893014802832}}
 	}
 }
@@ -170,10 +173,10 @@ o
 	u3 %v{1}
 	p
 	{
-		Uuid %Connection::Source{u4{17653069420849507475,4773401500307275277}}
-		s %Connection::SourcePin{"Exit"}
-		Uuid %Connection::Target{u4{8723262967062255135,9895206278042478648}}
-		s %Connection::TargetPin{"Enter"}
+		Uuid %Source{u4{17653069420849507475,4773401500307275277}}
+		s %SourcePin{"Exit"}
+		Uuid %Target{u4{8723262967062255135,9895206278042478648}}
+		s %TargetPin{"Enter"}
 		Uuid %Type{u4{828087971454940077,4744713816125726229}}
 	}
 }
@@ -231,6 +234,7 @@ o
 	u3 %v{1}
 	p
 	{
+		b %IsInitialState{0}
 		s %Name{"Retracting"}
 		Vec2 %Node::Pos{f{0x7F3DB343,0xA6D6BB43}}
 		Uuid %Type{u4{3087418058568863008,10497978977720190015}}
@@ -414,7 +418,7 @@ o
 		VarArray %Attributes{}
 		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
 		VarArray %Functions{}
-		s %ParentTypeName{"ezReflectedClass"}
+		s %ParentTypeName{"ezDocumentObject_ConnectionBase"}
 		s %PluginName{"ezEditorPluginAssets"}
 		VarArray %Properties{}
 		s %TypeName{"ezStateMachineConnection"}
@@ -435,6 +439,23 @@ o
 		s %PluginName{"ezEditorPluginAssets"}
 		VarArray %Properties{}
 		s %TypeName{"ezStateMachineNodeBase"}
+		u3 %TypeVersion{1}
+	}
+}
+o
+{
+	Uuid %id{u4{13983305718315019434,17572363554072221229}}
+	s %t{"ezReflectedTypeDescriptor"}
+	u3 %v{1}
+	p
+	{
+		VarArray %Attributes{}
+		s %Flags{"ezTypeFlags::Class|ezTypeFlags::Minimal"}
+		VarArray %Functions{}
+		s %ParentTypeName{"ezReflectedClass"}
+		s %PluginName{"Static"}
+		VarArray %Properties{}
+		s %TypeName{"ezDocumentObject_ConnectionBase"}
 		u3 %TypeVersion{1}
 	}
 }
