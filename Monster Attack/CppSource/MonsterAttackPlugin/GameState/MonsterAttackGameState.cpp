@@ -5,6 +5,7 @@
 #include <Core/World/World.h>
 #include <Foundation/Configuration/CVar.h>
 #include <Foundation/IO/FileSystem/FileSystem.h>
+#include <Foundation/Utilities/CommandLineUtils.h>
 #include <Foundation/Logging/Log.h>
 #include <GameEngine/Gameplay/SceneTransitionComponent.h>
 #include <GameEngine/UI/MainMenuComponent.h>
@@ -42,6 +43,26 @@ void MonsterAttackGameState::OnDeactivation()
 void MonsterAttackGameState::AfterWorldUpdate()
 {
   SUPER::AfterWorldUpdate();
+}
+
+void MonsterAttackGameState::GetStartupOptions(ezString& out_sScene, ezString& out_sPreloadCollection)
+{
+  if (ezCommandLineUtils::GetGlobalInstance()->HasOption("-scene"))
+  {
+    out_sScene = ezCommandLineUtils::GetGlobalInstance()->GetStringOption("-scene");
+  }
+  else
+  {
+    // the game binary starts in the hub
+    out_sScene = "AssetCache/Common/Scenes/Main.ezBinScene";
+  }
+
+  ezStringBuilder sPreloadCollection = out_sScene;
+  sPreloadCollection.ChangeFileExtension("ezBinCollection");
+  if (ezFileSystem::ExistsFile(sPreloadCollection))
+  {
+    out_sPreloadCollection = sPreloadCollection;
+  }
 }
 
 void MonsterAttackGameState::BeforeWorldUpdate()

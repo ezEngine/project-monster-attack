@@ -32,6 +32,9 @@ protected:
   virtual void ConfigureMainWindowInputDevices(ezWindowPlatformShared* pWindow) override;
   virtual void ConfigureInputActions() override;
   virtual void ConfigureMainCamera() override;
+
+  /// Loads the scene given with "-scene" (e.g. when launched from the editor), otherwise the hub in Scenes/Main.ezScene.
+  virtual void GetStartupOptions(ezString& out_sScene, ezString& out_sPreloadCollection) override;
   virtual void OnChangedMainWorld(ezWorld* pPrevWorld, ezWorld* pNewWorld, ezStringView sStartPosition, const ezTransform& startPositionOffset) override;
 
   /// Returns nullptr if the world has no main menu. The world must be locked by the caller.

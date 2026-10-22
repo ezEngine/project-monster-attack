@@ -1,0 +1,16 @@
+#include <CommonData.ezExportFilter>
+
+
+[EXCLUDE]
+
+// TODO: add exclude patterns
+
+
+[INCLUDE]
+
+// The HUD (UI/HUD.rml, UI/HUD.rcss) and the game state reference these images directly instead of as texture assets,
+// but CommonData.ezExportFilter excludes all *.png and *.jpg files.
+/Kenney.nl/UI/*
+/Kenney.nl/InputPrompts/*
+
+
