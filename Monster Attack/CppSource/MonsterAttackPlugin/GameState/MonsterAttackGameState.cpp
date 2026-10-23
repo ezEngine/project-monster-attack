@@ -287,6 +287,18 @@ ezStringView MonsterAttackGameState::GetInputPromptIcon(ezStringView sInputSlot)
   return it.Value();
 }
 
+void MonsterAttackGameState::ConfigureInputActions()
+{
+  SUPER::ConfigureInputActions();
+
+  // ESC is also registered as a developer shortcut to quit (see RequestQuit()), but developer shortcuts don't exist in shipping builds,
+  // so the game needs its own input action to open the menu
+  ezInputActionConfig cfg;
+  cfg.m_sInputSlotTrigger[0] = ezInputSlot_KeyEscape;
+  cfg.m_sInputSlotTrigger[1] = ezInputSlot_Controller0_ButtonBack;
+  ezInputManager::SetInputActionConfig("MonsterAttack", "OpenMainMenu", cfg, true);
+}
+
 void MonsterAttackGameState::ProcessInput()
 {
   SUPER::ProcessInput();
@@ -302,6 +314,17 @@ void MonsterAttackGameState::ProcessInput()
     else if (ezInputManager::GetExclusiveInputSet() == "ezMainMenu")
     {
       ezInputManager::SetExclusiveInputSet("");
+    }
+  }
+
+  // while the menu is open, the exclusive input set suppresses this action, so the menu can handle ESC itself
+  if (ezInputManager::GetInputActionState("MonsterAttack", "OpenMainMenu") == ezKeyState::Pressed && m_pMainWorld != nullptr)
+  {
+    EZ_LOCK(m_pMainWorld->GetWriteMarker());
+
+    if (ezMainMenuComponent* pMenu = GetMainMenu())
+    {
+      pMenu->OpenMenu();
     }
   }
 }

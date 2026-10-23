@@ -32,6 +32,9 @@ public:
   void AddMonster();
 
 protected:
+  /// Registers ESC (and the controller's back button) to open the main menu, also in shipping builds.
+  virtual void ConfigureInputActions() override;
+
   /// Loads the scene given with "-scene" (e.g. when launched from the editor), otherwise the hub in Scenes/Main.ezScene.
   virtual void GetStartupOptions(ezString& out_sScene, ezString& out_sPreloadCollection) override;
   virtual void OnChangedMainWorld(ezWorld* pPrevWorld, ezWorld* pNewWorld, ezStringView sStartPosition, const ezTransform& startPositionOffset) override;
