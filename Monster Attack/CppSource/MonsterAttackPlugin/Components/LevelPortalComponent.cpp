@@ -119,6 +119,8 @@ void ezLevelPortalComponent::OnMsgTriggerTriggered(ezMsgTriggerTriggered& msg)
 void ezLevelPortalComponent::ShowLevelName()
 {
   ezSharedPtr<ezBlackboard> pLevelState = ezBlackboardComponent::FindBlackboard(*GetOwner(), "LevelState");
+  if (pLevelState == nullptr)
+    return;
 
   ezStringBuilder sText = m_sLevelName;
   if (WasLevelWon(m_sTargetScene))
@@ -133,6 +135,8 @@ void ezLevelPortalComponent::ShowLevelName()
 void ezLevelPortalComponent::HideLevelName()
 {
   ezSharedPtr<ezBlackboard> pLevelState = ezBlackboardComponent::FindBlackboard(*GetOwner(), "LevelState");
+  if (pLevelState == nullptr)
+    return;
 
   // another portal may already show its name
   if (pLevelState->GetEntryValue("Message").ConvertTo<ezString>().StartsWith(m_sLevelName))

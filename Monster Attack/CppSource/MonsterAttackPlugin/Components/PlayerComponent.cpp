@@ -1,26 +1,15 @@
 #include <MonsterAttackPlugin/MonsterAttackPluginPCH.h>
 
-#include <Core/GameState/GameStateBase.h>
-#include <Core/Messages/CommonMessages.h>
 #include <GameComponentsPlugin/Gameplay/HeadBoneComponent.h>
-#include <GameEngine/GameApplication/GameApplication.h>
-#include <GameEngine/Gameplay/GrabbableItemComponent.h>
 #include <GameEngine/Gameplay/InputComponent.h>
 #include <GameEngine/Gameplay/SpawnComponent.h>
 #include <GameEngine/Physics/CharacterControllerComponent.h>
-#include <GameEngine/Physics/CollisionFilter.h>
 #include <GameEngine/StateMachine/StateMachineComponent.h>
 #include <MonsterAttackPlugin/Components/PlayerComponent.h>
-#include <MonsterAttackPlugin/GameState/MonsterAttackGameState.h>
-#include <RendererCore/Components/BlackboardComponent.h>
 
 // clang-format off
 EZ_BEGIN_COMPONENT_TYPE(ezPlayerComponent, 1, ezComponentMode::Dynamic)
 {
-  //EZ_BEGIN_PROPERTIES
-  //{
-  //}
-  //EZ_END_PROPERTIES;
   EZ_BEGIN_MESSAGEHANDLERS
   {
     EZ_MESSAGE_HANDLER(ezMsgInputActionTriggered, OnMsgInputActionTriggered),
@@ -34,20 +23,6 @@ EZ_BEGIN_COMPONENT_TYPE(ezPlayerComponent, 1, ezComponentMode::Dynamic)
 }
 EZ_END_COMPONENT_TYPE;
 // clang-format on
-
-void ezPlayerComponent::SerializeComponent(ezWorldWriter& stream) const
-{
-  SUPER::SerializeComponent(stream);
-
-  auto& s = stream.GetStream();
-}
-
-void ezPlayerComponent::DeserializeComponent(ezWorldReader& stream)
-{
-  SUPER::DeserializeComponent(stream);
-
-  auto& s = stream.GetStream();
-}
 
 // clang-format off
 const ezPlayerComponent::ItemDesc ezPlayerComponent::s_Items[] =
@@ -181,7 +156,7 @@ void ezPlayerComponent::PlaceTrap()
   }
 
   const ezInt32 iCost = GetItemCost(m_uiActiveItem);
-  const ezInt32 iMoney = m_pLevelState->GetEntry("Money")->m_Value.ConvertTo<ezInt32>();
+  const ezInt32 iMoney = m_pLevelState->GetEntryValue("Money", 0).ConvertTo<ezInt32>();
 
   if (iMoney < iCost)
   {
@@ -327,7 +302,9 @@ bool ezPlayerComponent::DetermineTrapPlacement(const ezGameObject* pCameraObject
     m_vPrevizPosition.y = ezMath::Round(m_vPrevizPosition.y);
     m_vPrevizPosition.z = ezMath::Round(m_vPrevizPosition.z);
 
-    m_qPrevizRotation = ezQuat::MakeShortestRotation(ezVec3::MakeAxisX(), result.m_vNormal);
+    // only rotate around the up axis, so that the trap is never tilted or rolled
+    // (a shortest-arc rotation is unstable when the normal points almost exactly against +X)
+    m_qPrevizRotation = ezQuat::MakeFromAxisAndAngle(ezVec3::MakeAxisZ(), ezMath::ATan2(result.m_vNormal.y, result.m_vNormal.x));
   }
 
   if (m_hPrevizObject.IsInvalidated())
@@ -352,6 +329,7 @@ bool ezPlayerComponent::DetermineTrapPlacement(const ezGameObject* pCameraObject
     if (GetWorld()->TryGetObject(m_hPrevizObject, pPreviz))
     {
       pPreviz->SetGlobalPosition(m_vPrevizPosition);
+      pPreviz->SetGlobalRotation(m_qPrevizRotation);
     }
   }
 

@@ -1,18 +1,12 @@
 #include <MonsterAttackPlugin/MonsterAttackPluginPCH.h>
 
 #include <Core/Input/InputManager.h>
-#include <Core/System/Window.h>
-#include <Core/World/World.h>
-#include <Foundation/Configuration/CVar.h>
 #include <Foundation/IO/FileSystem/FileSystem.h>
 #include <Foundation/Utilities/CommandLineUtils.h>
-#include <Foundation/Logging/Log.h>
 #include <GameEngine/Gameplay/SceneTransitionComponent.h>
 #include <GameEngine/UI/MainMenuComponent.h>
 #include <MonsterAttackPlugin/Components/LevelPortalComponent.h>
 #include <MonsterAttackPlugin/GameState/MonsterAttackGameState.h>
-#include <RendererCore/Debug/DebugRenderer.h>
-#include <RendererCore/Meshes/MeshComponent.h>
 
 EZ_BEGIN_DYNAMIC_REFLECTED_TYPE(MonsterAttackGameState, 1, ezRTTIDefaultAllocator<MonsterAttackGameState>)
 EZ_END_DYNAMIC_REFLECTED_TYPE;
@@ -31,18 +25,6 @@ void MonsterAttackGameState::OnActivation(ezWorld* pWorld, ezStringView sStartPo
   ezHashedString sName;
   sName.Assign("LevelState");
   m_pLevelState = ezBlackboard::GetOrCreateGlobal(sName);
-}
-
-void MonsterAttackGameState::OnDeactivation()
-{
-  EZ_LOG_BLOCK("GameState::Deactivate");
-
-  SUPER::OnDeactivation();
-}
-
-void MonsterAttackGameState::AfterWorldUpdate()
-{
-  SUPER::AfterWorldUpdate();
 }
 
 void MonsterAttackGameState::GetStartupOptions(ezString& out_sScene, ezString& out_sPreloadCollection)
@@ -305,29 +287,6 @@ ezStringView MonsterAttackGameState::GetInputPromptIcon(ezStringView sInputSlot)
   return it.Value();
 }
 
-void MonsterAttackGameState::ConfigureMainWindowInputDevices(ezWindowPlatformShared* pWindow)
-{
-  SUPER::ConfigureMainWindowInputDevices(pWindow);
-
-  // setup devices here
-}
-
-static void RegisterInputAction(const char* szInputSet, const char* szInputAction, const char* szKey1, const char* szKey2 = nullptr, const char* szKey3 = nullptr)
-{
-  ezInputActionConfig cfg;
-  cfg.m_bApplyTimeScaling = true;
-  cfg.m_sInputSlotTrigger[0] = szKey1;
-  cfg.m_sInputSlotTrigger[1] = szKey2;
-  cfg.m_sInputSlotTrigger[2] = szKey3;
-
-  ezInputManager::SetInputActionConfig(szInputSet, szInputAction, cfg, true);
-}
-
-void MonsterAttackGameState::ConfigureInputActions()
-{
-  SUPER::ConfigureInputActions();
-}
-
 void MonsterAttackGameState::ProcessInput()
 {
   SUPER::ProcessInput();
@@ -416,10 +375,10 @@ void MonsterAttackGameState::OnChangedMainWorld(ezWorld* pPrevWorld, ezWorld* pN
 
 void MonsterAttackGameState::MonsterReachedGoal()
 {
-  const ezInt32 iLives = ezMath::Max(0, m_pLevelState->GetEntry("Lives")->m_Value.ConvertTo<ezInt32>() - 1);
+  const ezInt32 iLives = ezMath::Max(0, m_pLevelState->GetEntryValue("Lives", 0).ConvertTo<ezInt32>() - 1);
   m_pLevelState->SetEntryValue("Lives", iLives);
 
-  const ezInt32 iMonsters = ezMath::Max(0, m_pLevelState->GetEntry("Monsters")->m_Value.ConvertTo<ezInt32>() - 1);
+  const ezInt32 iMonsters = ezMath::Max(0, m_pLevelState->GetEntryValue("Monsters", 0).ConvertTo<ezInt32>() - 1);
   m_pLevelState->SetEntryValue("Monsters", iMonsters);
 }
 
@@ -427,22 +386,15 @@ void MonsterAttackGameState::AddDeadMonster(ezGameObjectHandle hObject, ezInt32 
 {
   m_DeadMonsters.PushBack(hObject);
 
-  const ezInt32 iMoney = m_pLevelState->GetEntry("Money")->m_Value.ConvertTo<ezInt32>() + iMoneyReward;
+  const ezInt32 iMoney = m_pLevelState->GetEntryValue("Money", 0).ConvertTo<ezInt32>() + iMoneyReward;
   m_pLevelState->SetEntryValue("Money", iMoney);
 
-  const ezInt32 iMonsters = ezMath::Max(0, m_pLevelState->GetEntry("Monsters")->m_Value.ConvertTo<ezInt32>() - 1);
+  const ezInt32 iMonsters = ezMath::Max(0, m_pLevelState->GetEntryValue("Monsters", 0).ConvertTo<ezInt32>() - 1);
   m_pLevelState->SetEntryValue("Monsters", iMonsters);
 }
 
 void MonsterAttackGameState::AddMonster()
 {
-  const ezInt32 iMonsters = m_pLevelState->GetEntry("Monsters")->m_Value.ConvertTo<ezInt32>() + 1;
+  const ezInt32 iMonsters = m_pLevelState->GetEntryValue("Monsters", 0).ConvertTo<ezInt32>() + 1;
   m_pLevelState->SetEntryValue("Monsters", iMonsters);
-}
-
-void MonsterAttackGameState::ConfigureMainCamera()
-{
-  SUPER::ConfigureMainCamera();
-
-  // do custom camera setup here
 }

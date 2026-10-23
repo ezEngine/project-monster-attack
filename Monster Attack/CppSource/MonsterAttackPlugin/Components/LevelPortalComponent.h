@@ -16,7 +16,7 @@ using ezLevelPortalComponentManager = ezComponentManager<class ezLevelPortalComp
 ///
 /// Which levels were won is stored in the global 'Progress' blackboard.
 /// If the target level was won, a child object named "Completed" gets activated.
-class ezLevelPortalComponent : public ezComponent
+class EZ_MONSTERATTACKPLUGIN_DLL ezLevelPortalComponent : public ezComponent
 {
   EZ_DECLARE_COMPONENT_TYPE(ezLevelPortalComponent, ezComponent, ezLevelPortalComponentManager);
 

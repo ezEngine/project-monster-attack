@@ -1,17 +1,20 @@
 #pragma once
 
-#include <Core/Collection/CollectionResource.h>
-#include <Core/Input/Declarations.h>
+#include <Core/Utils/Blackboard.h>
 #include <Core/World/Declarations.h>
-#include <GameEngine/GameApplication/GameApplication.h>
-#include <GameEngine/GameState/FallbackGameState.h>
 #include <GameEngine/GameState/GameState.h>
 #include <MonsterAttackPlugin/MonsterAttackPluginDLL.h>
-#include <RendererCore/Pipeline/Extractor.h>
 
 class ezMainMenuComponent;
 
-class MonsterAttackGameState : public ezGameState
+/// The game state of Monster Attack.
+///
+/// The game state lives across scene changes. It owns everything that isn't part of a single level:
+///   * Starting in the hub (Scenes/Main) and going back there once a level is won or lost.
+///   * Opening the main menu on ESC, instead of quitting.
+///   * Writing data for the HUD into the global 'LevelState' blackboard (e.g. the current key bindings).
+///   * Bookkeeping for monsters (money rewards, lives lost, cleaning up dead bodies).
+class EZ_MONSTERATTACKPLUGIN_DLL MonsterAttackGameState : public ezGameState
 {
   EZ_ADD_DYNAMIC_REFLECTION(MonsterAttackGameState, ezGameState);
 
@@ -29,10 +32,6 @@ public:
   void AddMonster();
 
 protected:
-  virtual void ConfigureMainWindowInputDevices(ezWindowPlatformShared* pWindow) override;
-  virtual void ConfigureInputActions() override;
-  virtual void ConfigureMainCamera() override;
-
   /// Loads the scene given with "-scene" (e.g. when launched from the editor), otherwise the hub in Scenes/Main.ezScene.
   virtual void GetStartupOptions(ezString& out_sScene, ezString& out_sPreloadCollection) override;
   virtual void OnChangedMainWorld(ezWorld* pPrevWorld, ezWorld* pNewWorld, ezStringView sStartPosition, const ezTransform& startPositionOffset) override;
@@ -55,9 +54,7 @@ protected:
 
 private:
   virtual void OnActivation(ezWorld* pWorld, ezStringView sStartPosition, const ezTransform& startPositionOffset) override;
-  virtual void OnDeactivation() override;
   virtual void BeforeWorldUpdate() override;
-  virtual void AfterWorldUpdate() override;
 
   ezSharedPtr<ezBlackboard> m_pLevelState;
   ezDeque<ezGameObjectHandle> m_DeadMonsters;

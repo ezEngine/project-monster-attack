@@ -1,19 +1,23 @@
+#pragma once
+
 #include <Core/World/Component.h>
 #include <Core/World/ComponentManager.h>
 #include <GameEngine/Gameplay/InputComponent.h>
+#include <MonsterAttackPlugin/MonsterAttackPluginDLL.h>
 
 using ezPlayerComponentManager = ezComponentManagerSimple<class ezPlayerComponent, ezComponentUpdateType::WhenSimulating>;
 
-class ezPlayerComponent : public ezComponent
+/// The game logic of the player.
+///
+/// Reads the input from an ezInputComponent on the same object and forwards movement to the character controller.
+/// The player can switch between the magic gun and traps. While a trap is selected, a preview of it is shown
+/// where the player looks at, and shooting places the trap there, if the player has enough money.
+class EZ_MONSTERATTACKPLUGIN_DLL ezPlayerComponent : public ezComponent
 {
   EZ_DECLARE_COMPONENT_TYPE(ezPlayerComponent, ezComponent, ezPlayerComponentManager);
 
   //////////////////////////////////////////////////////////////////////////
   // ezComponent
-
-public:
-  virtual void SerializeComponent(ezWorldWriter& stream) const override;
-  virtual void DeserializeComponent(ezWorldReader& stream) override;
 
 protected:
   virtual void OnSimulationStarted() override;
@@ -21,10 +25,9 @@ protected:
   //////////////////////////////////////////////////////////////////////////
   // ezPlayerComponent
 
-public:
+private:
   void OnMsgInputActionTriggered(ezMsgInputActionTriggered& msg);
 
-private:
   void Update();
   void ClearPrevizObject();
   bool DetermineTrapPlacement(const ezGameObject* pCameraObject);

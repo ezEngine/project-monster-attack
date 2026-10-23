@@ -1,20 +1,11 @@
 #include <MonsterAttackPlugin/MonsterAttackPluginPCH.h>
 
 #include <AiPlugin/Navigation/Components/NavigationComponent.h>
-#include <AiPlugin/Navigation/NavMeshWorldModule.h>
-#include <AiPlugin/Navigation/Steering.h>
-#include <Core/GameState/GameStateBase.h>
-#include <Core/Messages/CommonMessages.h>
 #include <Core/Messages/SetColorMessage.h>
 #include <Core/Physics/SurfaceResource.h>
 #include <GameEngine/Animation/Skeletal/AnimationControllerComponent.h>
 #include <GameEngine/GameApplication/GameApplication.h>
-#include <GameEngine/GameState/GameState.h>
-#include <GameEngine/Gameplay/InputComponent.h>
-#include <GameEngine/Gameplay/SpawnComponent.h>
 #include <GameEngine/Messages/DamageMessage.h>
-#include <GameEngine/Physics/CharacterControllerComponent.h>
-#include <GameEngine/Physics/CollisionFilter.h>
 #include <JoltPlugin/Components/JoltRagdollComponent.h>
 #include <MonsterAttackPlugin/Components/MonsterComponent.h>
 #include <MonsterAttackPlugin/GameState/MonsterAttackGameState.h>
@@ -56,7 +47,6 @@ void ezMonsterComponent::SerializeComponent(ezWorldWriter& stream) const
 void ezMonsterComponent::DeserializeComponent(ezWorldReader& stream)
 {
   SUPER::DeserializeComponent(stream);
-  const ezUInt32 uiVersion = stream.GetComponentTypeVersion(GetStaticRTTI());
 
   auto& s = stream.GetStream();
 
@@ -68,14 +58,15 @@ void ezMonsterComponent::OnSimulationStarted()
 {
   SUPER::OnSimulationStarted();
 
-  ezGameObject* pMoveToTarget;
-  if (GetWorld()->TryGetObjectWithGlobalKey("Goal", pMoveToTarget))
+  ezAiNavigationComponent* pNav = nullptr;
+  if (GetOwner()->TryGetComponentOfBaseType(pNav))
   {
-    m_hMoveToTarget = pMoveToTarget->GetHandle();
+    m_fBaseWalkSpeed = pNav->m_fSpeed;
 
-    ezAiNavigationComponent* pNav = nullptr;
-    if (GetOwner()->TryGetComponentOfBaseType(pNav))
+    ezGameObject* pMoveToTarget;
+    if (GetWorld()->TryGetObjectWithGlobalKey("Goal", pMoveToTarget))
     {
+      m_hMoveToTarget = pMoveToTarget->GetHandle();
       pNav->SetDestination(pMoveToTarget->GetGlobalPosition(), true);
     }
   }
@@ -109,22 +100,26 @@ void ezMonsterComponent::Update()
 
   CheckGroundType();
 
+  ezAiNavigationComponent* pNav = nullptr;
+  if (GetOwner()->TryGetComponentOfBaseType(pNav))
+  {
+    pNav->m_fSpeed = m_fBaseWalkSpeed * m_fGroundWalkSpeed;
+  }
+
   if (auto pBoard = ezBlackboardComponent::FindBlackboard(*GetOwner()))
   {
     pBoard->SetEntryValue("State", 1); // "walk" animation
     pBoard->SetEntryValue("MoveSpeed", ezMath::Clamp(GetOwner()->GetLinearVelocity().GetLength() * 0.5f, 0.0f, 2.0f));
   }
 
-  if (m_fGroundWalkSpeed >= 1.0f)
+  // tint the monster while it walks through tar
+  const bool bSlowedDown = m_fGroundWalkSpeed < 1.0f;
+  if (bSlowedDown != m_bSlowedDown)
   {
+    m_bSlowedDown = bSlowedDown;
+
     ezMsgSetColor msg;
-    msg.m_Color = ezColor::White;
-    GetOwner()->SendMessageRecursive(msg);
-  }
-  else
-  {
-    ezMsgSetColor msg;
-    msg.m_Color = ezColor::DarkGrey;
+    msg.m_Color = bSlowedDown ? ezColor::DarkGrey : ezColor::White;
     GetOwner()->SendMessageRecursive(msg);
   }
 }

@@ -9,7 +9,6 @@ ez_create_target(SHARED_LIBRARY ${PROJECT_NAME} NO_EZ_PREFIX NO_UNITY)
 target_link_libraries(${PROJECT_NAME}
   PUBLIC
   GameEngine
-  Utilities
 )
 
 # include the EZ natvis file for a better debugging experience
