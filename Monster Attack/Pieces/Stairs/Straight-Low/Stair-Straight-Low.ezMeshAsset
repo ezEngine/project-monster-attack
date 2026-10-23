@@ -14,19 +14,19 @@ o
 			s{"Pieces/Stairs/Straight-Low/Stairs.obj"}
 		}
 		Uuid %DocumentID{u4{18296828024941359232,4987785532948237603}}
-		u4 %Hash{9754935823392135848}
+		u4 %Hash{8908431761047097062}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps
 		{
-			s{"{ 891ba30a-ba21-4458-b96b-47b12d3600e3 }"}
-			s{"{ a06adde0-31e2-4c2b-a7e2-72cec2be1aea }"}
+			s{"{ c5d593ad-9cac-4dc1-b09c-68a58a6ae47a }"}
+			s{"{ e92499e1-f87a-4322-ac01-f5a45f9e32fe }"}
 		}
 		VarArray %References
 		{
 			s{"Pieces/Stairs/Straight-Low/Stairs.obj"}
-			s{"{ 891ba30a-ba21-4458-b96b-47b12d3600e3 }"}
-			s{"{ a06adde0-31e2-4c2b-a7e2-72cec2be1aea }"}
+			s{"{ c5d593ad-9cac-4dc1-b09c-68a58a6ae47a }"}
+			s{"{ e92499e1-f87a-4322-ac01-f5a45f9e32fe }"}
 		}
 		s %Tags{""}
 	}
@@ -42,7 +42,7 @@ o
 	p
 	{
 		s %Label{"Highlights"}
-		s %Resource{"{ a06adde0-31e2-4c2b-a7e2-72cec2be1aea }"}
+		s %Resource{"{ e92499e1-f87a-4322-ac01-f5a45f9e32fe }"}
 	}
 }
 o
@@ -61,7 +61,7 @@ o
 		b %FlipForwardDir{0}
 		f %Height{0x0000803F}
 		b %HighPrecision{0}
-		b %ImportMaterials{1}
+		b %ImportMaterials{0}
 		s %ImportTransform{"ezMeshImportTransform::Custom"}
 		VarArray %Materials
 		{
@@ -95,7 +95,7 @@ o
 	p
 	{
 		s %Label{"Main"}
-		s %Resource{"{ 891ba30a-ba21-4458-b96b-47b12d3600e3 }"}
+		s %Resource{"{ c5d593ad-9cac-4dc1-b09c-68a58a6ae47a }"}
 	}
 }
 o

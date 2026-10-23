@@ -14,21 +14,21 @@ o
 			s{"Pieces/Walls/Window/Window_Bars.obj"}
 		}
 		Uuid %DocumentID{u4{2274114193878565277,5325715035447615049}}
-		u4 %Hash{12432711154382477031}
+		u4 %Hash{15285069703989920664}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps
 		{
-			s{"{ 300ff8b8-1070-404d-82ea-60ffc00ca0e1 }"}
-			s{"{ 61aaeae2-dc7d-4cba-be06-38133ffd9556 }"}
-			s{"{ 8a0b77bd-7f80-4344-919d-1c9d4bc46f34 }"}
+			s{"{ c5d593ad-9cac-4dc1-b09c-68a58a6ae47a }"}
+			s{"{ e7652e6e-382b-4e9f-a3b8-f6c7d844efd1 }"}
+			s{"{ e92499e1-f87a-4322-ac01-f5a45f9e32fe }"}
 		}
 		VarArray %References
 		{
 			s{"Pieces/Walls/Window/Window_Bars.obj"}
-			s{"{ 300ff8b8-1070-404d-82ea-60ffc00ca0e1 }"}
-			s{"{ 61aaeae2-dc7d-4cba-be06-38133ffd9556 }"}
-			s{"{ 8a0b77bd-7f80-4344-919d-1c9d4bc46f34 }"}
+			s{"{ c5d593ad-9cac-4dc1-b09c-68a58a6ae47a }"}
+			s{"{ e7652e6e-382b-4e9f-a3b8-f6c7d844efd1 }"}
+			s{"{ e92499e1-f87a-4322-ac01-f5a45f9e32fe }"}
 		}
 		s %Tags{""}
 	}
@@ -44,7 +44,7 @@ o
 	p
 	{
 		s %Label{"Metal"}
-		s %Resource{"{ 300ff8b8-1070-404d-82ea-60ffc00ca0e1 }"}
+		s %Resource{"{ e7652e6e-382b-4e9f-a3b8-f6c7d844efd1 }"}
 	}
 }
 o
@@ -55,7 +55,7 @@ o
 	p
 	{
 		s %Label{"Highlights"}
-		s %Resource{"{ 8a0b77bd-7f80-4344-919d-1c9d4bc46f34 }"}
+		s %Resource{"{ e92499e1-f87a-4322-ac01-f5a45f9e32fe }"}
 	}
 }
 o
@@ -66,7 +66,7 @@ o
 	p
 	{
 		s %Label{"Main"}
-		s %Resource{"{ 61aaeae2-dc7d-4cba-be06-38133ffd9556 }"}
+		s %Resource{"{ c5d593ad-9cac-4dc1-b09c-68a58a6ae47a }"}
 	}
 }
 o

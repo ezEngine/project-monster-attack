@@ -14,7 +14,7 @@ o
 			s{"Pieces/Columns/Round/Column_Round.obj"}
 		}
 		Uuid %DocumentID{u4{7461643097442281399,4726759774753178543}}
-		u4 %Hash{9075376995573423780}
+		u4 %Hash{3468550327544897600}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps{}
@@ -55,9 +55,24 @@ o
 		s %RightDir{"ezBasisAxis::PositiveX"}
 		b %SimplifyMesh{0}
 		s %Surface{""}
-		VarArray %Surfaces{}
+		VarArray %Surfaces
+		{
+			Uuid{u4{11031258047359097759,5678773813193166505}}
+		}
 		f %UniformScaling{0x0000803F}
 		s %UpDir{"ezBasisAxis::PositiveY"}
+	}
+}
+o
+{
+	Uuid %id{u4{11031258047359097759,5678773813193166505}}
+	s %t{"ezJoltSurfaceResourceSlot"}
+	u3 %v{1}
+	p
+	{
+		b %Exclude{0}
+		s %Label{"Main"}
+		s %Resource{""}
 	}
 }
 o

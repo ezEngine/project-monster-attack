@@ -14,21 +14,21 @@ o
 			s{"Props/Candles/Candles_1.fbx"}
 		}
 		Uuid %DocumentID{u4{16165375623794421904,4659723526737899404}}
-		u4 %Hash{8700909764939556988}
+		u4 %Hash{9799637136616165960}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps
 		{
-			s{"{ 0e62bb58-b26d-4122-be4d-673f4dd27e20 }"}
 			s{"{ 7e5dd7e5-88ab-40a0-8ede-45944d5aed48 }"}
 			s{"{ a61e62f7-33bb-4cd3-849d-a5f3bbe2e9e3 }"}
+			s{"{ e2af72e2-8528-45ec-b8de-4bcb736286cb }"}
 		}
 		VarArray %References
 		{
 			s{"Props/Candles/Candles_1.fbx"}
-			s{"{ 0e62bb58-b26d-4122-be4d-673f4dd27e20 }"}
 			s{"{ 7e5dd7e5-88ab-40a0-8ede-45944d5aed48 }"}
 			s{"{ a61e62f7-33bb-4cd3-849d-a5f3bbe2e9e3 }"}
+			s{"{ e2af72e2-8528-45ec-b8de-4bcb736286cb }"}
 		}
 		s %Tags{""}
 	}
@@ -52,7 +52,7 @@ o
 		b %FlipForwardDir{0}
 		f %Height{0x0000803F}
 		b %HighPrecision{0}
-		b %ImportMaterials{1}
+		b %ImportMaterials{0}
 		s %ImportTransform{"ezMeshImportTransform::Custom"}
 		VarArray %Materials
 		{
@@ -98,7 +98,7 @@ o
 	p
 	{
 		s %Label{"Light"}
-		s %Resource{"{ 0e62bb58-b26d-4122-be4d-673f4dd27e20 }"}
+		s %Resource{"{ e2af72e2-8528-45ec-b8de-4bcb736286cb }"}
 	}
 }
 o

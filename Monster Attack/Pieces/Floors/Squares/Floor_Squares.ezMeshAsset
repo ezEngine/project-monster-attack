@@ -14,19 +14,19 @@ o
 			s{"Pieces/Floors/Squares/Floor_Squares.obj"}
 		}
 		Uuid %DocumentID{u4{15858362554525164698,5518335457995048558}}
-		u4 %Hash{10044084202300230446}
+		u4 %Hash{2628218129081062669}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps
 		{
-			s{"{ 47c0409a-8061-40f6-8550-f40a63ffc874 }"}
-			s{"{ b6df6576-07c3-46a7-96fc-feb0cbe233f3 }"}
+			s{"{ c5d593ad-9cac-4dc1-b09c-68a58a6ae47a }"}
+			s{"{ e92499e1-f87a-4322-ac01-f5a45f9e32fe }"}
 		}
 		VarArray %References
 		{
 			s{"Pieces/Floors/Squares/Floor_Squares.obj"}
-			s{"{ 47c0409a-8061-40f6-8550-f40a63ffc874 }"}
-			s{"{ b6df6576-07c3-46a7-96fc-feb0cbe233f3 }"}
+			s{"{ c5d593ad-9cac-4dc1-b09c-68a58a6ae47a }"}
+			s{"{ e92499e1-f87a-4322-ac01-f5a45f9e32fe }"}
 		}
 		s %Tags{""}
 	}
@@ -50,7 +50,7 @@ o
 		b %FlipForwardDir{0}
 		f %Height{0x0000803F}
 		b %HighPrecision{0}
-		b %ImportMaterials{1}
+		b %ImportMaterials{0}
 		s %ImportTransform{"ezMeshImportTransform::Custom"}
 		VarArray %Materials
 		{
@@ -84,7 +84,7 @@ o
 	p
 	{
 		s %Label{"Main"}
-		s %Resource{"{ 47c0409a-8061-40f6-8550-f40a63ffc874 }"}
+		s %Resource{"{ c5d593ad-9cac-4dc1-b09c-68a58a6ae47a }"}
 	}
 }
 o
@@ -95,7 +95,7 @@ o
 	p
 	{
 		s %Label{"Highlights"}
-		s %Resource{"{ b6df6576-07c3-46a7-96fc-feb0cbe233f3 }"}
+		s %Resource{"{ e92499e1-f87a-4322-ac01-f5a45f9e32fe }"}
 	}
 }
 o

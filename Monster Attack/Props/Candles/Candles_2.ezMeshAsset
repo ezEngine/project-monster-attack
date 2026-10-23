@@ -14,7 +14,7 @@ o
 			s{"Props/Candles/Candles_2.fbx"}
 		}
 		Uuid %DocumentID{u4{1401729013278533012,5418477993853226234}}
-		u4 %Hash{2868546748584511935}
+		u4 %Hash{17922025784793867217}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps
@@ -63,7 +63,7 @@ o
 		b %FlipForwardDir{0}
 		f %Height{0x0000803F}
 		b %HighPrecision{0}
-		b %ImportMaterials{1}
+		b %ImportMaterials{0}
 		s %ImportTransform{"ezMeshImportTransform::Custom"}
 		VarArray %Materials
 		{

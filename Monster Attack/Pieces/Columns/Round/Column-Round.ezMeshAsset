@@ -14,17 +14,17 @@ o
 			s{"Pieces/Columns/Round/Column_Round.obj"}
 		}
 		Uuid %DocumentID{u4{15379862457566160822,4984200336428378069}}
-		u4 %Hash{2204123069144714665}
+		u4 %Hash{13015484425782538381}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps
 		{
-			s{"{ dcca6b1a-f673-4d59-941b-dbfbccd5efd9 }"}
+			s{"{ c5d593ad-9cac-4dc1-b09c-68a58a6ae47a }"}
 		}
 		VarArray %References
 		{
 			s{"Pieces/Columns/Round/Column_Round.obj"}
-			s{"{ dcca6b1a-f673-4d59-941b-dbfbccd5efd9 }"}
+			s{"{ c5d593ad-9cac-4dc1-b09c-68a58a6ae47a }"}
 		}
 		s %Tags{""}
 	}
@@ -40,7 +40,7 @@ o
 	p
 	{
 		s %Label{"Main"}
-		s %Resource{"{ dcca6b1a-f673-4d59-941b-dbfbccd5efd9 }"}
+		s %Resource{"{ c5d593ad-9cac-4dc1-b09c-68a58a6ae47a }"}
 	}
 }
 o
@@ -59,7 +59,7 @@ o
 		b %FlipForwardDir{0}
 		f %Height{0x0000803F}
 		b %HighPrecision{0}
-		b %ImportMaterials{1}
+		b %ImportMaterials{0}
 		s %ImportTransform{"ezMeshImportTransform::Custom"}
 		VarArray %Materials
 		{

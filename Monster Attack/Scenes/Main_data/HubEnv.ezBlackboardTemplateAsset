@@ -14,7 +14,7 @@ o
 			s{"{ 11b04ae6-c3a4-44c2-9c62-43421b9244b4 }"}
 		}
 		Uuid %DocumentID{u4{14189435443296956074,4874479045620849511}}
-		u4 %Hash{9698153286117455493}
+		u4 %Hash{5502958349625345933}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps{}
@@ -76,7 +76,7 @@ o
 	p
 	{
 		s %Flags{""}
-		s %InitialValue{"Walk through a doorway to pick a level"}
+		s %InitialValue{"Walk through a portal to pick a level"}
 		HashedString %Name{s{"Message"}}
 	}
 }

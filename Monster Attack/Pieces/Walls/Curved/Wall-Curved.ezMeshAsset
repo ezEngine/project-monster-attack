@@ -14,19 +14,19 @@ o
 			s{"Pieces/Walls/Curved/Curve_1.obj"}
 		}
 		Uuid %DocumentID{u4{6594219172493578156,5164737798386358565}}
-		u4 %Hash{1008458627517682207}
+		u4 %Hash{2214859152541938164}
 		VarArray %MetaInfo{}
 		VarArray %Outputs{}
 		VarArray %PackageDeps
 		{
-			s{"{ 7efa179b-eae9-4753-9d45-ec93639a9b59 }"}
-			s{"{ ea120f40-0db4-43f0-89fe-c31682a611d4 }"}
+			s{"{ c5d593ad-9cac-4dc1-b09c-68a58a6ae47a }"}
+			s{"{ e92499e1-f87a-4322-ac01-f5a45f9e32fe }"}
 		}
 		VarArray %References
 		{
 			s{"Pieces/Walls/Curved/Curve_1.obj"}
-			s{"{ 7efa179b-eae9-4753-9d45-ec93639a9b59 }"}
-			s{"{ ea120f40-0db4-43f0-89fe-c31682a611d4 }"}
+			s{"{ c5d593ad-9cac-4dc1-b09c-68a58a6ae47a }"}
+			s{"{ e92499e1-f87a-4322-ac01-f5a45f9e32fe }"}
 		}
 		s %Tags{""}
 	}
@@ -50,7 +50,7 @@ o
 		b %FlipForwardDir{0}
 		f %Height{0x0000803F}
 		b %HighPrecision{0}
-		b %ImportMaterials{1}
+		b %ImportMaterials{0}
 		s %ImportTransform{"ezMeshImportTransform::Custom"}
 		VarArray %Materials
 		{
@@ -84,7 +84,7 @@ o
 	p
 	{
 		s %Label{"Main"}
-		s %Resource{"{ ea120f40-0db4-43f0-89fe-c31682a611d4 }"}
+		s %Resource{"{ c5d593ad-9cac-4dc1-b09c-68a58a6ae47a }"}
 	}
 }
 o
@@ -95,7 +95,7 @@ o
 	p
 	{
 		s %Label{"Highlights"}
-		s %Resource{"{ 7efa179b-eae9-4753-9d45-ec93639a9b59 }"}
+		s %Resource{"{ e92499e1-f87a-4322-ac01-f5a45f9e32fe }"}
 	}
 }
 o
